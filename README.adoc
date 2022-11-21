@@ -55,9 +55,9 @@ Projet est réalisé par::
 - https://github.com/VictorThompsonKeyl[Victor Thompson]
 - https://github.com/Anthonycbrl[Anthony Cabrillac]
 - https://github.com/leosae06[Léo Douville]
-- https://github.com/Anthonycbrl[Shiyu Hu]
+- https://github.com/SylvainHsy[Shiyu Hu]
 
-Tuteur/tutrice enseignant(e) de l'équipe:: mailto:jean-michel.bruel@univ-tlse2.fr[JMB]
+Tuteur/tutrice enseignant(e) de l'équipe:: mailto:laurent.nonne@univ-tlse2.fr[LN]
 
 == Contexte général
 
