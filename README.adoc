@@ -51,7 +51,7 @@ toc::[]
 
 Projet est réalisé par::
 
-- https://github.com/janeDoe[Jane Doe]
+- https://github.com/Yann-cmd[Yann Guillevic]
 - https://github.com/johnSmith[John Smith]
 ...
 
