@@ -1,0 +1,45 @@
+# JMB 2022 -- Taken from https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
+name: User Story
+description: Une User Story de l'application
+title: "[US]: "
+labels: ["us"]
+body:
+  - type: input
+    id: us
+    attributes:
+      label: User Story
+      description: Description de la story
+      placeholder: En tant que [Persona], je veux [feature], afin que [raison].
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Importance
+      description: Quelle est l'importance de cette US pour le client?
+      options:
+        - Must (Default)
+        - Should
+        - Could
+        - Will
+    validations:
+      required: true
+  - type: textarea
+    id: acceptation
+    attributes:
+      label: Critères d'acceptation
+      description: Comment sera évaluée la satisfaction de cette US, jeux de tests si disponibles, ....
+  - type: textarea
+    id: details
+    attributes:
+      label: Détails
+      description: Donner des détails si possible.
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Tâches associées
+      description: Voici la liste des tâches associées à cette US (pourra évoluer plus tard) 
+      options:
+        - label: Écrire un test
+        - label: Coder
+        - label: Écrire la doc

@@ -1,0 +1,36 @@
+# JMB 2022 -- Adapted from https://gist.github.com/JonathanGawrych/32afe529fd519a7312df
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# VSCode
+.vscode
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# Inclusions
+!lib/**
+
+# Compiled Files
+*.class
+bin/
+build/
+/bin1/
+java/build/**

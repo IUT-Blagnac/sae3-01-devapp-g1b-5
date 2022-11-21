@@ -1,0 +1,106 @@
+= SAÉ 3.01 2022-2023
+:icons: font
+:models: models
+:experimental:
+:incremental:
+:numbered:
+:toc: macro
+:window: _blank
+:correction!:
+
+// Useful definitions
+:asciidoc: http://www.methods.co.nz/asciidoc[AsciiDoc]
+:icongit: icon:git[]
+:git: http://git-scm.com/[{icongit}]
+:plantuml: https://plantuml.com/fr/[plantUML]
+:vscode: https://code.visualstudio.com/[VS Code]
+
+ifndef::env-github[:icons: font]
+// Specific to GitHub
+ifdef::env-github[]
+:correction:
+:!toc-title:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+:icongit: Git
+endif::[]
+
+// /!\ A MODIFIER !!!
+:baseURL: https://github.com/IUT-Blagnac/sae3-01-template
+
+// Tags
+image:{baseURL}/actions/workflows/blank.yml/badge.svg[Bidon] 
+image:{baseURL}/actions/workflows/build.yml/badge.svg[Build] 
+image:{baseURL}/actions/workflows/tests.yml/badge.svg[Tests] 
+image:https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg[License: MPL-2.0, link="https://opensource.org/licenses/MPL-2.0"]
+//---------------------------------------------------------------
+
+TIP: Pensez à mettre à jour les infos dans ce fichier pour que les badges pointent sur les résultats effectifs de vos intégrations continue ou sur la bonne licence logicielle.
+
+WARNING: Ce dépôt présente le projet à développer dans le cadre de la SAÉ 3.01 du BUT1 Informatique de l'IUT de Blagnac.
+
+Ce fichier `README.adoc` (dont vous lisez sûrement le rendu HTML automatiquement effectué par GitHUb), fait partie du dépôt initial cloné à partir du lien GitHub classroom qui vous a été donné en cours (https://classroom.github.com/a/OUF7gxEa).
+Vous trouverez le dépôt "template" qui a servi de base ici : https://github.com/IUT-Blagnac/sae3-01-template. En complément du cours Moodle de la SAE 3.01 (cf. <<liensUtiles>>), ce dépôt template vous permet d'accéder à des exemples d'https://github.com/IUT-Blagnac/sae3-01-template/issues[issues], de https://github.com/IUT-Blagnac/sae3-01-template/releases[releases], ou d'autres artefacts à venir.
+
+toc::[]
+
+== Equipe
+
+Projet est réalisé par::
+
+- https://github.com/janeDoe[Jane Doe]
+- https://github.com/johnSmith[John Smith]
+...
+
+Tuteur/tutrice enseignant(e) de l'équipe:: mailto:jean-michel.bruel@univ-tlse2.fr[JMB]
+
+== Contexte général
+
+TIP: Cette partie de votre `README.adoc` peut être supprimée ou mise ailleurs.
+
+=== Dépôt initial
+
+Ce dépôt initial a été créé pour que tous les groupes de 2ème année aient les mêmes informations de départ.
+
+Vous y trouverez des fichiers qui peuvent être supprimés s'ils ne vous sont pas utiles :
+
+- `.gitignore` => un fichier minimaliste des éléments à ne pas pousser en général sur vos dépôts (utiliser la commande `git add -f` pour forcer l'ajout d'un fichier Jar qui ne bougera plus, pour archive par exemple).
+- `.github` => le répertoire qui contient des éléments de gestion de projet :
+** `workflows` => le repertoire qui contient les actions à lancer à chaque push sur votre repo. 
+*** `blank.yml` => un exemple bidon mais dont vous pourrez vérifier l’exécution correcte (1er tag)
+** `ISSUE_TEMPLATE` => le repertoire qui contient quelques templates pour vos issues.
+*** `us.yml` => Exemple de template pour les User Stories
+*** `bug.yml` => Exemple de template pour les issues de bug report
+
+TIP: Adaptez ces fichiers à votre projet et à votre organisation. Et inspirez-vous en pour en ajouter.
+
+[[liensUtiles]]
+=== Liens utiles
+
+- Le https://webetud.iut-blagnac.fr/course/view.php?id=841[cours Moodle] sur la SAE
+- Le dépôt https://github.com/IUT-Blagnac/sae3-01-template[template] qui sert de base à tous les dépôts étudiants.
+- Le lien https://classroom.github.com/a/OUF7gxEa[classroom] si besoin.
+
+TIP: Pensez à utiliser les salons Discord dédiés pour poser vos questions.
+
+== Réalisations 
+
+TIP: Mettez ici toutes les informations nécessaire à l'utilisation de votre dépôt (comment on installe votre application, où sont les docs, etc.)
+
+== Gestion de projet & Qualité
+
+Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
+Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
+
+De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
+
+- Version courante : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
+- Lien vers la doc technique
+- Lien vers la doc utilisateur
+- Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
+- Tests unitaires et plans de test
+- Indicateurs de qualité du code (dette technique)
+- ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
