@@ -52,8 +52,10 @@ toc::[]
 Projet est réalisé par::
 
 - https://github.com/Yann-cmd[Yann Guillevic]
-- https://github.com/johnSmith[John Smith]
-...
+- https://github.com/Anthonycbrl[Victor Thompson]
+- https://github.com/Anthonycbrl[Anthony Cabrillac]
+- https://github.com/Anthonycbrl[Léo Douville]
+- https://github.com/Anthonycbrl[Shiyu Hu]
 
 Tuteur/tutrice enseignant(e) de l'équipe:: mailto:jean-michel.bruel@univ-tlse2.fr[JMB]
 
