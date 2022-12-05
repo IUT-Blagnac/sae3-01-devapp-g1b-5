@@ -1,0 +1,17 @@
+.header {
+  position: absolute;
+  margin-top: -1%; 
+  margin-left: 35%;
+  font-size: 5em;
+  font-family: lemon;
+  color: #E1C200;
+  width: 100%;
+  text-shadow: 2px 0 0 #000, 2px 2px 0 #000, 0 2px 0 #000, -2px 2px 0 #000, -2px 0 0 #000, -2px -2px 0 #000, 0 -2px 0 #000, 2px -2px 0 #000;
+}
+
+#imageFR{
+  margin-left: 25%;
+}
+
+
+
