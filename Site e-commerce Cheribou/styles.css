@@ -1,16 +1,69 @@
-.header {
-  position: absolute;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+header {
+  /* position: absolute;
   margin-top: -1%; 
-  margin-left: 35%;
-  font-size: 5em;
-  font-family: lemon;
-  color: #E1C200;
+  margin-left: 35%; */
+  text-align: center;
   width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5em;
+  font-family: Lemon;
+  color: #E1C200;
   text-shadow: 2px 0 0 #000, 2px 2px 0 #000, 0 2px 0 #000, -2px 2px 0 #000, -2px 0 0 #000, -2px -2px 0 #000, 0 -2px 0 #000, 2px -2px 0 #000;
 }
 
 #imageFR{
-  margin-left: 25%;
+  /* margin-left: 25%; */
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.navbar {
+    width: 100%;
+    margin: 0px auto 40px auto;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+}
+
+nav ul{
+  list-style-type: none;
+}
+
+nav li{
+  float: left;
+  width: 20%;/*100% divisé par le nombre d'éléments de menu*/
+  text-align: center;/*Centre le texte dans les éléments de menu*/
+}
+
+/*Evite que le menu n'ait une hauteur nulle*/
+nav ul::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav a{
+  display: block; /*Toute la surface sera cliquable*/
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;/*Evite le décalage des éléments sous le menu à cause de la bordure en :hover*/
+  padding: 10px 0px;/*Agrandit le menu et espace la bordure du texte*/
+}
+
+nav a:hover{
+  color: orange;
+  border-bottom: 2px solid gold;
 }
 
 
