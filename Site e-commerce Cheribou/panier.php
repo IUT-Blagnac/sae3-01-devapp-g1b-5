@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8"/>
-     <link rel="stylesheet" href="images/styles.css">
-     <link rel="stylesheet" href="images/Panier.css">
-	<title>Mon site en PHP!</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="include\Panier.css">
+    <title>Mon site en PHP!</title>
 </head>
+
 <body>
-	<?php include("./images/header.php"); ?>
-  <main>
-    <div class="contener">
-      <button class="boutonD" style="color: black;"><b>Se déconnecter</b></button>
-      <p><b>Mon panier</b></p> 
-      
-      <p style="font-size: 2em;">X articles</p>
-      <div class="contener2">
-        <p class="text">Informations personnelles</p>
-        <div class="cont">  
-          <button class="boutonV">Valider</button> 
+    <?php include("include\header.php"); ?>
+    <main>
+        <div class="contener">
+            <button class="boutonD" style="color: black;"><b>Se déconnecter</b></button>
+            <p><b>Mon panier</b></p>
+
+            <p style="font-size: 2em;">X articles</p>
+            <div class="contener2">
+                <p class="text">Informations personnelles</p>
+                <div class="cont">
+                    <button class="boutonV">Valider</button>
+                </div>
+            </div>
+
+
+
         </div>
-      </div>
-      
-      
-  
-    </div>
-  </main>
+    </main>
+    <?php include("include/footer.php");?>
+
 </body>
+
 </html>
