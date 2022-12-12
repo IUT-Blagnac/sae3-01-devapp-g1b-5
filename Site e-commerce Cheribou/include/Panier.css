@@ -9,7 +9,7 @@ main{
   background-color: #ffd44f;
   margin: 0% 4%; /*hauteur,droite*/
   margin-left: 10%;
-  height: 60vh;
+  padding-bottom: 5%;
 }
 
 .contener2{
