@@ -119,8 +119,7 @@ Partie JAVA::
 Partie Python::
 
 
-Partie Gestion de projet::
-
+Partie Gestion de projet
 
 
 == Évaluations hebdomadaires
