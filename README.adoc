@@ -107,7 +107,7 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - Indicateurs de qualité du code (dette technique)
 - ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
 
-- == Partie Base de donnée
+ = Partie Base de donnée
 
 
 - Partie Développement web
