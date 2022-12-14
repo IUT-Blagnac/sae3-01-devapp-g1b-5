@@ -1,17 +1,12 @@
 import json
 import yaml
 import os
-
-from Crypto.Util.number import long_to_bytes, bytes_to_long
-
+import time
 
 import paho.mqtt.client as mqtt
 
-tabCo2 = []
-tabTemp= []
-tabHum = []
-
 def get_data(mqtt, obj, msg):
+    global param
     jsonMsg = json.loads(msg.payload)
     donneeCo2 = jsonMsg["object"]["co2"]
     print("Concentration CO2 : ", donneeCo2, " ppm")
@@ -19,29 +14,23 @@ def get_data(mqtt, obj, msg):
     print("Température : ", donneeTemp, "°C")
     donneeHum = jsonMsg["object"]["humidity"]
     print("Humidité : ", donneeHum, "%")
-    moy_tableaux(donneeCo2, donneeTemp, donneeHum)
 
-    ouv = os.open("fichier.txt",os.O_WRONLY|os.O_CREAT,0o644)
+    if donneeCo2 > param["seuilMax"]["CO2"]:
+        print("Attention, le taux de CO2 dépasse les normes !")
+    if donneeTemp > param["seuilMax"]["Temp"]:
+        print("Attention, la température dépasse les normes !")
+    if donneeHum> param["seuilMax"]["Hum"]:
+        print("Attention, le taux d'humidité dépasse les normes !")
+
+
+    time.sleep(param["frequence"]["valeur"])
+    ouv = os.open("fichier.txt",os.O_WRONLY|os.O_CREAT|os.O_TRUNC,0o644)
     os.write(ouv,bytes(str(donneeCo2), 'utf-8'))
     os.write(ouv,b"-")
     os.write(ouv,bytes(str(donneeTemp), 'utf-8'))
     os.write(ouv,b"-")
     os.write(ouv,bytes(str(donneeHum), 'utf-8'))
     os.close(ouv)
-    
-    
-def moy_tableaux(dCo2, dTemp, dHum):
-    global tabCo2, tabTemp, tabHum 
-    tabCo2.append(dCo2)
-    tabTemp.append(dTemp)
-    tabHum.append(dHum)
-    if len(tabCo2) >= 10:
-        print(sum(tabCo2[len(tabCo2) - 10 :] ) / 10)
-    if len(tabTemp) >= 10:
-        print(sum(tabTemp[len(tabTemp) - 10 :] ) / 10)
-    if len(tabHum) >= 10:
-        print(sum(tabHum[len(tabHum) - 10 :] ) / 10)
-    
     
 print("Connexion au broker MQTT...")
 
