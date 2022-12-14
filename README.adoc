@@ -51,7 +51,7 @@ toc::[]
 
 Projet est réalisé par::
 
-- https://github.com/Yann-cmd[Yann Guillevic]
+- https://github.com/Yann-cmd[Yann Guillevir]
 - https://github.com/VictorThompsonKeyl[Victor Thompson]
 - https://github.com/Anthonycbrl[Anthony Cabrillac]
 - https://github.com/leosae06[Léo Douville]
