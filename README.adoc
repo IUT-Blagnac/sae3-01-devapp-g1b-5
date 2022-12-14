@@ -108,6 +108,7 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
 
 Partie Base de donnée::
+ Lien vers les User Stories : https://github.com/orgs/IUT-Blagnac/projects/33[ici]
 
 
 Partie Développement web::
