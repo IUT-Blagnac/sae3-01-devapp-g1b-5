@@ -107,19 +107,23 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - Indicateurs de qualité du code (dette technique)
 - ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
 
-__Partie Base de donnée__
+**Partie Base de donnée**
+
  Lien vers les docs BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Base%20de%20donn%C3%A9e[ici]
 
 
-__Partie Développement web__
+**Partie Développement web**
+
  Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Site%20e-commerce%20Cheribou[ici]
 
 
-__Partie JAVA__
+**Partie JAVA**
+
  pas encore disponible
 
 
 **Partie Python**
+
  Lien vers les docs python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Programmes%20python[ici]
  
  Quelques tests pythons ont été codé pour vous permettre de tester le programmes principale. Vous pourrez les retrouver : 
@@ -127,6 +131,7 @@ __Partie JAVA__
 
 
 **Partie Gestion de projet**
+
  pas encore disponible
 
 
