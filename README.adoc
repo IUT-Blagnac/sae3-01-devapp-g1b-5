@@ -108,31 +108,25 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
 
 **Partie Base de donnée**
-
- Lien vers les docs BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Base%20de%20donn%C3%A9e[ici]
+Lien vers les docs BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Base%20de%20donn%C3%A9e[ici]
 
 
 **Partie Développement web**
-
- Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Site%20e-commerce%20Cheribou[ici]
+Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Site%20e-commerce%20Cheribou[ici]
 
 
 **Partie JAVA**
-
- pas encore disponible
+pas encore disponible
 
 
 **Partie Python**
-
- Lien vers les docs python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Programmes%20python[ici]
- 
- Quelques tests pythons ont été codé pour vous permettre de tester le programmes principale. Vous pourrez les retrouver : 
- https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Programmes%20python/Tests[ici]
+Lien vers les docs python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Programmes%20python[ici]
+Quelques tests pythons ont été codé pour vous permettre de tester le programmes principale. Vous pourrez les retrouver : 
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Programmes%20python/Tests[ici]
 
 
 **Partie Gestion de projet**
-
- pas encore disponible
+pas encore disponible
 
 
 === Évaluations hebdomadaires
