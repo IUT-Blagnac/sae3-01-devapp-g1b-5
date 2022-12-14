@@ -126,7 +126,7 @@ pas encore disponible
 
 Lien vers les docs python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Programmes%20python[ici]
 
-Quelques tests pythons ont été codé pour vous permettre de tester le programmes principale. Vous pourrez les retrouver : 
+Quelques tests pythons ont été codé pour vous permettre de tester le programmes principal. Vous pourrez les retrouver : 
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/V1_d%C3%A9but_du_projet/Programmes%20python/Tests[ici]
 
 
