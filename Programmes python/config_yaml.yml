@@ -1,4 +1,0 @@
-config:
-  mqttserver: "chirpstack.iut-blagnac.fr"
-  mqttport: 1883
-  device: "application/1/device/+/event/up"
