@@ -139,7 +139,7 @@ Notre programme python utilise la librairie paho-mqtt. Si vous n'avez pas instal
 
 **Partie Gestion de projet**
 
-pas encore disponible
+Vous trouverez les documents de communication et de gestion de projet https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/GPO[ici]
 
 
 === Évaluations hebdomadaires
