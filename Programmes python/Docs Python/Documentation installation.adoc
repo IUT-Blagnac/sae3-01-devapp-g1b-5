@@ -12,7 +12,7 @@ Vous avez récupéré le main.py et le fichier de configuration présent sur ce 
 Cette documentation va vous dévoiler toute les étapes nécessaires.
 
 Tous d'abord, vous devez posséder un logiciel capable d'interpréter du code python, comme par exemple pyCharm ou Visual Studio Code.
-Lorsque votre logiciel est ouvert, vous pouvez glisser-déposer les fichiers que vous souhiatez exécuter dans votre projet dans le logiciel.
+Lorsque votre logiciel est ouvert, vous pouvez glisser-déposer les fichiers que vous souhaitez exécuter dans votre projet dans le logiciel.
 
 Si vous êtes sur VS Code, vous avez 2 méthodes pour lancer le code : 
 
