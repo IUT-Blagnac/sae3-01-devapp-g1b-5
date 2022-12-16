@@ -1,0 +1,276 @@
+-- -----------------------------------------------------------------------------
+--             Génération d'une base de données pour
+--                      Oracle Version 10g
+--                        (16/12/2022 12:35:15)
+-- -----------------------------------------------------------------------------
+--      Nom de la base : MLR4
+--      Projet : 
+--      Auteur : IUT BLAGNAC
+--      Date de dernière modification : 16/12/2022 12:31:35
+-- -----------------------------------------------------------------------------
+
+DROP TABLE PAIEMENT CASCADE CONSTRAINTS;
+
+DROP TABLE PAYPAL CASCADE CONSTRAINTS;
+
+DROP TABLE COMMANDE CASCADE CONSTRAINTS;
+
+DROP TABLE CARTEBLEU CASCADE CONSTRAINTS;
+
+DROP TABLE BONBONS CASCADE CONSTRAINTS;
+
+DROP TABLE CLIENT CASCADE CONSTRAINTS;
+
+DROP TABLE CATEGORIEB CASCADE CONSTRAINTS;
+
+DROP TABLE RECIPIENT CASCADE CONSTRAINTS;
+
+DROP TABLE CONTIENTRECIPIENT CASCADE CONSTRAINTS;
+
+DROP TABLE CONTIENTBONBON CASCADE CONSTRAINTS;
+
+-- -----------------------------------------------------------------------------
+--       CREATION DE LA BASE 
+-- -----------------------------------------------------------------------------
+
+CREATE DATABASE MLR4;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : PAIEMENT
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE PAIEMENT
+   (
+    IDPAIEMENT NUMBER(3)  NOT NULL,
+    MODEPAIEMENT VARCHAR2(128)  NULL
+,   CONSTRAINT PK_PAIEMENT PRIMARY KEY (IDPAIEMENT)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : PAYPAL
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE PAYPAL
+   (
+    IDPAIEMENT NUMBER(3)  NOT NULL,
+    ADRESSEMAIL VARCHAR2(128)  NULL,
+    MODEPAIEMENT VARCHAR2(128)  NULL
+,   CONSTRAINT PK_PAYPAL PRIMARY KEY (IDPAIEMENT)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : COMMANDE
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE COMMANDE
+   (
+    IDCOMMANDE NUMBER(3)  NOT NULL,
+    IDPAIEMENT NUMBER(3)  NOT NULL,
+    IDCLIENT NUMBER(3)  NOT NULL,
+    DATECOMMANDE DATE  NULL
+,   CONSTRAINT PK_COMMANDE PRIMARY KEY (IDCOMMANDE)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       INDEX DE LA TABLE COMMANDE
+-- -----------------------------------------------------------------------------
+
+CREATE  INDEX I_FK_COMMANDE_PAIEMENT
+     ON COMMANDE (IDPAIEMENT ASC)
+    ;
+
+CREATE  INDEX I_FK_COMMANDE_CLIENT
+     ON COMMANDE (IDCLIENT ASC)
+    ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : CARTEBLEU
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE CARTEBLEU
+   (
+    IDPAIEMENT NUMBER(3)  NOT NULL,
+    NUMCARTE VARCHAR2(128)  NULL,
+    NOMCARTE VARCHAR2(128)  NULL,
+    CRYPTO VARCHAR2(128)  NULL,
+    DATEEXPIRATION DATE  NULL,
+    MODEPAIEMENT VARCHAR2(128)  NULL
+,   CONSTRAINT PK_CARTEBLEU PRIMARY KEY (IDPAIEMENT)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : BONBONS
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE BONBONS
+   (
+    IDB NUMBER(3)  NOT NULL,
+    IDCATEGORIE NUMBER(3)  NOT NULL,
+    PRIXKG NUMBER(5,2)  NULL,
+    COULEURB VARCHAR2(128)  NULL,
+    FORMAT VARCHAR2(128)  NULL,
+    INGREDIENT VARCHAR2(128)  NULL,
+    NOMB VARCHAR2(128)  NULL,
+    DESCRIPTIONB VARCHAR2(128)  NULL,
+    PREFERENCEALIMENTAIRE VARCHAR2(128)  NULL,
+    MARQUE VARCHAR2(128)  NULL,
+    GOUT VARCHAR2(128)  NULL
+,   CONSTRAINT PK_BONBONS PRIMARY KEY (IDB)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       INDEX DE LA TABLE BONBONS
+-- -----------------------------------------------------------------------------
+
+CREATE  INDEX I_FK_BONBONS_CATEGORIEB
+     ON BONBONS (IDCATEGORIE ASC)
+    ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : CLIENT
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE CLIENT
+   (
+    IDCLIENT NUMBER(3)  NOT NULL,
+    NOMC VARCHAR2(128)  NULL,
+    PRENOMC VARCHAR2(128)  NULL,
+    ADRESSEMAIL CHAR(255)  NULL,
+    PTSFIDELITE NUMBER(2)  NULL,
+    ADRESSEC VARCHAR2(128)  NULL,
+    TELPORTABLEC VARCHAR2(128)  NULL,
+    MOTDEPASSE VARCHAR2(128)  NULL
+,   CONSTRAINT PK_CLIENT PRIMARY KEY (IDCLIENT)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : CATEGORIEB
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE CATEGORIEB
+   (
+    IDCATEGORIE NUMBER(3)  NOT NULL,
+    NOMCATEGORIE VARCHAR2(128)  NULL,
+    STOCKB NUMBER(3)  NULL
+,   CONSTRAINT PK_CATEGORIEB PRIMARY KEY (IDCATEGORIE)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : RECIPIENT
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE RECIPIENT
+   (
+    IDR NUMBER(3)  NOT NULL,
+    NOMR VARCHAR2(128)  NULL,
+    DESCRIPTIONR VARCHAR2(128)  NULL,
+    PRIXUNITAIRE NUMBER(10,2)  NULL,
+    POIDSUNITAIRE NUMBER(5,2)  NULL,
+    COULEURR VARCHAR2(128)  NULL,
+    STOCK NUMBER(2)  NULL
+,   CONSTRAINT PK_RECIPIENT PRIMARY KEY (IDR)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : CONTIENTRECIPIENT
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE CONTIENTRECIPIENT
+   (
+    IDCOMMANDE NUMBER(3)  NOT NULL,
+    IDR NUMBER(3)  NOT NULL,
+    QUANTITEUNITAIRE NUMBER(3)  NULL
+,   CONSTRAINT PK_CONTIENTRECIPIENT PRIMARY KEY (IDCOMMANDE, IDR)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       INDEX DE LA TABLE CONTIENTRECIPIENT
+-- -----------------------------------------------------------------------------
+
+CREATE  INDEX I_FK_CONTIENTRECIPIENT_COMMAND
+     ON CONTIENTRECIPIENT (IDCOMMANDE ASC)
+    ;
+
+CREATE  INDEX I_FK_CONTIENTRECIPIENT_RECIPIE
+     ON CONTIENTRECIPIENT (IDR ASC)
+    ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : CONTIENTBONBON
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE CONTIENTBONBON
+   (
+    IDCOMMANDE NUMBER(3)  NOT NULL,
+    IDB NUMBER(3)  NOT NULL,
+    QUANTITEKG DECIMAL(3,2)  NULL
+,   CONSTRAINT PK_CONTIENTBONBON PRIMARY KEY (IDCOMMANDE, IDB)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       INDEX DE LA TABLE CONTIENTBONBON
+-- -----------------------------------------------------------------------------
+
+CREATE  INDEX I_FK_CONTIENTBONBON_COMMANDE
+     ON CONTIENTBONBON (IDCOMMANDE ASC)
+    ;
+
+CREATE  INDEX I_FK_CONTIENTBONBON_BONBONS
+     ON CONTIENTBONBON (IDB ASC)
+    ;
+
+
+-- -----------------------------------------------------------------------------
+--       CREATION DES REFERENCES DE TABLE
+-- -----------------------------------------------------------------------------
+
+
+ALTER TABLE PAYPAL ADD (
+     CONSTRAINT FK_PAYPAL_PAIEMENT
+          FOREIGN KEY (IDPAIEMENT)
+               REFERENCES PAIEMENT (IDPAIEMENT))   ;
+
+ALTER TABLE COMMANDE ADD (
+     CONSTRAINT FK_COMMANDE_PAIEMENT
+          FOREIGN KEY (IDPAIEMENT)
+               REFERENCES PAIEMENT (IDPAIEMENT))   ;
+
+ALTER TABLE COMMANDE ADD (
+     CONSTRAINT FK_COMMANDE_CLIENT
+          FOREIGN KEY (IDCLIENT)
+               REFERENCES CLIENT (IDCLIENT))   ;
+
+ALTER TABLE CARTEBLEU ADD (
+     CONSTRAINT FK_CARTEBLEU_PAIEMENT
+          FOREIGN KEY (IDPAIEMENT)
+               REFERENCES PAIEMENT (IDPAIEMENT))   ;
+
+ALTER TABLE BONBONS ADD (
+     CONSTRAINT FK_BONBONS_CATEGORIEB
+          FOREIGN KEY (IDCATEGORIE)
+               REFERENCES CATEGORIEB (IDCATEGORIE))   ;
+
+ALTER TABLE CONTIENTRECIPIENT ADD (
+     CONSTRAINT FK_CONTIENTRECIPIENT_COMMANDE
+          FOREIGN KEY (IDCOMMANDE)
+               REFERENCES COMMANDE (IDCOMMANDE))   ;
+
+ALTER TABLE CONTIENTRECIPIENT ADD (
+     CONSTRAINT FK_CONTIENTRECIPIENT_RECIPIENT
+          FOREIGN KEY (IDR)
+               REFERENCES RECIPIENT (IDR))   ;
+
+ALTER TABLE CONTIENTBONBON ADD (
+     CONSTRAINT FK_CONTIENTBONBON_COMMANDE
+          FOREIGN KEY (IDCOMMANDE)
+               REFERENCES COMMANDE (IDCOMMANDE))   ;
+
+ALTER TABLE CONTIENTBONBON ADD (
+     CONSTRAINT FK_CONTIENTBONBON_BONBONS
+          FOREIGN KEY (IDB)
+               REFERENCES BONBONS (IDB))   ;
+
+
+-- -----------------------------------------------------------------------------
+--                FIN DE GENERATION
+-- -----------------------------------------------------------------------------
