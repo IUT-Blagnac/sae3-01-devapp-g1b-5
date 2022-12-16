@@ -1,1 +1,12 @@
 == Documentation installation Python
+
+*Groupe : 1B05*
+
+*GUILLEVIC Yann* +
+*THOMPSON Victor* +
+*CABRILLAC Anthony* +
+*DOUVILLE Léo* +
+*HU Shiyu* +
+
+Vous avez récupéré le main.py et le fichier de configuration présent sur ce dépot et vous souhaitez avoir un environnement prêt pour l'utilisation ?
+Cette documentation va vous dévoiler toute les étapes nécessaires.
