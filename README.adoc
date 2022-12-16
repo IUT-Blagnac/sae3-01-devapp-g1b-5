@@ -111,6 +111,10 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 
 Lien vers les docs BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e[ici]
 
+Nous avons réalisés deux version des ces documents, la version V2 étant la plus récente.
+
+Vous pouvez accéder aux scripts https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Scripts[ici]
+
 
 **Partie Développement web**
 
