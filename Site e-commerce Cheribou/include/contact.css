@@ -1,0 +1,119 @@
+
+body {
+background-color: #ffd44f;
+font-family: Montserrat, "sans-serif";
+display: flex;
+justify-content: center;
+color: #303030;
+}
+
+.contactez-nous {
+position : absolute;
+top : 250px;
+width: 900px;
+border: 1px solid;
+border-radius: 8px;
+padding: 0 50px 0 50px;
+background: white;
+margin-bottom: 2,5%
+
+
+}
+
+
+.contactez-nous h2 {
+text-align: center;
+font-size: 30px;
+font-weight: 300;
+color : black;
+}
+
+
+
+
+
+form div {
+width: 100%;
+display: flex;
+flex-direction: column;
+min-height: 83px;
+margin-top: 15px;
+}
+
+form div label {
+margin-bottom: 7px;
+font-weight: 600;
+}
+
+form div input, form div select, form div textarea {
+background: #ffd44f;
+border: none;
+border-radius: 5px;
+font-size: 16px;
+font-weight: 500;
+font-family: Montserrat, "sans-serif";
+box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
+}
+
+form div input, form div select {
+height: 50px;
+padding-left: 10px;
+}
+
+form div select {
+
+}
+
+form div textarea {
+height: 195px;
+padding: 15px 0px 0px 10px;
+}
+
+form div input::placeholder, form div textarea::placeholder {
+color: black;
+}
+
+form div select:invalid {
+color: black;
+}
+
+form div select option {
+background: white;
+color: #303030;
+}
+
+form div:last-child {
+align-items:center;
+margin-top: 20px;
+}
+
+form button {
+width: 450px;
+max-width: 500px;
+height: 60px;
+background: white;
+color: black;
+border: none;
+border-radius: 5px;
+box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
+
+;
+}
+ button:hover {
+
+background: #016ABC;
+
+color: #fff;
+
+border: none;
+border-radius: 5px;
+box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
+
+box-shadow: 5px 5px 5px #eee;
+
+text-shadow:none;
+
+}
+
+
+
