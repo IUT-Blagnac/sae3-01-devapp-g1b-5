@@ -20,4 +20,4 @@ Si vous êtes sur VS Code, vous avez 2 méthodes pour lancer le code :
 
 - Deuxièmement, vous pouvez installer l'extension python dans le menu des extensions à gauche et lancer directement le code avec l'onglet "exécuter".
 
-Pour ces deux manières, si vous êtes sur Ubuntu par exmeple, il vous faudra peut-être isnatller l'extension paho avec la commande suivante : `sudo pip3 install paho-mqtt`.
+Pour ces deux manières, si vous êtes sur Ubuntu par exemple, il vous faudra peut-être installer l'extension paho avec la commande suivante : `sudo pip3 install paho-mqtt`.
