@@ -15,6 +15,7 @@ Tous d'abord, vous devez posséder un logiciel capable d'interpréter du code py
 Lorsque votre logiciel est ouvert, vous pouvez glisser-déposer les fichiers que vous souhiatez exécuter dans votre projet dans le logiciel.
 
 Si vous êtes sur VS Code, vous avez 2 méthodes pour lancer le code : 
+
 - Premièrement, vous pouvez cliquer en haut à gauche sur l'onglet "File" puis "new text file" et choisir le langage python. Vous pourrez ainsi y copier les codes python  que vous aurez récupéré. Pour l'exécuter vous pouvez ouvrir un nouveau terminal et y copier la commande suivante pour exécuter le main.py : `python3 main.py`
 
 - Deuxièmement, vous pouvez installer l'extension python dans le menu des extensions à gauche et lancer directement le code avec l'onglet "exécuter".
