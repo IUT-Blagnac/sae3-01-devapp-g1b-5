@@ -130,7 +130,7 @@ pas encore disponible
 
 Lien vers les programmes Python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Programmes%20python[ici]
 
-Lien vers les docs Python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Programmes%20python[ici]
+Lien vers les docs Python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Programmes%20python/Docs%20Python[ici]
 
 Quelques tests Python ont été codé pour vous permettre de tester le programmes principal. Vous pourrez les retrouver : 
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Programmes%20python/Tests[ici]
