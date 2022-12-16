@@ -14,8 +14,11 @@ Tous d'abord, le fichier de configuration.
 
 Le fichier config_yaml.yaml est le fichier de configuration accessible par l'utilisateur. C'est ici que le client peut décider quels sont les paramêtres d'exécution du code ainsi que la fréquence d'emission des données et des seuils maximaux de celles-ci.
 Ainsi, il est séparé en trois parties :
+
 - En haut la partie "config" dans laquelle l'utilisateur peut modifier les paramêtres des serveurs d'accès, des ports et des appareils.
+
 - La partie "fréquence" fait référence au délais d'attente que va respecter le main pour écrire les données dans le fichier. Ce délais est en seconde.
+
 - Enfin, la partie "seuilMax" qui définit les valeurs maximales que ne dovient pas dépasser les données.
 
 Au niveau du fichier python, celui-ci s'articule autour d'une méthode principale : la méthode get_data.
