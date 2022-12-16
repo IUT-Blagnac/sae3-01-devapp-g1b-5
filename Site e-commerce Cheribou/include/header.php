@@ -14,7 +14,7 @@
             </li>
             <li class="boxparent">
                 <div class="box">
-                    <a href="#">Compte</a>
+                    <a href="Compte.php">Compte</a>
                 </div>
                 <div class="box">
                     <a href="panier.php">Paniers</a>
