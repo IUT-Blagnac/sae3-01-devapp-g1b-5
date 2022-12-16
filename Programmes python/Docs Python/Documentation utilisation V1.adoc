@@ -21,6 +21,7 @@ Ainsi, il est séparé en trois parties :
 
 - Enfin, la partie "seuilMax" qui définit les valeurs maximales que ne dovient pas dépasser les données.
 
+
 Au niveau du fichier python, celui-ci s'articule autour d'une méthode principale : la méthode get_data.
 
 Celle-ci va d'abord récupérer les données émises par les capteurs et les affecter à des variables. Exemple : "donneeCo2 = jsonMsg["object"]["co2"]". Ici, la variable donneeCo2 récupère la valeur de CO2 émise par le capteur. Ces données sont également affichées dans le terminal pour les tests.
