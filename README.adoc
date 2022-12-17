@@ -118,9 +118,9 @@ Vous pouvez accéder aux scripts https://github.com/IUT-Blagnac/sae3-01-devapp-g
 
 **Partie Développement web**
 
-Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou[ici]
+Lien vers les fichiers Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou[ici]
 
-
+Lien vers les docs utilisateurs et techniques Dev Web : 
 **Partie JAVA**
 
 pas encore disponible
