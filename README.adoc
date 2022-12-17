@@ -107,6 +107,8 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - Indicateurs de qualité du code (dette technique)
 - ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
 
+Pour la plupart des documenations ci-dessous, celles-ci ont majoritairement été rangées par sprint. Le sprint 2 étant le plus récent.
+
 **Partie Base de donnée**
 
 Lien vers les docs BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e[ici]
