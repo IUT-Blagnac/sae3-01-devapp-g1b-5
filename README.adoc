@@ -92,21 +92,6 @@ TIP: Pensez à utiliser les salons Discord dédiés pour poser vos questions.
 
 TIP: Mettez ici toutes les informations nécessaire à l'utilisation de votre dépôt (comment on installe votre application, où sont les docs, etc.)
 
-== Gestion de projet & Qualité
-
-Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
-Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
-
-De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
-
-- Version courante : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
-- Lien vers la doc technique
-- Lien vers la doc utilisateur
-- Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
-- Tests unitaires et plans de test
-- Indicateurs de qualité du code (dette technique)
-- ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
-
 Pour la plupart des documenations ci-dessous, celles-ci ont majoritairement été rangées par sprint. Le sprint 2 étant le plus récent.
 
 **Partie Base de donnée**
@@ -145,6 +130,21 @@ Notre programme Python utilise la librairie paho-mqtt. Si vous n'avez pas instal
 **Partie Gestion de projet**
 
 Vous trouverez les documents de communication et de gestion de projet https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/GPO[ici]
+
+== Gestion de projet & Qualité
+
+Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
+Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.com/en/repositories/releasing-projects-on-github[Releases].
+
+De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
+
+- Version courante : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
+- Lien vers la doc technique
+- Lien vers la doc utilisateur
+- Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
+- Tests unitaires et plans de test
+- Indicateurs de qualité du code (dette technique)
+- ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
 
 
 === Évaluations hebdomadaires
