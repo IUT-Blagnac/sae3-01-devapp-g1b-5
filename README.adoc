@@ -173,3 +173,8 @@ ifndef::env-github[]
 
 endif::[]
 
+•	[ ] Pas beaucoup de progrès dans votre README :-( Il reste. toujours des rubriques que j'aimerai voir se remplir...
+•	[ ] Vos numéros de version devraient correspondre au numéro de sprints pour faciliter l'évaluation.
+•	[ ] J'ai apprécié la présence des tests, mais pensez à donner les résultats aussi (est-ce qu'ils passent ?)
+
+
