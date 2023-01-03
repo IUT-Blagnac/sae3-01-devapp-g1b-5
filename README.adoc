@@ -92,6 +92,18 @@ TIP: Pensez à utiliser les salons Discord dédiés pour poser vos questions.
 
 TIP: Mettez ici toutes les informations nécessaire à l'utilisation de votre dépôt (comment on installe votre application, où sont les docs, etc.)
 
+[cols="1,1"]
+|===
+|Cell in column 1, row 1 
+|Cell in column 2, row 1 
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+
+|Cell in column 1, row 3
+|Cell in column 2, row 3 
+|===
+
 Pour la plupart des documenations ci-dessous, celles-ci ont majoritairement été rangées par sprint. Le sprint 5 est actuellement en cours.
 
 **Partie Base de donnée**
