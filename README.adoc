@@ -139,8 +139,8 @@ Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.c
 De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
 
 - Version courante : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/releases/tag/V2[V2]
-- Lien vers la doc technique : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/V2/Site%20e-commerce%20Cheribou/assets/docs/Documentation_technique.adoc[ici]
-- Lien vers la doc utilisateur : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/V2/Site%20e-commerce%20Cheribou/assets/docs/Documentation_utilisateur.adoc[ici]
+- Lien vers la doc technique : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Documentation_technique.adoc[ici]
+- Lien vers la doc utilisateur : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Documentation_utilisateur.adoc[ici]
 - Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
 - Tests unitaires et plans de test
 - Indicateurs de qualité du code (dette technique)
