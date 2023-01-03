@@ -100,12 +100,14 @@ Lien vers les docs BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree
 
 Nous avons réalisés deux version des ces documents, la version du sprint 4 étant la plus récente.
 
-[cols="1,3"]
+[cols="1,1"]
 |===
 |Cell in column 1, row 1 
-Cell in column 2, row 1 
-|Cell in column 1, row 2
-|Cell in column 2, row 2
+|Cell in column 2, row 1 
+
+Cell in column 1, row 2
+
+Cell in column 2, row 2
 
 |Cell in column 1, row 3
 |Cell in column 2, row 3 
