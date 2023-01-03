@@ -102,12 +102,13 @@ Nous avons réalisés deux version des ces documents, la version du sprint 4 ét
 
 [cols="1,1"]
 |===
-|Cell in column 1, row 1 
-|Cell in column 2, row 1 
+|Sprint 3
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/DiagrammeDesClasses%20V1%20G1B%20-%205.pdf[Diagramme des classes V1]
 
-Cell in column 1, row 2
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/Sch%C3%A9ma%20relationnel%20V1%20G1B%20-%205.pdf[schéma relationnel V1]
 
-Cell in column 2, row 2
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/dicoDonnee_1.pdf[dictionnaire des données V1]
+|===
 
 |Cell in column 1, row 3
 |Cell in column 2, row 3 
