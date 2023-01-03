@@ -98,8 +98,6 @@ Pour la plupart des documenations ci-dessous, celles-ci ont majoritairement ét�
 
 Lien vers les docs BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e[ici]
 
-Nous avons réalisés deux version des ces documents, la version du sprint 4 étant la plus récente.
-
 [cols="1,1"]
 |===
 |Sprint 3
@@ -164,7 +162,43 @@ Notre programme Python utilise la librairie paho-mqtt. Si vous n'avez pas instal
 
 **Partie Gestion de projet**
 
-Vous trouverez les documents de communication et de gestion de projet https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/GPO[ici]
+[cols="1,1"]
+|===
+|Sprint 1
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%201/CDCF.pdf[CDCF]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%201/CDCT.pdf[CDCT]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%201/DCE%20SAE.pdf[DCE]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 2
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%202/Speed%20Dating%20G1B%20-%205.pdf[Compte rendue du speed dating]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 3
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%203/Backlog%20de%20sprint%201.pdf[Backlog de sprint 1]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%203/Compte%20rendu%20de%20r%C3%A9union%20G1B%20-%205.pdf[Compte rendue de réunion semaine 49]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%203/Ordre%20Du%20Jour%20semaine%2049%20G1B%20-5.pdf[Ordre du jour semaine 49]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 4
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/Backlog%20de%20sprint%202.pdf[Backlog de sprint 2]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/Compte%20rendu%20de%20r%C3%A9union%20semaine%2050%20G1B%20-5.pdf[Compte rendue de réunion semaine 50]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/Ordre%20du%20Jour%20semaine%2050%20G1B%20-%205.pdf[Ordre du jour semaine 50]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/Analyse%20semaine%2050%20G1B%20-5.pdf[Analyse semaine 50]
+|===
 
 == Gestion de projet & Qualité
 
