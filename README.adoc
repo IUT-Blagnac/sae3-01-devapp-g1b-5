@@ -92,13 +92,13 @@ TIP: Pensez à utiliser les salons Discord dédiés pour poser vos questions.
 
 TIP: Mettez ici toutes les informations nécessaire à l'utilisation de votre dépôt (comment on installe votre application, où sont les docs, etc.)
 
-Pour la plupart des documenations ci-dessous, celles-ci ont majoritairement été rangées par sprint. Le sprint 2 étant le plus récent.
+Pour la plupart des documenations ci-dessous, celles-ci ont majoritairement été rangées par sprint. Le sprint 5 est actuellement en cours.
 
 **Partie Base de donnée**
 
 Lien vers les docs BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e[ici]
 
-Nous avons réalisés deux version des ces documents, la version V2 étant la plus récente.
+Nous avons réalisés deux version des ces documents, la version du sprint 4 étant la plus récente.
 
 Vous pouvez accéder aux scripts https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Scripts[ici]
 
