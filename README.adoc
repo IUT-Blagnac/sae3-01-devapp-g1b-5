@@ -103,7 +103,7 @@ Nous avons réalisés deux version des ces documents, la version du sprint 4 ét
 [cols="1,3"]
 |===
 |Cell in column 1, row 1 
-|Cell in column 2, row 1 
+Cell in column 2, row 1 
 |Cell in column 1, row 2
 |Cell in column 2, row 2
 
