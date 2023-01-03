@@ -144,6 +144,7 @@ De plus ce fichier `README.adoc` devra être à jour des informations suivantes 
 - Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant : 
 
 Pour la partie python https://github.com/orgs/IUT-Blagnac/projects/43[ici]
+
 Pour la partie site d'E-commerce https://github.com/orgs/IUT-Blagnac/projects/6/views/1[ici]
   
 - Tests unitaires et plans de test
