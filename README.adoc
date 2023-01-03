@@ -124,10 +124,21 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Scripts[Scripts insertion et création des données]
 |===
 
-Vous pouvez accéder aux scripts https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Scripts[ici]
-
-
 **Partie Développement web**
+
+[cols="1,1"]
+|===
+|Sprint 3
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%203/Charte_Graphique_PHP_G1B%20-%205.pdf[Charte graphique V1]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%203/SEP%20G1B%20-%205.pdf[SEP]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 4
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%204/Avancement%20du%20projet%20Dev%20Web%20semaine%2050%20G1B%20-%205.pdf[Livrable avancement du site web]
+|===
 
 Lien vers les fichiers Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou[ici]
 
