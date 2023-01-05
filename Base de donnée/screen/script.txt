@@ -1,0 +1,155 @@
+--script contientRecipient--
+
+--SELECT
+
+-- Affichage avant événement
+SELECT IDR, NOMR, STOCK
+FROM RECIPIENT;
+-- Evénement déclencheur
+INSERT INTO contientrecipient
+VALUES (3, 5, 4);
+-- Affichage après événement
+SELECT IDR, NOMR, STOCK
+FROM RECIPIENT;
+-- Annulation de la séquence d’instructions
+ROLLBACK;
+
+--UPDATE
+
+-- Affichage avant événement
+SELECT IDR, NOMR, STOCK
+FROM RECIPIENT;
+-- Evénement déclencheur
+UPDATE contientrecipient
+SET quantiteunitaire = 1
+WHERE IDCOMMANDE = 7
+AND IDR = 5;
+-- Affichage après événement
+SELECT IDR, NOMR, STOCK
+FROM RECIPIENT;
+-- Annulation de la séquence d’instructions
+ROLLBACK;
+
+--DELETE
+
+-- Affichage avant événement
+SELECT IDR, NOMR, STOCK
+FROM RECIPIENT;
+-- Evénement déclencheur
+DELETE FROM CONTIENTRECIPIENT
+WHERE IDCOMMANDE = 15;
+-- Affichage après événement
+SELECT IDR, NOMR, STOCK
+FROM RECIPIENT;
+-- Annulation de la séquence d’instructions
+ROLLBACK;
+
+--script contientBonbons--
+
+--SELECT
+
+-- Affichage avant événement
+SELECT *
+FROM CATEGORIEB;
+-- Evénement déclencheur
+INSERT INTO contientBonbon
+VALUES (15, 8, 9.25);
+-- Affichage après événement
+SELECT *
+FROM CATEGORIEB;
+-- Annulation de la séquence d’instructions
+ROLLBACK;
+
+--UPDATE
+
+-- Affichage avant événement
+SELECT *
+FROM CATEGORIEB;
+-- Evénement déclencheur
+UPDATE contientbonbon
+SET quantitekg = 5.96
+WHERE IDCOMMANDE = 15
+AND IDB = 36;
+-- Affichage après événement
+SELECT *
+FROM CATEGORIEB;
+-- Annulation de la séquence d’instructions
+ROLLBACK;
+
+
+--DELETE
+
+-- Affichage avant événement
+SELECT *
+FROM CATEGORIEB;
+-- Evénement déclencheur
+DELETE FROM CONTIENTBONBON
+WHERE IDCOMMANDE = 25;
+-- Affichage après événement
+SELECT *
+FROM CATEGORIEB;
+-- Annulation de la séquence d’instructions
+ROLLBACK;
+
+
+
+
+
+
+
+
+
+trigger recip
+CREATE OR REPLACE TRIGGER maj_stock_recipient
+BEFORE INSERT OR DELETE OR UPDATE OF quantiteunitaire, IDR
+ON CONTIENTRECIPIENT
+FOR EACH ROW
+DECLARE
+    idRecipient RECIPIENT.IDR%TYPE;
+BEGIN
+IF (INSERTING OR UPDATING) THEN
+    SELECT IDR INTO idRecipient
+    FROM RECIPIENT
+    WHERE IDR = :NEW.IDR;
+    UPDATE RECIPIENT
+    SET stock = stock - :NEW.quantiteunitaire
+    WHERE IDR = idRecipient; 
+END IF;
+IF (DELETING OR UPDATING) THEN
+    SELECT idr INTO idRecipient
+    FROM RECIPIENT
+    WHERE idr = :OLD.idr;
+    UPDATE RECIPIENT
+    SET stock = stock + :OLD.quantiteunitaire
+    WHERE idr = idRecipient; 
+END IF;
+END;
+/
+
+trigger bonbon
+CREATE OR REPLACE TRIGGER maj_stock_bonbons
+BEFORE INSERT OR DELETE OR UPDATE OF quantitekg, idb
+ON CONTIENTBONBON
+FOR EACH ROW
+DECLARE
+    catBonbon BONBONS.idcategorie%TYPE;
+BEGIN
+IF (INSERTING OR UPDATING) THEN
+    SELECT B.idcategorie INTO catBonbon
+    FROM BONBONS B, CATEGORIEB C
+    WHERE  B.idcategorie = C.idcategorie
+    AND B.idb = :NEW.idb;
+    UPDATE CATEGORIEB
+    SET stockb = stockb - :NEW.quantitekg
+    WHERE idcategorie = catBonbon; 
+END IF;
+IF (DELETING OR UPDATING) THEN
+    SELECT B.idcategorie INTO catBonbon
+    FROM BONBONS B, CATEGORIEB C
+    WHERE B.idcategorie = C.idcategorie
+    AND B.idb = :OLD.idb;
+    UPDATE CATEGORIEB
+    SET stockb = stockb + :OLD.quantitekg
+    WHERE idcategorie = catBonbon; 
+END IF;
+END;
