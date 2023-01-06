@@ -16,7 +16,6 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |N° |Nom du Test |Nom de l'élément sur lequel le test est efféctué|Conditions de satisfactions |Validité
 
 |1
-.3+<.>|Chef d'Agence
 |Gérer les employés (guichetiers et lui-même)
 |• Doit pouvoir observer les différents comptes ouverts à l'agence (y compris lui-même) à l'aide d'une option qui lui serait proposée ; +
 
