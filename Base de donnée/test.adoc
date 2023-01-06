@@ -13,7 +13,7 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 
 
 |===
-|N° |Nom du Test |Nom |Conditions de satisfactions |Validité
+|N° |Nom du Test |Nom de l'élément sur lequel le test est efféctué|Conditions de satisfactions |Validité
 
 |1
 .3+<.>|Chef d'Agence
