@@ -15,7 +15,7 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |===
 |N° |Nom du Test |Nom de l'élément sur lequel le test est efféctué|Conditions de satisfactions |Validité
 
-|1
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture1.PNG[1]
 |testMaj_Stock_Recip_INSERT_OK
 |Déclencheur maj_stock_recipient
 |Un client fait une nouvelle commande d'un récipient avec une certaine quantité. Cette quantité est déduite du stock correspondant au récipient choisi.
