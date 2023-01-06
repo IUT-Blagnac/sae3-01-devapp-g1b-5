@@ -4,19 +4,13 @@ Réalisé par THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo,
 
 === Cadre de tests
 
-L'exécution de ces tests s'effectueront à travers le framework de test unitaire JUnit en Java 1.8 sur l'environnement de travail Eclipse. Cela permettra de s'assurer que le code répond toujours aux besoins même après d'éventuelles modifications.
-
-=== Equipes concernées
-
-Afin de mener à bien les actions à réaliser, seule une équipe de 4 personnes (voir README.adoc) est présente.
-Toutefois, la répartition des tâches reste, pour le moment, encore incertaine.
+L'exécution de ces tests s'est déroulé sur SQLDevelopper via Oracle. Cela permettra de s'assurer que le code répond toujours aux besoins même après d'éventuelles modifications.
 
 == Liste des tests
 
 Une liste de tests, comme son nom l'indique, permet de décrire les différentes actions à conduire afin de réaliser les futurs tests.
 Ces listes de tests facilitent ainsi la compréhension et la clarté des actions à mener mais également de faciliter la qualification des problèmes rencontrés au cours de la réalisation d'une action et donc, d'une manière plus générale, de la gestion de celles-ci.
 
-.Développement des cas d'utilisation de la V1
 
 |===
 |N° |Acteurs |Actions à réaliser |Attendus des actions sur l'application |Validité
