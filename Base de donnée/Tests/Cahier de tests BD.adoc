@@ -5,6 +5,7 @@ Réalisé par THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo,
 === Cadre de tests
 
 L'exécution de ces tests s'est déroulé sur SQLDevelopper via Oracle. Cela permettra de s'assurer que le code répond toujours aux besoins même après d'éventuelles modifications.
+Vous pouvez cliquer sur chaque numéro des tests pour être redirigé vers un screen du test réalisé sur SQLDevelopper.
 
 == Liste des tests
 
@@ -21,13 +22,13 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |Un client fait une nouvelle commande d'un récipient avec une certaine quantité. Cette quantité est déduite du stock correspondant au récipient choisi.
 | ✓
 
-|2
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture2.PNG[2]
 |testMaj_Stock_Recip_UPDATE_OK
 |Déclencheur maj_stock_recipient
 |Un client modifie la quantité d'un récipient dans sa commande. Cette nouvelle quantité est déduite du stock correspondant au récipient choisi.
 | ✓
 
-|3
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture3.PNG[3]
 |testMaj_Stock_Recip_DELETE_OK
 |Déclencheur maj_stock_recipient
 |Un client abandonne sa commande qui contenait des récipients. La quantité de récipient initialement choisi est ajoutée au stock correspondant au récipient.
