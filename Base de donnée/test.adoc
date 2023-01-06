@@ -1,0 +1,229 @@
+:toc:
+:toc-placement!:
+:toc-title: Table des matières
+
+image::/images/DailyBank.png[]
+= DailyBank - Cahier de tests V2
+_Réalisé par THOMPSON Victor, YVELIN Louis, SACILOTTO Nicolas et FERNANDEZ Mickael (4A)_
+
+toc::[]
+
+== Présentation du projet
+
+=== Objectifs 
+
+L’application doit permettre de gérer des comptes bancaires de dépôt pour des clients préalablement créés. 
+Elle devra permettre de débiter, créditer un compte soit par virement c’est-à-dire un échange d’argent entre deux comptes distincts mais domiciliés dans le réseau bancaire, soit par une personne physique se présentant devant un guichet.
+
+=== Responsabilités
+
+Pour réussir un projet, il est primordial d’être bien organisé et de pouvoir déterminer les responsabilités de chacun au sein du projet. +
+La réussite de ce projet repose donc sur une définition claire et précise des rôles et des responsabilités de chacun des acteurs.
+
+Pour cela, on va utiliser la méthode RACI.
+
+==== Qu’est-ce que la matrice RACI ?
+
+R.A.C.I. est un acronyme qui signifie :
+
+R - Responsible : les personnes chargées de réaliser la tâche +
+A - Accountable : les autorités chargées de valider le travail +
+C - Consulted : les personnes à consulter +
+I - Informed : les personnes à informer +
+
+Aussi appelée matrice des responsabilités ou RAM (Responsibility Assignment Matrix), la matrice RACI vous donne une vision simple et précise de qui fait quoi au sein du projet. Il s’agit d’un outil indispensable pour identifier clairement la répartition des rôles et des responsabilités de toute personne qui intervient sur le projet.
+
+Plusieurs personnes peuvent travailler ensemble à la réalisation d’une même tâche, mais la responsabilité doit être attribuée à une seule et unique personne. C’est cette personne que l’on va contacter pour connaître l’avancement de la tâche. C’est elle qui doit s’assurer que la tâche sera effectuée en respectant le budget et les délais qui lui ont été alloués.
+
+Ainsi, la matrice RACI permet de déterminer :
+
+* qui sont les membres opérationnels du projet et leurs tâches respectives ;
+* qui est l'unique décideur ;
+* qui sont les personnes qui peuvent être sollicités pour des conseils ;
+* qui sont les personnes qui doivent être informées des évolutions du projet.
+
+==== La matrice RACI :
+
+[%header,format=csv]
+|===
+Tâches,Victor,Mickael,Nicolas,Louis
+*GPO - V0/V1*,---,---,---,---
+Préparer le dépôt du groupe sout GIT,C,C,A,R
+Créer Gantt V1,R,R,A,I
+Créer / ordonnancer les tâches / issues du projet,R,R,R,R
+Rédiger en Asciidoc le CDCU V1,C,C,R,I
+Rédiger la documentation technique et la documentation utilisateur V0,I,C,C,R
+Créer le cahier de TEST V1,R,A,I,I
+Rédiger la documentation technique et la documentation utilisateur V1,I,C,I,R
+*GPO - V2*,---,---,---,---
+Faire le GANTT V2, , , ,
+Mettre à jour le GANTT et les issues, , , ,
+Rédiger le CDCU V2, A, C,R,I
+Rédiger le cahier de tests V2, , , ,
+Rédiger la documentation technique et la documentation utilisateur V2, A, C,R,I
+*DEV V0/V1*,---,---,---,---
+Gérer (faire le CRUD) les employés, I, I,C,R
+Créditer ou débiter un compte,R,I,A,I
+Créer un compte, A, C,R,I
+Effectuer un virement,A,R,C,I
+Clôturer un compte, , ,R,
+*DEV V2*,---,---,---,---
+Générer un relevé mensuel d'un compte en PDF,R,C,I,A
+Gérer (faire le CRUD) les prélèvements automatiques, A, C,R,I
+Effectuer un débit exceptionnel, I, A, C,R
+Simuler un emprunt, C, R, A, I
+Simuler une assurance d'emprunt, C, R, A, I
+|===
+
+image::../V1/images/RACI.png[Matrice RACI]
+
+== Périmètre et environnement des tests
+
+=== Cadre de tests
+
+L'exécution de ces tests s'effectueront à travers le framework de test unitaire JUnit en Java 1.8 sur l'environnement de travail Eclipse. Cela permettra de s'assurer que le code répond toujours aux besoins même après d'éventuelles modifications.
+
+=== Equipes concernées
+
+Afin de mener à bien les actions à réaliser, seule une équipe de 4 personnes (voir README.adoc) est présente.
+Toutefois, la répartition des tâches reste, pour le moment, encore incertaine.
+
+== Liste des tests
+
+Une liste de tests, comme son nom l'indique, permet de décrire les différentes actions à conduire afin de réaliser les futurs tests.
+Ces listes de tests facilitent ainsi la compréhension et la clarté des actions à mener mais également de faciliter la qualification des problèmes rencontrés au cours de la réalisation d'une action et donc, d'une manière plus générale, de la gestion de celles-ci.
+
+.Développement des cas d'utilisation de la V1
+
+|===
+|N° |Acteurs |Actions à réaliser |Attendus des actions sur l'application |Validité
+
+|1
+.3+<.>|Chef d'Agence
+|Gérer les employés (guichetiers et lui-même)
+|• Doit pouvoir observer les différents comptes ouverts à l'agence (y compris lui-même) à l'aide d'une option qui lui serait proposée ; +
+
+ • Doit pouvoir observer les différentes modifications qui seraient apportées par un guichetier sur un compte ; +
+ 
+ • Doit pouvoir gérer l'ensemble des comptes crées au sein de l'agence (virements, dépôts ou retraits) ; +
+ 
+ • Ne doit pas pouvoir gérer un guichetier ayant un compte au sein d'une agence différente. +
+ → _Soit le chef d'agence voit uniquement les différents comptes qui sont présents dans l'agence,_ +
+ → _(Version non-optimisée) Soit le chef d'agence peut voir tous les comptes. Message d'erreur : "Veuillez choisir un compte au sein de votre agence bancaire." (dans une liste ou sous forme de pop-up)_
+| ✓
+
+|2
+|Effectuer un débit exceptionnel
+|• Ne doit pouvoir être effectué qu'à condition que le compte soit ouvert et le client Actif
+ → _Le bouton est dans le cas contraire désactivé_
+ 
+ • Le montant débité doit être dans les limites données par la base de données
+ → _Alert box : Le montant n'est pas valide_
+
+ • Ne doit pouvoir renseigner que des chiffres
+ → _Alert box : Le montant n'est pas valide_
+| ✓
+
+|3
+|Simuler un emprunt / Simuler une assurance d'emprunt
+|• Doit pouvoir être indiqué (ici dans une alertbox), la mensualité que doit le client s'il souscrit à réaliser un emprunt. +
+
+ • Ne doit pas pouvoir être réalisé de la part d'un simple employé de l'agence bancaire. +
+ → _Message d'erreur : "Vous n'êtes pas chef d'agence !" (affiché dans une alertbox de type "WARNING");_ +
+ 
+ • Ne doit pas pouvoir renseigner des caractères autres que des chiffres ou des nombres dans les textfields. +
+ → _Message d'erreur : "Veuillez à respecter la casse lors de vos saisies." (affiché dans une alertbox de type "WARNING");_ +
+ 
+ • Ne doit pas pouvoir valider une simulation d'emprunt si l'un des champs de texte ou tous les champs de texte ne sont pas remplis. +
+ → _Message d'erreur : "L'élément doit obligatoirement être renseigné." (affiché dans une alertbox de type "WARNING");_ +
+ 
+ • Ne doit pas pouvoir renseigner un capital ou une durée trop élevée (supérieure à 6 caractères, par limitation). +
+ → _Message d'erreur : "L'élément ne doit pas dépasser 6 chiffres !" (affiché dans une alertbox de type "WARNING");_ +
+ 
+ • Ne doit pas pouvoir renseigner un taux d'assurance ou d'intérêt inférieur à 0 ou supérieur à 100. + 
+ → _Message d'erreur : "Merci de mettre un taux valide !" (affiché dans une alertbox de type "WARNING")_
+| ✓
+
+|4
+.6+<.>|Guichetier
+|Créditer ou débiter un compte
+|Débiter : +
+ • Doit pouvoir être affiché dans une liste des opérations effectuées (listview) ; +
+
+ • Ne doit pas pouvoir être crédité d'une somme négative. + 
+ → _Message d'erreur : NumberFormatException si somme inférieur à  0, String de la somme en ROUGE et impossibilité de créditer cette somme;_ +
+
+ • Ne doit pas pouvoir être débité d'une somme supérieure à un plafond éventuellement défini. + 
+ → _Message d'erreur : "Veuillez renseigner une valeur inférieure au plafond défini." (dans une liste ou sous forme de pop-up)_
+ 
+ Créditer : +
+  • Doit pouvoir être affiché dans une liste des opérations effectuées (listview) ; +
+
+ • Ne doit pas pouvoir être crédité d'une somme négative. + 
+ → _Message d'erreur : NumberFormatException si somme inférieur à 0, String de la somme en ROUGE et impossibilité de créditer cette somme;_ +
+
+ • Ne doit pas pouvoir être débité d'une somme supérieure à un plafond éventuellement défini. + 
+ → _Message d'erreur : "Dépassement du découvert!" (dans une liste ou sous forme de pop-up)_
+| ✓
+
+|5
+|Créer un compte à partir d'informations complémentaires
+|• Doit pouvoir être visible par le créateur du compte ainsi que le chef d'agence (proposée en tant qu'option pour celui-ci) ;
+
+ • Ne doit pas renseigner des informations erronées (message possédant des caractères spéciaux ou ne respectant pas le type attendu). +
+ → _Message d'erreur : "Veuillez vérifiez que vos informations renseignées soient valides." (dans une liste ou sous forme de pop-up) ;_ +
+
+ • Ne doit pas pouvoir être crée une seconde fois. +
+ → _Message d'erreur : "Le compte que vous avez renseigné existe déjà." (dans une liste ou sous forme de pop-up)_
+| ✖
+
+|6
+|Effectuer un virement de compte à compte
+|• Doit pouvoir être affiché en tant que message complet (virement, montant) dans une listview pour l'émetteur et le bénéficiaire ;
+ 
+ • Ne doit pas pouvoir être crédité ou débité d'une somme négative. + 
+ → _Erreur apparaissant sur l'interface du virement : les champs de texte changent de couleur, passant ainsi au rouge;_ +
+
+ • Ne doit pas pouvoir effectuer le virement d'une somme supérieure à un plafond éventuellement défini. + 
+ → _Message d'erreur : "Dépassement du découvert !" accompagné des champs de texte également modifiés en rouge;_
+ 
+ • Ne doit pas pouvoir réaliser le virement vers un compte clôturé ou n'existant pas. +
+ → _Changement de la requête SQL en ne prenant en considération que les comptes ouverts;_
+ 
+ • Ne doit pas pouvoir réaliser un virement vers lui-même (le même compte) +
+ → _Condition vérifiant si le compte dans lequel nous réalisons l'opération figure parmi tous les comptes recherchés. Si c'est le cas, il est retiré pour la procédure du virement, dans le cas échéant, ce ne sera pas le cas._
+| ✓
+
+|7
+|Clôturer un compte
+|• Doit pouvoir être affiché en tant que message dans une liste pour le guichetier et le chef d'agence ;
+
+• Ne doit plus être en interaction par un autre compte afin de réaliser une transaction quelconque, seul la consultation du compte sera possible, aucune autre action sera possible
+ 
+•Peut être réalisé une fois que le solde du compte est null 
+ 
+ 
+ • Ne doit pas pouvoir clôturer un compte déjà clôturé. +
+ → _Le compte est toujours visible par le chef d'agence ainsi que le guichetier mais aucunes actions ne peuvent être faites mise à part consulter le compte
+| ✓
+
+|8
+|Générer un relevé mensuel d'un compte en PDF
+| • Doit pouvoir générer le PDF contenant les opérations d'un compte dans Téléchargements;
+
+• Doit pouvoir ouvrir le PDF une fois le bouton cliqué
+| ✖
+
+|9
+|Gérer les prélèvements automatiques
+|• Doit pouvoir être affiché en tant que message dans une liste pour le guichetier et le chef d'agence ;
+ 
+•Peut être réalisé que si le compte n'est pas clôturé
+ 
+• Ne doit pas renseigner des informations erronées (date non valable). +
+→ _Message d'erreur : "Veuillez vérifiez que vos informations renseignées soient valides." (dans une liste ou sous forme de pop-up) ;_ +
+
+• Un prélèvement peut être arrêté, il est toujours consultable mais non modifiable/exécutable
+
+| ✓
+|===
