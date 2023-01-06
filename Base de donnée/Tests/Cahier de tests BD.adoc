@@ -10,6 +10,7 @@ Vous pouvez cliquer sur chaque numéro des tests pour être redirigé vers un sc
 == Liste des tests
 
 Une liste de tests, comme son nom l'indique, permet de décrire les différentes actions à conduire afin de réaliser les futurs tests.
+
 Ces listes de tests facilitent ainsi la compréhension et la clarté des actions à mener mais également de faciliter la qualification des problèmes rencontrés au cours de la réalisation d'une action et donc, d'une manière plus générale, de la gestion de celles-ci.
 
 
@@ -34,19 +35,19 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |Un client abandonne sa commande qui contenait des récipients. La quantité de récipient initialement choisi est ajoutée au stock correspondant au récipient.
 | ✓
 
-|4
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture4.PNG[4]
 |testMaj_Stock_bonbon_INSERT_OK
 |Déclencheur maj_stock_bonbons
 |Un client fait une nouvelle commande de bonbon avec une certaine quantité. Cette quantité est déduite du stock correspondant aux bonbons choisis.
 | ✓
 
-|5
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture5.PNG[5]
 |testMaj_Stock_bonbon_UPDATE_OK
 |Déclencheur maj_stock_bonbons
 |Un client modifie la quantité de bonbon dans sa commande. Cette nouvelle quantité est déduite du stock correspondant aux bonbons choisis.
 | ✓
 
-|6
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture6.PNG[6]
 |testMaj_Stock_bonbon_DELETE_OK
 |Déclencheur maj_stock_bonbons
 |Un client abandonne sa commande qui contenait des bonbons. La quantité de bonbons initialement choisis est ajoutée au stock correspondant aux bonbons.
@@ -58,7 +59,7 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |Un client fait une nouvelle commande de bonbon avec une quantité de 3KG. Le stock correspondant à ce bonbon est de 5KG. La commande est correctement effectuée. Le stock de ce bonbon passe de 5GK à 2KG.
 | ✓
 
-|8
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture7.PNG[8]
 |testVerif_qte_bonbon_INSERT_NOK
 |Déclencheur verif_qte_bonbon_commande
 |Un client fait une nouvelle commande de bonbon avec une quantité de 8KG. Le stock correspondant à ce bonbon est de 5KG. Un message d'erreur apparait signifiant que la quantité seléctionné dépasse le stock. La commande n'est pas effectuée.
@@ -70,7 +71,7 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |Un client fait une nouvelle commande de récipient et prend 2 exemplaires. Le stock correspondant à ce récipient est de 15. La commande est correctement effectuée. Le stock de ce récipient passe de 15 à 13.
 | ✓
 
-|10
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture8.PNG[10]
 |testVerif_qte_recipient_INSERT_NOK
 |Déclencheur verif_qte_recipient_commande
 |Un client fait une nouvelle commande de récipient et prend 20 exemplaires. Le stock correspondant à ce récipient est 10. Un message d'erreur apparait signifiant que la quantité seléctionné dépasse le stock. La commande n'est pas effectuée.
