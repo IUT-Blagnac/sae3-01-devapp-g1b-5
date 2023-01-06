@@ -3,7 +3,7 @@
 :toc-title: Table des matières
 
 = Cahier de test BD G1B -5
-_Réalisé par THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo, HU Shiyu
+Réalisé par THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo, HU Shiyu
 
 toc::[]
 
