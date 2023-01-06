@@ -22,35 +22,15 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 | ✓
 
 |2
-|Effectuer un débit exceptionnel
-|• Ne doit pouvoir être effectué qu'à condition que le compte soit ouvert et le client Actif
- → _Le bouton est dans le cas contraire désactivé_
- 
- • Le montant débité doit être dans les limites données par la base de données
- → _Alert box : Le montant n'est pas valide_
-
- • Ne doit pouvoir renseigner que des chiffres
- → _Alert box : Le montant n'est pas valide_
+|testMaj_Stock_Recip_UPDATE_OK
+|Déclencheur maj_stock_recipient
+|Un client modifie la quantité d'un recipient dans sa commande. Cette nouvelle quantité est déduite du stock correspondant au recipient choisi.
 | ✓
 
 |3
-|Simuler un emprunt / Simuler une assurance d'emprunt
-|• Doit pouvoir être indiqué (ici dans une alertbox), la mensualité que doit le client s'il souscrit à réaliser un emprunt. +
-
- • Ne doit pas pouvoir être réalisé de la part d'un simple employé de l'agence bancaire. +
- → _Message d'erreur : "Vous n'êtes pas chef d'agence !" (affiché dans une alertbox de type "WARNING");_ +
- 
- • Ne doit pas pouvoir renseigner des caractères autres que des chiffres ou des nombres dans les textfields. +
- → _Message d'erreur : "Veuillez à respecter la casse lors de vos saisies." (affiché dans une alertbox de type "WARNING");_ +
- 
- • Ne doit pas pouvoir valider une simulation d'emprunt si l'un des champs de texte ou tous les champs de texte ne sont pas remplis. +
- → _Message d'erreur : "L'élément doit obligatoirement être renseigné." (affiché dans une alertbox de type "WARNING");_ +
- 
- • Ne doit pas pouvoir renseigner un capital ou une durée trop élevée (supérieure à 6 caractères, par limitation). +
- → _Message d'erreur : "L'élément ne doit pas dépasser 6 chiffres !" (affiché dans une alertbox de type "WARNING");_ +
- 
- • Ne doit pas pouvoir renseigner un taux d'assurance ou d'intérêt inférieur à 0 ou supérieur à 100. + 
- → _Message d'erreur : "Merci de mettre un taux valide !" (affiché dans une alertbox de type "WARNING")_
+|testMaj_Stock_Recip_DELETE_OK
+|Déclencheur maj_stock_recipient
+|Un client abandonne sa commande qui contenait des recipients. La quantité de recipient initialement choisi est ajoutée au stock correspondant au recipient.
 | ✓
 
 |4
