@@ -18,19 +18,19 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |1
 |testMaj_Stock_Recip_INSERT_OK
 |Déclencheur maj_stock_recipient
-|Un client fait une nouvelle commande d'un recipient avec une certaine quantité. Cette quantité est déduite du stock correspondant au recipient choisi.
+|Un client fait une nouvelle commande d'un récipient avec une certaine quantité. Cette quantité est déduite du stock correspondant au récipient choisi.
 | ✓
 
 |2
 |testMaj_Stock_Recip_UPDATE_OK
 |Déclencheur maj_stock_recipient
-|Un client modifie la quantité d'un recipient dans sa commande. Cette nouvelle quantité est déduite du stock correspondant au recipient choisi.
+|Un client modifie la quantité d'un récipient dans sa commande. Cette nouvelle quantité est déduite du stock correspondant au récipient choisi.
 | ✓
 
 |3
 |testMaj_Stock_Recip_DELETE_OK
 |Déclencheur maj_stock_recipient
-|Un client abandonne sa commande qui contenait des recipients. La quantité de recipient initialement choisi est ajoutée au stock correspondant au recipient.
+|Un client abandonne sa commande qui contenait des récipients. La quantité de récipient initialement choisi est ajoutée au stock correspondant au récipient.
 | ✓
 
 |4
@@ -50,5 +50,30 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |Déclencheur maj_stock_bonbons
 |Un client abandonne sa commande qui contenait des bonbons. La quantité de bonbons initialement choisis est ajoutée au stock correspondant aux bonbons.
 | ✓
+
+|7
+|testVerif_qte_bonbon_INSERT_OK
+|Déclencheur verif_qte_bonbon_commande
+|Un client fait une nouvelle commande de bonbon avec une quantité de 3KG. Le stock correspondant à ce bonbon est de 5KG. La commande est correctement effectuée. Le stock de ce bonbon passe de 5GK à 2KG.
+| ✓
+
+|8
+|testVerif_qte_bonbon_INSERT_NOK
+|Déclencheur verif_qte_bonbon_commande
+|Un client fait une nouvelle commande de bonbon avec une quantité de 8KG. Le stock correspondant à ce bonbon est de 5KG. Un message d'erreur apparait signifiant que la quantité seléctionné dépasse le stock. La commande n'est pas effectuée.
+| ✓
+
+|9
+|testVerif_qte_recipient_INSERT_OK
+|Déclencheur verif_qte_recipient_commande
+|Un client fait une nouvelle commande de récipient et prend 2 exemplaires. Le stock correspondant à ce récipient est de 15. La commande est correctement effectuée. Le stock de ce récipient passe de 15 à 13.
+| ✓
+
+|10
+|testVerif_qte_recipient_INSERT_NOK
+|Déclencheur verif_qte_recipient_commande
+|Un client fait une nouvelle commande de récipient et prend 20 exemplaires. Le stock correspondant à ce récipient est 10. Un message d'erreur apparait signifiant que la quantité seléctionné dépasse le stock. La commande n'est pas effectuée.
+| ✓
+
 
 |===
