@@ -1,0 +1,71 @@
+--contientBonbon--
+
+--INSERT
+
+SELECT *
+FROM CATEGORIEB;
+
+INSERT INTO CONTIENTBONBON
+VALUES(15,35,6);
+
+SELECT *
+FROM CATEGORIEB;
+
+ROLLBACK;
+
+
+--contientRecipient--
+
+--INSERT
+
+SELECT IDR, NOMR, STOCK
+FROM RECIPIENT;
+
+INSERT INTO CONTIENTRECIPIENT
+VALUES(30,5,6);
+
+SELECT IDR, NOMR, STOCK
+FROM RECIPIENT;
+
+ROLLBACK;
+
+
+
+qteStock bonbon--
+CREATE OR REPLACE TRIGGER verif_qte_bonbon_commande
+BEFORE INSERT OR UPDATE OF quantitekg, idb
+ON CONTIENTBONBON
+FOR EACH ROW
+DECLARE
+    qteBonbon CATEGORIEB.STOCKB%TYPE;
+BEGIN
+    IF (INSERTING OR UPDATING) THEN
+        SELECT C.STOCKB INTO qteBonbon
+        FROM CATEGORIEB C, BONBONS B
+        WHERE B.idcategorie = C.idcategorie
+        AND B.idb = :NEW.idb;
+        IF (:NEW.quantitekg > qteBonbon) THEN
+            RAISE_APPLICATION_ERROR(-20000, 'Erreur: Votre quantitée choisie dépasse les stocks !');
+        END IF;
+    END IF;
+END;
+/
+
+qteStock Recipient--
+CREATE OR REPLACE TRIGGER verif_qte_recipient_commande
+BEFORE INSERT OR UPDATE OF quantiteunitaire, idr
+ON CONTIENTRECIPIENT
+FOR EACH ROW
+DECLARE
+    qteRecipient RECIPIENT.STOCK%TYPE;
+BEGIN
+    IF (INSERTING OR UPDATING) THEN
+        SELECT STOCK INTO qteRecipient
+        FROM RECIPIENT
+        WHERE IDR = :NEW.IDR;
+        IF (:NEW.quantiteunitaire > qteRecipient) THEN
+            RAISE_APPLICATION_ERROR(-20000, 'Erreur: Votre quantitée choisie dépasse les stocks !');
+        END IF;
+    END IF;
+END;
+/
