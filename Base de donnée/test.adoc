@@ -2,8 +2,7 @@
 :toc-placement!:
 :toc-title: Table des matières
 
-image::/images/DailyBank.png[]
-= DailyBank - Cahier de tests V2
+= SAE 3.01 CHERIBOU G1B -5
 _Réalisé par THOMPSON Victor, YVELIN Louis, SACILOTTO Nicolas et FERNANDEZ Mickael (4A)_
 
 toc::[]
