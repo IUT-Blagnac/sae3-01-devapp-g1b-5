@@ -16,17 +16,9 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |N° |Nom du Test |Nom de l'élément sur lequel le test est efféctué|Conditions de satisfactions |Validité
 
 |1
-|test
-|Gérer les employés (guichetiers et lui-même)
-|• Doit pouvoir observer les différents comptes ouverts à l'agence (y compris lui-même) à l'aide d'une option qui lui serait proposée ; +
-
- • Doit pouvoir observer les différentes modifications qui seraient apportées par un guichetier sur un compte ; +
- 
- • Doit pouvoir gérer l'ensemble des comptes crées au sein de l'agence (virements, dépôts ou retraits) ; +
- 
- • Ne doit pas pouvoir gérer un guichetier ayant un compte au sein d'une agence différente. +
- → _Soit le chef d'agence voit uniquement les différents comptes qui sont présents dans l'agence,_ +
- → _(Version non-optimisée) Soit le chef d'agence peut voir tous les comptes. Message d'erreur : "Veuillez choisir un compte au sein de votre agence bancaire." (dans une liste ou sous forme de pop-up)_
+|testMaj_Stock_Recip_INSERT_OK
+|Déclencheur maj_stock_recipient
+|Un client fait une nouvelle commande d'un recipient avec une certaine quantité. Cette quantité est déduite du stock correspondant au recipient choisi.
 | ✓
 
 |2
