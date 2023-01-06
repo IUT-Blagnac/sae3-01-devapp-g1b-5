@@ -181,7 +181,7 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%201/D
 [cols="1,1"]
 |===
 |Sprint 3
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%203/Backlog%20de%20sprint%201.pdf[Backlog de sprint 3]
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%203/Backlog%20de%20sprint%20(sprint%203).pdf[Backlog de sprint 3]
 
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%203/Compte%20rendu%20de%20r%C3%A9union%20G1B%20-%205.pdf[Compte rendue de réunion semaine 49]
 
