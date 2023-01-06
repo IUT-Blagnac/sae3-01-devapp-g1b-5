@@ -13,7 +13,7 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 
 
 |===
-|N° |Acteurs |Actions à réaliser |Attendus des actions sur l'application |Validité
+|N° |Nom du Test |Nom |Conditions de satisfactions |Validité
 
 |1
 .3+<.>|Chef d'Agence
