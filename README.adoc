@@ -162,7 +162,7 @@ Charte graphique panier.php(avec css)
 
 Charte graphique Bonbon.php (avec css)
 
-Finalisation Hader et footer
+Finalisation Header et footer
 
 Charte graphique Contact.php (avec css)
 
