@@ -154,6 +154,12 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerc
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%204/Avancement%20du%20projet%20Dev%20Web%20semaine%2050%20G1B%20-%205.pdf[Livrable avancement du site web]
 |===
 
+[cols="1,1"]
+|===
+|Sprint 5
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%205/Avancement%20du%20projet%20Dev%20Web%20semaine%2001%20G1B%20-%205.pdf[Livrable avancement du site web]
+|===
+
 Lien vers les fichiers Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou[ici]
 
 Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou/assets/docs[ici]
@@ -214,6 +220,18 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/C
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/Ordre%20du%20Jour%20semaine%2050%20G1B%20-%205.pdf[Ordre du jour semaine 50]
 
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/Analyse%20semaine%2050%20G1B%20-5.pdf[Analyse semaine 50]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 5
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%205/Backlog%20de%20sprint%20(sprint%205).pdf[Backlog de sprint 5]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%205/Compte%20rendu%20de%20r%C3%A9union%20semaine%2001%20G1B%20-5.pdf[Compte rendue de réunion semaine 01]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%205/Ordre%20du%20Jour%20semaine%2001%20G1B%20-%205.pdf[Ordre du jour semaine 01]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%205/Analyse%20semaine%2001%20G1B%20-5.pdf[Analyse semaine 01]
 |===
 
 == Gestion de projet & Qualité
