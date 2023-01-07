@@ -1,0 +1,54 @@
+create or replace PACKAGE PrixTotalCommande AS
+	FUNCTION PrixR   (r Commande.idcommande%TYPE) RETURN DECIMAL;
+	FUNCTION PrixB (c Commande.idcommande%TYPE) RETURN DECIMAL;
+    PROCEDURE PrixTotal(p Commande.idcommande%TYPE) ;
+END PrixTotalCommande;
+
+create or replace PACKAGE BODY Prixtotalcommande AS 
+	FUNCTION PrixR(r Commande.idcommande%TYPE) RETURN DECIMAL IS	
+    qr contientrecipient.quantiteunitaire%TYPE;
+    pr recipient.prixunitaire%TYPE;
+	prixR decimal;
+    CURSOR c1 IS SELECT cr.quantiteunitaire, r.prixunitaire FROM contientrecipient cr, recipient r where cr.idr = r.idr and cr.idcommande = r;
+	BEGIN
+    prixR:=0;
+    OPEN c1;
+    FETCH c1 INTO qr, pr;
+    WHILE c1%FOUND LOOP
+    prixR:= prixR + qr * pr;
+    FETCH c1 INTO qr,pr;
+    end loop;
+    RETURN prixR;
+	END PrixR;
+
+
+    FUNCTION PrixB (c Commande.idcommande%TYPE) RETURN DECIMAL IS	
+    qb contientbonbon.quantitekg%TYPE;
+    pb bonbons.prixkg%TYPE;
+	prixB decimal;
+    CURSOR c1 IS SELECT cb.quantitekg, b.prixkg FROM contientbonbon cb, bonbons b where cb.idb = b.idb and cb.idcommande = c;
+	BEGIN
+    prixB:=0;
+    OPEN c1;
+    FETCH c1 INTO qb, pb;
+    WHILE c1%FOUND LOOP
+    prixB:= prixB + qb * pb;
+    FETCH c1 INTO qb, pb;
+    end loop;
+    RETURN prixB;
+	END PrixB;
+
+
+    PROCEDURE PrixTotal(p Commande.idcommande%TYPE) IS
+    a1 decimal;
+    a2 decimal;
+    prixTotal decimal;
+    BEGIN
+    a1 := PrixB(p);
+    a2 := PrixR(p);
+    prixTotal := a1 + a2;
+    DBMS_OUTPUT.PUT_LINE(prixTotal);
+    END PrixTotal;
+
+
+END ;
