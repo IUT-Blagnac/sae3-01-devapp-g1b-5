@@ -162,6 +162,8 @@ Charte graphique panier.php(avec css)
 
 Charte graphique Bonbon.php (avec css)
 
+Finalisation Hader et footer
+
 Charte graphique Contact.php (avec css)
 
 Charte graphique Compte.php (avec css)
@@ -173,6 +175,10 @@ Charte graphique Compte.php (avec css)
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%205/Avancement%20du%20projet%20Dev%20Web%20semaine%2001%20G1B%20-%205.pdf[Livrable avancement du site web]
 
 Finalisation menus (PHP)
+
+Finalisation Contact.php (PHP)
+
+Finalisation index.php (PHP)
 
 Finalisation Compte.php (PHP)
 
