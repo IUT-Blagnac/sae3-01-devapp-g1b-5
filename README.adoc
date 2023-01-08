@@ -211,6 +211,32 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Programmes%20pyt
 
 Notre programme Python utilise la librairie paho-mqtt. Si vous n'avez pas installé celle-ci sur Ubuntu, vous pouvez l'installer avec cette commande :
   `sudo pip3 install paho-mqtt`
+  
+[cols="1,1"]
+|===
+|Sprint 3
+|Connexion aux services mqtt et extraction des données des capteurs
+
+Réalisation d'un fichier de configuration
+
+Ecriture des données dans un fichier texte
+
+Gestion des seuils maximaux des données
+|===
+
+[cols="1,1"]
+|===
+|Sprint 4
+|Gestion de la fréquence d'émission des données
+
+Réalisation des premiers tests
+|===
+
+[cols="1,1"]
+|===
+|Sprint 5
+|Cahier de test Python V1
+|===
 
 
 **Partie Gestion de projet**
