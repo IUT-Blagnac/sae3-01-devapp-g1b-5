@@ -308,6 +308,11 @@ Pour la partie python https://github.com/orgs/IUT-Blagnac/projects/43[ici]
 Pour la partie site d'E-commerce https://github.com/orgs/IUT-Blagnac/projects/6/views/1[ici]
   
 - Tests unitaires et plans de test
+
+Pour la partie base de donnée : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/Cahier%20de%20tests%20BD%20V1.adoc[ici]
+
+Pour la partie python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/Cahier%20de%20tests%20Python%20V1.adoc[ici]
+
 - Indicateurs de qualité du code (dette technique)
 - ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
 
