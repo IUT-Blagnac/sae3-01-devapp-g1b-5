@@ -19,65 +19,28 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |===
 |N° |Nom du Test |Nom de l'élément sur lequel le test est efféctué|Conditions de satisfactions |Validité
 
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture1.PNG[1]
-|testMaj_Stock_Recip_INSERT_OK
-|Déclencheur maj_stock_recipient
-|Un client fait une nouvelle commande d'un récipient avec une certaine quantité. Cette quantité est déduite du stock correspondant au récipient choisi.
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testEcritureDansUnFichier.py[1]
+|testEcritureDansUnFichier_OK
+|main.py
+|Le programme récupère les données émisent par les capteurs. Dès lors, un fichier "fichier.txt" va être crée si il n'existe pas et les données de : CO2, température et humidité vont être écritent, éspacées d'un tiret (-), dans le fichier.
 | ✓
 
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture2.PNG[2]
-|testMaj_Stock_Recip_UPDATE_OK
-|Déclencheur maj_stock_recipient
-|Un client modifie la quantité d'un récipient dans sa commande. Cette nouvelle quantité est déduite du stock correspondant au récipient choisi.
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testRecupDesDonneesAvecFichierDeConfig.py[2]
+|testRecupDesDonneesAvecFichierDeConfig_OK
+|main.py
+|Le programme se connecte au broker mqtt et attend l'émission des données. Quand celles-ci sont émisent, le programme les récupèrent dans des variables et les affichent dans un terminal.
 | ✓
 
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture3.PNG[3]
-|testMaj_Stock_Recip_DELETE_OK
-|Déclencheur maj_stock_recipient
-|Un client abandonne sa commande qui contenait des récipients. La quantité de récipient initialement choisi est ajoutée au stock correspondant au récipient.
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testValeurMax.py[3]
+|testValeurMax_OK
+|main.py
+|Dans le fichier de configuration, la valeur maximum pour la température a été définie a 10°C. Les données sont émisent, le programme les récupèrent et la valeur de la température est de 5°C. La valeur maximum est respéctée donc les valeurs sont écritent normalement dans le fichier texte.
 | ✓
 
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture4.PNG[4]
-|testMaj_Stock_bonbon_INSERT_OK
-|Déclencheur maj_stock_bonbons
-|Un client fait une nouvelle commande de bonbon avec une certaine quantité. Cette quantité est déduite du stock correspondant aux bonbons choisis.
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testValeurMax.py[3]
+|testValeurMax_NOK
+|main.py
+|Dans le fichier de configuration, la valeur maximum pour la température a été définie a 10°C. Les données sont émisent, le programme les récupèrent et la valeur de la température est de 15°C. La valeur maximum n'est pas respéctée. Un message apparait dans le terminal signifiant que les valeurs de températures sont trop hautes.
 | ✓
-
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture5.PNG[5]
-|testMaj_Stock_bonbon_UPDATE_OK
-|Déclencheur maj_stock_bonbons
-|Un client modifie la quantité de bonbon dans sa commande. Cette nouvelle quantité est déduite du stock correspondant aux bonbons choisis.
-| ✓
-
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture6.PNG[6]
-|testMaj_Stock_bonbon_DELETE_OK
-|Déclencheur maj_stock_bonbons
-|Un client abandonne sa commande qui contenait des bonbons. La quantité de bonbons initialement choisis est ajoutée au stock correspondant aux bonbons.
-| ✓
-
-|7
-|testVerif_qte_bonbon_INSERT_OK
-|Déclencheur verif_qte_bonbon_commande
-|Un client fait une nouvelle commande de bonbon avec une quantité de 3KG. Le stock correspondant à ce bonbon est de 5KG. La commande est correctement effectuée. Le stock de ce bonbon passe de 5GK à 2KG.
-| ✓
-
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture7.PNG[8]
-|testVerif_qte_bonbon_INSERT_NOK
-|Déclencheur verif_qte_bonbon_commande
-|Un client fait une nouvelle commande de bonbon avec une quantité de 8KG. Le stock correspondant à ce bonbon est de 5KG. Un message d'erreur apparait signifiant que la quantité seléctionné dépasse le stock. La commande n'est pas effectuée.
-| ✓
-
-|9
-|testVerif_qte_recipient_INSERT_OK
-|Déclencheur verif_qte_recipient_commande
-|Un client fait une nouvelle commande de récipient et prend 2 exemplaires. Le stock correspondant à ce récipient est de 15. La commande est correctement effectuée. Le stock de ce récipient passe de 15 à 13.
-| ✓
-
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture8.PNG[10]
-|testVerif_qte_recipient_INSERT_NOK
-|Déclencheur verif_qte_recipient_commande
-|Un client fait une nouvelle commande de récipient et prend 20 exemplaires. Le stock correspondant à ce récipient est 10. Un message d'erreur apparait signifiant que la quantité seléctionné dépasse le stock. La commande n'est pas effectuée.
-| ✓
-
 
 |===
