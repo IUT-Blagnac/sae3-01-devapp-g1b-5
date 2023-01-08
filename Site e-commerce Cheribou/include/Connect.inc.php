@@ -8,7 +8,7 @@
 		  )" ;
 	$connect = oci_connect("SAEBD05", "SAEg1b5", $db);
 	
-	// si la connexion a Ã©chouÃ©, on affiche le message d'erreur
+	// si la connexion a échoué, on affiche le message d'erreur
 	if (!$connect) {
 		$e = oci_error();
 		trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);

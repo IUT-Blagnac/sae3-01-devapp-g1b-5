@@ -1,16 +1,12 @@
-
 body{
-    background-color: #FFB2E2;
-    
+    background-color: #FFB2E2;    
   }
-  
   body, html {
     height:100vh;
   }
   section{
     margin: 2%;
-   margin-top: 10vh;
-    
+   margin-top: 10vh; 
   } 
   .bonbons{
     display: grid;
@@ -18,25 +14,17 @@ body{
     column-gap: 5vh;
     margin: 2% ;
     padding: 1% 1%;
-  
   }
-  
-  .bonbons #one{
-    
+  .bonbons #one{ 
     grid-row: 1;
     grid-column: 1;
     background-color: #fff;
-  
     height: 50vh;
     width: 50vh;  
     -webkit-transition: all 1s ease;
-  
     border-radius: 25px;
     border: solid 2px;
-  
   }
-  
-  
   .bonbons #two{
     -webkit-transition: all 1s ease;
     grid-row: 1;
@@ -57,9 +45,6 @@ body{
     border-radius: 20px;
     border: solid 2px;
   }
-  .bonbons  #one:hover, #two:hover,#three:hover{
-   
+  .bonbons  #one:hover, #two:hover,#three:hover{  
       -webkit-transform:scale(1.05);
   }
-  
-  

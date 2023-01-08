@@ -13,8 +13,7 @@
 header {
   text-align: center;
   font-family: lemon;
-  width: 100%;
-  height: 20vh;  
+  width: 100%; 
   background-color: white;
 }
 
@@ -52,6 +51,7 @@ h1 {
 .box{
   flex: auto;
   text-align: center;
+  font-size: 40px;
 }
 
  .firstnavbar{
@@ -120,7 +120,7 @@ nav a{
 }
 nav a:hover{
   color: #FFE867;
-  border-bottom: 2px solid #FFE867;
+  border-bottom: 2px solid black;
 }
 /*----- Menu deroulant -----*/
 
@@ -139,14 +139,26 @@ ul,ol{
 }
 nav > ul li:hover .sous{
   display: block;
+  text-align: center;
+  justify-items: center;
+  justify-content: center;
+}
+nav > ul li:hover .sous .sousitems{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+nav > ul li:hover .sous .sousitems > li{
+  
+  text-align: left;
 }
 
 .sous li{
   float: none;
   /* width: 100%; */
-  text-align: left;
   float: left;
-  width: 33%;/*100% divisé par le nombre d'éléments de menu*/
+  width: 25%;/*100% divisé par le nombre d'éléments de menu*/
   text-align: center;/*Centre le texte dans les éléments de menu*/
   position: relative;
 }

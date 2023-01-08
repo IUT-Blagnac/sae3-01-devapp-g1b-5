@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
 
 <!-- <footer class="site-footer">
     I'm the Sticky Footer.
@@ -7,10 +8,10 @@
 
     <div class="footer-right">
 
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-github"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
 
     </div>
 
@@ -27,7 +28,7 @@
 
             <a href="#">JSP</a>
 
-            <a href="#">Contact</a>
+            <a href="./contact.php">Contact</a>
         </p>
 
         <p id="footerCheribou">CHERIBOU &copy; 2022</p>
