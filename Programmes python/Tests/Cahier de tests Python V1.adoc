@@ -8,6 +8,8 @@ L'exécution de ces tests s'est déroulé sur Visual Studio Code. Cela permettra
 
 Vous pouvez cliquer sur chaque numéro des tests pour être redirigé vers un screen du code utilisé pour ces tests.
 
+Pour l'utilisation de ces codes, il est impératif d'importer également le fichier de configuration.
+
 == Liste des tests
 
 Une liste de tests, comme son nom l'indique, permet de décrire les différentes actions à conduire afin de réaliser les futurs tests.
