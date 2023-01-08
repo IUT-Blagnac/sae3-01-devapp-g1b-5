@@ -1,4 +1,4 @@
-= Cahier de test Python
+= Cahier de test Python V1
 
 Equipe : THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo, HU Shiyu (G1B -5)
 
