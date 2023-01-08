@@ -172,7 +172,7 @@ Charte graphique Compte.php (avec css)
 [cols="1,1"]
 |===
 |Sprint 5
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%205/Avancement%20du%20projet%20Dev%20Web%20semaine%2001%20G1B%20-%205.pdf[Livrable avancement du site web]
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%205/Avancement_du_projet_Dev_Web_semaine_01_G1B_-_5.pdf[Livrable avancement du site web]
 
 Finalisation menus (PHP)
 
