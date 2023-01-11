@@ -1,0 +1,50 @@
+body{
+    background-color: #FFB2E2;    
+  }
+  body, html {
+    height:100vh;
+  }
+  section{
+    margin: 2%;
+   margin-top: 10vh; 
+  } 
+  .bonbons{
+    display: grid;
+    justify-content: center;
+    column-gap: 5vh;
+    margin: 2% ;
+    padding: 1% 1%;
+  }
+  .bonbons #one{ 
+    grid-row: 1;
+    grid-column: 1;
+    background-color: #fff;
+    height: 50vh;
+    width: 50vh;  
+    -webkit-transition: all 1s ease;
+    border-radius: 25px;
+    border: solid 2px;
+  }
+  .bonbons #two{
+    -webkit-transition: all 1s ease;
+    grid-row: 1;
+    grid-column: 2/3;
+    background-color: rgb(112, 46, 46);
+    height: 50vh;
+    width: 50vh;
+    border-radius: 20px;
+    border: solid 2px;
+  }
+  .bonbons #three{
+    -webkit-transition: all 1s ease;
+    grid-row: 1;
+    grid-column: 3/3;
+    background-color: rgb(61, 26, 26);
+    height: 50vh;
+    width: 50vh;
+    border-radius: 20px;
+    border: solid 2px;
+  }
+  .bonbons  #one:hover, #two:hover,#three:hover{  
+      -webkit-transform:scale(1.05);
+  }
