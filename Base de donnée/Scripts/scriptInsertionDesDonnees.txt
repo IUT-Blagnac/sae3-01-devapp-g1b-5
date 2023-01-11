@@ -195,31 +195,31 @@ INSERT INTO Bonbons VALUES(seq_bonbon_idb.nextval,3,13.25,'violet','Grand Sachet
 INSERT INTO Bonbons VALUES(seq_bonbon_idb.nextval,3,13.25,'violet','Mini Sachet','Sirop de glucose, sucre, huile de palme, gélatine, colorants, arômes naturels','Dragibou','cette petite bille colorée qui déboule dans l univers de la confiserie. ',NULL,'Dragibou','Aucun');
 
 --Nounoursou
-INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,4,10,'Marron','Grand sachet','sucre, beurre, lait,pâte de cacao,sirop de glucose,gélatine, Cacao','Nounoursou','Ce bonbon renferme une tendre et savoureuse guimauve à la vanille','Aucune','Nounoursou','Chocolat');
-INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,4,10,'Marron','Petit sachet','sucre, beurre, lait,pâte de cacao,sirop de glucose,gélatine, Cacao','Nounoursou','Ce bonbon renferme une tendre et savoureuse guimauve à la vanille','Aucune','Nounoursou','Chocolat');
+INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,4,10,'Marron','Grand Sachet','sucre, beurre, lait,pâte de cacao,sirop de glucose,gélatine, Cacao','Nounoursou','Ce bonbon renferme une tendre et savoureuse guimauve à la vanille','Aucune','Nounoursou','Chocolat');
+INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,4,10,'Marron','Mini Sachet','sucre, beurre, lait,pâte de cacao,sirop de glucose,gélatine, Cacao','Nounoursou','Ce bonbon renferme une tendre et savoureuse guimauve à la vanille','Aucune','Nounoursou','Chocolat');
 --Tête broulou
-INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,2,11,'Rouge','Grand sachet','Sucre, sirop deglucose, arômesnaturels, colorant,acidifiant (acidecitrique)','Tête broulou','Les têtes brûlées citriques. Un bonbon qui arrache !.','Bonbon végétarien','Tête broulou','Acide');
-INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,2,11,'Bleu','Grand sachet','Sucre, sirop deglucose, arômesnaturels, colorant,acidifiant (acidecitrique)','Tête broulou','Les têtes brûlées citriques. Un bonbon qui arrache !.','Bonbon végétarien','Tête broulou','Acide');
+INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,2,11,'Rouge','Grand Sachet','Sucre, sirop deglucose, arômesnaturels, colorant,acidifiant (acidecitrique)','Tête broulou','Les têtes brûlées citriques. Un bonbon qui arrache !.','Bonbon végétarien','Tête broulou','Acide');
+INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,2,11,'Bleu','Grand Sachet','Sucre, sirop deglucose, arômesnaturels, colorant,acidifiant (acidecitrique)','Tête broulou','Les têtes brûlées citriques. Un bonbon qui arrache !.','Bonbon végétarien','Tête broulou','Acide');
 --Carambou
-INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'rose','Grand-sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Fraise(acide)');
+INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'rose','Grand Sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Fraise(acide)');
 --Carambou fraise mini-sachet
-INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'rose','Mini-sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Fraise(acide)');
+INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'rose','Mini Sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Fraise(acide)');
 --Carambou coca grand-sachet
-INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'marron','Grand-sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Coca(acide)');
+INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'marron','Grand Sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Coca(acide)');
 --Carambou coca mini-sachet
-INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'marron','Mini-sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Coca(acide)');
+INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'marron','Mini Sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Coca(acide)');
 --Carambou caramel grand-sachet
-INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'marron','Grand-sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Caramel(acide)');
+INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'marron','Grand Sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Caramel(acide)');
 --Carambou caramel mini-sachet
-INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'marron','Mini-sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Caramel(acide)');
+INSERT INTO BONBONS Values (seq_bonbon_idb.nextval,5,30,'marron','Mini Sachet','Sirop de glucose,sucre, huile de palme, acidifiant (acide citrique),gélatine, colorants,arômes naturels','Carambou','Caramel mou, originellement fait de caramel et de cacao','Bonbon végan','Carambou','Caramel(acide)');
 
 --Malabou
-INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Rose','Grand sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Fraise');
-INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Rose','Mini sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Fraise');
-INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Marron','Grand sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Coca');
-INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Marron','Mini sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Coca');
-INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Caramel','Grand sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Caramel');
-INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Caramel','Mini sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Caramel');
+INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Rose','Grand Sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Fraise');
+INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Rose','Mini Sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Fraise');
+INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Marron','Grand Sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Coca');
+INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Marron','Mini Sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Coca');
+INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Caramel','Grand Sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Caramel');
+INSERT INTO BONBONS VALUES(seq_bonbon_idb.NEXTVAL,5,20.5,'Caramel','Mini Sachet','Sirop de glucose,sucre, huile depalme, acidifiant(acide citrique),gélatine, colorants,arômes naturels,Gomme base','Malabou','Le fameux Bubble Gum aves ses bulles légendaires au goût et aux tattoos inimitables','Bonbon végétarien','Malabou','Caramel');
 --Toudoudou
 --
 INSERT INTO Bonbons VALUES(seq_bonbon_idb.nextval,1,14.98,'Rose','10cm','Sucre, sirop de glucose, arômes naturels, gélatine','Toudoudou','Cône en gelatine goût fraise',NULL,'Toudoudou','fraise(acide)'); 
@@ -243,9 +243,9 @@ INSERT INTO Bonbons VALUES(seq_bonbon_idb.nextval,1,25.98,'marron','50cm','Sucre
 
 --Ajout des récipients
 INSERT INTO RECIPIENT VALUES(idRecipient.NEXTVAL,'Bonbounière','Petite boîte de bonbons pouvant contenir tous ce que vous voulez',15,1.5,'transparent',30);
-INSERT INTO RECIPIENT VALUES(idRecipient.NEXTVAL,'Boîte papillon','Petite boîte de bonbons en forme de papillon pouvant contenir tous ce que vous voulez',13,2,'rouge',10);
-INSERT INTO RECIPIENT VALUES(idRecipient.NEXTVAL,'Boîte papillon','Petite boîte de bonbons en forme de papillon pouvant contenir tous ce que vous voulez',13,2,'bleu',10);
-INSERT INTO RECIPIENT VALUES(idRecipient.NEXTVAL,'Boîte papillon','Petite boîte de bonbons en forme de papillon pouvant contenir tous ce que vous voulez',13,2,'noire',15);
+INSERT INTO RECIPIENT VALUES(idRecipient.NEXTVAL,'Boîte papillon rouge','Petite boîte de bonbons en forme de papillon pouvant contenir tous ce que vous voulez',13,2,'rouge',10);
+INSERT INTO RECIPIENT VALUES(idRecipient.NEXTVAL,'Boîte papillon bleu','Petite boîte de bonbons en forme de papillon pouvant contenir tous ce que vous voulez',13,2,'bleu',10);
+INSERT INTO RECIPIENT VALUES(idRecipient.NEXTVAL,'Boîte papillon noire','Petite boîte de bonbons en forme de papillon pouvant contenir tous ce que vous voulez',13,2,'noire',15);
 INSERT INTO RECIPIENT VALUES(idRecipient.NEXTVAL,'Cheriboîte','Petite boîte de bonbons à l éfigie Cheribou pouvant contenir tous ce que vous voulez',25,1.5,'transparent',5);
 
 
