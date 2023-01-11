@@ -121,7 +121,7 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn
 
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/dicoDonnee_2.pdf[Dictionnaire des données V2]
 
-https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Scripts[Scripts insertion et création des données]
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Sprint%204/Scripts[Scripts insertion V1 et création des données V1]
 |===
 
 [cols="1,1"]
