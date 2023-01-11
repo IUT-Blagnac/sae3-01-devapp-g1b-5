@@ -1,0 +1,314 @@
+-- -----------------------------------------------------------------------------
+--             Génération d'une base de données pour
+--                      Oracle Version 10g
+--                        (11/1/2023 20:24:35)
+-- -----------------------------------------------------------------------------
+--      Nom de la base : MLR3
+--      Projet : 
+--      Auteur : GUILLEVIC
+--      Date de dernière modification : 11/1/2023 20:24:14
+-- -----------------------------------------------------------------------------
+
+DROP TABLE PAIEMENT CASCADE CONSTRAINTS;
+
+DROP TABLE PAYPAL CASCADE CONSTRAINTS;
+
+DROP TABLE COMMANDE CASCADE CONSTRAINTS;
+
+DROP TABLE CARTEBLEU CASCADE CONSTRAINTS;
+
+DROP TABLE PANIER CASCADE CONSTRAINTS;
+
+DROP TABLE BONBONS CASCADE CONSTRAINTS;
+
+DROP TABLE CLIENT CASCADE CONSTRAINTS;
+
+DROP TABLE CATEGORIEB CASCADE CONSTRAINTS;
+
+DROP TABLE RECIPIENT CASCADE CONSTRAINTS;
+
+DROP TABLE CONTIENTRECIPIENT CASCADE CONSTRAINTS;
+
+DROP TABLE CONTIENTBONBON CASCADE CONSTRAINTS;
+
+-- -----------------------------------------------------------------------------
+--       CREATION DE LA BASE 
+-- -----------------------------------------------------------------------------
+
+CREATE DATABASE MLR3;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : PAIEMENT
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE PAIEMENT
+   (
+    IDPAIEMENT NUMBER(3)  NOT NULL,
+    MODEPAIEMENT VARCHAR2(128)  NULL
+,   CONSTRAINT PK_PAIEMENT PRIMARY KEY (IDPAIEMENT)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : PAYPAL
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE PAYPAL
+   (
+    IDPAIEMENT NUMBER(3)  NOT NULL,
+    ADRESSEMAIL VARCHAR2(128)  NULL,
+    MODEPAIEMENT VARCHAR2(128)  NULL
+,   CONSTRAINT PK_PAYPAL PRIMARY KEY (IDPAIEMENT)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : COMMANDE
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE COMMANDE
+   (
+    IDCOMMANDE NUMBER(3)  NOT NULL,
+    IDPAIEMENT NUMBER(3)  NOT NULL,
+    IDCLIENT NUMBER(3)  NOT NULL,
+    DATECOMMANDE DATE  NULL
+,   CONSTRAINT PK_COMMANDE PRIMARY KEY (IDCOMMANDE)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       INDEX DE LA TABLE COMMANDE
+-- -----------------------------------------------------------------------------
+
+CREATE  INDEX I_FK_COMMANDE_PAIEMENT
+     ON COMMANDE (IDPAIEMENT ASC)
+    ;
+
+CREATE  INDEX I_FK_COMMANDE_CLIENT
+     ON COMMANDE (IDCLIENT ASC)
+    ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : CARTEBLEU
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE CARTEBLEU
+   (
+    IDPAIEMENT NUMBER(3)  NOT NULL,
+    IDPAIEMENT_PAIEMENT NUMBER(3)  NOT NULL,
+    NUMCARTE VARCHAR2(128)  NULL,
+    NOMCARTE VARCHAR2(128)  NULL,
+    CRYPTO VARCHAR2(128)  NULL,
+    DATEEXPIRATION DATE  NULL,
+    MODEPAIEMENT VARCHAR2(128)  NULL
+,   CONSTRAINT PK_CARTEBLEU PRIMARY KEY (IDPAIEMENT)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       INDEX DE LA TABLE CARTEBLEU
+-- -----------------------------------------------------------------------------
+
+CREATE  INDEX I_FK_CARTEBLEU_PAIEMENT
+     ON CARTEBLEU (IDPAIEMENT_PAIEMENT ASC)
+    ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : PANIER
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE PANIER
+   (
+    IDPANIER NUMBER(3)  NOT NULL,
+    NBPRODUIT NUMBER(3)  NULL
+,   CONSTRAINT PK_PANIER PRIMARY KEY (IDPANIER)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : BONBONS
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE BONBONS
+   (
+    IDB NUMBER(3)  NOT NULL,
+    IDCATEGORIE NUMBER(3)  NOT NULL,
+    PRIXKG NUMBER(5,2)  NULL,
+    COULEURB VARCHAR2(128)  NULL,
+    FORMAT VARCHAR2(128)  NULL,
+    INGREDIENT VARCHAR2(128)  NULL,
+    NOMB VARCHAR2(128)  NULL,
+    DESCRIPTIONB VARCHAR2(128)  NULL,
+    PREFERENCEALIMENTAIRE VARCHAR2(128)  NULL,
+    MARQUE VARCHAR2(128)  NULL,
+    GOUT VARCHAR2(128)  NULL,
+    POIDS VARCHAR2(128)  NULL,
+    PRIXUNITAIRE VARCHAR2(128)  NULL
+,   CONSTRAINT PK_BONBONS PRIMARY KEY (IDB)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       INDEX DE LA TABLE BONBONS
+-- -----------------------------------------------------------------------------
+
+CREATE  INDEX I_FK_BONBONS_CATEGORIEB
+     ON BONBONS (IDCATEGORIE ASC)
+    ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : CLIENT
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE CLIENT
+   (
+    IDCLIENT NUMBER(3)  NOT NULL,
+    IDPANIER NUMBER(3)  NOT NULL,
+    NOMC VARCHAR2(128)  NULL,
+    PRENOMC VARCHAR2(128)  NULL,
+    ADRESSEMAIL VARCHAR2(128)  NULL,
+    PTSFIDELITE NUMBER(3)  NULL,
+    ADRESSEC VARCHAR2(128)  NULL,
+    TELPORTABLEC VARCHAR2(128)  NULL,
+    MOTDEPASSE VARCHAR2(128)  NULL
+,   CONSTRAINT PK_CLIENT PRIMARY KEY (IDCLIENT)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       INDEX DE LA TABLE CLIENT
+-- -----------------------------------------------------------------------------
+
+CREATE UNIQUE INDEX I_FK_CLIENT_PANIER
+     ON CLIENT (IDPANIER ASC)
+    ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : CATEGORIEB
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE CATEGORIEB
+   (
+    IDCATEGORIE NUMBER(3)  NOT NULL,
+    NOMCATEGORIE VARCHAR2(128)  NULL,
+    STOCKB NUMBER(5,2)  NULL
+,   CONSTRAINT PK_CATEGORIEB PRIMARY KEY (IDCATEGORIE)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : RECIPIENT
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE RECIPIENT
+   (
+    IDR NUMBER(3)  NOT NULL,
+    NOMR VARCHAR2(128)  NULL,
+    DESCRIPTIONR VARCHAR2(128)  NULL,
+    PRIXUNITAIRE NUMBER(10,2)  NULL,
+    POIDSUNITAIRE NUMBER(10,2)  NULL,
+    COULEURR VARCHAR2(128)  NULL,
+    STOCK NUMBER(3)  NULL
+,   CONSTRAINT PK_RECIPIENT PRIMARY KEY (IDR)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : CONTIENTRECIPIENT
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE CONTIENTRECIPIENT
+   (
+    IDR NUMBER(3)  NOT NULL,
+    IDPANIER NUMBER(3)  NOT NULL,
+    QUANTITEUNITAIRE NUMBER(3)  NULL
+,   CONSTRAINT PK_CONTIENTRECIPIENT PRIMARY KEY (IDR, IDPANIER)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       INDEX DE LA TABLE CONTIENTRECIPIENT
+-- -----------------------------------------------------------------------------
+
+CREATE  INDEX I_FK_CONTIENTRECIPIENT_RECIPIE
+     ON CONTIENTRECIPIENT (IDR ASC)
+    ;
+
+CREATE  INDEX I_FK_CONTIENTRECIPIENT_PANIER
+     ON CONTIENTRECIPIENT (IDPANIER ASC)
+    ;
+
+-- -----------------------------------------------------------------------------
+--       TABLE : CONTIENTBONBON
+-- -----------------------------------------------------------------------------
+
+CREATE TABLE CONTIENTBONBON
+   (
+    IDPANIER NUMBER(3)  NOT NULL,
+    IDB NUMBER(3)  NOT NULL,
+    QUANTITEKG NUMBER(10,2)  NULL
+,   CONSTRAINT PK_CONTIENTBONBON PRIMARY KEY (IDPANIER, IDB)  
+   ) ;
+
+-- -----------------------------------------------------------------------------
+--       INDEX DE LA TABLE CONTIENTBONBON
+-- -----------------------------------------------------------------------------
+
+CREATE  INDEX I_FK_CONTIENTBONBON_PANIER
+     ON CONTIENTBONBON (IDPANIER ASC)
+    ;
+
+CREATE  INDEX I_FK_CONTIENTBONBON_BONBONS
+     ON CONTIENTBONBON (IDB ASC)
+    ;
+
+
+-- -----------------------------------------------------------------------------
+--       CREATION DES REFERENCES DE TABLE
+-- -----------------------------------------------------------------------------
+
+
+ALTER TABLE PAYPAL ADD (
+     CONSTRAINT FK_PAYPAL_PAIEMENT
+          FOREIGN KEY (IDPAIEMENT)
+               REFERENCES PAIEMENT (IDPAIEMENT))   ;
+
+ALTER TABLE COMMANDE ADD (
+     CONSTRAINT FK_COMMANDE_PAIEMENT
+          FOREIGN KEY (IDPAIEMENT)
+               REFERENCES PAIEMENT (IDPAIEMENT))   ;
+
+ALTER TABLE COMMANDE ADD (
+     CONSTRAINT FK_COMMANDE_CLIENT
+          FOREIGN KEY (IDCLIENT)
+               REFERENCES CLIENT (IDCLIENT))   ;
+
+ALTER TABLE CARTEBLEU ADD (
+     CONSTRAINT FK_CARTEBLEU_PAIEMENT
+          FOREIGN KEY (IDPAIEMENT_PAIEMENT)
+               REFERENCES PAIEMENT (IDPAIEMENT))   ;
+
+ALTER TABLE BONBONS ADD (
+     CONSTRAINT FK_BONBONS_CATEGORIEB
+          FOREIGN KEY (IDCATEGORIE)
+               REFERENCES CATEGORIEB (IDCATEGORIE))   ;
+
+ALTER TABLE CLIENT ADD (
+     CONSTRAINT FK_CLIENT_PANIER
+          FOREIGN KEY (IDPANIER)
+               REFERENCES PANIER (IDPANIER))   ;
+
+ALTER TABLE CONTIENTRECIPIENT ADD (
+     CONSTRAINT FK_CONTIENTRECIPIENT_RECIPIENT
+          FOREIGN KEY (IDR)
+               REFERENCES RECIPIENT (IDR))   ;
+
+ALTER TABLE CONTIENTRECIPIENT ADD (
+     CONSTRAINT FK_CONTIENTRECIPIENT_PANIER
+          FOREIGN KEY (IDPANIER)
+               REFERENCES PANIER (IDPANIER))   ;
+
+ALTER TABLE CONTIENTBONBON ADD (
+     CONSTRAINT FK_CONTIENTBONBON_PANIER
+          FOREIGN KEY (IDPANIER)
+               REFERENCES PANIER (IDPANIER))   ;
+
+ALTER TABLE CONTIENTBONBON ADD (
+     CONSTRAINT FK_CONTIENTBONBON_BONBONS
+          FOREIGN KEY (IDB)
+               REFERENCES BONBONS (IDB))   ;
+
+
+-- -----------------------------------------------------------------------------
+--                FIN DE GENERATION
+-- -----------------------------------------------------------------------------
