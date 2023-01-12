@@ -1,4 +1,4 @@
-= Cahier de test BD V1
+= Cahier de test BD V5
 
 Equipe : THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo, HU Shiyu (G1B -5)
 
