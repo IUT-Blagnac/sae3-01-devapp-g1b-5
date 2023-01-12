@@ -1,6 +1,6 @@
-= Cahier de test BD 
+= Cahier de test BD V1
 
-Réalisé par THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo, HU Shiyu (G1B -5)
+Equipe : THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo, HU Shiyu (G1B -5)
 
 === Cadre de tests
 
