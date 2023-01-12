@@ -1,6 +1,6 @@
---script contientRecipient--
+--script test stock recipient---------------------------------------------------
 
---SELECT
+--INSERT
 
 -- Affichage avant événement
 SELECT IDR, NOMR, STOCK
@@ -44,9 +44,39 @@ FROM RECIPIENT;
 -- Annulation de la séquence d’instructions
 ROLLBACK;
 
---script contientBonbons--
 
---SELECT
+--trigger stock_recip--
+CREATE OR REPLACE TRIGGER maj_stock_recipient
+AFTER INSERT OR DELETE OR UPDATE OF quantiteunitaire, IDR
+ON CONTIENTRECIPIENT
+FOR EACH ROW
+DECLARE
+    idRecipient RECIPIENT.IDR%TYPE;
+BEGIN
+IF (INSERTING OR UPDATING) THEN
+    SELECT IDR INTO idRecipient
+    FROM RECIPIENT
+    WHERE IDR = :NEW.IDR;
+    UPDATE RECIPIENT
+    SET stock = stock - :NEW.quantiteunitaire
+    WHERE IDR = idRecipient; 
+END IF;
+IF (DELETING OR UPDATING) THEN
+    SELECT idr INTO idRecipient
+    FROM RECIPIENT
+    WHERE idr = :OLD.idr;
+    UPDATE RECIPIENT
+    SET stock = stock + :OLD.quantiteunitaire
+    WHERE idr = idRecipient; 
+END IF;
+END;
+/
+
+
+
+--script test stock bonbon-----------------------------------------------------------------------
+
+--INSERT
 
 -- Affichage avant événement
 SELECT *
@@ -92,40 +122,6 @@ FROM CATEGORIEB;
 ROLLBACK;
 
 
-
-
-
-
-
-
-
---trigger stock_recip--
-CREATE OR REPLACE TRIGGER maj_stock_recipient
-AFTER INSERT OR DELETE OR UPDATE OF quantiteunitaire, IDR
-ON CONTIENTRECIPIENT
-FOR EACH ROW
-DECLARE
-    idRecipient RECIPIENT.IDR%TYPE;
-BEGIN
-IF (INSERTING OR UPDATING) THEN
-    SELECT IDR INTO idRecipient
-    FROM RECIPIENT
-    WHERE IDR = :NEW.IDR;
-    UPDATE RECIPIENT
-    SET stock = stock - :NEW.quantiteunitaire
-    WHERE IDR = idRecipient; 
-END IF;
-IF (DELETING OR UPDATING) THEN
-    SELECT idr INTO idRecipient
-    FROM RECIPIENT
-    WHERE idr = :OLD.idr;
-    UPDATE RECIPIENT
-    SET stock = stock + :OLD.quantiteunitaire
-    WHERE idr = idRecipient; 
-END IF;
-END;
-/
-
 --trigger stock_bonbon--
 CREATE OR REPLACE TRIGGER maj_stock_bonbons
 AFTER INSERT OR DELETE OR UPDATE OF quantitekg, idb
@@ -154,7 +150,7 @@ IF (DELETING OR UPDATING) THEN
 END IF;
 END;
 
---contientBonbon--
+--script test respect quantite bonbon---------------------------------------------------------
 
 --INSERT
 
@@ -170,7 +166,27 @@ FROM CATEGORIEB;
 ROLLBACK;
 
 
---contientRecipient--
+--trigger_qteStock_bonbon--
+create or replace TRIGGER verif_qte_bonbons_commande
+BEFORE INSERT OR UPDATE OF quantitekg, idb
+ON CONTIENTBONBON
+FOR EACH ROW
+DECLARE
+    qteBonbon CATEGORIEB.STOCKB%TYPE;
+BEGIN
+    IF (INSERTING OR UPDATING) THEN
+        SELECT C.STOCKB INTO qteBonbon
+        FROM CATEGORIEB C, BONBONS B
+        WHERE B.idcategorie = C.idcategorie
+        AND B.idb = :NEW.idb;
+        IF (:NEW.quantitekg > qteBonbon) THEN
+            RAISE_APPLICATION_ERROR(-20001, 'Erreur: Votre quantitée choisie dépasse les stocks !');
+        END IF;
+    END IF;
+END;
+/
+
+--script test respect quantite recipient--------------------------------------------------------------
 
 --INSERT
 
@@ -184,29 +200,6 @@ SELECT IDR, NOMR, STOCK
 FROM RECIPIENT;
 
 ROLLBACK;
-
-
-
-
---trigger_qteStock_bonbon--
-CREATE OR REPLACE TRIGGER verif_qte_bonbon_commande
-BEFORE INSERT OR UPDATE OF quantitekg, idb
-ON CONTIENTBONBON
-FOR EACH ROW
-DECLARE
-    qteBonbon CATEGORIEB.STOCKB%TYPE;
-BEGIN
-    IF (INSERTING OR UPDATING) THEN
-        SELECT C.STOCKB INTO qteBonbon
-        FROM CATEGORIEB C, BONBONS B
-        WHERE B.idcategorie = C.idcategorie
-        AND B.idb = :NEW.idb;
-        IF (:NEW.quantitekg > qteBonbon) THEN
-            RAISE_APPLICATION_ERROR(-20000, 'Erreur: Votre quantitée choisie dépasse les stocks !');
-        END IF;
-    END IF;
-END;
-/
 
 --trigger_qteStock_Recipient--
 CREATE OR REPLACE TRIGGER verif_qte_recipient_commande
@@ -226,3 +219,114 @@ BEGIN
     END IF;
 END;
 /
+
+--script test nb de bonbon dans un panier---------------------------------------------------------------
+
+--INSERT
+
+-- Affichage avant événement
+SELECT *
+FROM PANIER
+WHERE IDPANIER = 25;
+-- Evénement déclencheur
+INSERT INTO contientbonbon
+VALUES (25, 5, 7);
+-- Affichage après événement
+SELECT *
+FROM PANIER
+WHERE IDPANIER = 25;
+-- Annulation de la séquence d’instructions
+ROLLBACK;
+
+--DELETE
+
+-- Affichage avant événement
+SELECT *
+FROM PANIER
+WHERE IDPANIER = 25;
+-- Evénement déclencheur
+DELETE FROM CONTIENTBONBON
+WHERE IDPANIER = 25;
+-- Affichage après événement
+SELECT *
+FROM PANIER
+WHERE IDPANIER = 25;
+-- Annulation de la séquence d’instructions
+ROLLBACK;
+
+--trigger nbBonbon dans un panier--
+
+create or replace TRIGGER maj_NBarticle_bonbon
+AFTER INSERT OR UPDATE OR DELETE
+ON CONTIENTBONBON
+FOR EACH ROW
+BEGIN
+    IF (INSERTING OR UPDATING) THEN
+        UPDATE PANIER
+        SET NBPRODUIT = NBPRODUIT + 1
+        WHERE IDPANIER = :NEW.IDPANIER; 
+    END IF;
+    
+    IF (DELETING OR UPDATING) THEN
+        UPDATE PANIER
+        SET NBPRODUIT = NBPRODUIT - 1
+        WHERE IDPANIER = :OLD.IDPANIER; 
+    END IF;
+END;
+
+
+--script test nb de recipient dans un panier------------------------------------------------------------------
+
+--INSERT
+
+-- Affichage avant événement
+SELECT *
+FROM PANIER
+WHERE IDPANIER = 25;
+-- Evénement déclencheur
+INSERT INTO contientrecipient
+VALUES (1,25, 7);
+-- Affichage après événement
+SELECT *
+FROM PANIER
+WHERE IDPANIER = 25;
+-- Annulation de la séquence d’instructions
+ROLLBACK;
+
+--DELETE
+
+-- Affichage avant événement
+SELECT *
+FROM PANIER
+WHERE IDPANIER = 25;
+-- Evénement déclencheur
+DELETE FROM CONTIENTRECIPIENT
+WHERE IDPANIER = 25;
+-- Affichage après événement
+SELECT *
+FROM PANIER
+WHERE IDPANIER = 25;
+-- Annulation de la séquence d’instructions
+ROLLBACK;
+
+--trigger nbRecipient dans un panier--
+
+create or replace TRIGGER maj_NBarticle_recipient
+AFTER INSERT OR UPDATE OR DELETE
+ON CONTIENTRECIPIENT
+FOR EACH ROW
+BEGIN
+    IF (INSERTING OR UPDATING) THEN
+        UPDATE PANIER
+        SET NBPRODUIT = NBPRODUIT + 1
+        WHERE IDPANIER = :NEW.IDPANIER; 
+    END IF;
+    
+    IF (DELETING OR UPDATING) THEN
+        UPDATE PANIER
+        SET NBPRODUIT = NBPRODUIT - 1
+        WHERE IDPANIER = :OLD.IDPANIER; 
+    END IF;
+END;
+
+
