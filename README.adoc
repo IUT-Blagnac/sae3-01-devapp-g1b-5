@@ -143,7 +143,7 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn
 [cols="1,1"]
 |===
 |Sprint 3
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%203/Charte_Graphique_PHP_G1B%20-%205.pdf[Charte graphique V1]
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%203/Charte_Graphique_PHP_G1B%20-%205.pdf[Charte graphique V3]
 
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%203/SEP%20G1B%20-%205.pdf[SEP]
 
@@ -235,7 +235,7 @@ Réalisation des premiers tests
 [cols="1,1"]
 |===
 |Sprint 5
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/Cahier%20de%20tests%20Python%20V1.adoc[Cahier de test Python V1]
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/Cahier%20de%20tests%20Python%20V5.adoc[Cahier de test Python V5]
 |===
 
 
