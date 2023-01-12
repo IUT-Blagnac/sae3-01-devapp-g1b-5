@@ -103,11 +103,11 @@ Lien vers les tests BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blo
 [cols="1,1"]
 |===
 |Sprint 3
-|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/DiagrammeDesClasses%20V1%20G1B%20-%205.pdf[Diagramme des classes V1]
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/DiagrammeDesClasses%20V3%20G1B%20-%205.pdf[Diagramme des classes V3]
 
-https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/Sch%C3%A9ma%20relationnel%20V1%20G1B%20-%205.pdf[Schéma relationnel V1]
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/Sch%C3%A9ma%20relationnel%20V3%20G1B%20-%205.pdf[Schéma relationnel V3]
 
-https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/dicoDonnee_1.pdf[Dictionnaire des données V1]
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/dicoDonnee%20V3%20G1B%20-%205.pdf[Dictionnaire des données V3]
 |===
 
 [cols="1,1"]
@@ -115,13 +115,13 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn
 |Sprint 4
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/Avancement%20du%20projet%20Base%20de%20donn%C3%A9e%20Semaine%2050%20G1B%20-5.pdf[Livrable avancement de la BD]
 
-https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/DiagrammeDesClasses%20V2%20G1B%20-%205.pdf[Diagramme des classes V2]
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/DiagrammeDesClasses%20V4%20G1B%20-%205.pdf[Diagramme des classes V4]
 
-https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/Sch%C3%A9ma%20relationnel%20V2%20G1B%20-%205.pdf[Schéma relationnel V2]
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/Sch%C3%A9ma%20relationnel%20V4%20G1B%20-%205.pdf[Schéma relationnel V4]
 
-https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/dicoDonnee_2.pdf[Dictionnaire des données V2]
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/dicoDonnee%20V4%20G1B%20-%205.pdf[Dictionnaire des données V4]
 
-https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Sprint%204/Scripts[Scripts insertion V1 et création des données V1]
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Sprint%204/Scripts[Scripts insertion V4 et création des données V4]
 |===
 
 [cols="1,1"]
@@ -129,7 +129,7 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn
 |Sprint 5
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/Avancement%20du%20projet%20Base%20de%20donn%C3%A9e%20Semaine%2001.pdf[Livrable avancement de la BD]
 
-https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/Cahier%20de%20tests%20BD%20V1.adoc[cahier de test V1]
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/Cahier%20de%20tests%20BD%20V5.adoc[cahier de test V5]
 
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/D%C3%A9clencheurs.txt[Nos déclencheurs]
 
