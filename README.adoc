@@ -160,6 +160,42 @@ Charte graphique panier.php(avec css)
 |Sprint 4
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%204/Avancement%20du%20projet%20Dev%20Web%20semaine%2050%20G1B%20-%205.pdf[Livrable avancement du site web]
 
+Début création interface principale
+|===
+
+[cols="1,1"]
+|===
+|Sprint 5
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%205/Avancement_du_projet_Dev_Web_semaine_01_G1B_-_5.pdf[Livrable avancement du site web]
+
+Interface principale
+
+Interface de configuration
+
+Onglet config Seuils
+
+Onglet config Frequence
+
+Lecture/Affichage des données capteurs
+
+Lecture/Affichage des données config
+
+Modification fichier de config
+
+
+|===
+
+Lien vers les fichiers Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou[ici]
+
+Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou/assets/docs[ici]
+
+**Partie JAVA**
+
+[cols="1,1"]
+|===
+|Sprint 4
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%204/Avancement%20du%20projet%20Dev%20Web%20semaine%2050%20G1B%20-%205.pdf[Livrable avancement du site web]
+
 Charte graphique Bonbon.php (avec css)
 
 Finalisation Header et footer
@@ -191,13 +227,6 @@ Finalisation de modification des données client + sessions et cookies
 Charte graphique detailProduit.php (avec css)
 |===
 
-Lien vers les fichiers Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou[ici]
-
-Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou/assets/docs[ici]
-
-**Partie JAVA**
-
-pas encore disponible
 
 
 **Partie Python**
