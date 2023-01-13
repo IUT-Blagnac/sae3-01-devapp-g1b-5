@@ -22,7 +22,7 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testEcritureDansUnFichier.py[1]
 |testEcritureDansUnFichier_OK
 |main.py
-|Le programme récupère les données émisent par les capteurs. Dès lors, un fichier "fichier.txt" va être crée si il n'existe pas et les données de : CO2, température et humidité vont être écritent, éspacées d'un tiret (-), dans le fichier.
+|Le programme récupère les données émisent par les capteurs. Dès lors, un fichier "mesures.txt" va être crée si il n'existe pas et les données de : CO2, température et humidité vont être écritent, éspacées d'un tiret (-), dans le fichier.
 | ✓
 
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testRecupDesDonneesAvecFichierDeConfig.py[2]
