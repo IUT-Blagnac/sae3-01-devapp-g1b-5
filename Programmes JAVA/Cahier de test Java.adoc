@@ -1,0 +1,46 @@
+= Cahier de test Java V5
+
+Equipe : THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo, HU Shiyu (G1B -5)
+
+=== Cadre de tests
+
+L'exécution de ces tests s'est déroulé sur Visual Studio Code. Cela permettra de s'assurer que le code répond toujours aux besoins même après d'éventuelles modifications.
+
+Vous pouvez cliquer sur chaque numéro des tests pour être redirigé vers un screen du code utilisé pour ces tests.
+
+Pour l'utilisation de ces codes, il est impératif d'importer également le fichier de configuration.
+
+== Liste des tests
+
+Une liste de tests, comme son nom l'indique, permet de décrire les différentes actions à conduire afin de réaliser les futurs tests.
+Ces listes de tests facilitent ainsi la compréhension et la clarté des actions à mener mais également de faciliter la qualification des problèmes rencontrés au cours de la réalisation d'une action et donc, d'une manière plus générale, de la gestion de celles-ci.
+
+
+|===
+|N° |Nom du Test |Nom de l'élément sur lequel le test est efféctué|Conditions de satisfactions |Validité
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testEcritureDansUnFichier.py[1]
+|testEcritureDansUnFichier_OK
+|main.py
+|Le programme récupère les données émisent par les capteurs. Dès lors, un fichier "mesures.txt" va être crée si il n'existe pas et les données de : CO2, température et humidité vont être écritent, espacées d'un tiret (-), dans le fichier.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testRecupDesDonneesAvecFichierDeConfig.py[2]
+|testRecupDesDonneesAvecFichierDeConfig_OK
+|main.py
+|Le programme se connecte au broker mqtt et attend l'émission des données. Quand celles-ci sont émisent, le programme les récupèrent dans des variables et les affichent dans un terminal.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testValeurMax.py[3]
+|testValeurMax_OK
+|main.py
+|Dans le fichier de configuration, la valeur maximum pour la température a été définie a 10°C. Les données sont émisent, le programme les récupèrent et la valeur de la température est de 5°C. La valeur maximum est respéctée donc les valeurs sont écritent normalement dans le fichier texte.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testValeurMax.py[3]
+|testValeurMax_NOK
+|main.py
+|Dans le fichier de configuration, la valeur maximum pour la température a été définie a 10°C. Les données sont émisent, le programme les récupèrent et la valeur de la température est de 15°C. La valeur maximum n'est pas respéctée. Un message apparait dans le terminal signifiant que les valeurs de températures sont trop hautes.
+| ✓
+
+|===
