@@ -26,9 +26,9 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 | ✓
 
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testRecupDesDonneesAvecFichierDeConfig.py[2]
-|testRecupDesDonneesAvecFichierDeConfig_OK
+|testReadConfigData_OK
 |main.py
-|Le programme se connecte au broker mqtt et attend l'émission des données. Quand celles-ci sont émisent, le programme les récupèrent dans des variables et les affichent dans un terminal.
+|Le programme lit les donnés du fichier de configuration et les affichent dans l'interface de configuration de l'application java pour permettre au clients de les modifier.
 | ✓
 
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testValeurMax.py[3]
