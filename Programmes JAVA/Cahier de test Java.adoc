@@ -38,13 +38,13 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 | ✓
 
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testValeurMax.py[3]
-|testOuvririnterfaceConfig_OK
+|testOuvrirInterfaceConfig_OK
 |MainController.java > openConfig()
 |Le bouton 'buttonOpenConfig' permet comme son nom l'indique d'ouvrir l'interface de configuration.
 | ✓
 
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/testValeurMax.py[3]
-|testOuvririnterfaceConfig_OK
+|testInfoCharts_OK
 |MainController.java > infoChartLine[CO2/Temp/Hum]()
 |Permet d'afficher dans les graphiques de CO2, de Température et d'Humidité leurs valeurs associées depuis le fichier 'mesures.txt' grâce au dictionnaire de ReadFile.
 | ✓
