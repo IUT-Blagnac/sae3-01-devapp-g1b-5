@@ -6,7 +6,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
@@ -68,6 +71,29 @@ public class MainController implements Initializable {
     @FXML
     private LineChart linechartC02;
 
+    @FXML
+    private NumberAxis yaxisC02 = new NumberAxis(0,5000,50);
+
+    @FXML
+    private CategoryAxis xaxisC02;
+
+    private XYChart.Series<String, Double> seriesC02;
+
+    @FXML
+    private NumberAxis yaxisTemp = new NumberAxis(0,5000,50);
+
+    @FXML
+    private CategoryAxis xaxisTemp;
+
+    private XYChart.Series<String, Double> seriesTemp;
+
+    @FXML
+    private NumberAxis yaxisHum = new NumberAxis(0,5000,50);
+
+    @FXML
+    private CategoryAxis xaxisHum;
+
+    private XYChart.Series<String, Double> seriesHum;
 
 
     public LineChart getLinechartC02() {
@@ -109,6 +135,7 @@ public class MainController implements Initializable {
 
             // Créer la fenêtre de votre nouvelle interface
             Stage stage = new Stage();
+            //stage.getIcons().add(new Image("src/main/resources/Logo.ico"));
             stage.setTitle("Configuration");
             stage.setScene(scene);
 
@@ -118,28 +145,36 @@ public class MainController implements Initializable {
             //controller.readConfigData();
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
 
     public void infoDataLineChartC02() {
-        final int maxN = 3;
-        final int minX = 0;
-        final int maxX = 5;
-        double minY = Double.MAX_VALUE;
-        double maxY = -Double.MAX_VALUE;
-        for (int n = 0; n <= maxN; n++) {
-            final LineChart.Series series = new LineChart.Series<>();
-            series.setName(String.format("n = %d", n));
-            for (int x = minX; x <= maxX; x++) {
-                final double value = Math.pow(x, n);
-                minY = Math.min(minY, value);
-                maxY = Math.max(maxY, value);
-                final LineChart.Data data = new LineChart.Data(x, value);
-                series.getData().add(data);
-            }
-            linechartC02.getData().add(series);
-        }
+        this.seriesC02 = new XYChart.Series<>();
+        yaxisC02.setLabel("C02 (ppm)");
+        xaxisC02.setLabel("Temps");
+        this.seriesC02.getData().add(new XYChart.Data<String, Double>("1", Double.parseDouble(ReadFile.dictDonnes.get("C02"))));
+        this.linechartC02.getData().add(this.seriesC02);
+
     }
+
+    public void infoDataLineChartTemp() {
+        this.seriesTemp = new XYChart.Series<>();
+        yaxisTemp.setLabel("Température (°C)");
+        xaxisTemp.setLabel("Temps");
+        this.seriesTemp.getData().add(new XYChart.Data<String, Double>("1", Double.parseDouble(ReadFile.dictDonnes.get("Temp"))));
+        this.linechartTemp.getData().add(this.seriesTemp);
+
+    }
+
+    public void infoDataLineChartHum() {
+        this.seriesHum = new XYChart.Series<>();
+        yaxisHum.setLabel("Humidité (%)");
+        xaxisHum.setLabel("Temps");
+        this.seriesHum.getData().add(new XYChart.Data<String, Double>("1", Double.parseDouble(ReadFile.dictDonnes.get("Hum"))));
+        this.linechartHum.getData().add(this.seriesHum);
+
+    }
+
+
 
 }

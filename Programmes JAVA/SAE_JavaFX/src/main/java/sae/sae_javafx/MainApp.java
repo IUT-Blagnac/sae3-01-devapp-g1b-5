@@ -21,6 +21,7 @@ public class MainApp extends Application {
 
             primaryStage.setScene(scene);
             primaryStage.setTitle("Application Gestion des données");
+            //primaryStage.getIcons().add(new Image("src/main/resources/Logo.ico"));
 
             FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("main.fxml"));
 
@@ -28,6 +29,9 @@ public class MainApp extends Application {
             MainController ctrl = fxmlLoader.getController();
 
             ctrl.initContext(primaryStage);
+            ctrl.infoDataLineChartC02();
+            ctrl.infoDataLineChartTemp();
+            ctrl.infoDataLineChartHum();
             rootPane.setCenter(borderPane);
             primaryStage.show();
 

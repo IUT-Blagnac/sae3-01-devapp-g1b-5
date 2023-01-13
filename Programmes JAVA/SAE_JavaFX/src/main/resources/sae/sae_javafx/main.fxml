@@ -9,19 +9,20 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sae.sae_javafx.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="757.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sae.sae_javafx.MainController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#actionQuitter" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -40,55 +41,53 @@
    <center>
       <VBox prefHeight="594.0" prefWidth="554.0" BorderPane.alignment="CENTER">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Application Groupe 05" textAlignment="CENTER" wrappingWidth="553.13671875">
+            <Label alignment="CENTER" prefHeight="21.0" prefWidth="554.0" text="CHERIBOU" textAlignment="CENTER" textFill="#ffe867">
                <font>
-                  <Font name="System Bold" size="34.0" />
+                  <Font name="Bell MT" size="45.0" />
                </font>
-            </Text>
-            <AnchorPane prefHeight="113.0" prefWidth="554.0">
+               <graphic>
+                  <ImageView fitHeight="64.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Logo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <AnchorPane prefHeight="31.0" prefWidth="554.0">
                <children>
-                  <Label fx:id="labelC02" layoutY="24.0" text="Label" AnchorPane.bottomAnchor="72.0">
-                     <padding>
-                        <Insets left="30.0" />
-                     </padding></Label>
-                  <Label fx:id="labelHum" layoutY="82.0" text="Label">
-                     <padding>
-                        <Insets left="30.0" />
-                     </padding></Label>
-                  <Label fx:id="labelTemp" layoutY="53.0" text="Label">
-                     <padding>
-                        <Insets left="30.0" />
-                     </padding></Label>
+                  <Label fx:id="labelC02" layoutX="23.0" layoutY="20.0" text="Label" AnchorPane.bottomAnchor="0.0" />
+                  <Label fx:id="labelHum" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="461.0" layoutY="20.0" text="Label" textAlignment="RIGHT" />
+                  <Label fx:id="labelTemp" alignment="CENTER" contentDisplay="CENTER" layoutX="249.0" layoutY="20.0" text="Label" textAlignment="CENTER" />
                </children>
             </AnchorPane>
-            <LineChart fx:id="linechartC02" prefHeight="127.0" prefWidth="554.0" title="Données du C02">
+            <LineChart fx:id="linechartC02" prefHeight="185.0" prefWidth="554.0" title="Données du C02">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <CategoryAxis side="BOTTOM" fx:id="xaxisC02" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis fx:id="yaxisC02" side="LEFT" />
               </yAxis>
                <padding>
                   <Insets left="20.0" right="20.0" />
                </padding>
             </LineChart>
-            <LineChart fx:id="linechartTemp" prefHeight="93.0" prefWidth="554.0" title="Données du la Température">
+            <LineChart fx:id="linechartTemp" prefHeight="185.0" prefWidth="554.0" title="Données du la Température">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <CategoryAxis side="BOTTOM" fx:id="xaxisTemp" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis fx:id="yaxisTemp" side="LEFT" />
               </yAxis>
                <padding>
                   <Insets left="20.0" right="20.0" />
                </padding>
             </LineChart>
-            <LineChart fx:id="linechartHum" prefHeight="83.0" prefWidth="554.0" title="Données de l'Humidité">
+            <LineChart fx:id="linechartHum" prefHeight="185.0" prefWidth="554.0" title="Données de l'Humidité">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <CategoryAxis side="BOTTOM" fx:id="xaxisHum" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis fx:id="yaxisHum" side="LEFT" />
               </yAxis>
                <padding>
                   <Insets left="20.0" right="20.0" />

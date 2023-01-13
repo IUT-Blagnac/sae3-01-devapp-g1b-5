@@ -38,7 +38,7 @@
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Button fx:id="buttonValiderSeuil" layoutX="236.0" layoutY="152.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Valider" />
+                  <Button fx:id="buttonValiderSeuil" layoutX="236.0" layoutY="152.0" mnemonicParsing="false" onAction="#actionValider" prefHeight="25.0" prefWidth="81.0" text="Valider" />
                   <TextField editable="false" layoutX="144.0" layoutY="113.0" prefHeight="25.0" prefWidth="43.0" text="ppm" />
                   <TextField editable="false" layoutX="333.0" layoutY="113.0" prefHeight="25.0" prefWidth="31.0" text="°C" />
                   <TextField editable="false" layoutX="514.0" layoutY="113.0" prefHeight="25.0" prefWidth="29.0" text="\%" />
@@ -49,14 +49,14 @@
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <Spinner fx:id="spinnerFrequence" layoutX="202.0" layoutY="96.0" />
-                  <TextField editable="false" layoutX="351.0" layoutY="96.0" prefHeight="25.0" prefWidth="20.0" text="s" />
+                  <Spinner fx:id="spinnerFrequence" editable="true" layoutX="202.0" layoutY="96.0" />
+                  <TextField editable="false" layoutX="351.0" layoutY="96.0" prefHeight="25.0" prefWidth="21.0" text="s" />
                   <Text layoutX="61.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Définissez la fréquence d'apparition des données" textAlignment="CENTER">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Button fx:id="buttonValiderFrequence" layoutX="236.0" layoutY="152.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Valider" />
+                  <Button fx:id="buttonValiderFrequence" layoutX="236.0" layoutY="152.0" mnemonicParsing="false" onAction="#actionValider" prefHeight="25.0" prefWidth="81.0" text="Valider" />
                </children></AnchorPane>
       </content>
     </Tab>
