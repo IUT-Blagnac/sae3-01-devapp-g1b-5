@@ -1,0 +1,107 @@
+= Cahier de test BD V6
+
+Equipe : THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo, HU Shiyu (G1B -5)
+
+=== Cadre de tests
+
+L'exécution de ces tests s'est déroulé sur SQLDevelopper via Oracle. Cela permettra de s'assurer que le code répond toujours aux besoins même après d'éventuelles modifications.
+
+Vous pouvez cliquer sur chaque numéro des tests pour être redirigé vers un screen du test réalisé sur SQLDevelopper.
+
+Vous pouvez accéder aux scripts des tests réalisés sur SQLDevelopper : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/script_triggers.txt[ici]
+
+== Liste des tests
+
+Une liste de tests, comme son nom l'indique, permet de décrire les différentes actions à conduire afin de réaliser les futurs tests.
+Ces listes de tests facilitent ainsi la compréhension et la clarté des actions à mener mais également de faciliter la qualification des problèmes rencontrés au cours de la réalisation d'une action et donc, d'une manière plus générale, de la gestion de celles-ci.
+
+
+|===
+|N° |Nom du Test |Nom de l'élément sur lequel le test est efféctué|Conditions de satisfactions |Validité
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture1.PNG[1]
+|testMaj_Stock_Recip_INSERT_OK
+|Déclencheur maj_stock_recipient
+|Un client fait une nouvelle commande d'un récipient avec une certaine quantité. Cette quantité est déduite du stock correspondant au récipient choisi.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture2.PNG[2]
+|testMaj_Stock_Recip_UPDATE_OK
+|Déclencheur maj_stock_recipient
+|Un client modifie la quantité d'un récipient dans sa commande. Cette nouvelle quantité est déduite du stock correspondant au récipient choisi.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture3.PNG[3]
+|testMaj_Stock_Recip_DELETE_OK
+|Déclencheur maj_stock_recipient
+|Un client abandonne sa commande qui contenait des récipients. La quantité de récipient initialement choisi est ajoutée au stock correspondant au récipient.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture4.PNG[4]
+|testMaj_Stock_bonbon_INSERT_OK
+|Déclencheur maj_stock_bonbons
+|Un client fait une nouvelle commande de bonbon avec une certaine quantité. Cette quantité est déduite du stock correspondant aux bonbons choisis.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture5.PNG[5]
+|testMaj_Stock_bonbon_UPDATE_OK
+|Déclencheur maj_stock_bonbons
+|Un client modifie la quantité de bonbon dans sa commande. Cette nouvelle quantité est déduite du stock correspondant aux bonbons choisis.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture6.PNG[6]
+|testMaj_Stock_bonbon_DELETE_OK
+|Déclencheur maj_stock_bonbons
+|Un client abandonne sa commande qui contenait des bonbons. La quantité de bonbons initialement choisis est ajoutée au stock correspondant aux bonbons.
+| ✓
+
+|7
+|testVerif_qte_bonbon_INSERT_OK
+|Déclencheur verif_qte_bonbon_commande
+|Un client fait une nouvelle commande de bonbon avec une quantité de 3KG. Le stock correspondant à ce bonbon est de 5KG. La commande est correctement effectuée. Le stock de ce bonbon passe de 5GK à 2KG.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture7.PNG[8]
+|testVerif_qte_bonbon_INSERT_NOK
+|Déclencheur verif_qte_bonbon_commande
+|Un client fait une nouvelle commande de bonbon avec une quantité de 8KG. Le stock correspondant à ce bonbon est de 5KG. Un message d'erreur apparait signifiant que la quantité seléctionné dépasse le stock. La commande n'est pas effectuée.
+| ✓
+
+|9
+|testVerif_qte_recipient_INSERT_OK
+|Déclencheur verif_qte_recipient_commande
+|Un client fait une nouvelle commande de récipient et prend 2 exemplaires. Le stock correspondant à ce récipient est de 15. La commande est correctement effectuée. Le stock de ce récipient passe de 15 à 13.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture8.PNG[10]
+|testVerif_qte_recipient_INSERT_NOK
+|Déclencheur verif_qte_recipient_commande
+|Un client fait une nouvelle commande de récipient et prend 20 exemplaires. Le stock correspondant à ce récipient est 10. Un message d'erreur apparait signifiant que la quantité seléctionné dépasse le stock. La commande n'est pas effectuée.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture12.PNG[11]
+|testNombre_bonbon_dans_panier_INSERT_OK
+|Déclencheur maj_NBarticle_bonbon
+|Un client fait une nouvelle commande et insère des bonbons dans son panier. Le nombre d'article dans son panier passe de 0 à 1. Le client insère aussi 5 exemplaires d'un autre bonbon. Le nombre d'article passe de 1 à 2. Attention : Le trigger calcul le nombre d'article différend et non le nombre d'exemplaire par article.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture13.PNG[12]
+|testNombre_bonbon_dans_panier_DELETE_OK
+|Déclencheur maj_NBarticle_bonbon
+|Un client retire de son panier tout les articles bonbon qu'il a dans son panier. Il avait 6 articles bonbons et 2 articles de récipient. Le nombre d'article de son panier passe de 8 à 2. Attention : Le trigger calcul le nombre d'article différend et non le nombre d'exemplaire par article.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture14.PNG[13]
+|testNombre_récipient_dans_panier_INSERT_OK
+|Déclencheur maj_NBarticle_recipient
+|Un client ajoute dans son panier 2 récipients différents. Il avait, avant, ajouté 3 articles de bonbons différents. Le nombre d'article de son panier passe de 2 à 5. Attention : Le trigger calcul le nombre d'article différend et non le nombre d'exemplaire par article.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture15.PNG[14]
+|testNombre_récipient_dans_panier_DELETE_OK
+|Déclencheur maj_NBarticle_recipient
+|Un client retire de son panier 1 article récipient. Il avait, avant, 3 articles bonbons ainsi que son récipient. Le nombre d'article de son panier passe de 4 à 3.  Attention : Le trigger calcul le nombre d'article différend et non le nombre d'exemplaire par article.
+| ✓
+
+
+|===
