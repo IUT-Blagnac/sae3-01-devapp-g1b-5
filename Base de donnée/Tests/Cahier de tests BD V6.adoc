@@ -79,5 +79,29 @@ Ces listes de tests facilitent ainsi la compréhension et la clarté des actions
 |Un client fait une nouvelle commande de récipient et prend 20 exemplaires. Le stock correspondant à ce récipient est 10. Un message d'erreur apparait signifiant que la quantité seléctionné dépasse le stock. La commande n'est pas effectuée.
 | ✓
 
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture12.PNG[11]
+|testNombre_bonbon_dans_panier_INSERT_OK
+|Déclencheur maj_NBarticle_bonbon
+|Un client fait une nouvelle commande et insère des bonbons dans son panier. Le nombre d'article dans son panier passe de 0 à 1. Le client insère aussi 5 exemplaires d'un autre bonbon. Le nombre d'article passe de 1 à 2. Attention : Le trigger calcul le nombre d'article différend et non le nombre d'exemplaire par article.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture13.PNG[12]
+|testNombre_bonbon_dans_panier_DELETE_OK
+|Déclencheur maj_NBarticle_bonbon
+|Un client retire de son panier tout les articles bonbon qu'il a dans son panier. Il avait 6 articles bonbons et 2 articles de récipient. Le nombre d'article de son panier passe de 8 à 2. Attention : Le trigger calcul le nombre d'article différend et non le nombre d'exemplaire par article.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture14.PNG[13]
+|testNombre_récipient_dans_panier_INSERT_OK
+|Déclencheur maj_NBarticle_recipient
+|Un client ajoute dans son panier 2 récipients différents. Il avait, avant, ajouté 3 articles de bonbons différents. Le nombre d'article de son panier passe de 2 à 5. Attention : Le trigger calcul le nombre d'article différend et non le nombre d'exemplaire par article.
+| ✓
+
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/images/Capture15.PNG[14]
+|testNombre_récipient_dans_panier_DELETE_OK
+|Déclencheur maj_NBarticle_recipient
+|Un client retire de son panier 1 article récipient. Il avait, avant, 3 articles bonbons ainsi que son récipient. Le nombre d'article de son panier passe de 4 à 3.  Attention : Le trigger calcul le nombre d'article différend et non le nombre d'exemplaire par article.
+| ✓
+
 
 |===
