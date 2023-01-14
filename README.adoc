@@ -138,6 +138,26 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/Proc%C3%A9dures.txt[Nos procédures]
 |===
 
+[cols="1,1"]
+|===
+|Sprint 6
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/Avancement%20du%20projet%20Base%20de%20donn%C3%A9e%20Semaine%2002.pdf[Livrable avancement de la BD]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/Cahier%20de%20tests%20BD%20V5.adoc[cahier de test V5]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/D%C3%A9clencheurs.txt[Nos déclencheurs]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/Proc%C3%A9dures.txt[Nos procédures]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/DiagrammeDesClasses%20V6.pdf[Diagramme des classes V6]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/Sch%C3%A9ma%20relationnel%20V6%20G1B%20-%205.pdf[Schéma relationnel V6]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/dicoDonnee%20V6%20G1B%20-%205.pdf[Dictionnaire des données V6]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Sprint%206/Script[Scripts insertion V6 et création des données V6]
+|===
+
 **Partie Développement web**
 
 [cols="1,1"]
