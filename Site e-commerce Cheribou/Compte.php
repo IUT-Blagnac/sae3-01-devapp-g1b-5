@@ -29,9 +29,6 @@ if(!isset($_SESSION)){
                                     } ?>>Créer compte</a>
     </div>
     <?php
-    #if (isset('.$_COOKIE['Cook'].')) {
-                #echo "value="' . $_COOKIE['Cook'] .'"";
-            #}
     if (isset($_GET['acces'])) {
         if ($_GET['acces'] == 'login') {
             echo '  
@@ -41,11 +38,16 @@ if(!isset($_SESSION)){
                   <h4>Connexion</h4>
                     <hr>
                     <label for="email"><b>Email</b></label>
-                    <input type="email" name="Email" />
+                    <input type="email" name="Email" ';
+                    if (isset($_COOKIE['Cook'])) {
+                      echo "value='". $_COOKIE['Cook'] ."'";
+                    }
+                    
+                   echo ' />
                     <label for="mdp"><b>Mot de passe</b></label>
                     <input type="password" name="mdp" />
                     <label for="souvenir">Se souvenir de moi: </label>
-                    <input type="checkbox" name="souvenir"/><BR>
+                    <input style="text-align: left;" type="checkbox" name="souvenir"/><BR>
                     <button name="valider" type="submit" id="valider">Valider</button>
                 </form>
             </div>

@@ -5,7 +5,7 @@ if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && i
   $regexNom = "#[^0-9]#i";
   $regexPrenom = "#[^0-9]#i";
   $regexTel = "#^(?:\+33\s|0)[1-9](?:\s\d{2}){4}$#";
-  $regexMail = "#^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-z]{2,3}#i";
+  $regexMail = "#^[a-zA-Z0-9.]+@[a-zA-Z0-9]+.[a-z]{2,3}#i";
   if(preg_match($regexNom,$_POST['nom']) == True && preg_match($regexPrenom,$_POST['prenom']) == True &&
    preg_match($regexTel,$_POST['tel']) == True && preg_match($regexMail,$_POST['mail']) == True){ 
     #si les champs sont correctement remplis
@@ -24,6 +24,7 @@ if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && i
     oci_bind_by_name($requete, ":newTel", $tel);
     oci_bind_by_name($requete, ":mail", $ancienMail);
     $result = oci_execute($requete);
+    oci_commit($connect);
     oci_free_statement($requete);
     $_SESSION['nom'] = $mail;
     header("location: ..\index.php");

@@ -4,7 +4,7 @@ main{
   font-family: Arial;
 }
 .contener{
-  background-color: #ffd44f;
+  background-color: #ffd44f;  
   margin: 0% 4%; /*hauteur,droite*/
   margin-left: 10%;
   padding-bottom: 5%;
@@ -17,8 +17,7 @@ main{
   padding-bottom: 22%;
 }
 p{
-  font-size: 2.5em;
-  padding-left: 20px;
+  font-size: 2em;
 }
 .text{
   padding-top: 15px;
@@ -26,12 +25,42 @@ p{
   font-size: 2em; 
   color:#ff74aa;
 }
+.cont{
+  /*background-color: aqua;*/
+  margin: 20px;
+  display: flex;
+  flex-wrap:wrap ;
+  column-gap :2em;
+/*  width: 100%;*/
+}
+.infop p{
+  font-size: 1em;
+  flex: 1;
+  max-width:160px ;
+}
+
+.prixun{
+  flex: 1;
+}
+.quant{
+  flex: 1;
+}
+.prix{
+  flex: 1;
+}
+.bonbon{
+  flex: 1;
+}
+#bonbon{
+  height:150px; 
+  width:150px;
+  border-radius: 15px;
+}
 /*Bouton valider*/
 .boutonV {
   position: absolute;
   margin-left: 56%;
   margin-top: 16%;
-  
   background-color: red;
   border-radius: 20px;
   font-size: 1.6em;
@@ -47,7 +76,6 @@ p{
 /*Bouton déconnexion*/
 .boutonD {
   margin-left: 72%;
-
   background-color: white;
   border-radius: 20px;
   font-size: 1.6em;

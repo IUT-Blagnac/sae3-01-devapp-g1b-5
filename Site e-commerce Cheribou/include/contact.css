@@ -1,38 +1,47 @@
+
 body {
 background-color: #ffd44f;
-font-family: Montserrat, "sans-serif";
+font-family: cursive;
 display: flex;
 justify-content: center;
 color: #303030;
 }
-.contactez-nous {
+
+.c {
 position : absolute;
-top : 250px;
-width: 900px;
+top : 280px;
+width: 750px;
 border: 1px solid;
 border-radius: 8px;
 padding: 0 50px 0 50px;
 background: white;
-margin-bottom: 2,5%
+
 }
-.contactez-nous h2 {
-text-align: center;
-font-size: 30px;
-font-weight: 300;
-color : black;
+
+.c h2 {
+font-family: cursive;
+font-weight: 500;
+margin-left: auto;
+margin-right: auto;
+
 }
-form div {
+
+div {
 width: 100%;
 display: flex;
 flex-direction: column;
 min-height: 83px;
-margin-top: 15px;
+margin-top: 25px;
 }
-form div label {
+
+
+div label {
 margin-bottom: 7px;
 font-weight: 600;
 }
-form div input, form div select, form div textarea {
+
+
+div input,div select, div textarea {
 background: #ffd44f;
 border: none;
 border-radius: 5px;
@@ -41,54 +50,55 @@ font-weight: 500;
 font-family: Montserrat, "sans-serif";
 box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
 }
-form div input, form div select {
+
+div input,div select {
 height: 50px;
 padding-left: 10px;
 }
-form div p {
-text-align : center;
+
+div select {
+background-size: 15px;
+background-position: right 10px top 50%;
+background-repeat: no-repeat;
 }
-form div textarea {
-height: 195px;
-padding: 15px 0px 0px 10px;
+
+div textarea {
+height: 240px;
+padding: 10px 0px 0px 10px;
 }
-form div input::placeholder, form div textarea::placeholder {
-color: black;
+
+
+div input::placeholder, div textarea::placeholder {
+color:black;
 }
-form div select:invalid {
-color: black;
-}
-form div select option {
-background: white;
-color: #303030;
-}
-form div:last-child {
-align-items:center;
-margin-top: 20px;
-}
-form button {
-width: 450px;
+
+div button {
+width: 250px;
 max-width: 500px;
-height: 60px;
-background: white;
-color: black;
-border: none;
-border-radius: 5px;
-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
-;
-}
- button:hover {
-background: #016ABC;
-color: #fff;
-border: none;
-border-radius: 5px;
-box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.25);
-box-shadow: 5px 5px 5px #eee;
-text-shadow:none;
-}
-.zz p{
-text-align: center;
-font-size: 30px;
+height: 40px;
 font-weight: 300;
-color : black;
+font-size: 15px;
+font-family : cursive;
+background: white;
+border: rgba(48, 48, 48, 0.5) solid 1px;
+border-radius: 5px;
+box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.25);
+color: #303030;
+margin-left: auto;
+margin-right: auto;
+}
+
+div button:hover {
+background-color: #ffd44f;
+}
+
+.fin {
+position : absolute;
+top : 1080px;
+background: #ffd44f;
+}
+
+.fin p{
+margin-left: auto;
+margin-right: auto;
 }

@@ -9,7 +9,7 @@
   <img src="include\images\DrapeauFR.jpg" height=80 alt="image france" id="imageFR" />
   <nav class="firstnavbar">
     <ul>
-      <li><a href="#">Nos boutiques</a></li>
+      <li><a href="Boutique.php">Notre entreprise</a></li>
       <li>
         <form method="POST">
           <input type="search" placeholder="Search" name="search">
@@ -97,17 +97,11 @@
         </ul>
       </li>
       <li><a href="#">Nouveautés</a></li>
-      <li><a href="#">Offres</a></li>
-      <li><a href="#">Spécial</a></li>
+      <li><a href=>Offres</a></li>
+      <li><a href="recipient.php">Récipients</a></li>
       <li><a href="#">Votre bonbon</a></li>
     </ul>
   </nav>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
   
 </header>
 <?php #gestion de la barre de recherche

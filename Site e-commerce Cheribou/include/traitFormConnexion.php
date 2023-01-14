@@ -12,12 +12,16 @@ if(isset($_POST['valider']) && isset($_POST['Email']) && $_POST['mdp'] != "" ){ 
   $container = oci_fetch_assoc($requete);
   if($container != ""){
     if (password_verify($_POST['mdp'], $container['MOTDEPASSE'])) { 
+      #gestion session et cookie --------------------------------------------------------
       $_SESSION['access'] = "oui";
       $_SESSION['nom'] = htmlentities($_POST['Email']);
+      $_SESSION['IDC'] = $container['IDCLIENT'];
       if(isset($_POST['souvenir'])){#Si le cookie existe
         $val = htmlentities($_POST['Email']);
 			  setcookie('Cook', $val, time()+60);#on cr�er le cookie et on veut mettre la dur�e du cookie � 1min
       }
+      
+      #redirection ----------------------------------------------------------------------
       header('location: ..\index.php');
       exit();
     }else{#sinon on renvoie le retour � la page de base
