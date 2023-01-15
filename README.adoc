@@ -246,7 +246,7 @@ Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5
 
 [cols="1,1"]
 |===
-|Sprint 4
+|Sprint 5
 |
 Début Interface principale
 
@@ -254,7 +254,7 @@ Début Interface principale
 
 [cols="1,1"]
 |===
-|Sprint 5
+|Sprint 6
 |
 Interface principale
 
