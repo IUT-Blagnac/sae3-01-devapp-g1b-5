@@ -212,6 +212,32 @@ Charte graphique detailProduit.php (avec css)
 
 |===
 
+[cols="1,1"]
+|===
+|Sprint 6
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%206/Avancement_du_projet_Dev_Web_semaine_02_G1B_-_5.pdf[Livrable avancement du site web]
+
+Finalisation footer (PHP)
+
+Finalisation detailBonbon.php et detailRecipient.php (PHP)
+
+Finalisation page sur l'entreprise boutique.php
+
+Finalisation page de modification d'un client (PHP)
+
+Finalisation recipient.php (PHP)
+
+Amélioration panier.php
+
+Implémentation fonctionnalité d'historique des commandes
+
+Fonctionnalité ajout des produits (bonbon ou récipient) au panier
+
+Fonctionnalité suppression des produits (bonbon ou récipient) du panier
+
+
+|===
+
 Lien vers les fichiers Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou[ici]
 
 Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou/assets/docs[ici]
