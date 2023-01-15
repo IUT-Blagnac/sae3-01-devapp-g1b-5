@@ -364,6 +364,18 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%205/O
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%205/Analyse%20semaine%2001%20G1B%20-5.pdf[Analyse semaine 01]
 |===
 
+[cols="1,1"]
+|===
+|Sprint 6
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/Backlog%20de%20sprint%20(sprint%206).pdf[Backlog de sprint 6]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/Compte%20rendu%20de%20r%C3%A9union%20semaine%2002%20G1B%20-5.pdf[Compte rendue de réunion semaine 02]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/Ordre%20du%20Jour%20semaine%2002%20G1B%20-%205.pdf[Ordre du jour semaine 02]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/Analyse%20semaine%2002%20G1B%20-5.pdf[Analyse semaine 02]
+|===
+
 == Gestion de projet & Qualité
 
 Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
