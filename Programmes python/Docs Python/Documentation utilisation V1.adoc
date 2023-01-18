@@ -28,7 +28,9 @@ Celle-ci va d'abord récupérer les données émises par les capteurs et les aff
 
 Ensuite, arrive la partie de gestion des seuils maximaux. Celle-ci utilise simplement une vérification par une boucle if simple. Si la valeur sortie par le capteur est supérieur à la valeur maximum, il y a erreur et on affiche une alerte dans le terminal.
 
-Enfin, la gestion de la fréquence d'emission est encore en réalisation. Pour le moment, le programme va simpleemnt attendre le temps choisi par l'utilisateur pour écrire les données dans un fichier.
+Enfin, la gestion de la fréquence d'emission est un peu plus compliquée. Nous utilisons l'import signal et notamment la méthode "signal.alarm" qui va envoyé un signal dès que le temps en seconde passé en paramêtre est écoulé (correspondant à la fréquence voulue par le client). Le signal envoyé sera réceptionné plus tard dans le programme pour exécuter une méthode.
+
+Nous arrivons à la méthode "ecriture". Celle-ci démarre à la réception du signal émis par l'instruction "signal.alarm". Cette méthode va ouvrir un fichier texte en écriture, en le créant si il n'existe pas, et va écrire les données reçu dedans. Cela permettra de respecter la fréquence d'écriture des données choisie par le client.
 
 Au niveau de l'exécution du programme, les paramêtres du fichier de configuration sont chargés dans une variable "param" et ont l'architecture d'un dictionnaire. C'est pour cela que pour la gestion du maximum de l'humidité ,par exemple, la syntaxe est la suivante : "param["seuilMax"]["Hum"]". On récupère la valeur de la variable param correspondant à la clé "seuilMax" et "Hum".
 
