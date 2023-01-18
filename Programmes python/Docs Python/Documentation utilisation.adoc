@@ -8,34 +8,26 @@
 *DOUVILLE Léo* +
 *HU Shiyu* +
 
-Maintenant que votre environnement de travail est prêt, vous pouvez lancer le programme. Celui-ci vous affichera de nombreuses données et le fichier de configuration peut aussi vous paraitre un peu brouillon. Cette documentation va vous expliquer tous ces points en détails pour que vous soyez capable de comprendre ce que renvoie le code.
+Le fichier config_yaml.yaml est le fichier de configuration accessible par l’utilisateur. 
 
-Tous d'abord, le fichier de configuration.
+C’est ici que le client peut décider quels sont les paramètres d’exécution du code ainsi que la fréquence d'émission des données et des seuils maximaux de celles-ci. 
 
-Le fichier config_yaml.yaml est le fichier de configuration accessible par l'utilisateur. C'est ici que le client peut décider quels sont les paramêtres d'exécution du code ainsi que la fréquence d'emission des données et des seuils maximaux de celles-ci.
 Ainsi, il est séparé en trois parties :
 
-- En haut la partie "config" dans laquelle l'utilisateur peut modifier les paramêtres des serveurs d'accès, des ports et des appareils.
+ - En haut la partie "config" dans laquelle l’utilisateur peut modifier les paramètres des serveurs d’accès, des ports et des appareils.
 
-- La partie "fréquence" fait référence au délais d'attente que va respecter le main pour écrire les données dans le fichier. Ce délais est en seconde.
+ - La partie "fréquence" fait référence au délai d’attente que va respecter le main pour écrire les données dans le fichier. Ce délai est en seconde.
 
-- Enfin, la partie "seuilMax" qui définit les valeurs maximales que ne dovient pas dépasser les données.
+ - Enfin, la partie "seuilMax" qui définit les valeurs maximales que ne doivent pas dépasser les données.
+ 
+Au niveau du fichier python, celui-ci s’articule autour d’une méthode principale : la méthode get_data.
+Celle-ci va d’abord récupérer les données émises par les capteurs et les affecter à des variables. Exemple : "donneeCo2 = jsonMsg["object"]["co2"]". Ici, la variable donneeCo2 récupère la valeur de CO2 émise par le capteur. Ces données sont également affichées dans le terminal pour les tests.
+Ensuite, arrive la partie de gestion des seuils maximaux. Celle-ci utilise simplement une vérification par une boucle if simple. Si la valeur sortie par le capteur est supérieure à la valeur maximum, il y a erreur et on affiche une alerte dans le terminal.
+Enfin, la gestion de la fréquence d'émission est un peu plus compliquée. Nous utilisons l’import signal et notamment la méthode "signal.alarm" qui va envoyer un signal dès que le temps en seconde passé en paramètre est écoulé (correspondant à la fréquence voulue par le client). Le signal envoyé sera réceptionné plus tard dans le programme pour exécuter une méthode.
+Nous arrivons à la méthode "écriture". Celle-ci démarre à la réception du signal émis par l’instruction "signal.alarm". Cette méthode va ouvrir un fichier texte en écriture, en le créant si il n’existe pas, et va écrire les données reçues dedans. Cela permettra de respecter la fréquence d’écriture des données choisie par le client.
+Au niveau de l’exécution du programme, les paramètres du fichier de configuration sont chargés dans une variable "param" et ont l’architecture d’un dictionnaire. C’est pour cela que pour la gestion du maximum de l’humidité ,par exemple, la syntaxe est la suivante : "param["seuilMax"]["Hum"]". On récupère la valeur de la variable param correspondant à la clé "seuilMax" et "Hum".
+Pour finir, le client va se connecter sur le serveur de son choix et s’abonner au flux se son choix également.
+L’exécution tourne en boucle pour récupérer les données continuellement via l’instruction "client.loop_forever()".
 
-
-Au niveau du fichier python, celui-ci s'articule autour d'une méthode principale : la méthode get_data.
-
-Celle-ci va d'abord récupérer les données émises par les capteurs et les affecter à des variables. Exemple : "donneeCo2 = jsonMsg["object"]["co2"]". Ici, la variable donneeCo2 récupère la valeur de CO2 émise par le capteur. Ces données sont également affichées dans le terminal pour les tests.
-
-Ensuite, arrive la partie de gestion des seuils maximaux. Celle-ci utilise simplement une vérification par une boucle if simple. Si la valeur sortie par le capteur est supérieur à la valeur maximum, il y a erreur et on affiche une alerte dans le terminal.
-
-Enfin, la gestion de la fréquence d'emission est un peu plus compliquée. Nous utilisons l'import signal et notamment la méthode "signal.alarm" qui va envoyé un signal dès que le temps en seconde passé en paramêtre est écoulé (correspondant à la fréquence voulue par le client). Le signal envoyé sera réceptionné plus tard dans le programme pour exécuter une méthode.
-
-Nous arrivons à la méthode "ecriture". Celle-ci démarre à la réception du signal émis par l'instruction "signal.alarm". Cette méthode va ouvrir un fichier texte en écriture, en le créant si il n'existe pas, et va écrire les données reçu dedans. Cela permettra de respecter la fréquence d'écriture des données choisie par le client.
-
-Au niveau de l'exécution du programme, les paramêtres du fichier de configuration sont chargés dans une variable "param" et ont l'architecture d'un dictionnaire. C'est pour cela que pour la gestion du maximum de l'humidité ,par exemple, la syntaxe est la suivante : "param["seuilMax"]["Hum"]". On récupère la valeur de la variable param correspondant à la clé "seuilMax" et "Hum".
-
-Pour finir, le client va se connecter sur le serveur de son choix et s'abonner au flux se son choix également.
-
-L'exécution tourne en boucle pour récupérer les données continuellement via l'instruction "client.loop_forever()".
 
 
