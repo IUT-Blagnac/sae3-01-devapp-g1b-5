@@ -1,0 +1,455 @@
+:toc:
+:toc-placement!:
+:toc-title: Table des matières
+:toclevels: 6
+:numbered:
+:nofooter:
+
+image::/images/DailyBank.png[]
+= DailyBank - Documentation destinée aux utilisateurs - V2
+_Réalisé par THOMPSON Victor, YVELIN Louis, SACILOTTO Nicolas et FERNANDEZ Mickael (4A)_
+
+toc::[]
+
+== Présentation générale de l'application
+
+Cette application a été réalisée lors de notre première année de BUT informatique, nous avions pour but de réaliser une application nommée "DAILY BANK", celle-ci nous permettra de simuler des actions que l’on peut retrouver dans une banque du monde réel.
+
+L’application doit permettre de gérer des comptes bancaires de dépôt pour des clients préalablement créés. Elle devra permettre de débiter, créditer un compte soit par virement c’est à dire un échange d’argent entre deux comptes distincts mais domiciliés dans le réseau bancaire, soit par une personne physique se présentant devant un guichet.
+
+== Installation 
+
+Afin de pouvoir utiliser notre application, nos clients devront disposer d'un poste informatique munie d'un JRE JAVA 8. 
+https://techexpert.tips/fr/windows-fr/installation-de-java-jre-sur-windows/[Comment installer et configurer JAVA 8 sur votre PC ?]
+
+== Fonctionnement de l'application 
+
+=== Guichetier
+
+==== Connexion
+
+===== Comment se connecter ? 
+
+Voici l'interface d'accueil qui s'affichera lors de l'ouverture de l'exécutable de notre application DAILY BANK.
+
+Pour se connecter à son compte, le client devra appuyer sur le bouton "Connexion" situé en bas de page :
+
+image::/V0/images/accueil.png[Interface d'accueil]
+
+===== Identifiant et mot de passe
+
+En ce qui concerne vos identifiants, vous les recevrez par lettre recommandée. Vous pourrez ensuite insérer vos identifiants de connexion de la manière suivante :
+
+____
+- Votre identifiant dans la zone de texte indiquée par la flèche rouge ;
+
+- Votre mot de passe dans la zone de texte indiquée par la flèche bleue ;
+
+- Une fois vos identifiants non erronés saisis, il ne vous reste plus qu'à appuyer sur le bouton "Valider" indiqué par la flèche noire.
+____
+
+Si vos identifiants de connexion ne sont pas erronés, la page d'accueil s'affichera.
+
+image::/V0/images/log.png[Connexion à un compte]
+
+==== Gestion des clients 
+
+Pour vous déconnecter du compte, il vous suffira d'appuyer sur le bouton "Déconnexion" indiqué par la flèche noire.
+
+Pour exercer votre métier de guichetier et pour pouvoir effectuer des transactions financières (débit) mais aussi juridiques (créer un nouveau compte etc.) sur un compte, vous pourrez cliquer sur la rubrique "Gestion" située dans l'en-tête de l'application (flèche rouge), puis sur la sous-rubrique "Clients" indiquée par la flèche bleue.
+
+image::/V0/images/gestionClient.png[Exercer le métier de guichetier]
+
+===== Créer un nouveau client
+
+Afin de pouvoir créer un compte, veuillez cliquer sur les boutons indiqués par la flèche noire.
+
+image::/V0/images/creerCompte.png[Creer compte]
+
+Suite au clic du bouton "Nouveau client" de l'image ci-dessus, une nouvelle fenêtre nommée "Gestion d'un client" va s'ouvrir (ci-dessus). Le guichetier n'aura qu'à renseigner les éléments correspondants aux différentes zones de texte, à savoir : 
+
+____
+- Nom : nom du client 
+
+- Prénom : prénom du client 
+
+- Adresse : veuillez respecter cette nomenclature [numéro de rue "," nom de la rue "," code postal "," nom de la ville]
+
+- Téléphone : le numéro de téléphone du client (portable)
+
+- E-mail : l'adresse mail du client
+____
+
+image::/V0/images/ajoutClient.png[Creer compte]
+
+Si toutes les cases sont remplies correctement, il vous suffira d'appuyer sur le bouton "Valider" pour créer un nouveau client.
+
+===== Modifier les informations d'un client
+
+Vous vous êtes trompé lors de la création d'un client ? Pas de problèmes, notre application vous permet de rectifier d'éventuelles erreurs ! 
+Afin de pouvoir modifier un compte, il vous faut au préalable connaître au minimum son numéro de compte (ID). Vous regarderez la liste fournie par mail. Une fois le code obtenu, il vous suffira de le renseigner dans la zone de texte indiquée par la flèche rouge (le prénom ainsi que le nom peuvent être renseignés dans leur zone de texte correspondante, mais ce n'est pas obligatoire) puis d'appuyer sur le bouton "Rechercher".
+
+Prenons ici l'exemple du compte 181 qui appartient à un compte test pour la démonstration :
+
+image::/V0/images/rechercheClient.png[Recherche Client]
+
+Une fois le compte recherché, il ne vous reste plus qu'à regarder si le compte apparaît dans la zone blanche en dessous des zones de saisies comme sur l'image ci-dessous :
+
+image::/V0/images/CompteTest.png[Recherche Client]
+
+Une fois le client apparu dans la zone de recherche, il vous suffit de cliquer sur la zone horizontale où il apparaît puis de cliquer sur le bouton "Modifier client" indiqué par la flèche rouge :
+
+image::/V0/images/preModif.png[Pré modification d'un compte]
+
+Une nouvelle fenêtre s'ouvre (image de la fenêtre ci-dessous) et vous pourrez, de ce fait, changer les éventuelles erreurs en cliquant sur le bouton "Modifier" indiqué par la flèche rouge :
+
+image::/V0/images/modifClient.png[Modifier un compte]
+
+
+===== Créer un compte
+
+Pour créer un compte il suffit de cliquer sur le bouton nouveau compte puis de suivre les étapes indiquées par les flèches comme sur les images ci-dessous :
+
+image::/V1/images/creer1C.png[Etape 1 créer un compte]
+
+En ce qui concerne les champs à renseigner, le montant et le découvert ne doivent pas être négatif, une fois bien rempli, vous n'avez juste qu'à appuyer sur le bouton "valider" indiqué par la flèche noire
+
+image::/V1/images/creer2C.png[Etape 2 créer un compte]
+
+===== Clôturer un compte
+
+Pour clôturer un compte, il faut savoir que son solde (du compte en question) doit avoir un solde qui soit nul, équivalent à zéro, pour cela nous avons bloqué la possibilité d'appuyer sur le bouton clôturer compte du moment que le solde du compte ne soit pas nul, dès que le solde d'un compte est nul, vous pourrez appuyer sur le bouton et ainsi clôturer le compte comme illustré par ces images :
+
+image::/V1/images/cloturer1C.png[Etape 1 cloturer un compte]
+
+Puis vous devez arriver à ce résultat :
+
+image::/V1/images/cloturer2C.png[Etape 2 cloturer un compte]
+
+Enfin dans le cas où le solde du compte n'est pas égal à 0 :
+
+image::/V1/images/cloturer3C.png[Etape 3 cloturer un compte]
+
+
+===== Consulter un compte
+
+Afin de voir les opérations d'un compte je vous laisse suivre les étapes jusqu'à arriver à la fenêtre nommée "Gestion des clients" définie dans la rubrique "Modifier les informations d'un client" (étape 2.1.2.2). Une fois la page ouverte, il suffit de cliquer sur le compte dont on souhaite consulter les opérations avant de terminer par appuyer sur le bouton "Comptes client" (flèche rouge).
+
+image::/V0/images/compte1.png[Etape 1 pour consulter compte]
+
+Il ne reste plus qu'à suivre les flèches rouges :
+
+image::/V0/images/compte2.png[Etape 2 pour consulter compte]
+
+
+==== Opérations
+
+Enfin, nous pouvons voir la liste des opérations effectuées sur le compte sélectionné (flèche rouge)
+Les éléments étant renseignés sont les suivants :
+
+____
+- La date de l'opération ;
+
+- Description de l'opération (type de l'opération (retrait/dépôt), par quel moyen (carte bleue, espèce)) ;
+
+- Montant de la somme de l'opération.
+____
+
+image::/V0/images/compte3.png[Etape 3 pour consulter compte]
+
+Il vous est, en toute logique, impossible de réaliser une opération, quoi qu'elle puisse être, sur un compte que vous avez décidé de faire clôturer.
+Vous pourrez toujours consulter l'ensemble des opérations réalisées précédemment sur le compte en question, mais vous ne pourrez plus interagir avec celui-ci dès lors qu'il s'agit de faire une opération :
+
+image::/V0/images/cloture.PNG[Operation impossible]
+
+===== Débiter un compte
+
+Afin de pouvoir débiter un compte, il faut suivre les étapes de la rubrique "Consulter un compte" puis d'arriver jusqu'à l'interface nommée "Gestion des opérations comme illustrée sur l'image ci-dessous :
+
+image::/V0/images/debiter1.png[Etape 1 pour debiter un compte]
+
+Puis, veuillez sélectionner / saisir :
+
+____
+ - Le type d'opération (carte bleue ou espèce) indiqué par la flèche rouge ;
+ 
+ - Le montant de l'opération indiqué par la flèche verte.
+____
+ 
+Une fois ces deux actions réalisées, il vous faut appuyer sur le bouton "Effectuer débit" pour valider la transaction, elle apparaîtra dans la zone dédiée aux opérations, comme vu dans la rubrique "Consulter compte" :
+
+image::/V0/images/debiter2.png[Etape 2 pour debiter un compte]
+
+===== Créditer un compte
+
+Afin de pouvoir créditer un compte, il faut suivre les étapes de la rubrique "Consulter un compte" puis d'arriver jusqu'à l'interface nommée "Gestion des opérations comme illustrée sur l'image ci-dessous :
+
+image::/V1/images/Créditer.png[Etape 1 pour créditer un compte]
+
+Puis, veuillez sélectionner / saisir :
+
+____
+ - Le type d'opération (chèque ou espèce) indiqué par la flèche rouge ;
+ 
+ - Le montant de l'opération indiqué par la flèche verte.
+____
+ 
+Une fois ces deux actions réalisées, il vous faut appuyer sur le bouton "Effectuer Crédit" pour valider la transaction, elle apparaîtra dans la zone dédiée aux opérations, comme vu dans la rubrique "Consulter compte" :
+
+image::/V1/images/Créditer_TypeOp.png[Etape 2 pour créditer un compte]
+
+===== Réaliser un virement d'un compte à un compte
+
+La troisième et dernière opération que vous avez à votre disposition depuis la sélection d'un compte est de pouvoir réaliser un virement. Vous pouvez, de même, vous référer aux étapes expliquées plus haut afin d'accéder à la fenêtre suivante :
+
+image::/V0/images/virement.PNG[Etape 1 pour faire un virement de compte à compte]
+
+A la différence des deux autres actions, vous pourrez interagir avec l'ensemble des comptes courants possédés par un client afin de procéder à une transaction en direction du compte choisi. 
+Vous avez ainsi la possibilité de choisir parmi la liste que vous avez à votre disposition, le compte courant du client auquel vous effectuerez votre virement. 
+
+Mais ce ne serait sans oublier le montant dont vous êtes libre de choisir pour rendre le transfert fonctionnel. Toutefois, veuillez à vérifier votre découvert autorisé en fonction du solde de votre compte si vous aviez pour ambition de réaliser un virement auprès d'un autre client !
+
+Si vous pensez que vous êtes prêt à réaliser votre opération, alors appuyez sur "Effectuer virement" pour confirmer la transaction que vous étiez en train de réaliser jusque-là !
+
+image::/V0/images/interfacevirement.PNG[Etape 2 pour faire un virement de compte à compte]
+
+===== Générer un relevé mensuel d'un compte en PDF
+
+Pour générer un relevé mensuel d'un compte en PDF il vous suffit de suivre les étapes indiquées par la flèche rouge ci-dessous :
+
+image::/V2/images/utilpdf.png[Etape 1 pour générer un pdf]
+
+image::/V2/images/utilpdf2.png[Etape 2 pour générer un pdf]
+
+image::/V2/images/utilpdf3.png[Etape 3 pour générer un pdf]
+
+Une fois ces étapes effectuées, le PDF s'ouvrira automatiquement, PDF que vous retrouverez dans vos Téléchargements
+
+===== Gérer (faire le "CRUD") les prélèvements automatiques
+
+====== Créer un prélèvement
+
+Pour créer un prélèvement, il vous suffit de suivre les étapes indiquées par la flèche rouge ci-dessous :
+
+image::/V2/images/pre1.png[Etape 1 pour créer un prélèvement]
+
+image::/V2/images/pre2.png[Etape 2 pour créer un prélèvement]
+
+Ensuite une nouvelle interface va s'ouvrir il vous faudra respecter les règles suivantes :
+
+____
+ - Le montant indiqué par la flèche rouge doit être positif ;
+ 
+ - La date indiquée par la flèche verte doit être comprise entre 1 et 30 ;
+ 
+ - Le bénéficiaire quant à lui, doit juste saisir la chaine de caractère correspondante au nom du bénéficiaire de ce prélèvement.
+____
+
+Une fois respectées, vous pourrez appuyer sur le bouton "Ajouter" indiqué par la flèche noire :
+
+image::/V2/images/pre3.png[Etape 3 pour créer un prélèvement]
+
+====== Arrêter un prélèvement
+
+Pour arrêter un prélèvement il vous suffit de sélectionner un prélèvement puis d'appuyer sur le bouton "Modifier prélèvement", enfin d'appuyer sur le radio bouton "Arrêté" et valider pour finir l'étape :
+
+image::/V2/images/pre4.png[Etape 1 pour arrêter un prélèvement]
+
+image::/V2/images/pre6.png[Etape 2 pour arrêter un prélèvement]
+
+====== Modifier un prélèvement
+
+Comme pour arrêter un prélèvement, il faut appuyer sur le bouton "Modifier prélèvement" indiqué par la flèche rouge comme sur l'image ci-dessous :
+
+image::/V2/images/pre4.png[Etape 1 pour modifier un prélèvement]
+
+Une nouvelle fenêtre va s'ouvrir et vous pourrez modifier les champs qui vous intéressent comme le montant du prélèvement, la date récurrente ou encore le bénéficiaire. Une fois modifié, vous avez juste qu'à appuyer sur le bouton "Modifier prélèvement" indiqué par la flèche rouge :
+
+image::/V2/images/pre7.png[Etape 2 pour modifier un prélèvement]
+
+=== Chef d'Agence
+
+==== Débit Exceptionnel
+En tant que chef d'agence, vous avez la possibilité d'effectuer un débit exceptionnel sur le compte courant d'un client. +
+Pour se faire, rendez vous tout d'abord dans la fenêtre de ``Gestion des Comptes`` courants du client que vous visez. +
+
+image::/V2/images/GestionClients.png[Fenêtre de gestion des comptes d'un client]
+
+Puis sélectionnez le compte à débiter et cliquez, tout logiquement, sur le bouton ``[Débit Exceptionnel]`` sur la droite de la fenêtre. +
+Vous verrez en suite s'ouvrir la fenêtre conçue à cet effet et pourrez y inscrire le montant à débiter. +
+
+Notez qu'un débit exceptionnel n'est possible qu'à condition que le compte soit ouvert et que le client soit actif. +
+De plus, si le débit exceptionnel fait passer le compte courant en dessous de son découvert autorisé, le client ne pourra plus effectuer de débits sur celui-ci et devra d'abord réalimenter le compte. 
+
+=== Rendre inactif un client
+
+Cette fonctionnalité est différente selon les situations, pour vous les illustrer, vous pourrez les retrouvez ci-dessous :
+
+==== Si le client n'a pas de compte
+
+Généralement ce cas peut arriver lors de la création d'un client, lors de sa création il ne possède pas de compte donc on ne peut pas le rendre inactif :
+
+image::/V0/images/ri1Preuve.png[Etape 1 preuve rendre inactif un client]
+
+==== Si le client possède des comptes non clôturés
+
+Pour rendre inactif un client, il faut que tous les comptes du client soient clôturés :
+
+image::/V0/images/ri2Preuve.png[Etape 2 preuve rendre inactif un client]
+
+
+==== Si le client possède tous ses comptes clôturés
+
+Il vous suffit de vous rendre dans "Modifier client" puis de cliquer sur le bouton "Inactif"
+
+==== Si vous êtes arrivé à le rendre inactif
+
+Voici l'affichage lorsqu'un client est inactif :
+
+image::/V0/images/ri4Preuve.png[Etape 4preuve rendre inactif un client]
+
+==== Gestion des employés
+
+===== Gérer (faire le CRUD) les employés
+
+==== Opérations
+
+===== Effectuer un débit exceptionnel
+
+===== Simuler un emprunt / Simuler une assurance d'emprunt
+
+En règle générale, emprunter de l'argent signifie d'être en capacité de pouvoir réaliser le remboursement, ici au niveau du capital emprunté. C'est pour cela qu'il est primordial d'effectuer une simulation de crédit de manière à pouvoir anticiper son budget. 
+Depuis la fenêtre d'un client, une option "Simulation" est ainsi mise à disposition (dont vous pouvez vous référer aux étapes expliquées précédemment pour y accéder) :
+
+image::/V2/images/boutonsimulation.PNG[Etape 1 pour réaliser une simulation]
+
+Toutefois, tous les employés ne possèdent pas les mêmes capacités et compétences qu'un chef d'agence et c'est pourquoi, seulement celui-ci peut procéder à une simulation avec un client désireux d'en effectuer un :
+
+image::/V2/images/permissions.PNG[Etape 2 pour réaliser une simulation]
+
+En cliquant alors sur le bouton, une interface dédiée à la simulation sera ouverte. Vous disposez de l'ensemble des informations nécessaires à renseigner pour calculer la mensualité que le client devrait. Ces informations concernent de ce fait, le capital emprunté, la durée du prêt ainsi qu'un taux d'intérêt optionnel. Car oui, il se peut que le taux d'intérêt soit négligeable, au point d'être nul et ce, pour différents facteurs (politique monétaire, etc.).
+
+Ainsi, le client peut disposer ou non d'une assurance car il n'est pas impossible d'avoir des clients non-assurés :
+
+image::/V2/images/simulationsansassurance.PNG[Etape 3 pour réaliser une simulation]
+
+S'il n'en dispose pas, sa mensualité sera alors basée sur le capital emprunté, la durée ainsi que le taux d'intérêt :  
+
+image::/V2/images/resultatsansassurance.PNG[Etape 4 pour réaliser une simulation]
+
+S'il dispose d'une assurance, il est alors nécessaire qu'il le soit mentionné :
+
+image::/V2/images/simulationavecassurance.PNG[Etape 5 pour réaliser une simulation]
+
+Le taux d'assurance va influencer la mensualité que devra le client, généralement estimée plus chère. Pour autant, si celui-ci dispose d'un taux d'intérêt à 0%, son taux d'assurance le sera également, car ce genre de taux d'intérêts concernent généralement des légers investissements : la mensualité hors assurance et avec assurance risqueront alors d'être similaires.
+
+Ainsi, par le biais d'une pop-up, comme vous avez pu le voir précédemment, la mensualité hors et avec assurance y seront mentionnées : 
+
+image::/V2/images/resultatavecassurance.PNG[Etape 6 pour réaliser une simulation]
+
+== Résultats plus quelques exemples de jeux d'essais
+
+Passons à moins de théorique, ici vous trouverez les résultats de nos fonctionnalités, afin de mieux comprendre, il est fortement conseillé de connaître les étapes à suivre, je vous laisse pour cela, prendre connaissances de celles-ci qui sont situés dans la partie "Fonctionnement". Bien sur vous disposerez de toutes les preuves nécessaires (interface JAVA | base de données) pour témoigner de leur bon fonctionnement. 
+
+=== Créer un nouveau client
+
+Une fois toutes informations nécessaires renseignées, le client se rajoutera dans l'encadré blanc de votre interface "Gestion des clients" comme sur l'image ci-dessous:
+
+image::/V0/images/creaCli1Preuve.png[Etape 1 preuve création client]
+
+Au niveau back-end, votre client sera également ajouté, vous pourrez vérifier s'il existe en notant son idNumClient et remplacer le chiffre "323" par le chiffre qui correspond au niveau client, cette requête vous permet d'interroger la base de données et vous renvoie si il existe, les informations du client créé. 
+
+image::/V0/images/creaCli2Preuve.png[Etape 2 preuve création client]
+
+=== Modifier informations client
+
+Ici, nous reprenons le client créé juste plus haut, nous allons changer toutes ses informations mis à part l'id du client et son idAgence.
+
+image::/V0/images/modifCli1Preuve.png[Etape 1 preuve modification client]
+
+Nous pouvons, à présent, voir que le client ait bien modifié que ce soit au niveau de l'interface JAVA :
+
+image::/V0/images/modifCli2Preuve.png[Etape 2 preuve modification client]
+
+Mais également au niveau de la base de données, on effectue la même requête que tout à l'heure :
+
+image::/V0/images/modifCli3Preuve.png[Etape 3 preuve modification client]
+
+=== Consulter un compte 
+
+Reprenons une nouvelle fois le client orange1 crée plus haut et plus précisément son compte. Comme vous pouvez le voir sur l'image ci-dessous, le client hercule1 possède un compte. Pour le consulter, il vous suffit de cliquer dessus puis de suivre la flèche rouge.
+
+image::/V0/images/consulterCompte1Preuve.png[Etape 1 preuve consultation compte d'un client]
+
+Nous pouvons à présent voir les opérations du compte (débit en l'occurrence, ce n'est pas encore la fin du mois donc pas de crédit)
+
+image::/V0/images/consulterCompte2Preuve.png[Etape 2 preuve consultation compte d'un client]
+
+Côté back-end, les informations apparaissent également grâce à cette requête, une nouvelle fois, si vous voulez consulter les informations d'un autre client. Il vous suffira de changer le chiffre "323" par l'id du client désiré.
+
+image::/V0/images/consulterCompte3Preuve.png[Etape 3 preuve consultation compte d'un client]
+
+=== Débiter un compte
+
+Pour ne pas changer, reprenons le client hercule1. Nous allons effectuer 2 debits (par carte bleue et espèce). Pour choisir le type de retrait, il vous suffit de cliquer sur la barre déroulante nommée "Retrait Espèces" puis de choisir entre les deux options comme sur l'image ci-dessous :
+
+image::/V0/images/choixDuRetrait.png[Choix du type de retrait]
+
+Ensuite renseignez le montant que vous voulez retirer dans la zone de texte puis, appuyez sur le bouton "Effectuer Débit" indiqué par la flèche rouge comme sur l'image dessous : 
+
+image::/V0/images/debit1Preuve.png[Etape 1 preuve debit]
+
+Nous pouvons voir maintenant que le debit effectué à l'instant s'affiche dans l'encadré blanc en dessous des anciennes opérations :
+
+image::/V0/images/debit2Preuve.png[Etape 2 preuve debit]
+
+Du côté back-end, les changements ont également été effectué :
+
+image::/V0/images/debit3Preuve.png[Etape 3 preuve debit]
+
+=== Rendre inactif un client
+
+Cette fonctionnalité est différente selon les situations, pour vous les illustrer, vous pourrez les retrouvez ci-dessous :
+
+==== Si le client n'a pas de compte
+
+Généralement ce cas peut arriver lors de la création d'un client, lors de sa création il ne possède pas de compte donc on ne peut pas le rendre inactif :
+
+image::/V0/images/ri1Preuve.png[Etape 1 preuve rendre inactif un client]
+
+==== Si le client possède des comptes non clôturés
+
+Pour rendre inactif un client, il faut que tous les comptes du client soient clôturés donc nous vous proposons de tous les clôturer en un clic comme sur l'image ci-dessous :
+
+image::/V0/images/ri2Preuve.png[Etape 2 preuve rendre inactif un client]
+
+Voici le message de succès de la clôturation de tous les comptes du client :
+
+image::/V0/images/ri3Preuve.png[Etape 3 preuve rendre inactif un client]
+
+==== Si le client possède tous ses comptes clôturés
+
+Il vous suffit de vous rendre dans "Modifier client" puis de cliquer sur le bouton "Inactif"
+
+==== Si vous êtes arrivé à le rendre inactif
+
+Voici l'affichage lorsqu'un client est inactif :
+
+image::/V0/images/ri4Preuve.png[Etape 4preuve rendre inactif un client]
+
+=== Réaliser un virement de compte à compte
+
+Comme toute autre opération (créditer/débiter), vous verrez également votre règlement s'afficher dans la liste des opérations effectuées depuis ce même compte et il en va de même pour le compte bénéficiaire du virement.
+Le compte ici choisi, est différent de celui mentionné plus haut, mais le principe reste pour autant le même.
+
+Ce compte, présent ci-dessous correspond au compte émetteur, c'est-à-dire, celui réalisant le virement :
+
+image::/V1/images/emetteur.PNG[Etape 1 virement]
+
+Et enfin, le compte présent de même, ci-dessous, correspond au compte récepteur, celui bénéficiant du virement :
+
+image::/V1/images/recepteur.PNG[Etape 2 virement]
+
+Côté back-end, après une requête SQL permettant de retrouver le virement effectué, les informations apparaissent également pour tenir compte des modifications apportées :
+
+image::/V1/images/backend.PNG[Etape 3 virement]
