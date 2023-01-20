@@ -6,16 +6,16 @@
 :nofooter:
 
 image::/images/DailyBank.png[]
-= DailyBank - Documentation destinée aux utilisateurs - V2
-_Réalisé par THOMPSON Victor, YVELIN Louis, SACILOTTO Nicolas et FERNANDEZ Mickael (4A)_
+= CHERIBOU - Documentation destinée aux utilisateurs
+_Réalisé par THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo et HU Shiyu (1B)_
 
 toc::[]
 
-== Présentation générale de l'application
+== Présentation générale du site web
 
-Cette application a été réalisée lors de notre première année de BUT informatique, nous avions pour but de réaliser une application nommée "DAILY BANK", celle-ci nous permettra de simuler des actions que l’on peut retrouver dans une banque du monde réel.
+Ce site web d'e-commerce a été réalisée lors de notre deuxième année de BUT informatique, nous avions pour but de réaliser un site web permettant de vendre le produits de notre client 'Cheribou' celle-ci nous permettra de simuler des actions que l’on peut retrouver dans une boutiques de ventes en lignes.
 
-L’application doit permettre de gérer des comptes bancaires de dépôt pour des clients préalablement créés. Elle devra permettre de débiter, créditer un compte soit par virement c’est à dire un échange d’argent entre deux comptes distincts mais domiciliés dans le réseau bancaire, soit par une personne physique se présentant devant un guichet.
+Le site web doit permettre la ventes des bonbons et autres produits proposé par notre client de dépôt. Les produits ainsi que les données personnelles des clients sont stockées dans une base de données. Le client devra pouvoir se connecter/créer un compte, visiter le catalogue des produits, ajouter un produit au panier et de valider son panier pour accèder au paiement. 
 
 == Installation 
 
