@@ -3,14 +3,13 @@
 :toc-title: Table des matières
 
 image::/images/DailyBank.png[]
-= DailyBank - Documentation Technique - V2
-_Réalisé par THOMPSON Victor, YVELIN Louis, SACILOTTO Nicolas et FERNANDEZ Mickael (4A)_
+= Site Cheribou - Documentation Technique 
+_Réalisé par Anthony Cabrillac, Victor Thompson, Yann Guillevic, Léo Douville, Shiyu Hu
 
 toc::[]
 
-== I - Présentation rapide de l'application
-
-La banque DailyBank souhaite développer une application JAVA-Oracle de gestion des comptes clients pour remplacer plusieurs outils jusque-là obsolètes. Ce développement s’inscrit dans le cadre de la restructuration de ses services bancaires et l’application sera déployée dans les 100 agences que compte son réseau.
+== I - Présentation rapide du site
+L’entreprise Cheribou souhaitant re-conceptualiser son site internet pour que celui-ci soit le plus attractif possible afin d’augmenter le nombre de clients inscrits et d’améliorer le nombre de ventes en ligne. De plus, Cheribou a la volonté et les ressources pour se développer à l'international afin degagner en notoriété et en visibilité. Cheribou cherche à s’introduire et à s’exporter sur les marchés Allemand et Américain. Mais le site internet actuel est désuet et n’est pas adapté à pour une future expansion internationale. Une version anglaise du site devra donc être créée afin de s’adapter au nouveau type de clients. Le nouveau site web devra être adapté pour des enfants, adolescents et jeunes adultes, être simple à parcourir et être sécurisé pour permettre une bonne utilisation du site web et une fidélisation de la clientèle.
 
 === 1. Explications du use case global
 
