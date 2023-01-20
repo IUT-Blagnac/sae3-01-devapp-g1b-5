@@ -1,0 +1,973 @@
+:toc:
+:toc-placement!:
+:toc-title: Table des matières
+
+image::/images/DailyBank.png[]
+= DailyBank - Documentation Technique - V2
+_Réalisé par THOMPSON Victor, YVELIN Louis, SACILOTTO Nicolas et FERNANDEZ Mickael (4A)_
+
+toc::[]
+
+== I - Présentation rapide de l'application
+
+La banque DailyBank souhaite développer une application JAVA-Oracle de gestion des comptes clients pour remplacer plusieurs outils jusque-là obsolètes. Ce développement s’inscrit dans le cadre de la restructuration de ses services bancaires et l’application sera déployée dans les 100 agences que compte son réseau.
+
+=== 1. Explications du use case global
+
+Voici le use case général de la version 2 de l'application DailyBank :
+
+image::../V2/images/gauche.png[UC V2]
+image::../V2/images/droite.png[UC V2]
+
+==== 1.1 Types d'utilisateurs et spécificités
+
+Tout comme dans la V0, deux types d'utilisateurs subsistent : le chef d'agence ainsi que les guichetiers.
+En tant que chef d'agence, celui-ci possède des privilèges et des droits supplémentaires au sein de son agence bancaire, à comparer d'un simple employé (guichetier).
+
+Pour justifier cela, bien que le chef d'agence pouvait, dans la V0, rendre inactif un client inscrit dans son agence bancaire, celui-ci peut gérer ses employés. Cela n'aurait évidemment pas d'intérêts que cette action soit réciproque car la hiérarchie des rôles de chaque employé ne serait pas respectée.
+Celui-ci, en logique, bénéficie de l'ensemble des actions que peuvent réaliser les guichetiers.
+Par ailleurs, dans cette seconde version, le chef d'agence peut en plus effectuer un débit exceptionnel ou encore simuler un emprunt ou une assurance d'emprunt, disposant des capacités, des droits et des connaissances suffisantes.
+
+Pour un guichetier, en plus de pouvoir modifier les informations d'un client ou en créer un nouveau, de consulter un compte ou de pouvoir le débiter, étant des fonctionnalités déjà présentes dans la V0, celui-ci peut profiter de possibilités supplémentaires telles que de créer un nouveau compte, de créditer ou d'effectuer un virement de compte à compte ou encore de pouvoir clôturer le compte sélectionné. Mais ce n'est pas tout car dans cette seconde version, il pourra générer un relevé mensuel d'un compte en PDF ou encore gérer les prélèvements automatiques.
+
+Ces actions ne seront ainsi, possibles sans traiter les différentes problématiques liées à ces utilisations.
+
+=== 2. Explications du diagramme de classe des données globales
+
+image::../V2/images/dcv2.PNG[DC V2]
+
+==== 2.1 Fonctionnalités du chef d'agence
+
+==== 2.2 Fonctionnalités du guichetier
+
+== II - Architecture
+
+=== 1. Architecture générale
+
+Lorsqu'un employé vient à utiliser l'application "DailyBank", celle-ci n'est en réalité pas complexe à son utilisation. Elle reste relativement claire, facile à comprendre bien que certaines règles (règle des trois clics par exemple) ne soient pas respectées afin de trouver toutes les informations de manière rapide et simplement. Pour autant, celle-ci possède une architecture relativement aisée à comprendre étant donné qu'elle est construite sur un fonctionnement centralisé.
+
+==== 1.1 Poste client
+
+Concrètement, cela se résume à ce que l'application puisse être utilisée de n'importe quel employé, depuis n'importe quel poste de travail. Ainsi, chaque modifications ou ajouts de données effectuées, depuis un poste de travail au sein d'une agence bancaire inclue dans l'application, seront directement appliquées et reliées à la base de données de celle-ci. Ainsi, chaque poste de travail est une machine dédiée à un employé de l'agence bancaire.
+
+==== 1.2 Serveurs
+
+L'application possède ainsi une base de données propre à ses caractéristiques. Elle permet de conserver l'ensemble des informations relatives à une agence bancaire telles que : +
+____
+• Les employés ; 
+• Les clients ; 
+• Les comptes des clients ou encore 
+• Les opérations effectuées depuis un compte.
+____
+
+=== 2. Ressources externes et rôles
+
+L'application "DailyBank" étant codée en Java, celle-ci aura pour extension de fichier, un ``.jar`` car ce format est avantageux pour stocker l'ensemble des définitions des classes ainsi que de ses métadonnées, constituant la totalité du programme.
+
+Pour les employés souhaitant utiliser cette application de gestion de comptes clients, ils doivent s'assurer que leurs postes de travail soient équipés d'une ``JRE (Java Runtime Environement) 1.8``.
+
+Concernant la librairie figurant au sein de "DailyBank", celle-ci utilise la librairie jar.
+Enfin, l'application repose sur un fichier nommé ``"ojdbc6.jar"`` : c'est un pilote JDBC d'Oracle fournissant une connectivité entre une base de données au serveur de base de données Oracle et une interface de programme d'application JDBC disponible en Java.
+
+=== 3. Structuration en packages de l'application
+
+La structuration de l'application est répartie en plusieurs packages que voici : 
+
+[source]
+----
+├── application
+    │   ├── application.control
+    │   ├── application.tools
+    │   └── application.view
+    └── model
+        ├── model.data
+        └── model.orm
+            └── model.orm.exception
+----
+
+=== 4. Éléments à connaître
+
+Comme vous pouvez l'observer, le code de l'application est fourni dans 1 package principal étant ``application`` et dont celui-ci est constitué de 4 sous-packages principaux : +
+____
+• control ; 
+• tools ; 
+• view ; 
+• model ; 
+____
+
+Ces packages font ainsi référence à un principe de structuration que l'application ici présente et que les applications web en règle générale utilisent : le principe de MVC (Model-View-Controller).
+
+Le MVC (de son nom français _modèle-vue-contrôleur_) est le nom d'une méthodologie ou d'un motif de conception visant à faire le lien entre l'interface utilisateur et les modèles de données sous-jacents. Elle est notamment utile pour permettre de créer une application web afin de bien gérer la structuration d’un projet en trois parties ou encore pour la réutilisation du code objet, qui permet de réduire le temps nécessaire au développement d'applications dotées d'une interface utilisateur.
+
+==== 4.1 Spécificités
+
+Concernant le package ``application``, celui-ci constitue le package principal de l'application "DailyBank". 
+Vous trouverez dans ce package (comme indiqué au dessus, à la partie _3. Structuration en packages de l'application_), trois packages, dont les packages ``view`` et ``control`` sont inclus dans l'acronyme MVC.
+Concrètement : +
+____
+• Le sous-package _control_ comporte des classes permettant de faire communiquer les classes comprises dans le modèle ainsi que la vue. Ici, les classes présentes dans ce sous-package permettent d'afficher les différentes fenêtres ou sous-fenêtres de "DailyBank".
+• Le sous-package _tools_, comme son nom l'indique, est un sous-package d'outils. Celui-ci comporte des classes permettant de gérer certaines parties du code de l'application (notamment les différents types de droits, d'opérations, les pop-ups, etc.).
+• Le sous-package _view_ comporte un ensemble de classes représentant les différents éléments présents dans l'interface utilisée par l'utilisateur (boutons, listes, etc.) Ici-même, il contient l'ensemble des "controller" des différentes fenêtres ou sous-fenêtres avec leurs fichiers fxml respectifs.
+____
+
+Le sous-package principal ``model`` correspond à la partie "modèle" incluse dans l'acronyme MVC. Ce package permet de représenter la structure des données dans l'application logicielle mais également la classe supérieure qui y figure. À contrario des deux autres packages, celui-ci ne contient aucune information sur l'interface utilisateur.
+Concrètement : +
+____
+• Le sous-package _data_ comporte des classes représentant l'environnement d'une application de gestion de comptes de clients (l'agence bancaire et ses employés, les clients ainsi que leurs comptes ou encore les opérations différenciées par leurs types).
+• Le sous-package _orm_ comporte des classes permettant d'une part, de faire la liaison entre le code java et la base de données nécessaire au fonctionnement de l'application mais également de pouvoir accéder à toutes les informations nécessaires initialisées dans la _data_. Ces classes sont clairement liées au données figurant dans "DailyBank", qu'elles soient créées, mises à jour ou tout simplement obtenues.
+• Le sous-package _orm.exception_ comporte des classes permettant de gérer ou de faire signaler l'ensemble des erreurs ou exceptions possibles dans l'application.
+____
+
+==== 4.2 Éléments nécessaires à la mise en oeuvre du développement
+
+Pour une personne étant destiné à faire maintenir le fonctionnement de l'application, à réaliser de quelconques tests pour vérifier le fonctionnement de l'application ou tout simplement pour implémenter de nouvelles fonctionnalités, celle-ci devra obligatoirement opter pour une JRE (machine virtuelle Java) en version 1.8. 
+
+Par la suite, il lui est nécessaire de posséder un IDE (environnement de développement intégré) pour tout simplement pouvoir observer le code et interagir avec. Eclipse ou encore IntelliJ IDEA sont des IDE que le développeur peut utiliser. 
+
+Enfin, ce ne serait sans mentionner le Workspace depuis lequel repose l'application que le développeur pourrait programmer. Ce Workspace doit alors être configuré en JavaFX avec une version du JDK en 1.8. Le logiciel SceneBuilder devra être intégré dans le buildpath mais il est à préconiser afin d'interagir avec les fichiers fxml de "DailyBank". 
+
+
+== III - Explications des fonctionnalités
+
+=== 1. Guichetier
+
+==== 1.1 Modifier les informations d'un client - Déjà présent (V0)
+
+Un chef d'agence ou un guichetier peut modifier les informations d'un client selon les actualités tournant autour de celui-ci. Ces informations peuvent concerner le nom ou le prénom du client, son adresse, ses moyens de communication ou encore son évolutivité dans son agence bancaire, c'est-à-dire son activité.
+
+===== Partie du use case conforme
+
+image::/V1/images/modifinfoclient.PNG[Modifier info client]
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/clientdc.PNG[Modifier info client]
+
+Cette tâche n'inclut seulement qu'une classe dans le diagramme de classes V1 : la classe ``Client``.
+Cette classe est, de ce fait, dédiée à la modification des informations d'un client et par conséquent, à la mise à jour des données sur la base de données.
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _CategorieOperation.java_
+• _ConstantesIHM.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• _ClientEditorPane.java_
+• _ClientManagement.java_
+• _ExceptionDialog.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _ClientEditorPaneController.java_
+• _ClientManagementController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _Client.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessClient.java_
+• _ApplicationException.java_
+• _DatabaseConnexionException.java_
+• _DataAccessException.java_
+____
+
+===== Éléments à connaître / spécificités
+
+L'élément à connaître pour cette tâche est une fonction et celle-ci réside dans la classe _ClientsManagement.java_ : *modifierClient(Client c)*.
+
+===== Extraits de code commentés pour des points importants
+
+Le code étant déjà présent dans l'application, il n'y a aucune partie qui mérite d'être signalée et venant de notre part.
+De plus, il n'y a pas de détails spécifiques qui seraient difficiles à comprendre et donc à expliquer ou tout simplement d'être mentionné.
+
+==== 1.2 Créer un nouveau client - Déjà présent (V0)
+
+Un chef d'agence ou un guichetier peut créer/ insérer les informations d'un client. Ces informations peuvent concerner le nom ou le prénom du client, son adresse, ses moyens de communication (mail ou téléphone) ou encore son évolutivité dans son agence bancaire, c'est-à-dire son activité, s'il est actif ou non.
+
+===== Partie du use case conforme
+
+image::/V1/images/creernewclient.PNG[Creer new client]
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/clientdc.PNG[Créer client]
+
+Cette tâche n'inclut seulement qu'une classe dans le diagramme de classes V1 : la classe ``Client``.
+Cette classe est, de ce fait, dédiée à la création/insertion des informations d'un client et par conséquent, à l'insertion des données sur la base de données.
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _CategorieOperation.java_
+• _ConstantesIHM.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• _ClientEditorPane.java_
+• _ClientManagement.java_
+• _ExceptionDialog.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _ClientEditorPaneController.java_
+• _ClientManagementController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _Client.java_
+____
+
+===== Éléments à connaître / spécificités
+
+L'élément à connaître pour cette tâche est une fonction et celle-ci réside dans la classe _ClientsManagement.java_ : *nouveauClient()*.
+
+===== Extraits de code commentés pour des points importants
+
+Le code étant déjà présent dans l'application, il n'y a aucune partie qui mérite d'être signalée et venant de notre part.
+De plus, il n'y a pas de détails spécifiques qui seraient difficiles à comprendre et donc à expliquer ou tout simplement d'être mentionné.
+
+==== 1.3 Créer un nouveau compte - Nicolas S.
+
+===== Partie du use case conforme
+
+image::/V1/images/creercompte.PNG[Creer new compte]
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/dcCompteCourant.PNG[créer un compte]
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _CategorieOperation.java_
+• _EditionMode.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• _CompteManagement.java_
+• _CompteEditorPane.java_
+• _ExceptionDialog.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _CompteManagementController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _Compte.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessCompteCourant.java_
+• _ApplicationException.java_
+• _DatabaseConnexionException.java_
+• _DataAccessException.java_
+____
+
+===== Éléments à connaître / spécificités
+
+Ici, lorsque nous ajoutons un compte à la base de données, si l'on renseigne un découvert autorisé positif, celui-ci deviendra négatif lors de l'ajout, nous adoptons la reglementation de la méthode updateCompte implémenter par un des professeurs de la classe AccessCompteCourant
+
+image::/V1/images/expliUpdate.png[Code déjà implémenter par les profs]
+
+===== Extraits de code commentés pour des points importants
+
+==== 1.4 Clôturer un compte - Nicolas S.
+
+===== Partie du use case conforme
+
+image::/V1/images/cloturercompte.PNG[Clôturer compte]
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/dcCompteCourant.PNG[clôturer un compte]
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _CategorieOperation.java_
+• _EditionMode.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• _CompteManagement.java_
+• _ExceptionDialog.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _CompteManagementController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _Compte.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessCompteCourant.java_
+• _ApplicationException.java_
+• _DatabaseConnexionException.java_
+• _DataAccessException.java_
+____
+
+===== Éléments à connaître / spécificités
+
+===== Extraits de code commentés pour des points importants
+
+Le code étant déjà présent dans l'application, il n'y a aucune partie qui mérite d'être signalée et venant de notre part.
+De plus, il n'y a pas de détails spécifiques qui seraient difficiles à comprendre et donc à expliquer ou tout simplement d'être mentionné.
+
+==== 1.5 Consulter un compte - Déjà présent
+
+Un chef d'agence ou un guichetier peut consulter les informations d'un compte client. Ces informations peuvent concerner le code du compte, son solde, découvert autorisé et s'il est cloturé.
+
+===== Partie du use case conforme
+
+image::/V1/images/consultercompte.PNG[Consulter compte]
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/dcCompteCourant.PNG[Consulter les informations d'un compte]
+
+Cette tâche n'inclut seulement qu'une classe dans le diagramme de classes V1 : la classe ``CompteCourant``.
+Cette classe est, de ce fait, dédiée à la consultation des informations d'un compte client et par conséquent n'offre aucune possibilité de modification.
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _CategorieOperation.java_
+• _ConstantesIHM.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• _CompteEditorPane.java_
+• _CompteManagement.java_
+• _ExceptionDialog.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _CompteEditorPaneController.java_
+• _CompteManagementController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _Compte.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessCompte.java_
+• _ApplicationException.java_
+• _DatabaseConnexionException.java_
+• _DataAccessException.java_
+____
+
+===== Éléments à connaître / spécificités
+
+===== Extraits de code commentés pour des points importants
+
+==== 1.6 Débiter un compte (BD) - Victor T.
+
+Débiter un compte permet de retirer une somme d'argent depuis un compte bancaire sélectionné associé à un client. Il est évidemment impossible de débiter une somme négative ou un montant invalide. Le débit ne peut pas dépasser un certain seuil défini au préalable et le retrait d'une somme ne peut pas dépasser le découvert.
+
+===== Partie du use case conforme
+
+image::/V1/images/créditerdébiter.PNG[Déditer compte]
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/dcvirement.PNG[DC Virement compte]
+
+La tâche débit inclut 3 classes dans ce diagramme de classes :
+____
+• La classe ``CompteCourant``, n'étant seulement dédiée qu'à une lecture étant donné qu'elle prendra en compte les informations de celui-ci sans pour autant les modifier ;
+• La classe ``TypeOperation`` qui, de même, n'est dédiée qu'à une simple lecture étant donné qu'elle caractérise seulement l'opération sans pour autant y interagir avec ;
+• La classe ``Operation`` qui elle, utilise les données renseignées de l'utilisateur. Elle ne se contente donc pas de seulement lire les données mais plutôt de les interpréter, et cela passe avant par une définition de ces données.
+____
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _CategorieOperation.java_
+• _ConstantesIHM.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• _OperationManagement.java_
+• _OperationEditorPane.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _OperationManagementController.java_
+• _OperationEditorPaneController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _Operation.java_
+• _TypeOperation.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessOperation.java_
+• _DatabaseConnexionException.java_
+• _DataAccessException.java_
+____
+
+===== Éléments à connaître / spécificités
+
+Il n'y a pas d'élement réellement spécifique pour cette fonctionnalité.
+
+===== Extraits de code commentés pour des points importants
+
+image::/V1/images/CodeDébiter.png[code débiter]
+
+Ce bout de code est relativement important car il permet d'enregitrer le débit dans la base de données SQL depuis la procédure "Débiter", de déterminer quel type d'opération est renseigné et du montant à débiter.
+
+==== 1.7 Créditer un compte (BD) - Victor T.
+
+Créditer un compte permet de déposer une somme d'argent depuis un compte bancaire sélectionné associé à un client. Il est évidemment impossible de déposer une somme négative ou un montant invalide.
+
+===== Partie du use case conforme
+
+image::/V1/images/créditerdébiter.PNG[Créditer compte]
+
+===== Partie du diagramme de classe conforme
+
+La tâche débit inclut 3 classes dans ce diagramme de classes :
+____
+• La classe ``CompteCourant``, n'étant seulement dédiée qu'à une lecture étant donné qu'elle prendra en compte les informations de celui-ci sans pour autant les modifier ;
+• La classe ``TypeOperation`` qui, de même, n'est dédiée qu'à une simple lecture étant donné qu'elle caractérise seulement l'opération sans pour autant interagir avec ;
+• La classe ``Operation`` qui elle, utilise les données renseignées de l'utilisateur. Elle ne se contente donc pas de seulement de lire les données mais plutôt de les interpréter, et cela passe avant par une définition de ces données.
+____
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _CategorieOperation.java_
+• _ConstantesIHM.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• _OperationManagement.java_
+• _OperationEditorPane.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _OperationManagementController.java_
+• _OperationEditorPaneController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _Operation.java_
+• _TypeOperation.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessOperation.java_
+• _DatabaseConnexionException.java_
+• _DataAccessException.java_
+____
+
+===== Éléments à connaître / spécificités
+
+L'implémentation de la fonctionnalité Créditer a été effectuée à partir de la procédure SQL "Débiter" en mettant " 0 - " devant le montant à créditer pour permettre l'utilisation "inversée" de la procédure.
+
+===== Extraits de code commentés pour des points importants
+
+image::/V1/images/CaptureCodeCrediter.PNG[code Crediter]
+
+Comme cité plus haut, ce bout de code utilise la procédure SQL "Débiter" mais à "l'envers" en mettant " 0 - " devant le montant à créditer. Cela permet de réutiliser la même procédure pour deux opérations qui sont finalement opposées.
+
+==== 1.8 Effectuer un virement de compte à compte - Mickael F.
+
+Le virement consiste à, depuis un compte sélectionné, transférer une somme d'argent quelconque à destination d'un compte pouvant être d'un autre client ou de soi-même. Évidemment, il est inutile voire contradictoire d'effectuer un virement vers le même compte sélectionné et il en va de même pour un montant invalide (inférieur à 0 ou ne respectant pas le type attendu). 
+
+===== Partie du use case conforme
+
+image::/V1/images/virementcompte.PNG[Virement compte]
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/dcvirement.PNG[DC Virement compte]
+
+La tâche virement inclut 3 classes dans ce diagramme de classes :
+
+____
+• La classe ``CompteCourant``, n'étant seulement dédiée qu'à une lecture étant donné qu'elle prendra en compte les informations de celui-ci sans pour autant les modifier ;
+• La classe ``TypeOperation`` qui, de même, n'est dédiée qu'à une simple lecture étant donné qu'elle caractérise seulement l'opération sans pour autant interagir avec ;
+• La classe ``Operation`` qui elle, utilise les données renseignées de l'utilisateur. Elle ne se contente donc pas de seulement de lire les données mais plutôt de les interpréter, et cela passe avant par une définition de ces données (autrement dit, un "ajout" ; c'est le principe même de vouloir effectuer un virement).
+____
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _CategorieOperation.java_
+• _ConstantesIHM.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• _OperationManagement.java_
+• _OperationEditorPane.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _OperationManagementController.java_
+• _OperationEditorPaneController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _CompteCourant.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessCompteCourant.java_
+• _DatabaseConnexionException.java_
+• _DataAccessException.java_
+____
+
+===== Éléments à connaître / spécificités
+
+L'une des fonctions importantes pour implémenter cette action est la fonction _getComptesOuverts(int idNumCli)_ dans la classe AccessCompteCourant.java qui permet de rechercher l'ensemble des comptes courants présents pour un client faisant parti d'une agence bancaire pour effectuer cette opération de virement.
+
+===== Extraits de code commentés pour des points importants
+
+image::/V1/images/bouclevirement.PNG[Boucle virement]
+
+Cette condition est relativement importante pour mentionner le fait qu'un virement ne peut pas être effectué sur le compte étant sélectionné. Sans cette condition, aucune erreur ne serait à constater car le montant dépensé correspondait au montant reçu mais cela ne fait aucun sens.
+
+==== 1.9 Générer un relevé mensuel d'un compte en PDF - Victor T.
+
+Le relevé mensuel d'un compte permet de générer un PDF renfermant la liste des opérations effectué sur un compte.
+
+===== Partie du use case conforme
+
+image::/V2/images/pdf.PNG[Générer PDF]
+
+===== Partie du diagramme de classe conforme
+
+image::/V2/images/diagramme_classe_pdf.png[DC PDF]
+
+La tâche virement inclut 2 classes dans ce diagramme de classes :
+
+____
+• La classe ``CompteCourant``, n'étant seulement dédiée qu'à une lecture étant donné qu'elle prendra en compte les informations de celui-ci sans pour autant les modifier ;
+
+• La classe ``Operation`` qui n'est dédié elle aussi qu'à la lecture puisque qu'elle prend en compte la liste des opérations effectué sur un compte.
+____
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V2/Documentation%20Utilisateur%20V2.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.view`` :* +
+____
+• _OperationManagementController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _CompteCourant.java_
+• _Opération.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessCompteCourant.java_
+• _DatabaseConnexionException.java_
+• _DataAccessException.java_
+____
+
+===== Éléments à connaître / spécificités
+
+La génération d'un PDF utilise la librairie iTextPDF (ajouté avec le .jar "itextpdf-5.4.0.jar"), qui est accesible depuis le dossier 'LIBS'. 
+
+===== Extraits de code commentés pour des points importants
+
+image::/V2/images/pdfcode.png[Code PDF]
+
+Cette ligne permet d'accéder à la liste des opérations effectué sur un compte depuis la base de données.
+
+image::/V2/images/pdfcode2.png[Code PDF]
+
+Cette ligne permet de créer le PDF et de lui attribué un emplacement de création automatiquement
+
+image::/V2/images/pdfcode3.png[Code PDF]
+
+Cette ligne permet d'ouvrir le PDF une fois que l'utilisateur ai cliqué sur le bouton aussocié sur l'application DailyBank.
+
+==== 1.10 Gérer (faire le "CRUD") les prélèvements - Nicolas S.
+
+Les prélèvements sont très courant dans les banques, ce sont des relevés en général mensuel qui ont pour but de débiter des comptes en vue de payer les fournisseurs de la banque (EDF,Véolia ...)
+
+===== Partie du use case conforme
+
+image::/V2/images/prelevements.PNG[Gérer les prélèvements]
+
+===== Partie du diagramme de classe conforme
+
+image::/V2/images/svgPrelevement.png[Prélèvement SVG]
+
+La tâche virement inclut 3 classes dans ce diagramme de classes :
+
+____
+• La classe ``CompteCourant`` c'est sur un compte en particulier que les prélèvements se feront
+• La classe ``PrélèvementAutomatique`` qui elle, utilise les données renseignées de l'utilisateur. Elle ne se contente donc pas de seulement lire les données mais plutôt de les interpréter, et cela passe avant par une définition de ces données 
+• La classe ``Opération`` qui, de même, utilise les données renseignées de l'utilisateur. 
+____
+
+===== Principales fonctionnalités
+
+Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V2.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+
+*Côté ``application.control`` :* +
+____
+• _PrelevementEditorPane.java_
+• _PrelevementManagement.java_
+• _ComptesManagement.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _PrelevementEditorPaneController.java_
+• _PrelevementManagementController.java_
+• _ComptesManagementController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _Prelevement.java_
+____
+
+*Côté ``model.orm`` :* +
+____
+• _AcessPrelevement.java_
+• _ApplicationException.java_
+____
+
+===== Éléments à connaître / spécificités
+
+Nous avons décidés d'implémenter la classe prélèvements à l'instar de la classe compte et client, pous nous il est important de garder une trace des prélevements, de ce fait nous avons ajouter un attribu "estArrete" dans la base de données qui permet d'ajouter un état qui est soit *en cours* ou bien *arrêté*. De ce fait nous pouvons arrêter un prélèvement. 
+
+===== Extraits de code commentés pour des points importants
+
+image::/V2/images/doPrelevement.png[Prelevement]
+
+Un des éléments de l'implémentation de cette tâche, assez essentielle de mentionner est la fonction FXML *doPrelevement()* qui, associée au bouton "Consulter Prélèvements" présent dans la classe _ComptesManagementController.java_, permet d'ouvrir l'interface dédiée à cette réalisation de prélèvement.
+
+=== 2. Chef d'agence
+
+==== 2.1 Rendre inactif un client - Nicolas S.
+
+===== Partie du use case conforme
+
+image::/V1/images/inactifclient.PNG[Client inactif]
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/RI.png[Rendre Inactif svg]
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _ConstantesIHM.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _ClientEditorPaneController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _CompteCourant.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessCompteCourant.java_
+• _AccessClient.java_
+• _DataAccessException.java_
+____
+
+===== Éléments à connaître / spécificités
+
+Il faut savoir que pour rendre inactif un client il faut que tous ses comptes aient un solde null (égale à zéro)
+
+===== Extraits de code commentés pour des points importants
+
+
+==== 2.2 Gérer les employés (CRUD) - Louis Y.
+
+===== Partie du use case conforme
+
+image::/V1/images/gereremployes.PNG[Gérer employés]
+
+Un chef d'agence peut gérer les employés. Cela concerne le code de l'employé, son login, mot de passe, adresse et son numéro de téléphone.
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/dcEmploye.PNG[Gérer les informations d'un employé]
+
+Cette tâche n'inclut seulement qu'une classe dans le diagramme de classes V1 : la classe ``Employé``.
+Cette classe est, de ce fait, dédiée à la consultation et la modification des informations d'un employé et par conséquent permet également aux employés de consulter leurs informations.
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _CategorieOperation.java_
+• _ConstantesIHM.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• _EmployéEditorPane.java_
+• _EmployéManagement.java_
+• _ExceptionDialog.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _EmployéEditorPaneController.java_
+• _EmployéManagementController.java_
+____
+
+*Côté ``model.data`` :* +
+____
+• _Employé.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessCompte.java_
+• _ApplicationException.java_
+• _DatabaseConnexionException.java_
+• _DataAccessException.java_
+____
+
+==== 2.3 Effectuer un débit exceptionnel - Louis Y.
+
+===== Partie du use case conforme
+
+image::/V2/images/débitexceptionnel.PNG[Gérer un débit exceptionnel]
+
+Un chef d'agence peut effectuer un débit exceptionnel. Cela concerne le solde d'un compte client, uniquement en débit.
+
+===== Partie du diagramme de classe conforme
+
+image::/V2/images/DCDE.PNG[Gérer les informations d'un débit exceptionnel]
+
+Cette inclut deux classes dans le diagramme de classes V2 : les classes ``Opération`` et ``TypeOpération``.
+Ces classes ne sont pas seulement dédiées au débit exceptionnel d'un compte client et peuvent par exemple permettre aux employés de gérer leur·s compte·s.
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``application.tools`` :* +
+____
+• _CategorieOperation.java_
+• _ConstantesIHM.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• DebitExceptionnel.java_
+• _ExceptionDialog.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _DebitExceptionnelController.java_
+• debitexceptionnel.fxml_
+____
+
+*Côté ``model.data`` :* +
+____
+• _TypeOperation.java_
+____
+
+*Côté ``model.orm / model.orm.exception`` :* +
+____
+• _AccessOperation.java_
+• _AccessCompte.java_
+• _ApplicationException.java_
+• _DatabaseConnexionException.java_
+• _DataAccessException.java_
+____
+
+==== 2.4 / 2.5 Simuler un emprunt / Simuler une assurance d'emprunt - Mickael F.
+
+Une simulation d'emprunt est en règle générale, un document émis par une banque permettant de réaliser le meilleure choix en terme de durée de remboursement et de mensualités. Ces simulations sont généralement toujours réalisées avant de faire directement une demande de crédit, sauf si le client connaît déjà le budget qu'il possède. +
+Ici, seul un chef d'agence peut s'occuper, avec un client, de réaliser une simulation d'emprunt : les guichetiers n'ayant pas les droits de disposer de cette fonctionnalité. +
+On se contentera seulement d'afficher la mensualité que le client devra, tout en dépendant de si celui-ci possède une assurance. Car oui, l'assurance en question protègera le client tout au long du crédit, bien qu'elle ne soit pas obligatoire.
+
+===== Partie du use case conforme
+
+image::/V2/images/emprunt.PNG[Simulation]
+
+===== Partie du diagramme de classe conforme
+
+image::/V2/images/dcemprunt.PNG[Simulation]
+
+La tâche virement inclut 3 classes dans ce diagramme de classes :
+
+____
+• La classe ``Client``, n'étant seulement dédiée qu'en temps que support et donc en lecture, étant donné qu'elle prendra en compte les informations de celui-ci sans pour autant les modifier. En effet, il est seulement nécessaire de savoir quel client envisage une simulation. ;
+• La classe ``Emprunt`` qui elle, utilise les données renseignées de l'utilisateur. Elle ne se contente donc pas de seulement lire les données mais plutôt de les interpréter, et cela passe avant par une définition de ces données (pour autant, on ne peut pas qualifier la simulation comme étant un "ajout" car elle ne nécessite aucune relation avec la base de données et n'est que temporaire).
+• La classe ``AssuranceEmprunt`` qui, de même, utilise les données renseignées de l'utilisateur. Le mode d'utilisation des données est strictement similaire à la classe _Emprunt_.
+____
+
+Dans le code déjà présent, les classes _Emprunt_ et _AssuranceEmprunt_ ont été regroupé en une classe commune nommée _Simulation_ réalisant la simulation d'un emprunt, avec ou sans assurance. 
+
+===== Principales fonctionnalités
+
+Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+
+===== Classes impliquées à l'implémentation de la fonction
+
+_Inspiré en grande partie des classes_ ``ClientEditorPane.java`` _et_ ``ClientEditorPaneController.java``.
+
+*Côté ``application`` :* +
+____
+• _DailyBankState.java_
+____
+
+*Côté ``application.control`` :* +
+____
+• _ComptesManagement.java_
+• _Simulation.java_
+____
+
+*Côté ``application.view`` :* +
+____
+• _ComptesManagementController.java_
+• _SimulationController.java_
+____
+
+===== Éléments à connaître / spécificités
+
+image::/V2/images/mensualite.PNG[Simulation]
+
+Il est toujours intéressant de savoir sur quels éléments se base le calcul de la mensualité d'un client. Ci-joint, la relation permettant de calculer une mensualité dans le cas où le taux d'intérêt renseigné par celui-ci est différent de zéro. 
+
+===== Extraits de code commentés pour des points importants
+
+image::/V2/images/dosimulation.PNG[Simulation]
+
+Un des éléments de l'implémentation de cette tâche, assez essentielle de mentionner est la fonction FXML *doSimulation()* qui, associée au bouton "Simulation" présent dans la classe _ComptesManagementController.java_, permet d'ouvrir l'interface dédiée à cette réalisation de simulation *uniquement* si l'utilisateur de cette application est un chef de l'agence bancaire.
