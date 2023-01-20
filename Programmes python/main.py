@@ -49,7 +49,7 @@ with open("config_yaml.yml", "r") as ymlfile:
 
 client = mqtt.Client()
 #on se connecte au broker en fonction des paramêtres serveur du fichier de configuration
-client.connect(param["config"]["mqttserver"], param["config"]["mqttport"], 600)
+client.connect(param["config"]["mqttserver"], param["numPort"]["mqttport"], 600)
 client.subscribe(param["config"]["device"])
 
 #on execute la méthode "get_data"
