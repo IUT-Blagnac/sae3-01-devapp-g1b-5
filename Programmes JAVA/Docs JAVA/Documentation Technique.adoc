@@ -113,28 +113,88 @@ Lors de son arrivé sur l'application, notre client pourra visualiser en temps r
 
 ===== Partie du use case conforme
 
-image::/images/capture1.PNG[Visualiser données]
+image::/images/Capture1.PNG[Visualiser données]
 
 ===== Classes impliquées à l'implémentation de la fonction
 
 Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
 
-*Côté ``application.tools`` :* +
+*Côté ``Application.tools`` :* +
 ____
 • _RunBackground.java_
 • _ReadFile.java_
 • _AlertUtilities.java_
 ____
 
-*Côté ``application.control`` :* +
+*Côté ``Application.control`` :* +
 ____
 • _MainFrame.java_
 • _RunApp.java_
 ____
 
-*Côté ``application.view`` :* +
+*Côté ``Application.view`` :* +
 ____
 • _MainFrameController.java_
+____
+
+*Côté ``resources`` :* +
+____
+• _Config_yaml.yml_
+• _mesures.txt_
+____
+
+===== Éléments à connaître / spécificités
+
+Il y a plusieurs éléments à connaitre. Tout d'abord la classe ``RunBackground.java`` car c'est celle-ci qui contient le code que va exécuter le thread mais aussi la classe ``MainFrameController.java`` avec les 3 méthodes situées tout en bas _MajGraphesCO2()_, _MajGraphesHUM()_, _MajGraphesTEMP()_.
+
+Ces 3 méthodes sont exécutés à chaque intervalle du thread.
+
+Dans le package ``resources``, nous utilisons le fichier texte pour y récupérer les informations et les afficher dans les graphes.
+
+===== Extraits de code commentés pour des points importants
+
+Le code étant déjà présent dans l'application, il n'y a aucune partie qui mérite d'être signalée et venant de notre part.
+De plus, il n'y a pas de détails spécifiques qui seraient difficiles à comprendre et donc à expliquer ou tout simplement d'être mentionné.
+
+=== 2. Affichage des données sous forme de graphique
+
+Lors de son arrivé sur l'application, notre client aura la possibilité de cliquer sur le bouton ``Configurer`` qui ouvrira une nouvelle fenêtre. 3 menus seront disponibles et le premier permet la modification des seuils maximaux pour chaque donnée (CO2, teméprature, humidité). Les 3 champs sont pré-remplis avec les données déjà présentes dans le fichier texte et l'utilisateur est libre de baisser ou monter ces valeurs. 
+
+Lorsque le client a modifié les champs qu'il souhaite, il peut quitter cette fenêtre pour revenir sur la fenêtre principale et relancer l'application pour que les changements s'enregistrent.
+
+===== Partie du use case conforme
+
+image::/images/Capture2.PNG[Modifier les seuils maximaux]
+
+===== Classes impliquées à l'implémentation de la fonction
+
+Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
+
+*Côté ``Application.tools`` :* +
+____
+• _ReadFile.java_
+____
+
+*Côté ``Application.control`` :* +
+____
+• _MainFrame.java_
+• _RunApp.java_
+____
+
+*Côté ``Application.view`` :* +
+____
+• _ConfigController.java_
+____
+
+*Côté ``Application.model`` :* +
+____
+• _ConfigData.java_
+____
+
+*Côté ``resources`` :* +
+____
+• _Config_yaml.yml_
+• _mesures.txt_
 ____
 
 ===== Éléments à connaître / spécificités
@@ -148,61 +208,6 @@ Ces 3 méthodes sont exécutés à chaque intervalle du thread.
 Le code étant déjà présent dans l'application, il n'y a aucune partie qui mérite d'être signalée et venant de notre part.
 De plus, il n'y a pas de détails spécifiques qui seraient difficiles à comprendre et donc à expliquer ou tout simplement d'être mentionné.
 
-==== 1.2 Créer un nouveau client - Déjà présent (V0)
-
-Un chef d'agence ou un guichetier peut créer/ insérer les informations d'un client. Ces informations peuvent concerner le nom ou le prénom du client, son adresse, ses moyens de communication (mail ou téléphone) ou encore son évolutivité dans son agence bancaire, c'est-à-dire son activité, s'il est actif ou non.
-
-===== Partie du use case conforme
-
-image::/V1/images/creernewclient.PNG[Creer new client]
-
-===== Partie du diagramme de classe conforme
-
-image::/V1/images/clientdc.PNG[Créer client]
-
-Cette tâche n'inclut seulement qu'une classe dans le diagramme de classes V1 : la classe ``Client``.
-Cette classe est, de ce fait, dédiée à la création/insertion des informations d'un client et par conséquent, à l'insertion des données sur la base de données.
-
-===== Principales fonctionnalités
-
-Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
-
-===== Classes impliquées à l'implémentation de la fonction
-
-Pour l'implémentation de cette action, plusieurs classes ont été impliquées :
-
-*Côté ``application.tools`` :* +
-____
-• _CategorieOperation.java_
-• _ConstantesIHM.java_
-____
-
-*Côté ``application.control`` :* +
-____
-• _ClientEditorPane.java_
-• _ClientManagement.java_
-• _ExceptionDialog.java_
-____
-
-*Côté ``application.view`` :* +
-____
-• _ClientEditorPaneController.java_
-• _ClientManagementController.java_
-____
-
-*Côté ``model.data`` :* +
-____
-• _Client.java_
-____
-
-===== Éléments à connaître / spécificités
-
-L'élément à connaître pour cette tâche est une fonction et celle-ci réside dans la classe _ClientsManagement.java_ : *nouveauClient()*.
-
-===== Extraits de code commentés pour des points importants
-
-Le code étant déjà présent dans l'application, il n'y a aucune partie qui mérite d'être signalée et venant de notre part.
-De plus, il n'y a pas de détails spécifiques qui seraient difficiles à comprendre et donc à expliquer ou tout simplement d'être mentionné.
 
 ==== 1.3 Créer un nouveau compte - Nicolas S.
 
