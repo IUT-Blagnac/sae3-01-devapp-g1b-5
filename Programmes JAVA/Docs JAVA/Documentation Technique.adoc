@@ -20,16 +20,29 @@ image::../V2/images/droite.png[UC V2]
 
 ==== 1.1 Types d'utilisateurs et spécificités
 
-Tout comme dans la V0, deux types d'utilisateurs subsistent : le chef d'agence ainsi que les guichetiers.
-En tant que chef d'agence, celui-ci possède des privilèges et des droits supplémentaires au sein de son agence bancaire, à comparer d'un simple employé (guichetier).
+A partir des Users Story fournis par notre client, nous avons distingué 3 types d'utilisateurs.
 
-Pour justifier cela, bien que le chef d'agence pouvait, dans la V0, rendre inactif un client inscrit dans son agence bancaire, celui-ci peut gérer ses employés. Cela n'aurait évidemment pas d'intérêts que cette action soit réciproque car la hiérarchie des rôles de chaque employé ne serait pas respectée.
-Celui-ci, en logique, bénéficie de l'ensemble des actions que peuvent réaliser les guichetiers.
-Par ailleurs, dans cette seconde version, le chef d'agence peut en plus effectuer un débit exceptionnel ou encore simuler un emprunt ou une assurance d'emprunt, disposant des capacités, des droits et des connaissances suffisantes.
+Premièrement, les visiteurs qui ont la possibilité d'accéder librement au site pour pouvoir y découvrir les différets produits. Ils ont donc accès à la page principale ainsi qu'a la page :
+- des bonbons pour visualiser les bonbons et leurs détails, 
+- des récipients pour visualiser les récipients et leurs détails, 
+- des promotions pour visualiser tous les produits sur lesquels s'applique une promotion, 
+- des nouveautés pour visualiser les nouveaux produits
+- sur l'entreprise pour découvrir l'histoire de celle-ci ainsi que quelques informations importantes.
+- de création ou connexion à un compte
+- de contact pour envoyer des commentaires à l'entreprise via un formulaire de contact
 
-Pour un guichetier, en plus de pouvoir modifier les informations d'un client ou en créer un nouveau, de consulter un compte ou de pouvoir le débiter, étant des fonctionnalités déjà présentes dans la V0, celui-ci peut profiter de possibilités supplémentaires telles que de créer un nouveau compte, de créditer ou d'effectuer un virement de compte à compte ou encore de pouvoir clôturer le compte sélectionné. Mais ce n'est pas tout car dans cette seconde version, il pourra générer un relevé mensuel d'un compte en PDF ou encore gérer les prélèvements automatiques.
+D'après les Users Story, les visiteurs peuvent également faire des recherches de produit mais également des recherche par sous-catégorie et pouvoir consulter l'ensemble des avis ou en déposer. Après discussion avec notre client, un visiteur n'aura pas accès à son panier et ne pourra donc pas ajouter/retirer de produit de celui-ci. Il devra d'abord se connecter ou créer un compte et ainsi devenir client.
 
-Ces actions ne seront ainsi, possibles sans traiter les différentes problématiques liées à ces utilisations.
+Deuxièmement, nous avons les clients qui se distinguent des visiteurs par le fait qu'ils ont un compte présent dans la base de donnée. Ils ont donc accès à toutes les fonctions citées ci-dessus avec en plus l'accès :
+- à la page panier pour ajouter/supprimer un produit, abandonner le panier, valider le panier,
+- à la page d'informations du compte avec la visualisation des commandes passées et des points de fidélités,
+- à la page de modification des informations du compte ainsi que le mot de passe
+
+Troisèmement, nous avons les administrateurs. Les administreteurs n'auront pas directement accès aux fonctionnalités des clients et visiteurs mais ils pourront réaliser des actions que les clients et visiteurs sont dans l'impossibilités de faire. Nous avons donc :
+- la possibilité d'ajouter/retirer des produits (bonbons, récipients)
+- la possibilité de rajouter du stock (bonbons, récipients)
+- la possibilité de voir toutes les commandes passées par les clients
+- la possibilité de voir tous les messages envoyés par les clients
 
 === 2. Explications du diagramme de classe des données globales
 
