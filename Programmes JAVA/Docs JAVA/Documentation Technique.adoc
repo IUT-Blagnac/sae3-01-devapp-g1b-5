@@ -113,7 +113,7 @@ Lors de son arrivé sur l'application, notre client pourra visualiser en temps r
 
 ===== Partie du use case conforme
 
-image::/images/Capture1.PNG[Visualiser données]
+image::images/Capture1.PNG[Visualiser données]
 
 ===== Classes impliquées à l'implémentation de la fonction
 
@@ -164,7 +164,7 @@ Lorsque le client a modifié les champs qu'il souhaite, il peut quitter cette fe
 
 ===== Partie du use case conforme
 
-image::/images/Capture2.PNG[Modifier les seuils maximaux]
+image::images/Capture2.PNG[Modifier les seuils maximaux]
 
 ===== Classes impliquées à l'implémentation de la fonction
 
