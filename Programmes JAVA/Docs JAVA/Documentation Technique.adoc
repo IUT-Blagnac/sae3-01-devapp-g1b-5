@@ -80,21 +80,20 @@ Le MVC (de son nom français _modèle-vue-contrôleur_) est le nom d'une méthod
 
 ==== 4.1 Spécificités
 
-Concernant le package ``application``, celui-ci constitue le package principal de l'application "DailyBank". 
-Vous trouverez dans ce package (comme indiqué au dessus, à la partie _3. Structuration en packages de l'application_), trois packages, dont les packages ``view`` et ``control`` sont inclus dans l'acronyme MVC.
+Concernant le package ``application``, celui-ci constitue le package principal de l'application. 
+Vous trouverez dans ce package (comme indiqué au dessus, à la partie _3. Structuration en packages de l'application_), quatre packages, dont les packages ``view``, ``control`` et ``model`` sont inclus dans l'acronyme MVC.
 Concrètement : +
 ____
-• Le sous-package _control_ comporte des classes permettant de faire communiquer les classes comprises dans le modèle ainsi que la vue. Ici, les classes présentes dans ce sous-package permettent d'afficher les différentes fenêtres ou sous-fenêtres de "DailyBank".
-• Le sous-package _tools_, comme son nom l'indique, est un sous-package d'outils. Celui-ci comporte des classes permettant de gérer certaines parties du code de l'application (notamment les différents types de droits, d'opérations, les pop-ups, etc.).
-• Le sous-package _view_ comporte un ensemble de classes représentant les différents éléments présents dans l'interface utilisée par l'utilisateur (boutons, listes, etc.) Ici-même, il contient l'ensemble des "controller" des différentes fenêtres ou sous-fenêtres avec leurs fichiers fxml respectifs.
+• Le sous-package _control_ comporte des classes permettant de faire communiquer les classes comprises dans le modèle ainsi que la vue. Ici, les classes présentes dans ce sous-package permettent d'afficher les différentes fenêtres ou sous-fenêtres de l'application.
+• Le sous-package _tools_, comme son nom l'indique, est un sous-package d'outils. Celui-ci comporte des classes permettant de gérer certaines parties du code de l'application (notamment les alertes, la lecture de fichier et la mise en place du thread).
+• Le sous-package _view_ comporte un ensemble de classes représentant les différents éléments présents dans l'interface utilisée par l'utilisateur (boutons, label, etc.) Ici-même, il contient l'ensemble des "controller" des différentes fenêtres ou sous-fenêtres avec leurs fichiers fxml respectifs.
+• Le sous-package _model_ correspond à la partie "modèle" incluse dans l'acronyme MVC. Ce package permet de représenter la structure des données dans l'application logicielle mais également la classe supérieure qui y figure.
 ____
 
-Le sous-package principal ``model`` correspond à la partie "modèle" incluse dans l'acronyme MVC. Ce package permet de représenter la structure des données dans l'application logicielle mais également la classe supérieure qui y figure. À contrario des deux autres packages, celui-ci ne contient aucune information sur l'interface utilisateur.
+Au même niveau que le package ``Application``, nous avons également le package ``ressource`` qui contient la partie python avec fichier de configuration et fichier texte ainsi que le logo de l'entreprise Cheribou.
 Concrètement : +
 ____
-• Le sous-package _data_ comporte des classes représentant l'environnement d'une application de gestion de comptes de clients (l'agence bancaire et ses employés, les clients ainsi que leurs comptes ou encore les opérations différenciées par leurs types).
-• Le sous-package _orm_ comporte des classes permettant d'une part, de faire la liaison entre le code java et la base de données nécessaire au fonctionnement de l'application mais également de pouvoir accéder à toutes les informations nécessaires initialisées dans la _data_. Ces classes sont clairement liées au données figurant dans "DailyBank", qu'elles soient créées, mises à jour ou tout simplement obtenues.
-• Le sous-package _orm.exception_ comporte des classes permettant de gérer ou de faire signaler l'ensemble des erreurs ou exceptions possibles dans l'application.
+• Le sous-package _python_ contient essentiellement le main.py, c'est à dire, le programme principal python.
 ____
 
 ==== 4.2 Éléments nécessaires à la mise en oeuvre du développement
