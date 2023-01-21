@@ -45,7 +45,7 @@ Concrètement, cela se résume à ce que l'application puisse être utilisée de
 
 L'application étant codée en Java, celle-ci aura pour extension de fichier, un ``.jar`` car ce format est avantageux pour stocker l'ensemble des définitions des classes ainsi que de ses métadonnées, constituant la totalité du programme.
 
-Pour les employés souhaitant utiliser cette application pour visualiser les donénes, ils doivent s'assurer que leurs postes de travail soient équipés d'une ``JRE (Java Runtime Environement) 1.8`` au minimum.
+Pour les employés souhaitant utiliser cette application pour visualiser les données, ils doivent s'assurer que leurs postes de travail soient équipés d'une ``JRE (Java Runtime Environement) 1.8`` au minimum.
 
 Concernant la librairie, l'application utilise la librairie jar.
 
@@ -58,11 +58,10 @@ La structuration de l'application est répartie en plusieurs packages que voici 
 ├── application
     │   ├── application.control
     │   ├── application.tools
-    │   └── application.view
-    └── model
-        ├── model.data
-        └── model.orm
-            └── model.orm.exception
+    │   ├── application.view
+    |   └── application.model
+    └── resources
+        └── ressources.python
 ----
 
 === 4. Éléments à connaître
