@@ -23,6 +23,7 @@ image::../V2/images/droite.png[UC V2]
 A partir des Users Story fournis par notre client, nous avons distingué 3 types d'utilisateurs.
 
 Premièrement, les visiteurs qui ont la possibilité d'accéder librement au site pour pouvoir y découvrir les différets produits. Ils ont donc accès à la page principale ainsi qu'a la page :
+
 - des bonbons pour visualiser les bonbons et leurs détails, 
 - des récipients pour visualiser les récipients et leurs détails, 
 - des promotions pour visualiser tous les produits sur lesquels s'applique une promotion, 
@@ -34,11 +35,13 @@ Premièrement, les visiteurs qui ont la possibilité d'accéder librement au sit
 D'après les Users Story, les visiteurs peuvent également faire des recherches de produit mais également des recherche par sous-catégorie et pouvoir consulter l'ensemble des avis ou en déposer. Après discussion avec notre client, un visiteur n'aura pas accès à son panier et ne pourra donc pas ajouter/retirer de produit de celui-ci. Il devra d'abord se connecter ou créer un compte et ainsi devenir client.
 
 Deuxièmement, nous avons les clients qui se distinguent des visiteurs par le fait qu'ils ont un compte présent dans la base de donnée. Ils ont donc accès à toutes les fonctions citées ci-dessus avec en plus l'accès :
+
 - à la page panier pour ajouter/supprimer un produit, abandonner le panier, valider le panier,
 - à la page d'informations du compte avec la visualisation des commandes passées et des points de fidélités,
 - à la page de modification des informations du compte ainsi que le mot de passe
 
 Troisèmement, nous avons les administrateurs. Les administreteurs n'auront pas directement accès aux fonctionnalités des clients et visiteurs mais ils pourront réaliser des actions que les clients et visiteurs sont dans l'impossibilités de faire. Nous avons donc :
+
 - la possibilité d'ajouter/retirer des produits (bonbons, récipients)
 - la possibilité de rajouter du stock (bonbons, récipients)
 - la possibilité de voir toutes les commandes passées par les clients
