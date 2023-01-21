@@ -9,51 +9,12 @@ _Réalisé par Anthony Cabrillac, Victor Thompson, Yann Guillevic, Léo Douville
 toc::[]
 
 == I - Présentation rapide de l'application
-L’entreprise Cheribou souhaitant re-conceptualiser son site internet pour que celui-ci soit le plus attractif possible afin d’augmenter le nombre de clients inscrits et d’améliorer le nombre de ventes en ligne. De plus, Cheribou a la volonté et les ressources pour se développer à l'international afin degagner en notoriété et en visibilité. Cheribou cherche à s’introduire et à s’exporter sur les marchés Allemand et Américain. Mais le site internet actuel est désuet et n’est pas adapté à pour une future expansion internationale. Une version anglaise du site devra donc être créée afin de s’adapter au nouveau type de clients. Le nouveau site web devra être adapté pour des enfants, adolescents et jeunes adultes, être simple à parcourir et être sécurisé pour permettre une bonne utilisation du site web et une fidélisation de la clientèle.
+L’entreprise Cheribou souhaite suivre en direct l'environnement dans ses différents entreprôt de stockage. Plusieurs capteurs ont été installés permettant la récupération de données en CO2, température ainsi qu'humidité et souhaite disposer d'un outil permettant la visualisation de ces données pour s'assurer des bonnes conditions de stockage de ces produits (bonbons et récipients).
+Ainsi, cette application permettra à notre client de visualiser les données des capteurs sur des graphiques et de modifier plusieurs paramêtres comme la gestion des seuils maximaux des données, la gestion de la fréquence d'émission et la gestion des serveurs choisis pour l'écoute.
 
 === 1. Explications du use case global
+image::images/Use Case.PNG[UC global]
 
-Voici le use case général de la version 2 de l'application DailyBank :
-
-image::../V2/images/gauche.png[UC V2]
-image::../V2/images/droite.png[UC V2]
-
-==== 1.1 Types d'utilisateurs et spécificités
-
-A partir des Users Story fournis par notre client, nous avons distingué 3 types d'utilisateurs.
-
-Premièrement, les visiteurs qui ont la possibilité d'accéder librement au site pour pouvoir y découvrir les différets produits. Ils ont donc accès à la page principale ainsi qu'a la page :
-
-- des bonbons pour visualiser les bonbons et leurs détails, 
-- des récipients pour visualiser les récipients et leurs détails, 
-- des promotions pour visualiser tous les produits sur lesquels s'applique une promotion, 
-- des nouveautés pour visualiser les nouveaux produits
-- sur l'entreprise pour découvrir l'histoire de celle-ci ainsi que quelques informations importantes.
-- de création ou connexion à un compte
-- de contact pour envoyer des commentaires à l'entreprise via un formulaire de contact
-
-D'après les Users Story, les visiteurs peuvent également faire des recherches de produit mais également des recherche par sous-catégorie et pouvoir consulter l'ensemble des avis ou en déposer. Après discussion avec notre client, un visiteur n'aura pas accès à son panier et ne pourra donc pas ajouter/retirer de produit de celui-ci. Il devra d'abord se connecter ou créer un compte et ainsi devenir client.
-
-Deuxièmement, nous avons les clients qui se distinguent des visiteurs par le fait qu'ils ont un compte présent dans la base de donnée. Ils ont donc accès à toutes les fonctions citées ci-dessus avec en plus l'accès :
-
-- à la page panier pour ajouter/supprimer un produit, abandonner le panier, valider le panier,
-- à la page d'informations du compte avec la visualisation des commandes passées et des points de fidélités,
-- à la page de modification des informations du compte ainsi que le mot de passe
-
-Troisèmement, nous avons les administrateurs. Les administreteurs n'auront pas directement accès aux fonctionnalités des clients et visiteurs mais ils pourront réaliser des actions que les clients et visiteurs sont dans l'impossibilités de faire. Nous avons donc :
-
-- la possibilité d'ajouter/retirer des produits (bonbons, récipients)
-- la possibilité de rajouter du stock (bonbons, récipients)
-- la possibilité de voir toutes les commandes passées par les clients
-- la possibilité de voir tous les messages envoyés par les clients
-
-=== 2. Explications du diagramme de classe des données globales
-
-image::../V2/images/dcv2.PNG[DC V2]
-
-==== 2.1 Fonctionnalités du chef d'agence
-
-==== 2.2 Fonctionnalités du guichetier
 
 == II - Architecture
 
