@@ -56,13 +56,14 @@ Si vos identifiants de connexion ne sont pas erronés, cela vous redirigera vert
 
 image::/V0/images/log.png[Connexion à un compte]
 
-==== Se déconnecter 
+===== Se déconnecter 
 
 Pour vous déconnecter du compte, il vous suffira d'appuyer sur le bouton "Se déconnecter" en haut à droite dans la page "Compte".
 
 
 image::/V0/images/gestionClient.png[Exercer le métier de guichetier]
 
+==== Gestion de compte
 
 ===== Modifier les informations de votre compte
 
@@ -76,7 +77,7 @@ image::/V0/images/rechercheClient.png[Recherche Client]
 Une fois le bouton "Modifier" cliqué, un formulaire permettant de changer vos informations apparaît.
 
 
-===== Clôturer un compte
+===== Modifier son mot de passe
 
 Pour clôturer un compte, il faut savoir que son solde (du compte en question) doit avoir un solde qui soit nul, équivalent à zéro, pour cela nous avons bloqué la possibilité d'appuyer sur le bouton clôturer compte du moment que le solde du compte ne soit pas nul, dès que le solde d'un compte est nul, vous pourrez appuyer sur le bouton et ainsi clôturer le compte comme illustré par ces images :
 
@@ -91,7 +92,7 @@ Enfin dans le cas où le solde du compte n'est pas égal à 0 :
 image::/V1/images/cloturer3C.png[Etape 3 cloturer un compte]
 
 
-===== Consulter un compte
+===== Historiques de commandes
 
 Afin de voir les opérations d'un compte je vous laisse suivre les étapes jusqu'à arriver à la fenêtre nommée "Gestion des clients" définie dans la rubrique "Modifier les informations d'un client" (étape 2.1.2.2). Une fois la page ouverte, il suffit de cliquer sur le compte dont on souhaite consulter les opérations avant de terminer par appuyer sur le bouton "Comptes client" (flèche rouge).
 
