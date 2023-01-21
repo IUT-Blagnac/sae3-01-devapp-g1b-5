@@ -29,30 +29,25 @@ Nos clients pourront également accéder à une page de modification des paramê
 
 === 1. Architecture générale
 
-Lorsqu'un employé vient à utiliser l'application "DailyBank", celle-ci n'est en réalité pas complexe à son utilisation. Elle reste relativement claire, facile à comprendre bien que certaines règles (règle des trois clics par exemple) ne soient pas respectées afin de trouver toutes les informations de manière rapide et simplement. Pour autant, celle-ci possède une architecture relativement aisée à comprendre étant donné qu'elle est construite sur un fonctionnement centralisé.
+Lorsqu'un client vient à utiliser l'application, celle-ci n'est en réalité pas complexe à son utilisation. Elle reste relativement claire, facile à comprendre et celle-ci possède une architecture relativement aisée à comprendre étant donné qu'elle est construite sur un fonctionnement centralisé.
+
+L'application contient 3 parties globales. Premièrement, la partie générale de l'application qui respecte le pattern MVC, que nous verront en détail plus bas, et qui représente l'application avec les différentes fenêtres. 
+
+Deuxièmement, nous stockons le fichier de donnée dans lequel le programme python y écris les données des capteurs. L'application y lis les données et les affiche dans les graphiques.
+
+Troisèmement, le fichier de configuration en yml. Nous stockons également ce fichier car celui-ci est re-écris à chaque fois que le client modifiera des données comme il le souhaite.
 
 ==== 1.1 Poste client
 
-Concrètement, cela se résume à ce que l'application puisse être utilisée de n'importe quel employé, depuis n'importe quel poste de travail. Ainsi, chaque modifications ou ajouts de données effectuées, depuis un poste de travail au sein d'une agence bancaire inclue dans l'application, seront directement appliquées et reliées à la base de données de celle-ci. Ainsi, chaque poste de travail est une machine dédiée à un employé de l'agence bancaire.
-
-==== 1.2 Serveurs
-
-L'application possède ainsi une base de données propre à ses caractéristiques. Elle permet de conserver l'ensemble des informations relatives à une agence bancaire telles que : +
-____
-• Les employés ; 
-• Les clients ; 
-• Les comptes des clients ou encore 
-• Les opérations effectuées depuis un compte.
-____
+Concrètement, cela se résume à ce que l'application puisse être utilisée de n'importe quel employé, depuis n'importe quel poste de travail. Le système de visualisation des données est basé sur une méthode permettant la mise à jour automatique des graphes suivant un délais pré-définis quelques sois l'utilisation ou la page sur laquelle se trouve le client.
 
 === 2. Ressources externes et rôles
 
-L'application "DailyBank" étant codée en Java, celle-ci aura pour extension de fichier, un ``.jar`` car ce format est avantageux pour stocker l'ensemble des définitions des classes ainsi que de ses métadonnées, constituant la totalité du programme.
+L'application étant codée en Java, celle-ci aura pour extension de fichier, un ``.jar`` car ce format est avantageux pour stocker l'ensemble des définitions des classes ainsi que de ses métadonnées, constituant la totalité du programme.
 
-Pour les employés souhaitant utiliser cette application de gestion de comptes clients, ils doivent s'assurer que leurs postes de travail soient équipés d'une ``JRE (Java Runtime Environement) 1.8``.
+Pour les employés souhaitant utiliser cette application pour visualiser les donénes, ils doivent s'assurer que leurs postes de travail soient équipés d'une ``JRE (Java Runtime Environement) 1.8`` au minimum.
 
-Concernant la librairie figurant au sein de "DailyBank", celle-ci utilise la librairie jar.
-Enfin, l'application repose sur un fichier nommé ``"ojdbc6.jar"`` : c'est un pilote JDBC d'Oracle fournissant une connectivité entre une base de données au serveur de base de données Oracle et une interface de programme d'application JDBC disponible en Java.
+Concernant la librairie, l'application utilise la librairie jar.
 
 === 3. Structuration en packages de l'application
 
