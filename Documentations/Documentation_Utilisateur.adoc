@@ -13,108 +13,68 @@ toc::[]
 
 == Présentation générale du site web
 
-Ce site web d'e-commerce a été réalisée lors de notre deuxième année de BUT informatique, nous avions pour but de réaliser un site web permettant de vendre le produits de notre client 'Cheribou' celle-ci nous permettra de simuler des actions que l’on peut retrouver dans une boutiques de ventes en lignes.
+Ce site web d'E-commerce a été réalisée lors de notre deuxième année de BUT informatique, nous avions pour but de réaliser un site web permettant de vendre le produits de notre client 'Cheribou' celle-ci nous permettra de simuler des actions que l’on peut retrouver dans une boutiques de ventes en lignes.
 
 Le site web doit permettre la ventes des bonbons et autres produits proposé par notre client de dépôt. Les produits ainsi que les données personnelles des clients sont stockées dans une base de données. Le client devra pouvoir se connecter/créer un compte, visiter le catalogue des produits, ajouter un produit au panier et de valider son panier pour accèder au paiement. 
 
-== Installation 
+== Visite du site
 
-Afin de pouvoir utiliser notre application, nos clients devront disposer d'un poste informatique munie d'un JRE JAVA 8. 
-https://techexpert.tips/fr/windows-fr/installation-de-java-jre-sur-windows/[Comment installer et configurer JAVA 8 sur votre PC ?]
+Afin de pouvoir visiter le site, les clients devront posséder le lien permettant d'accéder : http://193.54.227.164/~SAESYS05/
 
-== Fonctionnement de l'application 
+== Fonctionnement du site d'E-commerce
 
-=== Guichetier
+=== Client
 
 ==== Connexion
 
-===== Comment se connecter ? 
+===== Comment se connecter/créer un compte ? 
 
-Voici l'interface d'accueil qui s'affichera lors de l'ouverture de l'exécutable de notre application DAILY BANK.
+Voici la page d'accueil qui s'affichera lors de l'ouverture du site web depuis le lien donné précédemment.
 
-Pour se connecter à son compte, le client devra appuyer sur le bouton "Connexion" situé en bas de page :
+Pour se connecter à son compte, le client devra appuyer sur l'icone "Compte" situé en haut à droite du menu de navigation :
 
 image::/V0/images/accueil.png[Interface d'accueil]
 
+Le client aura alors la possibilité de se connecter ou bien de se créer un compte au cas écheant.
+
+
 ===== Identifiant et mot de passe
 
-En ce qui concerne vos identifiants, vous les recevrez par lettre recommandée. Vous pourrez ensuite insérer vos identifiants de connexion de la manière suivante :
+Pour se connecter vous allez devoir saisir votre adresse mail ainsi que votre mot de passe crées lors de la création de votre compte. Si vous n'avez pas encore crée de compte vous devriez y renseigner votre nom, prénom, e-mail ainsi que le mot de passe que vous souhaitez utiliser.
 
 ____
-- Votre identifiant dans la zone de texte indiquée par la flèche rouge ;
+- Votre e-mail renseigné doit être valide (contenant un '@') ;
 
-- Votre mot de passe dans la zone de texte indiquée par la flèche bleue ;
+- Votre mot de passe doit être valide (avoir au moins 8 caractères, dont une majuscules, une minuscule, un caractère spécial et un chiffres) ;
 
-- Une fois vos identifiants non erronés saisis, il ne vous reste plus qu'à appuyer sur le bouton "Valider" indiqué par la flèche noire.
+- l'e-mail ne peux pas etre dejà utilisé, auquel cas vous avez dejà un compte;
+
+- Une fois vos champs non erronés saisis, il ne vous reste plus qu'à appuyer sur le bouton "Valider".
 ____
 
-Si vos identifiants de connexion ne sont pas erronés, la page d'accueil s'affichera.
+Si vos identifiants de connexion ne sont pas erronés, cela vous redirigera verts la page d'accueil.
 
 image::/V0/images/log.png[Connexion à un compte]
 
-==== Gestion des clients 
+==== Se déconnecter 
 
-Pour vous déconnecter du compte, il vous suffira d'appuyer sur le bouton "Déconnexion" indiqué par la flèche noire.
+Pour vous déconnecter du compte, il vous suffira d'appuyer sur le bouton "Se déconnecter" en haut à droite dans la page "Compte".
 
-Pour exercer votre métier de guichetier et pour pouvoir effectuer des transactions financières (débit) mais aussi juridiques (créer un nouveau compte etc.) sur un compte, vous pourrez cliquer sur la rubrique "Gestion" située dans l'en-tête de l'application (flèche rouge), puis sur la sous-rubrique "Clients" indiquée par la flèche bleue.
 
 image::/V0/images/gestionClient.png[Exercer le métier de guichetier]
 
-===== Créer un nouveau client
 
-Afin de pouvoir créer un compte, veuillez cliquer sur les boutons indiqués par la flèche noire.
+===== Modifier les informations de votre compte
 
-image::/V0/images/creerCompte.png[Creer compte]
+Vous vous êtes trompé lors de la création de votre ? Pas de problèmes, notre site web permet de rectifier d'éventuelles erreurs ! 
+Afin de pouvoir modifier vos informations, il vous faut suffit de cliquer sur le bouton "Modifier" dans la rubrique "Informations personnelles" de la page Compte.
 
-Suite au clic du bouton "Nouveau client" de l'image ci-dessus, une nouvelle fenêtre nommée "Gestion d'un client" va s'ouvrir (ci-dessus). Le guichetier n'aura qu'à renseigner les éléments correspondants aux différentes zones de texte, à savoir : 
-
-____
-- Nom : nom du client 
-
-- Prénom : prénom du client 
-
-- Adresse : veuillez respecter cette nomenclature [numéro de rue "," nom de la rue "," code postal "," nom de la ville]
-
-- Téléphone : le numéro de téléphone du client (portable)
-
-- E-mail : l'adresse mail du client
-____
-
-image::/V0/images/ajoutClient.png[Creer compte]
-
-Si toutes les cases sont remplies correctement, il vous suffira d'appuyer sur le bouton "Valider" pour créer un nouveau client.
-
-===== Modifier les informations d'un client
-
-Vous vous êtes trompé lors de la création d'un client ? Pas de problèmes, notre application vous permet de rectifier d'éventuelles erreurs ! 
-Afin de pouvoir modifier un compte, il vous faut au préalable connaître au minimum son numéro de compte (ID). Vous regarderez la liste fournie par mail. Une fois le code obtenu, il vous suffira de le renseigner dans la zone de texte indiquée par la flèche rouge (le prénom ainsi que le nom peuvent être renseignés dans leur zone de texte correspondante, mais ce n'est pas obligatoire) puis d'appuyer sur le bouton "Rechercher".
-
-Prenons ici l'exemple du compte 181 qui appartient à un compte test pour la démonstration :
+Prenons ici l'exemple du compte de Victor Thompson :
 
 image::/V0/images/rechercheClient.png[Recherche Client]
 
-Une fois le compte recherché, il ne vous reste plus qu'à regarder si le compte apparaît dans la zone blanche en dessous des zones de saisies comme sur l'image ci-dessous :
+Une fois le bouton "Modifier" cliqué, un formulaire permettant de changer vos informations apparaît.
 
-image::/V0/images/CompteTest.png[Recherche Client]
-
-Une fois le client apparu dans la zone de recherche, il vous suffit de cliquer sur la zone horizontale où il apparaît puis de cliquer sur le bouton "Modifier client" indiqué par la flèche rouge :
-
-image::/V0/images/preModif.png[Pré modification d'un compte]
-
-Une nouvelle fenêtre s'ouvre (image de la fenêtre ci-dessous) et vous pourrez, de ce fait, changer les éventuelles erreurs en cliquant sur le bouton "Modifier" indiqué par la flèche rouge :
-
-image::/V0/images/modifClient.png[Modifier un compte]
-
-
-===== Créer un compte
-
-Pour créer un compte il suffit de cliquer sur le bouton nouveau compte puis de suivre les étapes indiquées par les flèches comme sur les images ci-dessous :
-
-image::/V1/images/creer1C.png[Etape 1 créer un compte]
-
-En ce qui concerne les champs à renseigner, le montant et le découvert ne doivent pas être négatif, une fois bien rempli, vous n'avez juste qu'à appuyer sur le bouton "valider" indiqué par la flèche noire
-
-image::/V1/images/creer2C.png[Etape 2 créer un compte]
 
 ===== Clôturer un compte
 
