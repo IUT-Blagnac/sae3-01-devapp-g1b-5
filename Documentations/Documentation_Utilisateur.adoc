@@ -44,8 +44,11 @@ image::/Documentations/images/page_connexion.PNG[Page connexion]
 
 ===== Identifiant et mot de passe
 
+image::/Documentations/images/connexion.PNG[connexion]
+
 Pour se connecter vous allez devoir saisir votre adresse mail ainsi que votre mot de passe crées lors de la création de votre compte. Si vous n'avez pas encore crée de compte vous devriez y renseigner votre nom, prénom, e-mail ainsi que le mot de passe que vous souhaitez utiliser.
 
+image::/Documentations/images/inscription.PNG[connexion]
 ____
 - Votre e-mail renseigné doit être valide (contenant un '@') ;
 
