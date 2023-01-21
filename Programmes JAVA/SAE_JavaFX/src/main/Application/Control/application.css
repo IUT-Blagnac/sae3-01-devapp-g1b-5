@@ -1,0 +1,5 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lemon" />
+.Titre{
+        -fx-font-family:"lemon";
+}

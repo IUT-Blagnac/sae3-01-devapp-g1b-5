@@ -1,4 +1,0 @@
-seuilMax: {Hum: 20, Temp: 50, CO2: 5000}
-frequence: {valeur: 20}
-config: {mqttserver: chirpstack.iut-blagnac.fr, device: application/1/device/+/event/up}
-numPort: {mqttport: 1880}
