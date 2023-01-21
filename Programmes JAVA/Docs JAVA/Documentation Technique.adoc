@@ -2,7 +2,7 @@
 :toc-placement!:
 :toc-title: Table des matières
 
-https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/include/images/Logo.png[]
+image::/https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/include/images/Logo.png[]
 = Application JAVA - Documentation Technique 
 _Réalisé par Anthony Cabrillac, Victor Thompson, Yann Guillevic, Léo Douville, Shiyu Hu_
 
