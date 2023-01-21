@@ -31,15 +31,15 @@ Afin de pouvoir visiter le site, les clients devront posséder le lien permettan
 
 Voici la page d'accueil qui s'affichera lors de l'ouverture du site web depuis le lien donné précédemment.
 
-image::/Documentations/images/page_accueil.png[Page d'accueil]
+image::/Documentations/images/page_accueil.PNG[Page d'accueil]
 
 Pour se connecter à son compte, le client devra appuyer sur l'icone "Compte" situé en haut à droite du menu de navigation :
 
-image::/Documentations/images/compte.png[Icone Compte]
+image::/Documentations/images/compte.PNG[Icone Compte]
 
 Le client aura alors la possibilité de se connecter ou bien de se créer un compte au cas écheant.
 
-image::/Documentations/images/page_connexion.png[Page connexion]
+image::/Documentations/images/page_connexion.PNG[Page connexion]
 
 
 ===== Identifiant et mot de passe
