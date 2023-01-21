@@ -45,7 +45,7 @@ Concrètement, cela se résume à ce que l'application puisse être utilisée de
 
 L'application étant codée en Java, celle-ci aura pour extension de fichier, un ``.jar`` car ce format est avantageux pour stocker l'ensemble des définitions des classes ainsi que de ses métadonnées, constituant la totalité du programme.
 
-Pour les employés souhaitant utiliser cette application pour visualiser les données, ils doivent s'assurer que leurs postes de travail soient équipés d'une ``JRE (Java Runtime Environement) 1.8`` au minimum.
+Pour les employés souhaitant utiliser cette application pour visualiser les données, ils doivent s'assurer que leurs postes de travail soient équipés d'une ``JRE (Java Runtime Environement) 1.17``.
 
 Concernant la librairie, l'application utilise la librairie jar.
 
@@ -102,31 +102,18 @@ Pour une personne étant destiné à faire maintenir le fonctionnement de l'appl
 
 Par la suite, il lui est nécessaire de posséder un IDE (environnement de développement intégré) pour tout simplement pouvoir observer le code et interagir avec. Eclipse ou encore IntelliJ IDEA sont des IDE que le développeur peut utiliser. 
 
-Enfin, ce ne serait sans mentionner le Workspace depuis lequel repose l'application que le développeur pourrait programmer. Ce Workspace doit alors être configuré en JavaFX avec une version du JDK en 1.8. Le logiciel SceneBuilder devra être intégré dans le buildpath mais il est à préconiser afin d'interagir avec les fichiers fxml.
+Enfin, ce ne serait sans mentionner le Workspace depuis lequel repose l'application que le développeur pourrait programmer. Ce Workspace doit alors être configuré en JavaFX avec une version du JDK en 1.17. Le logiciel SceneBuilder devra être intégré dans le buildpath mais il est à préconiser afin d'interagir avec les fichiers fxml.
 
 
 == III - Explications des fonctionnalités
 
-=== 1. Guichetier
+=== 1. Affichage des données sous forme de graphique
 
-==== 1.1 Modifier les informations d'un client - Déjà présent (V0)
-
-Un chef d'agence ou un guichetier peut modifier les informations d'un client selon les actualités tournant autour de celui-ci. Ces informations peuvent concerner le nom ou le prénom du client, son adresse, ses moyens de communication ou encore son évolutivité dans son agence bancaire, c'est-à-dire son activité.
+Lors de son arrivé sur l'application, notre client pourra visualiser en temps réel les données en CO2, température et humidité via des labels mais aussi via des graphiques qui montreront l'évolution de ces données avec les différentes courbes. Cette implémentation est possible grâce à un thread.
 
 ===== Partie du use case conforme
 
-image::/V1/images/modifinfoclient.PNG[Modifier info client]
-
-===== Partie du diagramme de classe conforme
-
-image::/V1/images/clientdc.PNG[Modifier info client]
-
-Cette tâche n'inclut seulement qu'une classe dans le diagramme de classes V1 : la classe ``Client``.
-Cette classe est, de ce fait, dédiée à la modification des informations d'un client et par conséquent, à la mise à jour des données sur la base de données.
-
-===== Principales fonctionnalités
-
-Les principales fonctionnalités ont été introduites de manière brève dans l'introduction de cette opération. Pour plus de détails, veuillez vous référer à la https://github.com/IUT-Blagnac/sae2022-bank-4a2/blob/main/V1/Documentation%20Utilisateur%20V1.adoc[_documentation utilisateur_].
+image::/images/capture1.PNG[Visualiser données]
 
 ===== Classes impliquées à l'implémentation de la fonction
 
@@ -134,39 +121,27 @@ Pour l'implémentation de cette action, plusieurs classes ont été impliquées 
 
 *Côté ``application.tools`` :* +
 ____
-• _CategorieOperation.java_
-• _ConstantesIHM.java_
+• _RunBackground.java_
+• _ReadFile.java_
+• _AlertUtilities.java_
 ____
 
 *Côté ``application.control`` :* +
 ____
-• _ClientEditorPane.java_
-• _ClientManagement.java_
-• _ExceptionDialog.java_
+• _MainFrame.java_
+• _RunApp.java_
 ____
 
 *Côté ``application.view`` :* +
 ____
-• _ClientEditorPaneController.java_
-• _ClientManagementController.java_
-____
-
-*Côté ``model.data`` :* +
-____
-• _Client.java_
-____
-
-*Côté ``model.orm / model.orm.exception`` :* +
-____
-• _AccessClient.java_
-• _ApplicationException.java_
-• _DatabaseConnexionException.java_
-• _DataAccessException.java_
+• _MainFrameController.java_
 ____
 
 ===== Éléments à connaître / spécificités
 
-L'élément à connaître pour cette tâche est une fonction et celle-ci réside dans la classe _ClientsManagement.java_ : *modifierClient(Client c)*.
+Il y a plusieurs éléments à connaitre. Tout d'abord la classe ``RunBackground.java`` car c'est celle-ci qui contient le code que va exécuter le thread mais aussi la classe ``MainFrameController.java`` avec les 3 méthodes situées tout en bas _MajGraphesCO2()_, _MajGraphesHUM()_, _MajGraphesTEMP()_.
+
+Ces 3 méthodes sont exécutés à chaque intervalle du thread.
 
 ===== Extraits de code commentés pour des points importants
 
