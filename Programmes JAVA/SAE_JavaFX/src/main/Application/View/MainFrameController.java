@@ -52,18 +52,24 @@ public class MainFrameController implements Initializable {
             this.seriesC02 = new XYChart.Series<>();
             yaxisC02.setLabel("C02 (ppm)");
             xaxisC02.setLabel("Temps");
+
+            //on récupère les dernières valeurs déjà présente dans le fichier texte
             this.listeCO2.add(Double.parseDouble(ReadFile.dictDonnes.get("C02")));
 
             //on définie le graphique pour la température
             this.seriesTemp = new XYChart.Series<>();
             yaxisTemp.setLabel("Température (°C)");
             xaxisTemp.setLabel("Temps");
+
+            //on récupère les dernières valeurs déjà présente dans le fichier texte
             this.listeTEMP.add(Double.parseDouble(ReadFile.dictDonnes.get("Temp")));
 
             //on définie le graphique pour l'humidité
             this.seriesHum = new XYChart.Series<>();
             yaxisHum.setLabel("Humidité (%)");
             xaxisHum.setLabel("Temps");
+
+            //on récupère les dernières valeurs déjà présente dans le fichier texte
             this.listeHUM.add(Double.parseDouble(ReadFile.dictDonnes.get("Hum")));
 
             // Création du "code" à exécuter en thread (un Runnable)
