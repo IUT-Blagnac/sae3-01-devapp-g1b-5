@@ -245,7 +245,7 @@ Fonctionnalité suppression des produits (bonbon ou récipient) du panier
 [cols="1,1"]
 |===
 |Sprint 7
-|Codage de la page paiment (Charte graphique + PHP)
+|Codage de la page paiement (Charte graphique + PHP)
 
 Finalisation page des produits en promotion (PHP)
 
