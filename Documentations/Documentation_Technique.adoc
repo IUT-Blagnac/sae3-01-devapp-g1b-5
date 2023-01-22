@@ -1,8 +1,3 @@
-:toc:
-:toc-placement!:
-:toc-title: Table des matières
-
-image::/images/DailyBank.png[]
 = Site Cheribou - Documentation Technique 
 _Réalisé par Anthony Cabrillac, Victor Thompson, Yann Guillevic, Léo Douville, Shiyu Hu
 
@@ -13,23 +8,21 @@ L’entreprise Cheribou souhaitant re-conceptualiser son site internet pour que 
 
 === 1. Explications du use case global
 
-Voici le use case général de la version 2 de l'application DailyBank :
+Voici le use case général du nouveau site de cheribou:
 
 image::../V2/images/gauche.png[UC V2]
 image::../V2/images/droite.png[UC V2]
 
 ==== 1.1 Types d'utilisateurs et spécificités
 
-Tout comme dans la V0, deux types d'utilisateurs subsistent : le chef d'agence ainsi que les guichetiers.
-En tant que chef d'agence, celui-ci possède des privilèges et des droits supplémentaires au sein de son agence bancaire, à comparer d'un simple employé (guichetier).
+Il y a trois types d'utilisateurs subsistent : l'admin, les clients ainsi que les visiteurs.
 
-Pour justifier cela, bien que le chef d'agence pouvait, dans la V0, rendre inactif un client inscrit dans son agence bancaire, celui-ci peut gérer ses employés. Cela n'aurait évidemment pas d'intérêts que cette action soit réciproque car la hiérarchie des rôles de chaque employé ne serait pas respectée.
-Celui-ci, en logique, bénéficie de l'ensemble des actions que peuvent réaliser les guichetiers.
-Par ailleurs, dans cette seconde version, le chef d'agence peut en plus effectuer un débit exceptionnel ou encore simuler un emprunt ou une assurance d'emprunt, disposant des capacités, des droits et des connaissances suffisantes.
+Le simple visiteur, lui pourra visité le site(voir les produits, les details des produit, etc), contacter via un formulaire un administrateur, il aura la possibilité de se crée un compte ou de se connecter pour devenir un client.
 
-Pour un guichetier, en plus de pouvoir modifier les informations d'un client ou en créer un nouveau, de consulter un compte ou de pouvoir le débiter, étant des fonctionnalités déjà présentes dans la V0, celui-ci peut profiter de possibilités supplémentaires telles que de créer un nouveau compte, de créditer ou d'effectuer un virement de compte à compte ou encore de pouvoir clôturer le compte sélectionné. Mais ce n'est pas tout car dans cette seconde version, il pourra générer un relevé mensuel d'un compte en PDF ou encore gérer les prélèvements automatiques.
+Pour un client, il peut effectué les même actions qu'un visiteur et peut modifié sont profile, visualiser compte, ce deconnecter qui le refera devenir un visiteur, ajouté des articles dans panier qu'il pourra valider par la suite.
 
-Ces actions ne seront ainsi, possibles sans traiter les différentes problématiques liées à ces utilisations.
+En tant qu'administrateur, celui-ci possède un espace parallèle au site qui lui permettra de modifier des articles. Il pourra aussi ajouter des stocks de produits, lire les messages envoyé par les clients ou les visiteurs..
+
 
 === 2. Explications du diagramme de classe des données globales
 
@@ -43,20 +36,19 @@ image::../V2/images/dcv2.PNG[DC V2]
 
 === 1. Architecture générale
 
-Lorsqu'un employé vient à utiliser l'application "DailyBank", celle-ci n'est en réalité pas complexe à son utilisation. Elle reste relativement claire, facile à comprendre bien que certaines règles (règle des trois clics par exemple) ne soient pas respectées afin de trouver toutes les informations de manière rapide et simplement. Pour autant, celle-ci possède une architecture relativement aisée à comprendre étant donné qu'elle est construite sur un fonctionnement centralisé.
+Pour les visiteurs ou clients le site est simple d'utilisation, reste relativement facile à comprendre et respecte la règle des trois clics.
 
-==== 1.1 Poste client
-
-Concrètement, cela se résume à ce que l'application puisse être utilisée de n'importe quel employé, depuis n'importe quel poste de travail. Ainsi, chaque modifications ou ajouts de données effectuées, depuis un poste de travail au sein d'une agence bancaire inclue dans l'application, seront directement appliquées et reliées à la base de données de celle-ci. Ainsi, chaque poste de travail est une machine dédiée à un employé de l'agence bancaire.
 
 ==== 1.2 Serveurs
+Le site est héberger sur un serveur Apache deployé dans un serveur de l'IUT de Blagnac.
 
-L'application possède ainsi une base de données propre à ses caractéristiques. Elle permet de conserver l'ensemble des informations relatives à une agence bancaire telles que : +
+Le site possède une base de données propre à ses caractéristiques. Elle permet de conserver l'ensemble des informations relatives au clients et produits telles que : +
 ____
-• Les employés ; 
 • Les clients ; 
-• Les comptes des clients ou encore 
-• Les opérations effectuées depuis un compte.
+• Les produits ; 
+• Les promotions ;
+• Les commandes ;
+• Les paniers des clients ;
 ____
 
 === 2. Ressources externes et rôles
@@ -74,14 +66,61 @@ La structuration de l'application est répartie en plusieurs packages que voici 
 
 [source]
 ----
-├── application
-    │   ├── application.control
-    │   ├── application.tools
-    │   └── application.view
-    └── model
-        ├── model.data
-        └── model.orm
-            └── model.orm.exception
+├── public_html
+        ├── index.php
+        ├── Compte.php
+        ├── admin.php
+        ├── AjoutPanierBonbon.php
+        ├──	AjoutPanierRecip.php
+        ├──	bonbon.php
+	  ├──	choixP.php
+	  ├──	contact.php
+	  ├──	detailBonbon.php
+	  ├──	detailRecipient.php
+	  ├──	InfosCompte.php
+	  ├──	Nouveaute.php
+	  ├──	panier.php
+	  ├──	produitadmin.php
+	  ├──	Promotion.php
+	  ├──	recipient.php
+	  ├──	stockadmin.php
+        └──include  
+         	  ├── admn.css
+           	  ├── bonbon.css
+           	  ├── Boutique.css
+	   	  ├── choixP.css
+	   	  ├── Compte.css
+	   	  ├── contact.css
+	   	  ├── datailBonbon.css
+	   	  ├── detailRecipient.css
+	   	  ├── footer.css
+	   	  ├── header.css
+	   	  ├── headeradmin.css
+	   	  ├── index.css
+	   	  ├── infosCompte.css
+	   	  ├── Nouveaute.css
+	    	  ├── padmin.css
+	   	  ├── promotion.css
+	     	  ├── Connect.inc.php
+	   	  ├── Deconnexion.php
+	   	  ├── footer.php
+	   	  ├── header.php
+	   	  ├── headeradmin.php
+	   	  ├── modifierCompte.php
+	   	  ├── suppbobonadmin.php
+	   	  ├── supprecipadmin.php
+	   	  ├── supprimerbonbon.php
+	   	  ├── supprimerRecipient.php
+	   	  ├── traitFormConnexion.php
+	   	  ├── traitFormCreerCompte.php
+	   	  ├── traitNvBonbon.php
+		  ├── traitNvRecip.php
+		  ├── traitPanier.php
+		  └──Images
+    			├── imgBonbons
+			├── ...
+
+
 ----
 
 === 4. Éléments à connaître
@@ -970,4 +1009,3 @@ Il est toujours intéressant de savoir sur quels éléments se base le calcul de
 image::/V2/images/dosimulation.PNG[Simulation]
 
 Un des éléments de l'implémentation de cette tâche, assez essentielle de mentionner est la fonction FXML *doSimulation()* qui, associée au bouton "Simulation" présent dans la classe _ComptesManagementController.java_, permet d'ouvrir l'interface dédiée à cette réalisation de simulation *uniquement* si l'utilisateur de cette application est un chef de l'agence bancaire.
-
