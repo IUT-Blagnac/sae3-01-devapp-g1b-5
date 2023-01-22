@@ -259,6 +259,9 @@ Fonctionnalité supprimer/rajouter produits pour admin
 
 Fonctionalité voire les commandes des clients pour admin
 
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Documentations/Documentation_Technique.adoc[Début doc technique]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Documentations/Documentation_Utilisateur.adoc[Début doc utilisateur]
 
 |===
 
