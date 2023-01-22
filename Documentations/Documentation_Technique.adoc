@@ -145,30 +145,41 @@ Par la suite, il lui est nécessaire de posséder un IDE (environnement de déve
 == III - Explications des fonctionnalités
 
 === 1 Visiteur
-exemple:
-==== 1.1 Modifier les informations d'un client - Déjà présent (V0)
-
- les informations d'un client selon les actualités tournant autour de celui-ci. Ces informations peuvent concerner le nom ou le prénom du client, son adresse, ses moyens de communication ou encore son évolutivité dans son agence bancaire, c'est-à-dire son activité.
-
-===== Partie du use case conforme
-
-image::/V1/images/modifinfoclient.PNG[Modifier info client]
-
-===== Partie du diagramme de classe conforme
-
-image::/V1/images/clientdc.PNG[Modifier info client]
-
-Cette tâche n'inclut seulement qu'une classe dans le diagramme de classes V1 : la classe ``Client``.
-Cette classe est, de ce fait, dédiée à la modification des informations d'un client et par conséquent, à la mise à jour des données sur la base de données.
-
-
-
 
 ==== 1.2 Créer un nouveau compte client.
+Le visiteur aura la possibilité de crée sont compte via un formulaire sur la page "compte.php".
 
+image::images/FormCreerCompte.png
+
+Ce formulaire et ensuite envoyé a la  page "traitFormCreerCompte.php"
+
+image::images/traitFormCreerCompte.png
+
+Cette page verifie d'abord si les champs sont remplie.
+image::images/traitFormCreerCompte1.png
+
+Si ces champs sont remplie : +
+____
+• include le fichier qui permet de se connecter a la base de données; 
+• Verifie si l'addresse mail est unique. ; 
+____
+
+Si l'addresse mail n'est pas une alert s'affiche et nous redirige vers la page de creation.
+image::images/traitFormCreerCompte3_1.png
+
+Si l'adresse est unique:+
+____
+• Verifie si le mot de passe et la comfirmation de mot de passe sont identique.; 
+• Verifie si l'addresse mail et la comfirmation d'email sont identique. ; 
+____
+ Si l'un des deux n'est pas verifier ou les deux, une alert s'affiche avec les champs où il y avait des erreur en nous redirigeant vers la page de creation d'un compte.
+ 
+ image::images/traitFormCreerCompte3_2.png
+ 
+ Si les champs sont identique, crypte le mot de passe avec la fonction "password_hash()" et insert le nouveau compte dans la base de données avec les données saissie.
 
 ==== 1.3 Se connecter.
-
+Pour la connexion a un compte, 
 === 2 Client
 
 ==== 2.1 Ajouter au panier.
