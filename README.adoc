@@ -257,7 +257,7 @@ Fonctionnalité rajouter stock bonbon/récipient pour admin
 
 Fonctionnalité supprimer/rajouter produits pour admin
 
-Fonctionalité voire les commandes des clients pour admin
+Fonctionnalité voire les commandes des clients pour admin
 
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Documentations/Documentation_Technique.adoc[Début doc technique]
 
