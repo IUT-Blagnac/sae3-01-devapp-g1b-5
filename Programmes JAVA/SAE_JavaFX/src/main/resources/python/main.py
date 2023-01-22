@@ -43,7 +43,7 @@ with open("config_yaml.yml", "r") as ymlfile:
     param = yaml.safe_load(ymlfile)
 
 client = mqtt.Client()
-client.connect(param["config"]["mqttserver"], param["config"]["mqttport"], 600)
+client.connect(param["config"]["mqttserver"], param["numPort"]["mqttport"], 600)
 
 
 #client.subscribe([("application/1/device/24e124128c011586/event/up",0),("application/1/device/24e124128c017943/event/up",2)])
