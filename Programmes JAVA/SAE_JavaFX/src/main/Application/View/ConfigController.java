@@ -124,10 +124,13 @@ public class ConfigController implements Initializable {
             switch (saisie) {
                 case "Device1":
                     fin = "24e124128c011586";
+                    break;
                 case "Device2":
                     fin = "24e124128c017943";
+                    break;
                 case "TOUS":
                     fin = "+";
+                    break;
             }
         }
         return fin;
