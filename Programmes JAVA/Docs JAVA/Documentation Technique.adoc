@@ -9,9 +9,9 @@ _Réalisé par Anthony Cabrillac, Victor Thompson, Yann Guillevic, Léo Douville
 toc::[]
 
 == I - Présentation rapide de l'application
-L’entreprise Cheribou souhaite suivre en direct l'environnement dans ses différents entreprôt de stockage. Plusieurs capteurs ont été installés permettant la récupération de données en CO2, température ainsi qu'humidité et souhaite disposer d'un outil permettant la visualisation de ces données pour s'assurer des bonnes conditions de stockage de ces produits (bonbons et récipients).
+L’entreprise Cheribou souhaite suivre en direct l’environnement dans ses différents entrepôts de stockage. Plusieurs capteurs ont été installés permettant la récupération de données en CO2, température ainsi que l’humidité et souhaite disposer d’un outil permettant la visualisation de ces données pour s’assurer des bonnes conditions de stockage de ces produits (bonbons et récipients).
 
-Ainsi, cette application permettra à notre client de visualiser les données des capteurs sur des graphiques et de modifier plusieurs paramêtres comme la gestion des seuils maximaux des données, la gestion de la fréquence d'émission et la gestion des serveurs choisis pour l'écoute.
+Ainsi, cette application permettra à notre client de visualiser les données des capteurs sur des graphiques et de modifier plusieurs paramètres comme la gestion des seuils maximaux des données, la gestion de la fréquence d’émission et la gestion des serveurs choisis pour l’écoute.
 
 === 1. Explications du use case global
 image::images/Use Case.PNG[UC global]
@@ -29,17 +29,17 @@ Nos clients pourront également accéder à une page de modification des paramê
 
 === 1. Architecture générale
 
-Lorsqu'un client vient à utiliser l'application, celle-ci n'est en réalité pas complexe à son utilisation. Elle reste relativement claire, facile à comprendre et celle-ci possède une architecture relativement aisée à comprendre étant donné qu'elle est construite sur un fonctionnement centralisé.
+Lorsqu’un client vient à utiliser l’application, celle-ci n’est en réalité pas complexe à son utilisation. Elle reste relativement claire, facile à comprendre et celle-ci possède une architecture relativement aisée à comprendre étant donné qu’elle est construite sur un fonctionnement centralisé.
+L’application contient 3 parties globales. Premièrement, la partie générale de l’application qui respecte le pattern MVC, que nous verrons en détail plus bas, et qui représente l’application avec les différentes fenêtres.
 
-L'application contient 3 parties globales. Premièrement, la partie générale de l'application qui respecte le pattern MVC, que nous verront en détail plus bas, et qui représente l'application avec les différentes fenêtres. 
+Deuxièmement, nous stockons le fichier de données dans lequel le programme python y écrit les données des capteurs. L’application y lit les données et les affiche dans les graphiques.
 
-Deuxièmement, nous stockons le fichier de donnée dans lequel le programme python y écris les données des capteurs. L'application y lis les données et les affiche dans les graphiques.
+Troisièmement, le fichier de configuration en yml. Nous stockons également ce fichier car celui-ci est réécrit à chaque fois que le client modifie des données comme il le souhaite.
 
-Troisèmement, le fichier de configuration en yml. Nous stockons également ce fichier car celui-ci est re-écris à chaque fois que le client modifiera des données comme il le souhaite.
 
 ==== 1.1 Poste client
 
-Concrètement, cela se résume à ce que l'application puisse être utilisée de n'importe quel employé, depuis n'importe quel poste de travail. Le système de visualisation des données est basé sur une méthode permettant la mise à jour automatique des graphes suivant un délais pré-définis quelques sois l'utilisation ou la page sur laquelle se trouve le client.
+Concrètement, cela se résume à ce que l’application puisse être utilisée de n’importe quel employé, depuis n’importe quel poste de travail. Le système de visualisation des données est basé sur une méthode permettant la mise à jour automatique des graphes suivant un délai pré-définis quel que soit l’utilisation ou la page sur laquelle se trouve le client.
 
 === 2. Ressources externes et rôles
 
@@ -109,7 +109,7 @@ Enfin, ce ne serait sans mentionner le Workspace depuis lequel repose l'applicat
 
 === 1. Affichage des données sous forme de graphique
 
-Lors de son arrivé sur l'application, notre client pourra visualiser en temps réel les données en CO2, température et humidité via des labels mais aussi via des graphiques qui montreront l'évolution de ces données avec les différentes courbes. Cette implémentation est possible grâce à un thread.
+Lors de son arrivée sur l’application, notre client pourra visualiser en temps réel les données en CO2, température et humidité via des labels mais aussi via des graphiques qui montreront l’évolution de ces données avec les différentes courbes. Cette implémentation est possible grâce à un thread.
 
 ===== Partie du use case conforme
 
@@ -158,9 +158,10 @@ De plus, il n'y a pas de détails spécifiques qui seraient difficiles à compre
 
 === 2. Modifier les seuils maximaux des données
 
-Lors de son arrivé sur l'application, notre client aura la possibilité de cliquer sur le bouton ``Configurer`` qui ouvrira une nouvelle fenêtre. 3 menus seront disponibles et le premier permet la modification des seuils maximaux pour chaque donnée (CO2, teméprature, humidité). Les 3 champs sont pré-remplis avec les données déjà présentes dans le fichier texte et l'utilisateur est libre de baisser ou monter ces valeurs. 
+Lors de son arrivée sur l’application, notre client aura la possibilité de cliquer sur le bouton ``Configurer`` qui ouvrira une nouvelle fenêtre. 3 menus seront disponibles et le premier permet la modification des seuils maximaux pour chaque donnée (CO2, teméprature, humidité). Les 3 champs sont pré-remplis avec les données déjà présentes dans le fichier texte et l’utilisateur est libre de baisser ou monter ces valeurs.
 
-Lorsque le client a modifié les champs qu'il souhaite, il peut quitter cette fenêtre pour revenir sur la fenêtre principale et relancer l'application pour que les changements s'enregistrent.
+Lorsque le client a modifié les champs qu’il souhaite, il peut quitter cette fenêtre pour revenir sur la fenêtre principale et relancer l’application pour que les changements s’enregistrent.
+
 
 ===== Partie du use case conforme
 
@@ -199,9 +200,10 @@ ____
 
 ===== Éléments à connaître / spécificités
 
-Il y a un élement général à comprendre qui est la classe ``ConfigController.java`` qui contient les 2 méthodes permettant le pré-remplissage des champs de modification avec les valeurs déjà présente dans le fichier de configuration ainsi que la méthode pour la réécriture du fichier de configuration lors du changement des valeurs des champs.
+Il y a un élément général à comprendre qui est la classe ``ConfigController.java`` qui contient les 2 méthodes permettant le pré-remplissage des champs de modification avec les valeurs déjà présente dans le fichier de configuration ainsi que la méthode pour la réécriture du fichier de configuration lors du changement des valeurs des champs.
 
-Bien entendu, la classe ``ReadFile.java`` a également son importance puisque c'est celle-ci qui contient les méthodes qui vont extraire les données du  fichier de configuration.
+Bien entendu, la classe ``ReadFile.java`` a également son importance puisque c’est celle-ci qui contient les méthodes qui vont extraire les données du fichier de configuration.
+
 
 ===== Extraits de code commentés pour des points importants
 
@@ -210,9 +212,10 @@ De plus, il n'y a pas de détails spécifiques qui seraient difficiles à compre
 
 === 3. Modifier les seuils maximaux des données
 
-Lors de son arrivé sur l'application, notre client aura la possibilité de cliquer sur le bouton ``Configurer`` qui ouvrira une nouvelle fenêtre. 3 menus seront disponibles et deuxième correspond à la modification de la fréquence d'émission des données en seconde. 
+Lors de son arrivée sur l’application, notre client aura la possibilité de cliquer sur le bouton ``Configurer`` qui ouvrira une nouvelle fenêtre. 3 menus seront disponibles et deuxième correspond à la modification de la fréquence d’émission des données en seconde.
 
-Lorsque le client a modifié les champs qu'il souhaite, il peut quitter cette fenêtre pour revenir sur la fenêtre principale et relancer l'application pour que les changements s'enregistrent.
+Lorsque le client a modifié les champs qu’il souhaite, il peut quitter cette fenêtre pour revenir sur la fenêtre principale et relancer l’application pour que les changements s’enregistrent.
+
 
 ===== Partie du use case conforme
 
@@ -251,13 +254,13 @@ ____
 
 ===== Éléments à connaître / spécificités
 
-Comme dis précédemment, l'utilisateur peut donc modifier la fréquence d'émission des données. Cette modification correspond à 2 choses :
+Comme dis précédemment, l’utilisateur peut donc modifier la fréquence d’émission des données. Cette modification correspond à 2 choses :
 
-- De 1, elle correspond à la fréquence d'écriture que va respecter le programme python. Si la fréquence est de 15min, alors le programme écrira les nouvelles données dans le fichier texte toutes les 15min.
+- De 1, elle correspond à la fréquence d’écriture que va respecter le programme python. Si la fréquence est de 15min, alors le programme écrira les nouvelles données dans le fichier texte toutes les 15min.
 
-- De 2, elle correspond à la fréquence d'exécution du thread dans le programme JAVA. Dans la classe ``RunBackground.java``, la méthode _run()_ contient un try/catch dans lequel il faut renseigner la durée entre chaque rafraichissement par le thread en millisecondes.
+- De 2, elle correspond à la fréquence d’exécution du thread dans le programme JAVA. Dans la classe ``RunBackground.java``, la méthode _run()_ contient un try/catch dans lequel il faut renseigner la durée entre chaque rafraîchissement par le thread en millisecondes.
 
-Bien entendu, la classe ``ReadFile.java`` a également son importance puisque c'est celle-ci qui contient les méthodes qui vont extraire les données du  fichier de configuration.
+Bien entendu, la classe ``ReadFile.java`` a également son importance puisque c’est celle-ci qui contient les méthodes qui vont extraire les données du fichier de configuration.
 
 ===== Extraits de code commentés pour des points importants
 
@@ -267,15 +270,17 @@ Voici ci-dessus, notre catch contenant le temps d'endormissement du thread. Nous
 
 === 4. Modifier les paramètres serveurs pour l'écoute des capteurs
 
-Lors de son arrivé sur l'application, notre client aura la possibilité de cliquer sur le bouton ``Configurer`` qui ouvrira une nouvelle fenêtre. 3 menus seront disponibles et le premier permet le troisème contient 3 champs pré-remplis :
+Lors de son arrivée sur l’application, notre client aura la possibilité de cliquer sur le bouton Configurer qui ouvrira une nouvelle fenêtre. 3 menus seront disponibles et le premier permet le troisième contient 3 champs pré-remplis :
 
 - Le nom du serveur
+
 - Le numéro de port
+
 - Le device correspondant
 
-Le client peut a tout moment modifié ces données qui seront mise à jour se le fichier de configuration. Il faudra ainsi remdémarrer l'application.
+Le client peut à tout moment modifier ces données qui seront mises à jour selon le fichier de configuration. Il faudra ainsi redémarrer l’application.
 
-Lorsque le client a modifié les champs qu'il souhaite, il peut quitter cette fenêtre pour revenir sur la fenêtre principale et relancer l'application pour que les changements s'enregistrent.
+Lorsque le client a modifié les champs qu’il souhaite, il peut quitter cette fenêtre pour revenir sur la fenêtre principale et relancer l’application pour que les changements s’enregistrent.
 
 ===== Partie du use case conforme
 
@@ -314,15 +319,15 @@ ____
 
 ===== Éléments à connaître / spécificités
 
-Il y a un élement général à comprendre qui est la classe ``ConfigController.java`` qui contient la méthode _returnValue()_. 
+Il y a un élément général à comprendre qui est la classe ``ConfigController.java`` qui contient la méthode _returnValue()_.
 
-Explication : Sur notre fxml, le client pourra choisir le device qu'il souhaite via un choiceBox. Dans cette choiceBox, le client à 3 choix possible. Le device1, le device2 ou "TOUS" qui signifie que le programme python va s'abonner à tout les capteurs.
+Explication : Sur notre fxml, le client pourra choisir le device qu’il souhaite via un choiceBox. Dans cette choiceBox, le client à 3 choix possibles. Le device1, le device2 ou "TOUS" qui signifie que le programme python va s’abonner à tous les capteurs.
 
-Cependant, dans notre champs "device" dans le fichier de configuration, nous ne pouvons pas rentrer les valeurs "device1" ou "device2". Nous avons donc écris une méthode, _returnValue()_, qui va, pour chaque choix, retourner un String qui correspond au numéro du device. L'exception est pour le choix "TOUS" pour lequel nous renvoyons "+".
+Cependant, dans notre champ "device" dans le fichier de configuration, nous ne pouvons pas rentrer les valeurs "device1" ou "device2". Nous avons donc écrit une méthode, _returnValue()_, qui va, pour chaque choix, retourner un String qui correspond au numéro du device. L’exception est pour le choix "TOUS" pour lequel nous renvoyons "+".
 
-Nous intégrons ensuite la valeur retourner dans notre fichier de configuration.
+Nous intégrons ensuite la valeur retour dans notre fichier de configuration.
 
-Bien entendu, la classe ``ReadFile.java`` a également son importance puisque c'est celle-ci qui contient les méthodes qui vont extraire les données du  fichier de configuration.
+Bien entendu, la classe ``ReadFile.java`` a également son importance puisque c’est celle-ci qui contient les méthodes qui vont extraire les données du fichier de configuration.
 
 ===== Extraits de code commentés pour des points importants
 
