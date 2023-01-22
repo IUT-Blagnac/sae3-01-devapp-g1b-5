@@ -330,7 +330,7 @@ image::images/Capture6.PNG[Extrait code returnValue device]
 
 Comme expliqué ci-dessus, cette méthode va retourner un code correspondant au différend device, que nous incorporons dans le fichier de configuration. 
 
-== III - Procédure d'installation
+== IV - Procédure d'installation
 
 Sur notre dépot github ou dans les fichiers sources fournis, vous trouverez 2 projets distincts.
 
@@ -338,9 +338,9 @@ Sur notre dépot github ou dans les fichiers sources fournis, vous trouverez 2 p
 
 Le premier, nommé ``SAE_JavaFX``, contient le programme JAVA. 
 
-Vous pouvez télécharger ce dossier et l'ouvrir sur IntelliJ par exemple. Une fois ouvert, il est possible qu'une erreur apparaisse vous signalant que le projet est _out of source root_. Pour résoudre cela, voud devez aller en haut à gauche dans le menu ``File``, puis dans ``Project Structures``. Vous seléctionnez l'onglet ``Modules`` et la l'arborescence du projet apparait. Vous pouvez cliquer sur ``src`` puis ``Applciation``, qui vient d'apparaitre, puis sur l'onglet ``Sources`` en bleu, un peu plus haut puis cliquez sur ``Apply``.
+Vous pouvez télécharger ce dossier et l'ouvrir sur IntelliJ par exemple. Une fois ouvert, il est possible qu'une erreur apparaisse vous signalant que le projet est _out of source root_. Pour résoudre cela, vous devez aller en haut à gauche dans le menu ``File``, puis dans ``Project Structures``. Vous sélectionnez l'onglet ``Modules`` et là l'arborescence du projet apparait. Vous pouvez cliquer sur ``src`` puis ``Applciation``, qui vient d'apparaitre, puis sur l'onglet ``Sources`` en bleu, un peu plus haut puis cliquez sur ``Apply``.
 
-A ce moment la, il vous suffie de patienter un peu et les problêmes devraient se résoudre.
+A ce moment là, il vous suffie de patienter un peu et les problêmes devraient se résoudre.
 
 Au niveau du JDK, assurez-vous d'avoir une version de JAVA compatible avec java 17.
 
@@ -349,15 +349,15 @@ Au niveau du JDK, assurez-vous d'avoir une version de JAVA compatible avec java 
 
 Le deuxième, nommé ``SAE_Python``, contient le programme python.
 
-Celuic-ci est différent de l'autre car nous avons dû modifier la gestion de la fréquence étant donné que SIGARLM n'existe pas sur Windows. Au niveau du reste, son fonctionnement est identique.
+Celui-ci est différent de l'autre car nous avons dû modifier la gestion de la fréquence étant donné que SIGARLM n'existe pas sur Windows. Au niveau du reste, son fonctionnement est identique.
 
 Vous pouvez téléchargé ce dossier est l'ouvrir sur PyCharm, par exemple. Une fois ouvert 2 cas peuvent survenir. Le premier est que vous n'avez pas d'erreur de compilation et le deuxième est que vous avez bien des erreurs de compilation.
 
-- Pour le premier cas. Vous n'avez pas d'erreur de compilation. Dans ce cas, il vous faudra seulement modifié les chemins d'accès au fichier de configuration et au fichier texte présent dans le projet JAVA dans le package ``resources``. Une première fois dans la méthode _ecriture()_ et une dfeuxième fois, juste en dessous, lors de l'ouverture du fichier de configuration.
+- Pour le premier cas. Vous n'avez pas d'erreur de compilation. Dans ce cas, il vous faudra seulement modifier les chemins d'accès au fichier de configuration et au fichier texte présent dans le projet JAVA dans le package ``resources``. Une première fois dans la méthode _ecriture()_ et une deuxième fois, juste en dessous, lors de l'ouverture du fichier de configuration.
 
-- Dans le deuxième cas, vous avez des erreurs pour l'importation yml et paho. Normalement, nous avons déjà créer un environnement virtuel contenant ces librairies mais il nous est déjà arriver que l'environnement ne marche pas lors de l'ouverture sur une nouvelle machine.
+- Dans le deuxième cas, vous avez des erreurs pour l'importation yml et paho. Normalement, nous avons déjà créé un environnement virtuel contenant ces librairies mais il nous est déjà arrivé que l'environnement ne marche pas lors de l'ouverture sur une nouvelle machine.
 
-Cependant, pour ce faire c'est très simple. Sur PyCharm, vous devez aller en haut à gauche dans le menu ``File`` puis dans ``settings``. Une page s'ouvre et, à gauche, vous pouvez cliquer sur le menu ``Project: SAE_Python`` puis sur ``Project interpreter``.
+Cependant, pour ce faire c'est très simple. Sur PyCharm, vous devez allé en haut à gauche dans le menu ``File`` puis dans ``settings``. Une page s'ouvre et, à gauche, vous pouvez cliquer sur le menu ``Project: SAE_Python`` puis sur ``Project interpreter``.
 
 Vous pouvez ajouter un nouvel interpreter via votre machine avec le path menant vers votre executable python : python.exe.
 Ainsi, après avoir ajouter votre interpreter, vous pouvez cliquer sur le ``+`` à gauche dans la page et installer 2 paquets :
