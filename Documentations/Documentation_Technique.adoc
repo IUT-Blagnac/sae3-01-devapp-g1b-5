@@ -145,10 +145,10 @@ Par la suite, il lui est nécessaire de posséder un IDE (environnement de déve
 == III - Explications des fonctionnalités
 
 === 1 Visiteur
-
+exemple:
 ==== 1.1 Modifier les informations d'un client - Déjà présent (V0)
 
-Un chef d'agence ou un guichetier peut modifier les informations d'un client selon les actualités tournant autour de celui-ci. Ces informations peuvent concerner le nom ou le prénom du client, son adresse, ses moyens de communication ou encore son évolutivité dans son agence bancaire, c'est-à-dire son activité.
+ les informations d'un client selon les actualités tournant autour de celui-ci. Ces informations peuvent concerner le nom ou le prénom du client, son adresse, ses moyens de communication ou encore son évolutivité dans son agence bancaire, c'est-à-dire son activité.
 
 ===== Partie du use case conforme
 
@@ -169,5 +169,56 @@ Cette classe est, de ce fait, dédiée à la modification des informations d'un 
 
 ==== 1.3 Se connecter.
 
+=== 2 Client
 
-==== 1.4 Clôturer un compte.
+==== 2.1 Ajouter au panier.
+
+Un chef d'agence ou un guichetier peut modifier les informations d'un client selon les actualités tournant autour de celui-ci. Ces informations peuvent concerner le nom ou le prénom du client, son adresse, ses moyens de communication ou encore son évolutivité dans son agence bancaire, c'est-à-dire son activité.
+
+===== Partie du use case conforme
+
+image::/V1/images/modifinfoclient.PNG[Modifier info client]
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/clientdc.PNG[Modifier info client]
+
+Cette tâche n'inclut seulement qu'une classe dans le diagramme de classes V1 : la classe ``Client``.
+Cette classe est, de ce fait, dédiée à la modification des informations d'un client et par conséquent, à la mise à jour des données sur la base de données.
+
+
+
+
+==== 2.2 Consulter sont compte.
+
+
+==== 2.3 Modifier sont compte.
+
+
+==== 2.4 Déconnexion.
+
+=== 3 Administrateur
+
+==== 3.1 Modifier les informations d'un client - Déjà présent (V0)
+
+Un chef d'agence ou un guichetier peut modifier les informations d'un client selon les actualités tournant autour de celui-ci. Ces informations peuvent concerner le nom ou le prénom du client, son adresse, ses moyens de communication ou encore son évolutivité dans son agence bancaire, c'est-à-dire son activité.
+
+===== Partie du use case conforme
+
+image::/V1/images/modifinfoclient.PNG[Modifier info client]
+
+===== Partie du diagramme de classe conforme
+
+image::/V1/images/clientdc.PNG[Modifier info client]
+
+Cette tâche n'inclut seulement qu'une classe dans le diagramme de classes V1 : la classe ``Client``.
+Cette classe est, de ce fait, dédiée à la modification des informations d'un client et par conséquent, à la mise à jour des données sur la base de données.
+
+
+
+
+==== 3.2 Créer un nouveau compte client.
+
+==== 3.3 Se connecter.
+
+==== 3.4 Clôturer un compte.
