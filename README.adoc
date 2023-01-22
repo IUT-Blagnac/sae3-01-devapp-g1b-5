@@ -160,6 +160,10 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn
 
 **Partie Développement web**
 
+Lien vers les fichiers Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou[ici]
+
+Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou/assets/docs[ici]
+
 [cols="1,1"]
 |===
 |Sprint 3
@@ -238,9 +242,25 @@ Fonctionnalité suppression des produits (bonbon ou récipient) du panier
 
 |===
 
-Lien vers les fichiers Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou[ici]
+[cols="1,1"]
+|===
+|Sprint 7
+|Codage de la page paiment (Charte graphique + PHP)
 
-Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou/assets/docs[ici]
+Finalisation page des produits en promotion (PHP)
+
+Finalisation page des nouveaux produits (PHP)
+
+Codage de la partie administrateur
+
+Fonctionnalité rajouter stock bonbon/récipient pour admin
+
+Fonctionnalité supprimer/rajouter produits pour admin
+
+Fonctionalité voire les commandes des clients pour admin
+
+
+|===
 
 **Partie JAVA**
 
@@ -269,6 +289,16 @@ Lecture/Affichage des données capteurs
 Lecture/Affichage des données config
 
 Modification fichier de config
+|===
+
+[cols="1,1"]
+|===
+|Sprint 7
+|Onglet config paramètre serveur
+
+Thread pour affichage des données sur graphiques
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20JAVA/Docs%20JAVA/Documentation%20Technique.adoc[Documentation technique JAVA]
 |===
 
 
@@ -309,6 +339,12 @@ Réalisation des premiers tests
 |===
 |Sprint 5
 |https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/Cahier%20de%20tests%20Python%20V5.adoc[Cahier de test Python V5]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 7
+|Documentation globale
 |===
 
 
@@ -374,6 +410,16 @@ https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/C
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/Ordre%20du%20Jour%20semaine%2002%20G1B%20-%205.pdf[Ordre du jour semaine 02]
 
 https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/Analyse%20semaine%2002%20G1B%20-5.pdf[Analyse semaine 02]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 7
+|Ordre du jour post-mortem
+
+Compte rendue de réunion post-mortem
+
+Analyse d'impact
 |===
 
 == Gestion de projet & Qualité
