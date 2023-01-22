@@ -27,10 +27,10 @@ def get_data(mqtt, obj, msg):
         print("Attention, le taux d'humidité dépasse les normes !")
 
     #signal.alarm(param["frequence"]["valeur"])
-    test(1,1)
+    ecriture(1,1)
 
 
-def test(signum, code):
+def ecriture(signum, code):
     global donneeCo2,donneeHum,donneeTemp
     print("Ecriture des données...")
     ouv = os.open("D:/COURS IUT/SAE3.01/Programmes JAVA/SAE_JavaFX/src/main/resources/mesures.txt",os.O_WRONLY|os.O_CREAT|os.O_TRUNC,0o644)
@@ -55,7 +55,7 @@ def loop1_10():
         print(param["frequence"]["valeur"])
         print("thread ecriture")
         if donneeCo2 != "-":
-            test(1,1)
+            ecriture(1,1)
 
 
 
