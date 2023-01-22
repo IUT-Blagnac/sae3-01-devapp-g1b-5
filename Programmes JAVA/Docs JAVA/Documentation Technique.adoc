@@ -338,7 +338,7 @@ Sur notre dépot github ou dans les fichiers sources fournis, vous trouverez 2 p
 
 Le premier, nommé ``SAE_JavaFX``, contient le programme JAVA. 
 
-Vous pouvez télécharger ce dossier et l'ouvrir sur IntelliJ par exemple. Une fois ouvert, il est possible qu'une erreur apparaisse vous signalant que le projet est _out of source root_. Pour résoudre cela, vous devez aller en haut à gauche dans le menu ``File``, puis dans ``Project Structures``. Vous sélectionnez l'onglet ``Modules`` et là l'arborescence du projet apparait. Vous pouvez cliquer sur ``src`` puis ``Applciation``, qui vient d'apparaitre, puis sur l'onglet ``Sources`` en bleu, un peu plus haut puis cliquez sur ``Apply``.
+Vous pouvez télécharger ce dossier et l'ouvrir sur IntelliJ par exemple. Une fois ouvert, il est possible qu'une erreur apparaisse vous signalant que le projet est _out of source root_. Pour résoudre cela, vous devez aller en haut à gauche dans le menu ``File``, puis dans ``Project Structures``. Vous sélectionnez l'onglet ``Modules`` et là l'arborescence du projet apparait. Vous pouvez cliquer sur ``src`` puis ``Application``, qui vient d'apparaitre, puis sur l'onglet ``Sources`` en bleu, un peu plus haut puis cliquez sur ``Apply``.
 
 A ce moment là, il vous suffie de patienter un peu et les problêmes devraient se résoudre.
 
