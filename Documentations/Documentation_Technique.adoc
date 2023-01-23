@@ -156,7 +156,7 @@ Ce formulaire et ensuite envoyé a la  page "traitFormCreerCompte.php"
 image::images/traitFormCreerCompte.png
 
 Cette page verifie d'abord si les champs sont remplie.
-image::images/traitFormCreerCompte1.png
+image::images/traitformcreercompte1.png
 
 Si ces champs sont remplie : +
 ____
@@ -165,7 +165,7 @@ ____
 ____
 
 Si l'addresse mail n'est pas une alert s'affiche et nous redirige vers la page de creation.
-image::images/traitFormCreerCompte3_1.png
+image::images/traitformcreercompte3_1.png
 
 Si l'adresse est unique:+
 ____
@@ -174,7 +174,7 @@ ____
 ____
  Si l'un des deux n'est pas verifier ou les deux, une alert s'affiche avec les champs où il y avait des erreur en nous redirigeant vers la page de creation d'un compte.
  
- image::images/traitFormCreerCompte3_2.png
+ image::images/traitformcreercompte3_2.png
  
  Si les champs sont identique, crypte le mot de passe avec la fonction "password_hash()" et insert le nouveau compte dans la base de données avec les données saissie.
 
