@@ -149,14 +149,14 @@ Par la suite, il lui est nécessaire de posséder un IDE (environnement de déve
 ==== 1.2 Créer un nouveau compte client.
 Le visiteur aura la possibilité de crée sont compte via un formulaire sur la page "compte.php".
 
-image::images/FormCreerCompte.png
+image::images/FormCreerCompte.png[3.2]
 
 Ce formulaire et ensuite envoyé a la  page "traitFormCreerCompte.php"
 
-image::images/traitFormCreerCompte.png
+image::images/traitFormCreerCompte.png[0]
 
 Cette page verifie d'abord si les champs sont remplie.
-image::images/traitformcreercompte1.png
+image::images/traitformcreercompte1.png[1]
 
 Si ces champs sont remplie : +
 ____
@@ -166,7 +166,7 @@ ____
 
 Si l'addresse mail n'est pas une alert s'affiche et nous redirige vers la page de creation.
 
-image::images/traitformcreercompte3_1.png
+image::images/traitformcreercompte3_1.png[3.1]
 
 Si l'adresse est unique:+
 ____
