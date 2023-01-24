@@ -27,7 +27,7 @@ def get_data(mqtt, obj, msg):
         print("Attention, le taux d'humidité dépasse les normes !")
 
     #signal.alarm(param["frequence"]["valeur"])
-    ecriture(1,1)
+    #ecriture(1,1)
 
 
 def ecriture(signum, code):
