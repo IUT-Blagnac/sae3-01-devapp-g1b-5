@@ -188,7 +188,7 @@ Pour la connexion a un compte,
 
 ==== 2.1 Ajouter au panier.
 
-Un chef client peut ajouter un produit dans sont panier avec une quantité reliée.
+Un client peut ajouter un produit dans sont panier avec une quantité reliée.
 
 ===== Partie du use case conforme
 
@@ -206,17 +206,17 @@ Cette classe est, de ce fait, dédiée à la modification des informations d'un 
 
 ==== 2.2 Consulter sont compte.
 
-
+Un client peut consulter les informations de sont compte.
 ==== 2.3 Modifier sont compte.
-
+Un client peut modifier les informations de sont compte.
 
 ==== 2.4 Déconnexion.
+Un client peut ce déconnecter de sont compte.
 
 === 3 Administrateur
+Quand l'administrateur se connectera sur sont compte il sera directement rediriger vers un espace dedier a l'adminnistrateur qui lui permettra:
+==== 3.1 Ajouter des stocks de produits
 
-==== 3.1 Modifier les informations d'un client - Déjà présent (V0)
-
-Un chef d'agence ou un guichetier peut modifier les informations d'un client selon les actualités tournant autour de celui-ci. Ces informations peuvent concerner le nom ou le prénom du client, son adresse, ses moyens de communication ou encore son évolutivité dans son agence bancaire, c'est-à-dire son activité.
 
 ===== Partie du use case conforme
 
