@@ -188,7 +188,7 @@ Pour la connexion a un compte, cela se fait via au formulaire de la page Compte.
 
 
 ===Spécidication de code
-Comme vous avez pu le constater la connexion creation et la modification se font tous sur la meme page, "Compte.php" ceci est fait grace un lien qui rappel la page avec une valeur envoyer dans l'URL avec le  nom "acces" si il est égale à login alors le formulaire de connexion s'affiche s'il est égale a register alors la page affiche le formulaire de création d'un compte.
+Comme vous avez pu le constater la connexion et de creation d'un compte  se font tous sur la meme page, "Compte.php" ceci est fait grace un lien qui rappel la page avec une valeur envoyer dans l'URL avec le  nom "acces" si il est égale à login alors le formulaire de connexion s'affiche s'il est égale a register alors la page affiche le formulaire de création d'un compte.
 === 2 Client
 
 ==== 2.1 Ajouter au panier.
