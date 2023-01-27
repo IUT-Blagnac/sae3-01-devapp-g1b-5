@@ -16,27 +16,42 @@ L’entreprise Cheribou souhaitant re-conceptualiser son site internet pour que 
 
 Voici le use case général du nouveau site de cheribou:
 
-image::../V2/images/gauche.png[UC V2]
-image::../V2/images/droite.png[UC V2]
+_mettre SEP_
 
 ==== 1.1 Types d'utilisateurs et spécificités
 
-Il y a trois types d'utilisateurs subsistent : l'admin, les clients ainsi que les visiteurs.
+Il y a trois types d'utilisateurs qui subsistent : l'administrateur, les clients ainsi que les visiteurs.
 
-Le simple visiteur, lui pourra visité le site(voir les produits, les details des produit, etc), contacter via un formulaire un administrateur, il aura la possibilité de se crée un compte ou de se connecter pour devenir un client.
+Premièrement, un visiteur aura accès au site pour simplement y découvrir les produits en vente chez Cheribou. Celui-ci aura accès :
 
-Pour un client, il peut effectué les même actions qu'un visiteur et peut modifié sont profile, visualiser compte, ce deconnecter qui le refera devenir un visiteur, ajouté des articles dans panier qu'il pourra valider par la suite.
+- A la page principale.
+- A la page sur l'entreprise.
+- A la page des nouveautés.
+- A la page des offres.
+- A la page de création/connexion à un compte.
+- A la page de contact.
+- Aux différents bonbons ainsi qu'a leurs descriptifs.
+- Aux différents récipients ainsi qu'a leurs descriptifs.
 
-En tant qu'administrateur, celui-ci possède un espace parallèle au site qui lui permettra de modifier des articles. Il pourra aussi ajouter des stocks de produits, lire les messages envoyé par les clients ou les visiteurs..
+Un visiteur pourra également utiliser la barre de recherche pour rechercher des produits.
 
+Deuxièmement, un client aura accès aux mêmes spécifités qu'au visiteur avec en plus l'accès à :
 
-=== 2. Explications du diagramme de classe des données globales
+- La page panier.
+- La page descriptive d'un compte.
+- La page de paiement.
 
-image::../V2/images/dcv2.PNG[DC V2]
+Un client pourra également modifier les informations de sont compte, voir et payer avec ses points de fidélités, voir ses commandes.
 
-==== 2.1 Fonctionnalités du chef d'agence
+Troisèmement, un administrateur aura accès à un espace sécurié parallèlement au site. Il aura donc la possibilité d'effectuer des actions exclusivement réservées à un administrateur. Un visiteur ou un client n'y ont donc pas accès.
 
-==== 2.2 Fonctionnalités du guichetier
+L'administrateur pourra donc :
+
+- Rajouter du stock pour bonbon
+- Rajouter du stock pour récipient
+- Ajouter/supprimer des nouveaux produits(bonbons,récipients).
+- Ajouter de nouvelles catégories.
+- Voir les commandes passées par les clients.
 
 == II - Architecture
 
@@ -124,6 +139,7 @@ La structuration du site est répartie en plusieurs packages que voici :
 
 ----
 Cette arborescence a été choisi par les membres de l'equipes pour la facilité de compréhension qu'elle apporte.
+
 === 4. Éléments à connaître
 
 Comme vous pouvez l'observer, le code de du site est fourni dans 1 package principal étant ``public.html`` et dont celui-ci contient les pages principales .
@@ -145,7 +161,6 @@ Le type ``css`` est utilisé pour la mise en forme des éléments en ajoutant ou
 ==== 4.2 Éléments nécessaires à la mise en oeuvre du développement
 
 Par la suite, il lui est nécessaire de posséder un IDE (environnement de développement intégré) pour tout simplement pouvoir observer le code et interagir avec. Visual Studio Code ou encore SublimeText sont des IDE que le développeur peut utiliser. 
-
 
 
 == III - Explications des fonctionnalités
