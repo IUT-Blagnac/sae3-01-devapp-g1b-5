@@ -180,20 +180,42 @@ Par la suite, il lui est nécessaire de posséder un IDE (environnement de déve
 
 == III - Explications des fonctionnalités
 
+_Header_
+
+Le header est commun à chaque page pour un client et un visiteur.
+
+image::images/header.png[header]
+
+Celui-ci contient le logo de l'entreprise ainsi que le nom de celle-ci et la langue du site, en haut à droite.
+Au centre, une barre de recherche permet de rechercher des bonbons. Cette recherche redirige l'utilisateur vers la page ``bonbon.php`` qui affiche les bonbons.
+
+A gauche, le label _Notre entreprise_ redirige l'utilisateur vers la page sur l'entreprise : ``Boutique.php``.
+A droite, le logo avec le bonhome est un lien cliquable qui redirige l'utilisateur vers ``Compte.php`` s'il n'est pas connecté et sur ``InfosCompte.php`` s'il est connecté.
+
+Le menu _bonbon_ permet de parcourir les différents types de bonbons en les choisissant par marque, format, goût ou préférence alimentaire. Chacun de ces liens renvoie vers la page ``bonbon.php`` qui affiche les bonbons en fonction des choix fait par l'utilisateur.
+
+Le label _Nouveauté_ renvoie l'utilisateur vers la page ``Nouveaute.php`` où il pourra y trouver les nouveaux produits.
+Le label _Offres_ renvoie l'utilisateur vers la page ``Promotion.php`` où il pourra y trouver les offres en cours sur certains produits.
+Le label _Récipients_ renvoie l'utilisateur vers la page ``recipient.php`` où il pourra y trouver tous les récipients en vente.
+
+_Footer_
+
 === 1 Visiteur
 
 ==== 1.1 Accès à la page principale
+
+Lorsqu'un visiteur ou client arrive sur le site, celui-ci est dirigé vers la page principale
 
 ==== 1.2 Accès aux comptes client
 
 ===== 1.2.1 Création d'un compte
 Le visiteur aura la possibilité de créer son compte via un formulaire sur la page "compte.php".
 
-image::images/FormCreerCompte.png[3.2]
+image::images/traitformcreercompte.png[3.2]
 
 Ce formulaire est ensuite envoyé à la page "traitFormCreerCompte.php"
 
-image::images/traitFormCreerCompte.png[0]
+image::images/traitformcreercompte.png[0]
 
 Cette page verifie d'abord si les champs sont remplis.
 Pas besoin de faire de regex sur les adresses mail car le type mail le fait automatiquement.
