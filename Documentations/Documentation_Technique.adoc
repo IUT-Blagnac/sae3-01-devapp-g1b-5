@@ -279,7 +279,7 @@ Si le couple mot de passe et email est incorecte:
 ____
 • On lance une erreur javascript pour le mot de passe et l'adresse mail et on redirige vers la page de connexion
 
-image::images/erreurMDPMAIL.PNG.PNG[erreur mdp_mail connexion]
+image::images/erreurMDPMAIL.PNG[erreur mdp_mail connexion]
 ____
 
 Si il n'y a pas tous les champs de remplis ou si il manque l'acceptation des conditions d'utilisations:
