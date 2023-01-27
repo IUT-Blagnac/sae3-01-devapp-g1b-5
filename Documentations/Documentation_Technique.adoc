@@ -236,10 +236,24 @@ Comme vous avez pu le constater la connexion et de creation d'un compte  se font
 
 ==== 1.5 Accès à la page des offres
 
+==== 1.6 Accès à la page contact
+
+==== 1.7 Visualisation des produits
+
+===== 1.7.1 Accès aux bonbons
+
+===== 1.7.2 Accès aux récipients
+
+==== 1.8 Visualisation de la description des produits
+
+===== 1.8.1 Description des bonbons
+
+===== 1.8.2 Description des récipients
+
 
 === 2 Client
 
-==== 2.1 Ajouter au panier.
+==== 2.1 Accès au panier.
 
 Un client peut ajouter un produit dans sont panier avec une quantité reliée.
 
@@ -257,20 +271,27 @@ Cette classe est, de ce fait, dédiée à la modification des informations d'un 
 
 
 
-==== 2.2 Consulter sont compte.
+==== 2.2 Accès au descriptif de son compte.
 
 Un client peut consulter les informations de sont compte.
-==== 2.3 Modifier sont compte.
+
+==== 2.3 Accès à la modification des informations du compte
+
 Un client peut modifier les informations de sont compte.
 
-==== 2.4 Déconnexion.
+==== 2.4 Accès à ses points de fidélités
+
+==== 2.5 Déconnexion.
 Un client peut ce déconnecter de sont compte.
+
+==== 2.6 Accès au paiement
 
 === 3 Administrateur
 Quand l'administrateur se connectera sur sont compte il sera directement rediriger vers un espace dedier a l'adminnistrateur qui lui permettra:+
 ___
 • Rajouter des stoks de produit; 
-• Gérer les produits;
+• Gérer les produits (supprimer/ajouter);
+• Ajouter des catégories;
 • Voir les commandes des clients;
 ___
 
@@ -291,8 +312,8 @@ Cette classe est, de ce fait, dédiée à la modification des informations d'un 
 
 
 
-==== 3.2 Créer un nouveau compte client.
+==== 3.2 Gérer les produits
 
-==== 3.3 Se connecter.
+==== 3.3 Ajouter des catégories
 
-==== 3.4 Clôturer un compte.
+==== 3.4 Voir les commanes client
