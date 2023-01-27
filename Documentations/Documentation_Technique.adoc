@@ -312,9 +312,9 @@ Pour l'affichage des nouveaux récipients, le fonction est exactement similaire 
 
 ==== 1.5 Accès à la page des offres
 
-La page des offres affiche tous les produits ayant une promotion. En ce moment, seul les bonbons _Dragibou_ sont en promo avec une réduction de 20%. Ainsi, via une requête SQL, nous seléctionnons tous les dragibous et nous modifions directement en PHP leur prix unitaire en soustrayant au prix unitaire la différence avec la promotion (variable *$pixpromo*).
+La page des offres affiche tous les produits ayant une promotion. En ce moment, seul les bonbons _Dragibou_ sont en promo avec une réduction de 20%. Ainsi, via une requête SQL, nous seléctionnons tous les dragibous et nous modifions directement en PHP leur prix unitaire en soustrayant au prix unitaire la différence avec la promotion (variable *$prixpromo*).
 
-Enfin, nous affichons les mêmes informations que précédemment en affichant, le véritable prix unitaire baré et le nouveaux prix en promotion en rouge.
+Enfin, nous affichons les mêmes informations que précédemment en affichant, en plus, le véritable prix unitaire baré et le nouveaux prix en promotion en rouge.
 
 image::images/offres.PNG[offres]
 
