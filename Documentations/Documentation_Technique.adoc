@@ -180,7 +180,7 @@ Par la suite, il lui est nécessaire de posséder un IDE (environnement de déve
 
 == III - Explications des fonctionnalités
 
-_Header_
+*Header*
 
 Le header est commun à chaque page pour un client et un visiteur.
 
@@ -201,7 +201,14 @@ Le label _Offres_ renvoie l'utilisateur vers la page ``Promotion.php`` où il po
 Le label _Récipients_ renvoie l'utilisateur vers la page ``recipient.php`` où il pourra y trouver tous les récipients en vente.           
 
 
-_Footer_
+*Footer*
+
+Le footer est commun à chaque page pour un client et un visiteur.
+
+image::images/footer.png[footer]
+
+Celui-ci contient plusieurs liens ramenant vers la page principale; ``index.php``, ainsi que la page sur l'entreprise; ``Boutique.php``, la page des nouveaux produits; ``Nouveaute.php`` et la page de contact; ``contact.php``.       
+
 
 === 1 Visiteur
 
