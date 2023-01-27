@@ -194,7 +194,7 @@ A droite, le logo avec le bonhome est un lien cliquable qui redirige l'utilisate
 
 Le menu _bonbon_ permet de parcourir les différents types de bonbons en les choisissant par marque, format, goût ou préférence alimentaire. Chacun de ces liens renvoie vers la page ``bonbon.php`` qui affiche les bonbons en fonction des choix fait par l'utilisateur.
 
-image::images/menus.PNG[menus]
+image::images/menus.png[menus]
 
 Le label _Nouveauté_ renvoie l'utilisateur vers la page ``Nouveaute.php`` où il pourra y trouver les nouveaux produits.   
 
@@ -216,7 +216,9 @@ Celui-ci contient plusieurs liens ramenant vers la page principale; ``index.php`
 
 ==== 1.1 Accès à la page principale
 
-Lorsqu'un visiteur ou client arrive sur le site, celui-ci est dirigé vers la page principale
+Lorsqu'un visiteur ou client arrive sur le site, celui-ci est dirigé vers la page principale composé du header, footer ainsi que de 3 images principales correspondant aux 3 nouveaux produits du moment.
+
+image::images/index.PNG[index]
 
 ==== 1.2 Accès aux comptes client
 
@@ -258,7 +260,7 @@ image::images/traitformcreercompte3_2.png[3.2]
 Si les champs sont identiques, crypte le mot de passe avec la fonction "password_hash()" et insert le nouveau compte dans la base de données avec les données saisies.
 
 ===== 1.2.2 Connexion à un comtpe
-Pour la connexion a un compte, cela se fait via au formulaire de la page Compte.php et est traiter sur la  page "traitFormConnexion".
+Pour la connexion a un compte, cela se fait via au formulaire de la page Compte.php et est traiter sur la  page "traitFormConnexion.php".
 
 
 ===Spécidication de code
