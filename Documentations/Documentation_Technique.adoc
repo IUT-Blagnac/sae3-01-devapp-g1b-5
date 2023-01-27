@@ -83,53 +83,68 @@ La structuration du site est répartie en plusieurs packages que voici :
 [source]
 ----
 ├── public_html
-        ├── index.php
-        ├── Compte.php
-        ├── admin.php
-        ├── AjoutPanierBonbon.php
-        ├──	AjoutPanierRecip.php
-        ├──	bonbon.php
-	├──	choixP.php
-	├──	contact.php
-	├──	detailBonbon.php
-	├──	detailRecipient.php
-	├──	InfosCompte.php
-	├──	Nouveaute.php
-	├──	panier.php
-	├──	produitadmin.php
-	├──	Promotion.php
-	├──	recipient.php
-	├──	stockadmin.php
-        └──include  
-         	  ├── admn.css
+	├── admin.php
+	├── AjoutPanierBonbon.php
+        ├── AjoutPanierRecip.php
+	├── bonbon.php
+	├── Boutique.php
+	├── Cadeaux.php
+	├── ChangerMDP.php
+	├── choixP.php
+	├── Compte.php
+	├── contact.php
+	├── detailBonbon.php
+	├── detailRecipient.php
+	├── index.php
+	├── InfosCompte.php
+	├── Nouveaute.php
+	├── panier.php
+	├── produitadmin.php
+	├── Promotion.php
+	├── recipient.php
+        └──include
+         	  ├── actionContact.php
+		  ├── actionPanierCadeau.php
+		  ├── actionRecherche.php
+		  ├── admin.css
+		  ├── adminCo.css
            	  ├── bonbon.css
            	  ├── Boutique.css
+		  ├── contact.css
+		  ├── Cadeau.css
 	   	  ├── choixP.css
 	   	  ├── Compte.css
-	   	  ├── contact.css
+		  ├── Connect.inc.php
+		  ├── contact.css
+		  ├── Deconnexion.php
 	   	  ├── datailBonbon.css
 	   	  ├── detailRecipient.css
 	   	  ├── footer.css
+		  ├── footer.php
 	   	  ├── header.css
+		  ├── header.php
 	   	  ├── headeradmin.css
-	   	  ├── index.css
-	   	  ├── infosCompte.css
-	   	  ├── Nouveaute.css
-	    	  ├── padmin.css
-	   	  ├── promotion.css
-	     	  ├── Connect.inc.php
-	   	  ├── Deconnexion.php
-	   	  ├── footer.php
-	   	  ├── header.php
-	   	  ├── headeradmin.php
+		  ├── headeradmin.php
+		  ├── index.css
+		  ├── infosCompte.css
 	   	  ├── modifierCompte.php
-	   	  ├── suppbobonadmin.php
+		  ├── Nouveaute.css
+		  ├── Panier.css
+		  ├── proadmin.css
+		  ├── Promotion.css
+		  ├── recipient.css
+		  ├── stockadmin.php
+		  ├── stockadminrecip.php
+	   	  ├── suppbonbonadmin.php
 	   	  ├── supprecipadmin.php
 	   	  ├── supprimerbonbon.php
 	   	  ├── supprimerRecipient.php
+		  ├── traitAdminCo.php
 	   	  ├── traitFormConnexion.php
 	   	  ├── traitFormCreerCompte.php
+		  ├── traitFormPaiement.php
 	   	  ├── traitNvBonbon.php
+		  ├── traitNvCategorie.php
 		  ├── traitNvRecip.php
 		  ├── traitPanier.php
 		  └──Images
@@ -167,26 +182,30 @@ Par la suite, il lui est nécessaire de posséder un IDE (environnement de déve
 
 === 1 Visiteur
 
-==== 1.2 Créer un nouveau compte client.
-Le visiteur aura la possibilité de crée sont compte via un formulaire sur la page "compte.php".
+==== 1.1 Accès à la page principale
+
+==== 1.2 Accès aux comptes client
+
+=== 1.2.1 Création d'un compte
+Le visiteur aura la possibilité de créer son compte via un formulaire sur la page "compte.php".
 
 image::images/FormCreerCompte.png[3.2]
 
-Ce formulaire et ensuite envoyé a la  page "traitFormCreerCompte.php"
+Ce formulaire est ensuite envoyé à la page "traitFormCreerCompte.php"
 
 image::images/traitFormCreerCompte.png[0]
 
-Cette page verifie d'abord si les champs sont remplie.
+Cette page verifie d'abord si les champs sont remplis.
 Pas besoin de faire de regex sur les adresses mail car le type mail le fait automatiquement.
 image::images/traitformcreercompte1.png[1]
 
-Si ces champs sont remplie : +
+Si ces champs sont remplis : +
 ____
 • include le fichier qui permet de se connecter a la base de données; 
 • Verifie si l'addresse mail est unique. ; 
 ____
 
-Si l'addresse mail n'est pas une alert s'affiche et nous redirige vers la page de creation.
+Si l'adresse mail n'est pas bonne, une alerte s'affiche et nous redirige vers la page de creation.
 
 image::images/traitformcreercompte3_1.png[3.1]
 
@@ -197,19 +216,27 @@ ____
 ____
 
 
-Si l'un des deux n'est pas verifier ou les deux, une alert s'affiche avec les champs où il y avait des erreur en nous redirigeant vers la page de creation d'un compte.
+Si l'un des deux n'est pas verifié ou les deux, une alerte s'affiche avec les champs où il y avait des erreurs en nous redirigeant vers la page de creation d'un compte.
  
 
 image::images/traitformcreercompte3_2.png[3.2]
 
-Si les champs sont identique, crypte le mot de passe avec la fonction "password_hash()" et insert le nouveau compte dans la base de données avec les données saissie.
+Si les champs sont identiques, crypte le mot de passe avec la fonction "password_hash()" et insert le nouveau compte dans la base de données avec les données saisies.
 
-==== 1.3 Se connecter.
+==== 1.2.2 Connexion à un comtpe
 Pour la connexion a un compte, cela se fait via au formulaire de la page Compte.php et est traiter sur la  page "traitFormConnexion".
 
 
 ===Spécidication de code
 Comme vous avez pu le constater la connexion et de creation d'un compte  se font tous sur la meme page, "Compte.php" ceci est fait grace un lien qui rappel la page avec une valeur envoyer dans l'URL avec le  nom "acces" si il est égale à login alors le formulaire de connexion s'affiche s'il est égale a register alors la page affiche le formulaire de création d'un compte.
+
+==== 1.3 Accès à la page de l'entreprise
+
+==== 1.4 Accès à la page des nouveaux produits
+
+==== 1.5 Accès à la page des offres
+
+
 === 2 Client
 
 ==== 2.1 Ajouter au panier.
