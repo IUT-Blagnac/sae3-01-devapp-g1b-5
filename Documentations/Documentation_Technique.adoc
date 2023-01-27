@@ -1,3 +1,9 @@
+:toc:
+:toc-placement!:
+:toc-title: Table des matières
+
+image::images/Logo.png[]
+
 = Site Cheribou - Documentation Technique 
 _Réalisé par Anthony Cabrillac, Victor Thompson, Yann Guillevic, Léo Douville, Shiyu Hu
 
