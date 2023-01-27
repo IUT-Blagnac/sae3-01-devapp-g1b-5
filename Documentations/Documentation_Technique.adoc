@@ -262,6 +262,32 @@ Si les champs sont identiques, crypte le mot de passe avec la fonction "password
 ===== 1.2.2 Connexion à un comtpe
 Pour la connexion a un compte, cela se fait via au formulaire de la page Compte.php et est traiter sur la  page "traitFormConnexion.php".
 
+Si les champs sont bien remplis et que le couple mail/mot de passe est corecte, alors on lance la requête SQL permettant de récupérer les informations du client connecté et on affecte les données nécessaire dans des sessions pour utilisation ultérieure.
+
+image::images/connexion1.PNG[connexion]
+
+Gestion des erreurs :
+
+Si le mot de passe est incorecte:
+____
+• On lance une erreur javascript pour le mot de passe et on redirige vers la page de connexion
+
+image::images/erreurMDP.PNG[erreur mdp connexion]
+____
+
+Si le couple mot de passe et email est incorecte:
+____
+• On lance une erreur javascript pour le mot de passe et l'adresse mail et on redirige vers la page de connexion
+
+image::images/erreurMDPMAIL.PNG.PNG[erreur mdp_mail connexion]
+____
+
+Si il n'y a pas tous les champs de remplis ou si il manque l'acceptation des conditions d'utilisations:
+____
+• On lance une erreur javascript pour le remplissage des champs et on redirige vers la page de connexion
+
+image::images/erreurChamp.PNG[erreur champ connexion]
+____
 
 ===Spécidication de code
 Comme vous avez pu le constater la connexion et de creation d'un compte  se font tous sur la meme page, "Compte.php" ceci est fait grace un lien qui rappel la page avec une valeur envoyer dans l'URL avec le  nom "acces" si il est égale à login alors le formulaire de connexion s'affiche s'il est égale a register alors la page affiche le formulaire de création d'un compte.
