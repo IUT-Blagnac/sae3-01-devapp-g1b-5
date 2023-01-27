@@ -194,9 +194,12 @@ A droite, le logo avec le bonhome est un lien cliquable qui redirige l'utilisate
 
 Le menu _bonbon_ permet de parcourir les différents types de bonbons en les choisissant par marque, format, goût ou préférence alimentaire. Chacun de ces liens renvoie vers la page ``bonbon.php`` qui affiche les bonbons en fonction des choix fait par l'utilisateur.
 
-Le label _Nouveauté_ renvoie l'utilisateur vers la page ``Nouveaute.php`` où il pourra y trouver les nouveaux produits.                    
+Le label _Nouveauté_ renvoie l'utilisateur vers la page ``Nouveaute.php`` où il pourra y trouver les nouveaux produits.   
+
 Le label _Offres_ renvoie l'utilisateur vers la page ``Promotion.php`` où il pourra y trouver les offres en cours sur certains produits.  
+
 Le label _Récipients_ renvoie l'utilisateur vers la page ``recipient.php`` où il pourra y trouver tous les récipients en vente.           
+
 
 _Footer_
 
