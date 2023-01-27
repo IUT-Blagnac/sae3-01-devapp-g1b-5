@@ -210,7 +210,7 @@ Bien entendu, la classe ``ReadFile.java`` a également son importance puisque c�
 Le code étant déjà présent dans l'application, il n'y a aucune partie qui mérite d'être signalée et venant de notre part.
 De plus, il n'y a pas de détails spécifiques qui seraient difficiles à comprendre et donc à expliquer ou tout simplement d'être mentionné.
 
-=== 3. Modifier les seuils maximaux des données
+=== 3. Modifier la fréquence d'émission des données
 
 Lors de son arrivée sur l’application, notre client aura la possibilité de cliquer sur le bouton ``Configurer`` qui ouvrira une nouvelle fenêtre. 3 menus seront disponibles et deuxième correspond à la modification de la fréquence d’émission des données en seconde.
 
