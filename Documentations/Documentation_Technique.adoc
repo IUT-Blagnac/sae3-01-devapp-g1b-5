@@ -186,7 +186,7 @@ Par la suite, il lui est nécessaire de posséder un IDE (environnement de déve
 
 ==== 1.2 Accès aux comptes client
 
-=== 1.2.1 Création d'un compte
+===== 1.2.1 Création d'un compte
 Le visiteur aura la possibilité de créer son compte via un formulaire sur la page "compte.php".
 
 image::images/FormCreerCompte.png[3.2]
@@ -223,7 +223,7 @@ image::images/traitformcreercompte3_2.png[3.2]
 
 Si les champs sont identiques, crypte le mot de passe avec la fonction "password_hash()" et insert le nouveau compte dans la base de données avec les données saisies.
 
-==== 1.2.2 Connexion à un comtpe
+===== 1.2.2 Connexion à un comtpe
 Pour la connexion a un compte, cela se fait via au formulaire de la page Compte.php et est traiter sur la  page "traitFormConnexion".
 
 
