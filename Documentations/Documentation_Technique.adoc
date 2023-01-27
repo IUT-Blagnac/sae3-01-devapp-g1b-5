@@ -294,7 +294,21 @@ Comme vous avez pu le constater la connexion et de creation d'un compte  se font
 
 ==== 1.3 Accès à la page de l'entreprise
 
+La page sur l'entreprise permet à un visiteur/client d'en apprendre plus sur Cheribou en ayant accès à son hsitoire. Les internautes ont également accès à plusieurs chiffres clès comme la date de création ou le chiffre d'affaires. La page permet également la redirection vers le formulaire de contact au besoin.
+
+Cette page ne contient aucune spécifitée technique.
+
 ==== 1.4 Accès à la page des nouveaux produits
+
+La page des nouveaux produits met en avant les 3 nouveaux produits de l'entreprise. L'affichage correspond donc à un nouveau bonbon et à 2 nouveaux récipients.
+
+image::images/newB.PNG[nouveaux bonbons]
+
+Sur cette page, une requête SQL va venir seléctionner tous les bonbons ayant un id supérieur à 41, les autres bonbons ayant des dates de création plus ancienne et ne sont donc plus nouveaux. A partir de la requête, nous récupérons différentes informations sur les bonbons seléctionnés et nous les affichons discernement (voir documentation web utilisateur).
+
+image::images/newR.PNG[nouveaux récipients]
+
+Pour l'affichage des nouveaux récipients, le fonction est exactement similaire que précédemment. Une requête SQL seléctionne tous les récipients ayant un id supérieur à une certaine valeur et affiche différentes informations.
 
 ==== 1.5 Accès à la page des offres
 
