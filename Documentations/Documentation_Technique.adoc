@@ -219,7 +219,13 @@ Un client peut modifier les informations de sont compte.
 Un client peut ce déconnecter de sont compte.
 
 === 3 Administrateur
-Quand l'administrateur se connectera sur sont compte il sera directement rediriger vers un espace dedier a l'adminnistrateur qui lui permettra:
+Quand l'administrateur se connectera sur sont compte il sera directement rediriger vers un espace dedier a l'adminnistrateur qui lui permettra:+
+___
+• Rajouter des stoks de produit; 
+• Gérer les produits;
+• Voir les commandes des clients;
+___
+
 ==== 3.1 Ajouter des stocks de produits
 
 
