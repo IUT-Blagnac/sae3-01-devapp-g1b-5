@@ -13,9 +13,9 @@ toc::[]
 
 == Présentation générale du site web
 
-Ce site web d'E-commerce a été réalisée lors de notre deuxième année de BUT informatique, nous avions pour but de réaliser un site web permettant de vendre le produits de notre client 'Cheribou' celle-ci nous permettra de simuler des actions que l’on peut retrouver dans une boutiques de ventes en lignes.
+Ce site web d'E-commerce a été réalisée lors de notre deuxième année de BUT informatique, nous avions pour but de réaliser un site web permettant de vendre les produits de notre client 'Cheribou' celui-ci nous permettra de simuler des actions que l’on peut retrouver dans une boutique de vente en ligne.
 
-Le site web doit permettre la ventes des bonbons et autres produits proposé par notre client de dépôt. Les produits ainsi que les données personnelles des clients sont stockées dans une base de données. Le client devra pouvoir se connecter/créer un compte, visiter le catalogue des produits, ajouter un produit au panier et de valider son panier pour accèder au paiement. 
+Le site web doit permettre la vente des bonbons et autres produits proposés par notre client de dépôt. Les produits ainsi que les données personnelles des clients sont stockées dans une base de données. Le client devra pouvoir se connecter/créer un compte, visiter le catalogue des produits, ajouter un produit au panier et de valider son panier pour accèder au paiement. 
 
 == Visite du site
 
@@ -23,7 +23,7 @@ Afin de pouvoir visiter le site, les clients devront posséder le lien permettan
 
 == Fonctionnement du site d'E-commerce
 
-Le site est destiné à 3 catégories d'utilosateurs. L'internaute ou visiteur, le client et l'administrateur.
+Le site est destiné à 3 catégories d'utilisateurs. L'internaute ou visiteur, le client et l'administrateur.
 
 === Visiteur
 
@@ -40,11 +40,11 @@ image::images/page_entreprise1.png[Page entreprise]
 image::images/page_entreprise2.png[Page entreprise]
 image::images/page_entreprise3.png[Page entreprise]
 
-Cette page contient toute l'histoire de création de l'entreprise ainsi son besoin d'avoir un site d'e-commerce. NOus y avons également placé des chiffres clès comme sa date de création et son chiffre d'affaires.
+Cette page contient toute l'histoire de création de l'entreprise ainsi son besoin d'avoir un site d'e-commerce. Nous y avons également placé des chiffres clès comme sa date de création et son chiffre d'affaires.
 
 ===== Page sur les bonbons
 
-Dans le header, en cliquant sur le menus ``Bonbons``, un menu déroulant apparaitra et vous pourrez choisir les types de bonbons que vous voulez accéder que ce soit par le marque, leur format, leur goût ou la préférence alimentaire.
+Dans le header, en cliquant sur le menus ``Bonbons``, un menu déroulant apparaitra et vous pourrez choisir les types de bonbons que vous voulez accéder que ce soit par leurs marques, leurs formats, leurs goûts ou la préférence alimentaire.
 
 image::images/menus.png[menus]
 
@@ -62,7 +62,7 @@ image::images/erreur_connexion.png[erreur]
 
 ===== Page sur les nouveautés
 
-Toujours dans l'espace du menus en haut, le visiteur pourra cliquer sur le bouton ``Nouveautés``qui le redirigera vers la page des nouveaux produits.
+Toujours dans l'espace du menu en haut, le visiteur pourra cliquer sur le bouton ``Nouveautés``qui le redirigera vers la page des nouveaux produits.
 
 image::images/page_nouveau.png[Page nouveau]
 
@@ -126,7 +126,7 @@ image::images/page_connexion.png[Page connexion]
 
 image::images/connexion.png[connexion]
 
-Pour se connecter vous allez devoir saisir votre adresse mail ainsi que votre mot de passe crées lors de la création de votre compte. Si vous n'avez pas encore crée de compte vous devriez y renseigner votre nom, prénom, e-mail ainsi que le mot de passe que vous souhaitez utiliser. Bien sur, vous sereez aussi inviter a ccpeter les conditions d'utilisations
+Pour se connecter vous allez devoir saisir votre adresse mail ainsi que votre mot de passe crées lors de la création de votre compte. Si vous n'avez pas encore crée de compte vous devriez y renseigner votre nom, prénom, e-mail ainsi que le mot de passe que vous souhaitez utiliser. Bien sur, vous serez aussi invité a accepter les conditions d'utilisations
 
 image::images/inscription.png[connexion]
 ____
@@ -155,7 +155,7 @@ image::images/infoscompte.png[Infos compte]
 
 ===== Modifier les informations de votre compte
 
-En arrivant sur votre espace compte, vous aurez plusieurs choix. Tout d'abord, cet espace vous présente plusieurs informations sur votre compte comme votre nom, prénom, vos points de fidélités, votre numéro de téléphone et votre adresse mail. Vous pourrez modifier ces informations ainsi que votre mot de passe. PLus bas, vous aurez accès à l'historique de toutes vos commande passées sur le site.
+En arrivant sur votre espace compte, vous aurez plusieurs choix. Tout d'abord, cet espace vous présente plusieurs informations sur votre compte comme votre nom, prénom, vos points de fidélités, votre numéro de téléphone et votre adresse mail. Vous pourrez modifier ces informations ainsi que votre mot de passe. Plus bas, vous aurez accès à l'historique de toutes vos commande passées sur le site.
 
 image::images/infoscompte.png[Infos compte]
 image::images/infoscompte2.png[Infos compte]
@@ -192,7 +192,7 @@ image::images/historique.png[historiquecommande]
 
 ===== Accéder à ses cadeaux (points de fidélités)
 
-Dans votre espace compte, vous aurez la possibilité d'accès à vos cadeau lorsque vous avez des points de fidélités. Attention, vous devez avoir plus de 0 points pour que le bouton s'affiche. 
+Dans votre espace compte, vous aurez la possibilité d'accès à vos cadeaux lorsque vous avez des points de fidélités. Attention, vous devez avoir plus de 0 point pour que le bouton s'affiche. 
 
 image::images/infoscompte.png[Infos compte]
 
@@ -209,7 +209,7 @@ Lorsque vous créer un compte ou que vous réaliser votre première commande, vo
 
 image::images/panier.png[panier]
 
-Si vous ajouter un produit (bonbon ou récipient), celui-ci s'affichera dans le panier avec la quantité choisie, le prix unitaire et le prix total en fonction de la quantité. Aussi, les boutons en bas du panier changeront et vous pourrez le valider ou l'abandonner.
+Si vous ajoutez un produit (bonbon ou récipient), celui-ci s'affichera dans le panier avec la quantité choisie, le prix unitaire et le prix total en fonction de la quantité. Aussi, les boutons en bas du panier changeront et vous pourrez le valider ou l'abandonner.
 
 image::images/panierB.png[panierbonbon]
 
@@ -218,10 +218,10 @@ ____
 
 - Si vous cliquer sur bouton ``abandonner le panier``, tous les artciles seront supprimer et vous aurez un panier vide.
 
-- Si vous validé, vous serez redirigé vers la page du paiement.
+- Si vous validez, vous serez redirigé vers la page du paiement.
 ____
 
-Si vous ajouté un produit, par exemple un bonbon, avec une quantité de 2 mais que vous voulez augmenter/réduire la quantité, alors au lieu que le même produit se s'affiche plusieurs fois, seulement la quantité et le prix total seront modifiés :
+Si vous ajoutez un produit, par exemple un bonbon, avec une quantité de 2 mais que vous voulez augmenter/réduire la quantité, alors au lieu que le même produit se s'affiche plusieurs fois, seulement la quantité et le prix total seront modifiés :
 
 image::images/paniertest1.png[]
 image::images/paniertest2.png[]
@@ -232,7 +232,7 @@ Si vous acheté des produits avec vos points de fidélités, l'affichage dans le
 
 image::images/panierfidelite.png[]
 
-Dès que ces produits seront dans le panier, les points de fidélités sont retirés. Bien sur, si vous abandonner le panier ou supprimer le produit du panier, les points sont automatiquement recrédités sur votre compte.
+Dès que ces produits seront dans le panier, les points de fidélités sont retirés. Bien sur, si vous abandonnez le panier ou supprimez le produit du panier, les points sont automatiquement recrédités sur votre compte.
 
 ===== Le paiement
 
