@@ -265,3 +265,33 @@ ____
 Lorsque vos informations sont correctement remplies, vous pouvez cliquez sur le bouton ``Valider`` qui vous ramènera sur votre panier (vide) et vous créditera des points de fidélités à hauteur de : prix de la commande divisé par 2.
 
 === Administrateur
+
+L'esapce administrateur est un espace sécurisé, parallèle au site principal et qui n'est accessible que par un administrateur. Celui-ci a accès à 3 fonctionnalités principales.
+
+===== Rajouter stock produit
+
+Un administrateur peut rajouter du stock pour des bonbons ou des récipients en cliquant sur l'onglet ``Rajouter Stock``. Il lui suffit de sélectionner la catégorie (pour un bonbon) ou l'identifiant du récipient et de renseigner le nouveau stock. Une fois le bouton ``Valider`` appuyé, le stock sera modifié dans la base de donnée.
+
+image::images/adminstock.png[adminstock]
+
+===== Gérer produit
+
+En cliquant sur l'onglet ``Gérer produit``, un administrateur peut choisir s'il veut modifier un bonbon, un récipient ou une catégorie de bonbon.
+
+image::images/gereradmin.png[admingerer]
+
+En cliquant sur 1 des 3 onglets qui sont apparus, l'administrateur pourra rajouter des bonbons, récipients ou catégorie et supprimer des bonbons, récipients ou catégories.
+
+image::images/gestionb.png[]
+
+===== Voir commande client
+
+En cliquant sur l'onglet ``Commandes``, un administrateur pourra visualiser les commandes réalisées par un client. Une liste déroulante lui permettra de sélectionner un id de client.
+
+image::images/commandeclient.png[commandeclient]
+
+En cliquant sur le bouton ``Valider``, l'administrateur pourra voir toutes les commandes passées par le client qu'il a sélectionné.
+
+image::images/voircommandeclient.png[voircommandeclient]
+
+
