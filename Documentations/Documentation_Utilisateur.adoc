@@ -95,7 +95,7 @@ image::images/page_recipient3.png[]
 
 En cliquant sur une image, le visiteur est redirigé vers la page de détail des récipients où il pourra trouver plusieurs informations sur le produit ainsi que choisir sa quantité et ajouter au panier.
 
-image::images/detailR.png[detailrecipient]
+image::images/detailrecipient.png[detailrecipient]
 
 Bien sur, le visiteur ne pourra pas ajouter un produit au panier, il devra d'abord se connecter ou créer un compte.
 
@@ -126,7 +126,7 @@ image::images/page_connexion.png[Page connexion]
 
 image::images/connexion.png[connexion]
 
-Pour se connecter vous allez devoir saisir votre adresse mail ainsi que votre mot de passe crées lors de la création de votre compte. Si vous n'avez pas encore crée de compte vous devriez y renseigner votre nom, prénom, e-mail ainsi que le mot de passe que vous souhaitez utiliser.
+Pour se connecter vous allez devoir saisir votre adresse mail ainsi que votre mot de passe crées lors de la création de votre compte. Si vous n'avez pas encore crée de compte vous devriez y renseigner votre nom, prénom, e-mail ainsi que le mot de passe que vous souhaitez utiliser. Bien sur, vous sereez aussi inviter a ccpeter les conditions d'utilisations
 
 image::images/inscription.png[connexion]
 ____
@@ -134,7 +134,9 @@ ____
 
 - Votre mot de passe doit être valide (avoir au moins 8 caractères, dont une majuscules, une minuscule, un caractère spécial et un chiffres) ;
 
-- l'e-mail ne peux pas etre dejà utilisé, auquel cas vous avez dejà un compte;
+- L'e-mail ne peux pas etre dejà utilisé, auquel cas vous avez dejà un compte;
+
+- Vous devez accepter les conditions d'utilisations
 
 - Une fois vos champs non erronés saisis, il ne vous reste plus qu'à appuyer sur le bouton "Valider".
 ____
@@ -145,35 +147,49 @@ image::/V0/images/log.png[Connexion à un compte]
 
 ===== Se déconnecter 
 
-Pour vous déconnecter du compte, il vous suffira d'appuyer sur le bouton "Se déconnecter" en haut à droite dans la page "Compte".
+Après avoir créer un compte ou s'être connecté, un client arrivera sur la page d'information sur son compte en cliquant sur le logo du compte.
 
-image::/V0/images/gestionClient.png[Exercer le métier de guichetier]
+Pour vous déconnecter du compte, il vous suffira d'appuyer sur le bouton "Se déconnecter" en haut à droite dans la page "InfosCompte".
+
+image::images/infoscompte.png[Infos compte]
 
 ==== Gestion de compte
 
 ===== Modifier les informations de votre compte
 
-Vous vous êtes trompé lors de la création de votre ? Pas de problèmes, notre site web permet de rectifier d'éventuelles erreurs ! 
-Afin de pouvoir modifier vos informations, il vous faut suffit de cliquer sur le bouton "Modifier" dans la rubrique "Informations personnelles" de la page Compte.
+En arrivant sur votre espace compte, vous aurez plusieurs choix. Tout d'abord, cet espace vous présente plusieurs informations sur votre compte comme votre nom, prénom, vos points de fidélités, votre numéro de téléphone et votre adresse mail. Vous pourrez modifier ces informations ainsi que votre mot de passe. PLus bas, vous aurez accès à l'historique de toutes vos commande passées sur le site.
 
-Prenons ici l'exemple du compte de Victor Thompson :
+image::images/infoscompte.png[Infos compte]
+image::images/infoscompte2.png[Infos compte]
 
-image::/V0/images/rechercheClient.png[Recherche Client]
+Pour modifier vos informations, vous pouvez cliquer sur le bouton ``Modifier`` dans le carré de vos informations personnelles. Ainsi, un formulaire de modification apparaitra et vous pourrez remplir les champs.
 
-Une fois le bouton "Modifier" cliqué, un formulaire permettant de changer vos informations apparaît.
+image::images/modifcompte.png[modif compte]
+
+Pour être valides, vos informations doivent respecter plusieurs formats.
+
+____
+- Votre nom et prénom de doit pas contenir de caractère spéciale ou de chiffres.
+
+- Votre adresse mail doit être correctement écrite avec le format qui suit : lettre ou chiffre ou point suivie d'un @ puis lettre ou chiffre et si point, alors 4 caractères max pour .com par exemple.
+
+- Enfin, le numéro de téléphone ne doit contenir que des chiffres de 0 à 9 avec 8 chiffres maximum.
+____
+
+Si les informations ne sont pas valides, des pop-up d'erreurs apparaitront. Sinon, vos informations seront bien modifiées.
 
 
 ===== Modifier son mot de passe
 
-Pour modifier son mot de passe, un bouton "Modifier" dans la rubrique "Mot de passe" de la page compte est disponible. Malheureusement la fonctionnalité n'est pas encore implémentée.
+Pour modifier son mot de passe, un bouton "Modifier" dans la rubrique "Mot de passe" de la page compte est disponible. Vous serez redirigé vers un formulaire de modification.
 
-image::/V1/images/cloturer1C.png[Etape 1 cloturer un compte]
+image::images/modifmdp.png
 
 
 ===== Historiques de commandes
 
 Une fois des commandes passées, vous pourrez les visualiser dans la rupriques "Historique de commandes" de la page compte
 
-image::/V0/images/compte1.png[Etape 1 pour consulter compte]
+image::images/historique.png
 
 === Administrateur
