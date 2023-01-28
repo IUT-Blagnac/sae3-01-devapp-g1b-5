@@ -201,4 +201,67 @@ En cliquant sur le bouton ``voir mes cadeaux``, vous êtes rédirigé vers la pa
 image::images/cadeau1.png[cadeau]
 image::images/cadeau2.png[cadeau]
 
+==== Passer commande
+
+===== Le panier
+
+Lorsque vous créer un compte ou que vous réaliser votre première commande, vous n'avez pas de points de fidélités et aucun article dans le panier.
+
+image::images/panier.png[panier]
+
+Si vous ajouter un produit (bonbon ou récipient), celui-ci s'affichera dans le panier avec la quantité choisie, le prix unitaire et le prix total en fonction de la quantité. Aussi, les boutons en bas du panier changeront et vous pourrez le valider ou l'abandonner.
+
+image::images/panierB.png[panierbonbon]
+
+____
+- Si vous cliquer sur le bouton ``supprimer``, à droite d'un produit, le la ligne entière sera supprimer de votre panier.
+
+- Si vous cliquer sur bouton ``abandonner le panier``, tous les artciles seront supprimer et vous aurez un panier vide.
+
+- Si vous validé, vous serez redirigé vers la page du paiement.
+____
+
+Si vous ajouté un produit, par exemple un bonbon, avec une quantité de 2 mais que vous voulez augmenter/réduire la quantité, alors au lieu que le même produit se s'affiche plusieurs fois, seulement la quantité et le prix total seront modifiés :
+
+image::images/paniertest1.png[]
+image::images/paniertest2.png[]
+
+Ces tests marchent aussi pour les récipients.
+
+Si vous acheté des produits avec vos points de fidélités, l'affichage dans le panier en sera modifié ainsi que le prix.
+
+image::images/panierfidelite.png[]
+
+Dès que ces produits seront dans le panier, les points de fidélités sont retirés. Bien sur, si vous abandonner le panier ou supprimer le produit du panier, les points sont automatiquement recrédités sur votre compte.
+
+===== Le paiement
+
+Après avoir validé votre panier, vous serez redirigé vers la page du paiement, celle-ci vous invite à choisir votre mode de paiement (CB ou paypal) et vous pouvez également voir le récapitulatif de votre commande.
+
+image::images/paiement1.png[paiement]
+image::images/paiement2.png[paiement]
+
+Vous pouvez basculer du paiement en CB au paiement paypal en cliquant sur les boutons ``CB`` et ``Paypal``.
+
+Pour le formulaire du paiement en CB, pour être valides, vos informations doivent respecter plusieurs formats.
+
+____
+- Votre numéro de carte bleue doit contenir exclusivement 16 chiffres.
+
+- Le nom du propriétaire commence par une majuscule et contient au maximum 15 caractères.
+
+- Enfin, le CVV doit contenir 3 ou 4 chiffres.
+
+image::images/formCB.png[formCB]
+____
+
+Pour le formulaire du paiement par paypal, pour être valides, vos informations doivent respecter plusieurs formats.
+____
+- Votre adresse mail doit être correctement écrite
+
+image::images/formpaypal.png[formpaypal]
+____
+
+Lorsque vos informations sont correctement remplies, vous pouvez cliquez sur le bouton ``Valider`` qui vous ramènera sur votre panier (vide) et vous créditera des points de fidélités à hauteur de : prix de la commande divisé par 2.
+
 === Administrateur
