@@ -198,7 +198,7 @@ image::images/infoscompte.png[Infos compte]
 
 En cliquant sur le bouton ``voir mes cadeaux``, vous êtes rédirigé vers la page des cadeaux où vous pouvez payer certains articles avec des points de fidélités. Ceci seront donc "gratuit" dans votre panier. En fonction du nombre de point que vous avez, vous aurez la possibilité d'acheter différents produits (4 en tout) avec  25, 50, 100 ou 200 points.
 
-image::images/cadeau1.png[Infos compte]
-image::images/cadeau2.png[Infos compte]
+image::images/cadeau1.png[cadeau]
+image::images/cadeau2.png[cadeau]
 
 === Administrateur
