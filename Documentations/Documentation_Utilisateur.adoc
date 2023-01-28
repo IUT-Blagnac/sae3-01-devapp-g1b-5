@@ -31,14 +31,14 @@ Pour rappel, un visiteur a accès à toutes les fonctionnalités de base, que no
 
 ===== Page sur l'entreprise 
 
-image::/Documentations/images/page_accueil.PNG[Page d'accueil]
+image::images/page_accueil.PNG[Page d'accueil]
 
 En arrivant sur la page d'accueil, un visiteur aura accès à la page sur l'entreprise. Pour y accéder, il devra cliquer sur le menus ``Notre entreprise``.
 Ceci vous redirigera vers la page suivante :
 
-image::/Documentations/images/page_entreprise1.PNG[Page entreprise]
-image::/Documentations/images/page_entreprise2.PNG[Page entreprise]
-image::/Documentations/images/page_entreprise3.PNG[Page entreprise]
+image::images/page_entreprise1.PNG[Page entreprise]
+image::images/page_entreprise2.PNG[Page entreprise]
+image::images/page_entreprise3.PNG[Page entreprise]
 
 Cette page contient toute l'histoire de création de l'entreprise ainsi son besoin d'avoir un site d'e-commerce. NOus y avons également placé des chiffres clès comme sa date de création et son chiffre d'affaires.
 
@@ -46,17 +46,17 @@ Cette page contient toute l'histoire de création de l'entreprise ainsi son beso
 
 Dans le header, en cliquant sur le menus ``Bonbons``, un menu déroulant apparaitra et vous pourrez choisir les types de bonbons que vous voulez accéder que ce soit par le marque, leur format, leur goût ou la préférence alimentaire.
 
-image::/Documentations/images/menus.png[menus]
+image::images/menus.png[menus]
 
 Lorsque vous aurez cliqué sur un choix, vous serez redirigé vers la page d'affichage des bonbons comme suit : 
 
-image::/Documentations/images/page_bonbon.PNG[Page bonbon]
+image::/images/page_bonbon.PNG[Page bonbon]
 
 ===== Page sur les nouveautés
 
 Toujours dans l'espace du menus en haut, le visiteur pourra cliquer sur le bouton ``Nouveautés``qui le redirigera vers la page des nouveaux produits.
 
-image::/Documentations/images/page_nouveau.PNG[Page nouveau]
+image::images/page_nouveau.PNG[Page nouveau]
 
 En ce moment, il y a 1 nouveau bonbon et 2 nouveaux récipients.
 
@@ -64,18 +64,18 @@ En ce moment, il y a 1 nouveau bonbon et 2 nouveaux récipients.
 
 Le visiteur pourra aussi accéder à la page des produits en promotions en cliquant sur l'onglet ``Offres``. Dans cette page, le visiteur pourra donc voir les produits ayant un prix réduit. En ce moment, seul les bonbons _Dragibous_ sont en promotions avec une réduction de 20%.
 
-image::/Documentations/images/page_offre1.PNG[Page offre]
-image::/Documentations/images/page_offre2.PNG[Page offre]
+image::images/page_offre1.PNG[Page offre]
+image::images/page_offre2.PNG[Page offre]
 
 ===== Page contact
 
 Un visiteur pourra envoyer des commentaires à l'entreprise via un formulaire de contact disponible soit sur la page de l'entreprise, via le bouton, soit dans le footer sur l'onglet ``contact``.
 
-image::/Documentations/images/page_footer_contact.PNG[]
+image::images/page_footer_contact.PNG[]
 
 Après être parvenu sur la page, l'utilisateur sera invité à remplir tous les champs et a envoyé son message.
 
-image::/Documentations/images/page_contact.PNG[]
+image::images/page_contact.PNG[]
 
 
 === Client
@@ -86,24 +86,24 @@ image::/Documentations/images/page_contact.PNG[]
 
 Voici la page d'accueil qui s'affichera lors de l'ouverture du site web depuis le lien donné précédemment.
 
-image::/Documentations/images/page_accueil.PNG[Page d'accueil]
+image::images/page_accueil.PNG[Page d'accueil]
 
 Pour se connecter à son compte, le client devra appuyer sur l'icone "Compte" situé en haut à droite du menu de navigation :
 
-image::/Documentations/images/compte.PNG[Icone Compte]
+image::images/compte.PNG[Icone Compte]
 
 Le client aura alors la possibilité de se connecter ou bien de se créer un compte au cas écheant.
 
-image::/Documentations/images/page_connexion.PNG[Page connexion]
+image::images/page_connexion.PNG[Page connexion]
 
 
 ===== Identifiant et mot de passe
 
-image::/Documentations/images/connexion.PNG[connexion]
+image::images/connexion.PNG[connexion]
 
 Pour se connecter vous allez devoir saisir votre adresse mail ainsi que votre mot de passe crées lors de la création de votre compte. Si vous n'avez pas encore crée de compte vous devriez y renseigner votre nom, prénom, e-mail ainsi que le mot de passe que vous souhaitez utiliser.
 
-image::/Documentations/images/inscription.PNG[connexion]
+image::images/inscription.PNG[connexion]
 ____
 - Votre e-mail renseigné doit être valide (contenant un '@') ;
 
