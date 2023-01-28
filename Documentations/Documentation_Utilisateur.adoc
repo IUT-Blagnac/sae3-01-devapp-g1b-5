@@ -50,7 +50,15 @@ image::images/menus.png[menus]
 
 Lorsque vous aurez cliqué sur un choix, vous serez redirigé vers la page d'affichage des bonbons comme suit : 
 
-image::/images/page_bonbon.png[Page bonbon]
+image::images/page_bonbon.png[Page bonbon]
+
+En cliquant sur une image, le visiteur est redirigé vers la page de détail des bonbons. Il pourra voir différentes informations sur le produit, basculer de format quand s'est disponible, choisir sa quantité et ajouter au panier. 
+
+image::images/detailB.png[detailbonbon]
+
+Bien sur, le visiteur ne pourra pas ajouter un produit au panier, il devra d'abord se connecter ou créer un compte.
+
+image::images/erreur_connexion.png[erreur]
 
 ===== Page sur les nouveautés
 
@@ -77,8 +85,25 @@ Après être parvenu sur la page, l'utilisateur sera invité à remplir tous les
 
 image::images/page_contact.png[]
 
+===== Page récipient
+
+En cliquant sur l'onglet ``récipient`` dans le header, le visiteur sera redirigé vers la page des récipients. A partir d'ici, il pourra voir tous les récipients disponible à l'achat sur le site.
+
+image::images/page_recipient1.png[]
+image::images/page_recipient2.png[]
+image::images/page_recipient3.png[]
+
+En cliquant sur une image, le visiteur est redirigé vers la page de détail des récipients où il pourra trouver plusieurs informations sur le produit ainsi que choisir sa quantité et ajouter au panier.
+
+image::images/detailR.png[detailrecipient]
+
+Bien sur, le visiteur ne pourra pas ajouter un produit au panier, il devra d'abord se connecter ou créer un compte.
+
+image::images/erreur_connexion.png[erreur]
 
 === Client
+
+Pour rappel, un client à la possibilité de réaliser toutes les fonctionnalités présentées ci-dessus avec en plus, l'accès au panier, à son espace compte et au paiement.
 
 ==== Connexion
 
@@ -99,11 +124,11 @@ image::images/page_connexion.png[Page connexion]
 
 ===== Identifiant et mot de passe
 
-image::images/connexion.PNG[connexion]
+image::images/connexion.png[connexion]
 
 Pour se connecter vous allez devoir saisir votre adresse mail ainsi que votre mot de passe crées lors de la création de votre compte. Si vous n'avez pas encore crée de compte vous devriez y renseigner votre nom, prénom, e-mail ainsi que le mot de passe que vous souhaitez utiliser.
 
-image::images/inscription.PNG[connexion]
+image::images/inscription.png[connexion]
 ____
 - Votre e-mail renseigné doit être valide (contenant un '@') ;
 
