@@ -143,8 +143,6 @@ ____
 
 Si vos identifiants de connexion ne sont pas erronés, cela vous redirigera verts la page d'accueil.
 
-image::/V0/images/log.png[Connexion à un compte]
-
 ===== Se déconnecter 
 
 Après avoir créer un compte ou s'être connecté, un client arrivera sur la page d'information sur son compte en cliquant sur le logo du compte.
@@ -183,13 +181,24 @@ Si les informations ne sont pas valides, des pop-up d'erreurs apparaitront. Sino
 
 Pour modifier son mot de passe, un bouton "Modifier" dans la rubrique "Mot de passe" de la page compte est disponible. Vous serez redirigé vers un formulaire de modification.
 
-image::images/modifmdp.png
+image::images/modifmdp.png[modifmdp]
 
 
 ===== Historiques de commandes
 
 Une fois des commandes passées, vous pourrez les visualiser dans la rupriques "Historique de commandes" de la page compte
 
-image::images/historique.png
+image::images/historique.png[historiquecommande]
+
+===== Accéder à ses cadeaux (points de fidélités)
+
+Dans votre espace compte, vous aurez la possibilité d'accès à vos cadeau lorsque vous avez des points de fidélités. Attention, vous devez avoir plus de 0 points pour que le bouton s'affiche. 
+
+image::images/infoscompte.png[Infos compte]
+
+En cliquant sur le bouton ``voir mes cadeaux``, vous êtes rédirigé vers la page des cadeaux où vous pouvez payer certains articles avec des points de fidélités. Ceci seront donc "gratuit" dans votre panier. En fonction du nombre de point que vous avez, vous aurez la possibilité d'acheter différents produits (4 en tout) avec  25, 50, 100 ou 200 points.
+
+image::images/cadeau1.png[Infos compte]
+image::images/cadeau2.png[Infos compte]
 
 === Administrateur
