@@ -362,7 +362,7 @@ Un client peut consulter les informations de sont compte.
 Un client peut modifier les informations de sont compte.
 
 ==== 2.4 Accès à ses points de fidélités
-
+Un client peut utiliser ses points de fidélités pour avoir des cadeaux.
 ==== 2.5 Déconnexion.
 Un client peut ce déconnecter de sont compte.
 
@@ -379,6 +379,7 @@ ___
 
 ==== 3.1 Ajouter des stocks de produits
 
+L'administrateur peut ajouter des stocks a differents produits
 
 ===== Partie du use case conforme
 
@@ -395,7 +396,8 @@ Cette classe est, de ce fait, dédiée à la modification des informations d'un 
 
 
 ==== 3.2 Gérer les produits
-
+Un administrateur peut modifier chaque produits
 ==== 3.3 Ajouter des catégories
-
+Un administrateur peut gere 
 ==== 3.4 Voir les commanes client
+Un administrateur peut visualiser les commande de chaque client
