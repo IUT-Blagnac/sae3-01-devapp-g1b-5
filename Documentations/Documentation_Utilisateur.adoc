@@ -5,7 +5,7 @@
 :numbered:
 :nofooter:
 
-image::/images/Logo.png[]
+image::images/Logo.png[]
 = CHERIBOU - Documentation destinée aux utilisateurs
 _Réalisé par THOMPSON Victor, GUILLEVIC Yann, CABRILLAC Anthony, DOUVILLE Léo et HU Shiyu (1B)_
 
