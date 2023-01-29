@@ -339,15 +339,17 @@ image::images/offres.PNG[offres]
 
 La page du panier permet de visualiser les produit qu'a le client a l'interieur de sont panier.
 Cette page n'est accesible seulement si l'utilisateur est connecté.
-image::images/panier.png[panier_alert]
+image::images/panier.PNG[panier_alert]
 
 Pour un client qui n'as pas d'article dans sont panier la page la page affichera que le panier est vide et pemmetra via un boutton d'aller visiter la page nouveaute
-image::images/panier.png[panier_0article]
+image::images/panier_nbA.PNG[panier_0article]
 Pour un client qui a des articles la page affichera les article avec le nom, format, description, prix unitaire, quantité et le prix total du produit(prix unitaire x quantité) et un boutton qui permet de supprimer l'article du panier 
-image::images/panier.png[panier_articles]
+image::images/panier1.PNG[panier_articles]
+image::images/panier2.PNG[panier_articles]
+image::images/panierRecip.PNG[panier_articles]
 deux boutton seront maintenant disponible le boutton permettant d'abandonner sont panier ce qui videra complétement le panier grace a un procédure PL-SQL
 ou le boutton Valider qui redirigera l'utilisateur vers la page de paiement.
-
+image::images/panierFin.PNG[panier_articles]
 abandonner panier: 
 image::images/panier.png[panier_abandonner]
 
