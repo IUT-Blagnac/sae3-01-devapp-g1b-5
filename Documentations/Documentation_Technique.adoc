@@ -337,16 +337,20 @@ image::images/offres.PNG[offres]
 
 ==== 2.1 Accès au panier.
 
-Cette page utilise la base de données avec les tables panier , contientbonbon, contientrecipient, bonbons et recipient
-tout d'abord si l'utilisateur c'est pas connecter la page affichera une alert pour lui dire de se connecter et renvera sur la page connexion.
+La page du panier permet de visualiser les produit qu'a le client a l'interieur de sont panier.
+Cette page n'est accesible seulement si l'utilisateur est connecté.
+image::images/panier.png[panier_alert]
 
-:image::images/panier.png[panier]
+Pour un client qui n'as pas d'article dans sont panier la page la page affichera que le panier est vide et pemmetra via un boutton d'aller visiter la page nouveaute
+image::images/panier.png[panier_0article]
+Pour un client qui a des articles la page affichera les article avec le nom, format, description, prix unitaire, quantité et le prix total du produit(prix unitaire x quantité) et un boutton qui permet de supprimer l'article du panier 
+image::images/panier.png[panier_articles]
+deux boutton seront maintenant disponible le boutton permettant d'abandonner sont panier ce qui videra complétement le panier grace a un procédure PL-SQL
+ou le boutton Valider qui redirigera l'utilisateur vers la page de paiement.
 
-si un client arrive sur la page du panier la page verifira le nombre d'article du panier=+
-____
--s'il est vide alors affichera votre panier est vide et un boutton qui permettra d'aller sur la page nouveauté 
-s'il y a des articles alors l'article sera afficher et des boutton pour abandonner ou valider le panier s'afficherons aussi
-____
+abandonner panier: 
+image::images/panier.png[panier_abandonner]
+
 
 ===== Partie du use case conforme
 
@@ -355,11 +359,6 @@ image::/V1/images/modifinfoclient.PNG[Modifier info client]
 ===== Partie du diagramme de classe conforme
 
 image::/V1/images/clientdc.PNG[Modifier info client]
-
-Cette tâche n'inclut seulement qu'une classe dans le diagramme de classes V1 : la classe ``Client``.
-Cette classe est, de ce fait, dédiée à la modification des informations d'un client et par conséquent, à la mise à jour des données sur la base de données.
-
-
 
 
 ==== 2.2 Accès au descriptif de son compte.
@@ -376,7 +375,18 @@ Un client peut utiliser ses points de fidélités pour avoir des cadeaux.
 Un client peut ce déconnecter de sont compte.
 
 ==== 2.6 Accès au paiement
+Pour acceder a cette page il faut tout d'abord valider sont panier et etre connecté.
 
+Sur cette page nous pouvons choisir de payer de deux manieres differentes 'carte bleue' ou 'paypal' 
+Comme pour la page compte cette page contient deux formulaire différents sur la meme page mais n'en affiche qu'un a la fois
+
+sur cette page permet un recapitulatif de toutl es article dans le panier du client et affihe le prix total du panier en cours de validation
+
+Si vous choisisez CB alors le formulaire s'affiche et vous devez remplir les champs demander (numero de carte, nom propriétaire, CVV, date d'expiration, adresse de livraisons. Ces champs sont verifier dans la page de traitement 'traitFormPaiement'.
+
+traitFormPaiement verifie le mode de paiement choisi et si les champs sont tous entrer.
+
+s'il sont tous renseigner alors elle verifie les champs avec des regex associé.
 === 3 Administrateur
 Quand l'administrateur se connectera sur sont compte il sera directement rediriger vers un espace dedier a l'adminnistrateur qui lui permettra:+
 ____
