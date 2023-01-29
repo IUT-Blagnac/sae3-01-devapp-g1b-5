@@ -337,7 +337,16 @@ image::images/offres.PNG[offres]
 
 ==== 2.1 Accès au panier.
 
-Un client peut ajouter un produit dans sont panier avec une quantité reliée.
+Cette page utilise la base de données avec les tables panier , contientbonbon, contientrecipient, bonbons et recipient
+tout d'abord si l'utilisateur c'est pas connecter la page affichera une alert pour lui dire de se connecter et renvera sur la page connexion.
+
+:image::images/panier.png[panier]
+
+si un client arrive sur la page du panier la page verifira le nombre d'article du panier=+
+____
+-s'il est vide alors affichera votre panier est vide et un boutton qui permettra d'aller sur la page nouveauté 
+s'il y a des articles alors l'article sera afficher et des boutton pour abandonner ou valider le panier s'afficherons aussi
+____
 
 ===== Partie du use case conforme
 
@@ -370,12 +379,12 @@ Un client peut ce déconnecter de sont compte.
 
 === 3 Administrateur
 Quand l'administrateur se connectera sur sont compte il sera directement rediriger vers un espace dedier a l'adminnistrateur qui lui permettra:+
-___
+____
 • Rajouter des stoks de produit; 
 • Gérer les produits (supprimer/ajouter);
 • Ajouter des catégories;
 • Voir les commandes des clients;
-___
+____
 
 ==== 3.1 Ajouter des stocks de produits
 
