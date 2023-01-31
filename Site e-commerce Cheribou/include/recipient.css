@@ -41,6 +41,7 @@ main{
 }
 .produit{
   display: grid;
+  font-size: 1.2em;
   grid-template-columns: repeat(3, 1fr);
 }
 .produit #produitAffiche{

@@ -37,8 +37,14 @@
               #id du recipient que l'on va ajouter
               $_SESSION['recipPanier'] = $container['IDR'];
               
-              # affichage prix du produit
-              echo "<div class='info'>".$container['PRIXUNITAIRE']." euros </div><br></br>";
+              # affichage prix du produit / Promo si jamais
+              $prixU = str_replace(',', '.', htmlentities($container['PRIXUNITAIRE']));
+              $prixpromo = $prixU - ($prixU*$container['PROMO']);
+              if($container['PROMO'] != null){
+                echo "<div class='info'><p style='text-decoration: line-through;'>".$container['PRIXUNITAIRE']." euros</p>".$prixpromo." euros </div><br></br>";
+              }else{
+                echo "<div class='info'>".$container['PRIXUNITAIRE']." euros </div><br></br>";
+              }
               
               # affichage bouton panier + qte a choisir
               echo " <form class='complement' method='POST' action='ajoutPanierRecip.php'>

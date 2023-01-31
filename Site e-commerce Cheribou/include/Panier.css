@@ -5,7 +5,6 @@ main{
 }
 .contener{
   background-color: #ffd44f;  
-  margin: 0% 4%; /*hauteur,droite*/
   margin-left: 10%;
   padding-bottom: 5%;
 }
@@ -31,7 +30,7 @@ p{
   display: flex;
   flex-wrap:wrap ;
   column-gap :2em;
-/*  width: 100%;*/
+  width: 100%;
 }
 .infop p{
   font-size: 1em;
@@ -51,13 +50,36 @@ p{
 .bonbon{
   flex: 1;
 }
+.imgP{
+  flex: 1;
+}
 #bonbon{
   height:150px; 
   width:150px;
   border-radius: 15px;
 }
+a{
+  text-decoration: none;
+  color: black;
+}
+.submit{
+  background-color  : red;
+  position: absolute;
+  margin-left: 36%;
+  margin-top: 16%;
+  border-radius: 20px;
+  font-size: 1.6em;
+  padding: 0.3%;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.submit:hover {background-color: #3e8e41}
 /*Bouton valider*/
 .boutonV {
+  
   position: absolute;
   margin-left: 56%;
   margin-top: 16%;
@@ -98,3 +120,28 @@ p{
   opacity: 0;
   transition: all 0.8s
 }*/
+.ContinuerAchats{
+  position: absolute;
+  margin-left: 54%;
+  margin-top: 16%;
+  background-color:#ff74aa;
+  border-radius: 20px;
+  font-size: 1.6em;
+  padding: 0.3%;
+  
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ContinuerAchats:hover {background-color: #EAEAEA}
+.boutonS{
+  background-color: white;
+  color: red;
+  border-radius: 10px;
+  font-size: 1em;
+  text-align: center;
+  padding: 2%;
+}
+.boutonS:hover {background-color: #EAEAEA}

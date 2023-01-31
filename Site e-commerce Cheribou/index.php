@@ -12,6 +12,7 @@
     <title>Cheribou</title>
 
 </head>
+
 <body>
     <header> <?php include("include/header.php"); ?>
     </header>
@@ -19,13 +20,14 @@
     <section>
         <div class="bonbons">
 
-            <img src=" include\images\bonbon1.jpg" alt=" bonbon" id="one">
-            <img src="include\images\bonbon2.jpg" alt="bonbon" id="two">
-            <img src="include\images\bonbon3.jpg" alt="bonbon" id="three">
+            <img src=" include\images\P083.jpg" alt=" bonbon" id="one"></img>
+            <img src="include\images\R021.jpg" alt="bonbon" id="two"></img>
+            <img src="include\images\R022.jpg" alt="bonbon" id="three"></img>
 
 
         </div>
     </section>
     <?php include("include/footer.php"); ?>
 </body>
+
 </html>

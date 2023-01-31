@@ -64,10 +64,10 @@
               echo "".$container['POIDS']." KG<br></br>"; # affichage poids du produit
               echo "</div>";
               echo "<div class='format1'>Formats disponibles : <br></br>";
-              if($container['IDB'] == 19 or $container['IDB'] == 20){#gestion des formats seulement pour les grands sachets
+              if($container['IDB'] == 19 or $container['IDB'] == 20 or $container['IDB'] == 83){#gestion des formats seulement pour les grands sachets
                 echo "<a style='color: red; text-decoration: none;' href='detailBonbon.php?colorBonbon=".$container['COULEURB']."&NOM=".$container['NOMB']."&Format=Grand Sachet'>Grand Sachet</a><br></br></div>";
               }
-              elseif($container['IDB'] > 32){#gestion des formats seulement pour les toudoudou
+              elseif($container['IDB'] > 32 AND $container['IDB'] <= 41){#gestion des formats seulement pour les toudoudou
               echo "<a style='color: red; text-decoration: none;' href='detailBonbon.php?colorBonbon=".$container['COULEURB']."&NOM=".$container['NOMB']."&Format=10cm'>10cm</a> - 
                     <a style='color: red; text-decoration: none;' href='detailBonbon.php?colorBonbon=".$container['COULEURB']."&NOM=".$container['NOMB']."&Format=25cm'>25cm</a> - 
                     <a style='color: red; text-decoration: none;' href='detailBonbon.php?colorBonbon=".$container['COULEURB']."&NOM=".$container['NOMB']."&Format=50cm'>50cm</a><br></br></div>";
@@ -79,9 +79,14 @@
               #id du bonbon que l'on va ajouter
               $_SESSION['bonbonsPanier'] = $container['IDB'];
               
-              # affichage prix du produit
-              echo "<div class='info'>".$container['PRIXUNITAIRE']." euros / ".$container['PRIXKG']." euros le kilos</div><br></br>";
-              
+              # affichage prix du produit / Promo si jamais
+              $prixU = str_replace(',', '.', htmlentities($container['PRIXUNITAIRE']));
+              $prixpromo = $prixU - ($prixU*$container['PROMO']);
+              if($container['PROMO'] != 0){
+                echo "<div class='info'><p style='text-decoration: line-through;'>".$container['PRIXUNITAIRE']." euros</p>".$prixpromo." euros / ".$container['PRIXKG']." euros le kilos</div><br></br>";
+              }else{
+                echo "<div class='info'>".$container['PRIXUNITAIRE']." euros / ".$container['PRIXKG']." euros le kilos</div><br></br>";
+              }
               # affichage bouton panier + qte a choisir
               echo " <form class='complement' method='POST' action='ajoutPanierBonbon.php'>
                        <input class='qte' type='number' min='1' max='10' placeholder='quantite' name='qteAchoisir' value='1'/>

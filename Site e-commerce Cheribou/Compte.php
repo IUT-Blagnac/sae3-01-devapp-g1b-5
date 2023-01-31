@@ -38,16 +38,13 @@ if(!isset($_SESSION)){
                   <h4>Connexion</h4>
                     <hr>
                     <label for="email"><b>Email</b></label>
-                    <input type="email" name="Email" ';
-                    if (isset($_COOKIE['Cook'])) {
-                      echo "value='". $_COOKIE['Cook'] ."'";
-                    }
-                    
-                   echo ' />
+                    <input type="email" name="Email"> </input>
                     <label for="mdp"><b>Mot de passe</b></label>
-                    <input type="password" name="mdp" />
-                    <label for="souvenir">Se souvenir de moi: </label>
-                    <input style="text-align: left;" type="checkbox" name="souvenir"/><BR>
+                    <input type="password" name="mdp"></input><br></br>
+                    <div>
+                    <label for="souvenir">Politique de confidentialité : </label>
+                    <input type="checkbox" name="confi"></input><br></br>
+                    </div>
                     <button name="valider" type="submit" id="valider">Valider</button>
                 </form>
             </div>
@@ -63,7 +60,7 @@ if(!isset($_SESSION)){
                              <input type="text" name="nom" />
                     </div>
                     <div>
-                    <strong><label>Prenom*</label></strong>
+                         <strong><label>Prenom*</label></strong>
                         <input type="text" name="prenom" />
                     </div>
                     </div>
@@ -71,12 +68,10 @@ if(!isset($_SESSION)){
                         <div>
                         <strong> <label >E-mail*</label></strong>
             <input type="email" name="email">
-            </div>
-            <div>
+            </div><div>
             <strong><label >Confirmer lʼe-mail*</label></strong>
             <input type="email" name="email2" />
-            </div>
-            </div>
+            </div>    </div>
             <div class="name-field">
                         <div>
                         <strong><label >Mot de passe*</label></strong>
@@ -85,15 +80,16 @@ if(!isset($_SESSION)){
             <div>
             <strong><label >Confirmer le mot de passe*</label></strong>
             <input type="password" name="mdp2" />
-            </div>
-            </div>
-            <div>
+            </div></div>
+            <div><br></br>
+            <label for="souvenir">Politique de confidentialité : </label>
+            <input type="checkbox" name="confi"/><br></br>
             <button id="valider" type="submit" name="valider">Valider</button>
             </div>
                 </form>   
                 </div> 
-                </section>
-            ';}}?>
+                </section>';}}?>
+                
     <?php include("include/footer.php"); ?>
 </body>
 </strong>

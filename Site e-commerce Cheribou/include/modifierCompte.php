@@ -2,8 +2,8 @@
 session_start();
 if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['tel'])){#si tout les champs sont saisis
   #regex
-  $regexNom = "#[^0-9]#i";
-  $regexPrenom = "#[^0-9]#i";
+  $regexNom = "#[\sa-zA-Záâäôèéêëçîïûü-]$#i";
+  $regexPrenom = "#[\sa-zA-Záâäôèéêëçîïûü-]$#i";
   $regexTel = "#^(?:\+33\s|0)[1-9](?:\s\d{2}){4}$#";
   $regexMail = "#^[a-zA-Z0-9.]+@[a-zA-Z0-9]+.[a-z]{2,3}#i";
   if(preg_match($regexNom,$_POST['nom']) == True && preg_match($regexPrenom,$_POST['prenom']) == True &&
@@ -27,15 +27,19 @@ if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && i
     oci_commit($connect);
     oci_free_statement($requete);
     $_SESSION['nom'] = $mail;
-    header("location: ..\index.php");
+    echo "<script language='Javascript' type='text/javascript'>
+    alert('Modification enregistrée !'); location.href='../index.php';</script>";
+    exit();
   }
   else{
     echo "<script language='Javascript' type='text/javascript'>
-    alert('Erreur: Vous avez mal écris vos informations !'); location.href='../index.php';</script>";
+    alert('Erreur: Vous avez mal écris vos informations !'); location.href='../InfosCompte.php?nomC=".$_SESSION['nom']."';</script>";
+    exit();
   }
 }
 else{
   echo "<script language='Javascript' type='text/javascript'>
-  alert('Erreur: Vous devez remplir tous les champs !'); location.href='../index.php';</script>";
+  alert('Erreur: Vous devez remplir tous les champs !'); location.href='../InfosCompte.php?nomC=".$_SESSION['nom']."';</script>";
+  exit();
 }
 ?>

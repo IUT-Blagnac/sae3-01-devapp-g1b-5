@@ -8,18 +8,19 @@
 
 <body>
     <?php include("include/header.php"); ?>
+    <main>
     <div class="c">
         <h2><b>Contactez-nous</b></h2>
-        <form action="" method="post">
-            <div>
+        <form action="include/actionContact.php" method="post">
+            <div class="champ">
                 <label for="nom">Votre nom</label>
                 <input type="text" id="nom" name="nom" placeholder="Martin" required>
             </div>
-            <div>
+            <div class="champ">
                 <label for="email">Votre e-mail</label>
                 <input type="email" id="email" name="email" placeholder="monadresse@mail.com" required>
             </div>
-            <div>
+            <div class="champ">
                 <label for="sujet">Quel est le sujet de votre message ?</label>
                 <select name="sujet" id="sujet" required>
                     <option value="" disabled selected hidden>Choisissez le sujet de votre message</option>
@@ -29,26 +30,19 @@
                     <option value="autre">Autre...</option>
                 </select>
             </div>
-            <div>
+            <div class="champ">
                 <label for="message">Votre message</label>
                 <textarea id="message" name="message" placeholder="Bonjour, je vous contacte car...." required></textarea>
             </div>
-            <div>
-                <button type="submit">Envoyer mon message</button>
+            <div class="champ">
+                <button type="submit" name="Valider">Envoyer mon message</button>
             </div>
         </form>
 
     </div>
-    <div class="fin">
-        <?php
-        if (!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['sujet']) && !empty($_POST['message'])) {
-            echo "<p><b>Message envoy&eacute</b></p>";
-        }
-        ?>
-    </div>
-
-
-
+    </main>
+<?php include("include/footer.php"); ?>
+    
 </body>
 
 </html>

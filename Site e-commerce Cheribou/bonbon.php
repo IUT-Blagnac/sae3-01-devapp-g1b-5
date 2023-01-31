@@ -11,32 +11,27 @@
   <main>
     <p class="titre">Nos Bonbons</p>
     <div class="contener">
-      <p class="text">
         <?php
         if (!isset($_SESSION)) {
           session_start();
         }
         ?>
-      <form class="form" method="POST">
-        Trier par : <select style="width: 200px; font-size: 0.7em;" name='Type_recherche'>
-          <option value="best">Meileur résultat</option>
-          <option value="prixCroissant">Prix croissant</option>
-          <option value="prixDecr">Prix décroissant</option>
-          <option value="AaZ">De A à Z</option>
-          <option value="ZaA">De Z à A</option>
-          <option value="marque">Marque</option>
-          <option value="PlusPOP">Les plus populaires</option>
-        </select>
-        <input style="font-size: 0.7em; width: 150px; height: 25px;" type="submit" name="Valider" value="Valider" />
-      </form>
       <br></br><br></br>
       <?php
+        $count = 0;
         if(isset($_GET['msgErreur'])){ #si il y a un mg d'erreur (donc qu'il n'y a pas d'articles correspondant à la recherche)
           $titre = $_GET['msgErreur'];
-          echo "<h1 style='padding-bottom: 15%;'>$titre</h1>"; #on affiche l'erreur
+          echo "<h1 style='padding-bottom: 15%; text-align: center;'>$titre</h1>"; #on affiche l'erreur
         }
         else{ #sinon
           require_once('include/Connect.inc.php');
+          if (isset($_GET['Search'])) { #gestion si recherche par barre de recherche
+            $req = "SELECT * FROM Bonbons WHERE lower(nomB) LIKE lower('%$_GET[Search]%')";
+            $requete = oci_parse($connect, $req);
+
+
+          }
+
           if (isset($_GET['nomP'])) { # gestion des liens des marques
             $value = $_GET['nomP'];
             $req = "SELECT * FROM Bonbons WHERE nomB = :produit";
@@ -60,7 +55,10 @@
           }
           $result = oci_execute($requete);
           echo "<div class='produit'>";
+          
+          
           while (($container = oci_fetch_assoc($requete)) != false) {
+          
             echo "<div id='produitAffiche'>";
             echo "<div id='img'>";
             echo "<a href='detailBonbon.php?IDB=".$container['IDB']."'><img style='border-radius: 20px;' src='include/images/P0" . $container['IDB'] . ".jpg'  alt='image du produit'/></a>";
@@ -71,6 +69,10 @@
             echo "<div id='desc'>" . $container['DESCRIPTIONB'] . "</div>";
             echo "</div>";
             echo "</div>";
+            $count += 1;
+          }
+          if($count == 0){
+            echo "<p style = 'font-size: 2.5em; margin: 25%; ' ><b>Aucun résultat !</b></p><br></br>";
           }
           oci_free_statement($requete);
         }

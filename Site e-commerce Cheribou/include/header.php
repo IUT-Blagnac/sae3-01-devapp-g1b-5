@@ -7,12 +7,12 @@
   <a href="index.php"><img src="include\images\Logo.png" height=120 alt="image logo" id="logo"></img></a>
   <h1>CHERIBOU</h1>
   <img src="include\images\DrapeauFR.jpg" height=80 alt="image france" id="imageFR" />
-  <nav class="firstnavbar">
+  <nav class="firstnavbar" style="font-size: 1.2em;">
     <ul>
       <li><a href="Boutique.php">Notre entreprise</a></li>
       <li>
-        <form method="POST">
-          <input type="search" placeholder="Search" name="search">
+        <form method="POST" action="include/actionRecherche.php">
+          <input type="search" placeholder="Rechercher" name="search">
         </form>
 
       </li>
@@ -46,7 +46,7 @@
     </ul>
   </nav>
 
-  <nav class="secondnavbar">
+  <nav class="secondnavbar" style="font-size: 1.2em;">
     <ul>
       <li class="deroulant"><a href="#">Bonbons &ensp;</a>
         <ul class="sous">
@@ -81,7 +81,7 @@
               <li><a <?php echo "href='bonbon.php?nomG=Fraise&nomG=Fraise(acide)'"; ?>>Fraise</a></li>
               <li><a <?php echo "href='bonbon.php?nomG=Coca&nomG=Coca(acide)'"; ?>>Coca</a></li>
               <li><a <?php echo "href='bonbon.php?nomG=Caramel&nomG=Caramel(acide)'"; ?>>Caramel</a></li>
-              <li><a <?php echo "href='bonbon.php?nomG=fraise + coca(acide)'"; ?>>Fraise-coca</a></li>
+              <li><a <?php echo "href='bonbon.php?nomG=fraise et coca(acide)'"; ?>>Fraise-coca</a></li>
             </ul>
           </li>
           <li>
@@ -96,43 +96,10 @@
 
         </ul>
       </li>
-      <li><a href="#">Nouveautés</a></li>
-      <li><a href=>Offres</a></li>
+      <li><a href="Nouveaute.php">Nouveautés</a></li>
+      <li><a href="Promotion.php">Offres</a></li>
       <li><a href="recipient.php">Récipients</a></li>
-      <li><a href="#">Votre bonbon</a></li>
     </ul>
   </nav>
   
 </header>
-<?php #gestion de la barre de recherche
-
-
-if (isset($_POST['search'])) { #si la barre de recherche est nom vide
-  switch ($_POST['search']) { #on met en place un switch case
-    case "Dragibou": #case pour dragibou
-      header('location: bonbon.php?nomP=Dragibou'); #redirection
-      break;
-    case "Nounoursou": #case pour nounoursou
-      header('location: bonbon.php?nomP=Nounoursou'); #redirection
-      break;
-    case "Tête broulou": #case pour tête broulou
-      header('location: bonbon.php?nomP=Tête broulou'); #redirection
-      break;
-    case "Carambou": #case pour carambou
-      header('location: bonbon.php?nomP=Carambou'); #redirection
-      break;
-    case "Malabou": #case pour malabou
-      header('location: bonbon.php?nomP=Malabou'); #redirection
-      break;
-    case "Toudoudou": #case pour toudoudou
-      header('location: bonbon.php?nomP=Toudoudou'); #redirection
-      break;
-    default: #si rien trouvé
-      header('location: bonbon.php?msgErreur=Aucun resultat trouvé'); #redirection avec message d'erreur
-      break;
-
-
-  }
-}
-
-?>

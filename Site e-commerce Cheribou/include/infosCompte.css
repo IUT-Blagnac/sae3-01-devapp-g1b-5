@@ -1,11 +1,16 @@
 body{
   background-color: #ffd44f;
 }
+.global{
+  display: flex;
+  width: 100%;
+  column-gap: 7em;
+}
 .info{
   font-family: Arial;
   font-size: 1.5em;
   margin-top: 2%;
-  margin-bottom: 6%; 
+ 
   border:2px none;
   border-radius: 15px;
   background-color: white;
@@ -14,90 +19,18 @@ body{
   padding-top: 2%;
   padding-bottom: 2%;
   box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+  flex: 1;
+  width: 50%;
+}
+
+.global2{
+  flex: 1;
 }
 
 .ca{
   position : absolute;
   padding-top: 70%;
   width : 100%;
-}
-
-
-.fidel{
- 
-  font-family: Arial;
-  font-size: 1.5em;
-  background-color: white;
-  margin-left : 57%;
-  width : 40%;
-  padding-left: 2%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  text-align: left;
-  border:2px none;
-  border-radius: 15px;
-  margin-top: -40%;
-  height : 170px;
-  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
-}
-
-.fidel h3{
-  color : #ff74aa;
-  font-size : 1em;
-
-
-}
-
-.fidel p{
-
-  font-size : 0.8em;
-
-
-}
-
-.bf {
- border-radius: 20px;
-  font-size: 1em;
-  text-align: center;
-  padding: 0.5%;
-  width: 60%;
-  transition: all 0.5s;
-  cursor: pointer; 
-  font-family: "mikado_bold";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.75rem;
-  color: #fff;
-  text-align: center;
-  border-radius: 0.9375rem;
-  border:1px solid;
-  -webkit-box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
-  box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
-  background: #D92534;
-  
-
-
-}
-
-.historique{
-  position : absolute;
-  font-family: Arial;
-  border:2px none;
-  border-radius: 15px;
-  text-align: left;
-  width: 46%;
-  height: 540px;
-  background-color : white;
-  padding-left: 2%;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
-   
-}
-
-
-.historique h4{
-  font-size : 0.9 em;
 }
 
 
@@ -121,6 +54,112 @@ body{
   box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
   background: #D92534;
 }
+
+
+.fidel{
+  width: 70%;
+  font-family: Arial;
+  font-size: 1.5em;
+  background-color: white;
+  padding: 2%;
+  text-align: left;
+  border:2px none;
+  border-radius: 15px;
+  margin-top: 5%;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+}
+
+.mdp{
+  width: 70%;
+  font-family: Arial;
+  font-size: 1.5em;
+  background-color: white;
+  padding: 2%;
+  text-align: left;
+  border:2px none;
+  border-radius: 15px;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+
+
+}
+
+.mdp h3{
+  color : #ff74aa;
+  font-size : 1em;
+}
+
+.mdp p{
+  font-size : 0.8em;
+}
+
+.fidel h3{
+  color : #ff74aa;
+  font-size : 1em;
+}
+
+.fidel p{
+  font-size : 0.8em;
+}
+
+
+.bmdp {
+ border-radius: 20px;
+  font-size: 1em;
+  text-align: center;
+  padding: 0.5%;
+  width: 60%;
+  transition: all 0.5s;
+  cursor: pointer; 
+  font-family: "mikado_bold";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.9375rem;
+  border:1px solid;
+  -webkit-box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
+  box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
+  background: #D92534;
+}
+
+.bf {
+ border-radius: 20px;
+  font-size: 1em;
+  text-align: center;
+  padding: 0.5%;
+  width: 60%;
+  transition: all 0.5s;
+  cursor: pointer; 
+  font-family: "mikado_bold";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 1rem;
+  border:1px solid;
+  -webkit-box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
+  box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
+  background: #D92534;
+}
+
+.historique{
+  font-family: Arial;
+  border:2px none;
+  border-radius: 15px;
+  text-align: left;
+  height: 540px;
+  background-color : white;
+  padding-left: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 50%;
+}
+
 h2{
   font-family: Arial;
   font-size: 2.5em;
@@ -140,17 +179,22 @@ h2{
   cursor: pointer;
 }
 .boutonD:hover {background-color: #EAEAEA}
+
 .formModif{
-  float: right;
-  margin-left: 60%;
-  margin-top: -26%;
-  font-size: 1.5em;
-  position: absolute;
+  width: 50%;
+  font-size: 2em;
+  margin-left: 10%;
+  margin-top: 10%;
+  font-family: Arial;
 }
 .formModif input{
-  border-radius: 0.8em;
   padding:5px;
   outline:0;
-  border:1px solid;
+  border:2px none;
+  border-radius: 15px;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+  
 }
 
+ 
+ 

@@ -60,7 +60,6 @@
         $resultat = oci_execute($nomproduit);
         while (($container = oci_fetch_assoc($nomproduit)) != false) {
           $qkg = htmlentities($container['QUANTITEKG']);
-          //Table Bonbons---------------------------------------------------------------------------------------------------------
           $req2 = "SELECT * FROM BONBONS WHERE IDB=:idb";
           $nomb = oci_parse($connect, $req2);
           oci_bind_by_name($nomb, ':idb', $container['IDB']);
@@ -69,20 +68,18 @@
             $idbonbon = htmlentities($container2['IDB']);
             $nameC = htmlentities($container2['NOMB']);
             $datailC = htmlentities($container2['DESCRIPTIONB']);
-            $prixU = str_replace(',', '.', htmlentities($container2['PRIXUNITAIRE']));
+            if ($container2['PROMO'] != '0') { //gestion de la promo
+              $prix = str_replace(',', '.', htmlentities($container2['PRIXUNITAIRE']));
+              $prixU = $prix - ($prix * $container2['PROMO']);
+            } else {
+              $prixU = str_replace(',', '.', htmlentities($container2['PRIXUNITAIRE']));
+            }
+             if($container['FIDELITE'] == 'oui'){
+               $prixU = 0;
+             }
             $format = htmlentities($container2['FORMAT']);
           }
-          oci_free_statement($nomb);
-          //------------------------------------------------------------fonction PrixTotal-----------------------------------------------------------------------------
-          /* $sq = "begin :retour := prixtotalcommande.prixtotal(:idc); end;";
-                    // $req = " begin :retour := Gestion_Rugby.retournePointsMarques(:pNe); end; ";
-                    $appelFunct = oci_parse($connect, $sq);
-                    oci_bind_by_name($appelFunct, ':idc', $idp);
-                    oci_bind_by_name($appelFunct, ':retour', $retour, 40);
-                    $prixTotal = oci_execute($appelFunct);
-                    oci_free_statement($appelFunct);*/
           $prixTotal = $prixU * $qkg;
-
           echo  '
                     <div class="cont">
                       <div class="bonbon">
@@ -98,8 +95,12 @@
                       </div>
                       <div class="prixun">
                         <h2>Prix unitaire :</h2>
-                        <p>' . $prixU . '€</p>
-                      </div>
+                          <p>' . $prixU . '€</p>';
+                          if($container['FIDELITE'] == 'oui'){
+                              echo "<br></br><p style='color: red; font-size: 1em;'>Paiement par pts fidélités</p>";
+                          } 
+                          
+         echo  '             </div>
                       <div class="quant">
                         <h2>Quantité :</h2>
                         <p>' . $qkg . '</p>
@@ -108,75 +109,82 @@
                         <h2>Prix total :</h2>
                         <p>' . $prixTotal . ' €</p>
                       </div> 
-                      <a href="include/supprimerbonbon.php?idb=' . $idbonbon . '"><button class="boutonS" style="color: RED;"><b>Supprimer</b></button></a>
+                      <div class="imgP">';
+                      if($container['FIDELITE'] == 'oui'){
+                       echo ' <a href="include/supprimerbonbon.php?idb=' . $idbonbon . '&fi=oui"><button class="boutonS" style="color: RED;"><b>Supprimer</b></button></a>';
+                      }else{
+                       echo ' <a href="include/supprimerbonbon.php?idb=' . $idbonbon . '"><button class="boutonS" style="color: RED;"><b>Supprimer</b></button></a>';
+                      }
+                   echo '   </div>
                     </div><hr>
                     ';
+          oci_free_statement($nomb);
         }
-        //recipient------------------------------------------------------------------------------- //recipient-------------------------------------------------------------------------------
-        //recipient------------------------------------------------------------------------------- //recipient-------------------------------------------------------------------------------
-        //recipient------------------------------------------------------------------------------- //recipient-------------------------------------------------------------------------------
-        //recipient------------------------------------------------------------------------------- //recipient------------------------------------------------------------------------------- //recipient-------------------------------------------------------------------------------
-        //recipient------------------------------------------------------------------------------- //recipient------------------------------------------------------------------------------- //recipient-------------------------------------------------------------------------------
-
+        oci_free_statement($nomproduit);
+        //recipient------------------------------------------------------------------------------- 
         $requeteSQL1 = 'SELECT * from contientrecipient where idpanier = :idc';
         $nomR = oci_parse($connect, $requeteSQL1);
         oci_bind_by_name($nomR, ":idc", $idp);
         $resultat = oci_execute($nomR);
         while (($container1 = oci_fetch_assoc($nomR)) != false) {
-          $qkg = htmlentities($container1['QUANTITEUNITAIRE']);
+          $qtu = htmlentities($container1['QUANTITEUNITAIRE']);
+          $idr = $container1['IDR'];
           //Table Recipient---------------------------------------------------------------------------------------------------------
           $requeteSQL2 = "SELECT * FROM RECIPIENT WHERE IDR=:idr";
           $nomb = oci_parse($connect, $requeteSQL2);
-          oci_bind_by_name($nomb, ':idr', $container1['IDR']);
+          oci_bind_by_name($nomb, ':idr', $idr);
           $res = oci_execute($nomb);
           while (($container2 = oci_fetch_assoc($nomb)) != false) {
             $idRecip = htmlentities($container2['IDR']);
             $nameC = htmlentities($container2['NOMR']);
             $datailC = htmlentities($container2['DESCRIPTIONR']);
-            $prixU = str_replace(',', '.', htmlentities($container2['PRIXUNITAIRE']));
+            if ($container2['PROMO'] != null) { //gestion de la promo
+              $prix = str_replace(',', '.', htmlentities($container2['PRIXUNITAIRE']));
+              $prixU = $prix - ($prix * $container2['PROMO']);
+            } else {
+              $prixU = str_replace(',', '.', htmlentities($container2['PRIXUNITAIRE']));}          
             $couleur = htmlentities($container2['COULEURR']);
-          }
-          oci_free_statement($nomb);
-
-          $prixTotal = $prixU * $qkg;
-
+          } $prixTotal = $prixU * $qtu;
           echo  '
                     <div class="cont">
                       <div class="bonbon">
-                        <img id="bonbon" src="include/images/R0' . $idRecip . '.jpg" alt="img recipient">
-                      </div>
-                      <div class="infop">       
+                        <img id="bonbon" src="include/images/R0' . $idRecip . '.jpg" alt="img recipient"> </div>
+                      <div class="infop" style="width: 15%;">       
                         <h2>' . $nameC . '</h2>
-                        <p>' . $datailC . '</p>
-                      </div>
+                        <p>' . $datailC . '</p> </div>
                       <div class="infop">       
                         <h2>Couleur :</h2>
-                        <p>' . $couleur . '</p>
-                      </div>
+                        <p>' . $couleur . '</p></div>
                       <div class="prixun">
                         <h2>Prix unitaire :</h2>
-                        <p>' . $prixU . '€</p>
-                      </div>
+                        <p>' . $prixU . '€</p></div>
                       <div class="quant">
                         <h2>Quantité :</h2>
-                        <p>' . $qkg . '</p>
-                      </div>
+                        <p>' . $qtu . '</p></div>
                       <div class="prix">
                         <h2>Prix total :</h2>
                         <p>' . $prixTotal . ' €</p>
                       </div> 
-                      <a href="include/supprimerRecipient.php?idr=' . $idRecip . '"><button class="boutonS" style="color: RED;"><b>Supprimer</b></button></a>
+                      <div class="imgP">
+                        <a href="include/supprimerRecipient.php?idr=' . $idRecip . '"><button class="boutonS" style="color: RED;"><b>Supprimer</b></button></a>
+                      </div> 
                     </div><hr>
                     ';
+          oci_free_statement($nomb);
         }
-
-        oci_free_statement($nomproduit);
+        oci_free_statement($nomR);
         //recipient-------------------------------------------------------------------------------
         ?>
-        <form class='complement' method='POST' action='abP.php'>
-          <input class="boutonV" type="submit" name="Val" value="valider">
-          <input class='submit' type='submit' name='panier' value='Abandonner le panier' />
+        <?php if ($nba != 0) {
+        
+          echo "   <form class='complement' method='POST' action='include/traitPanier.php'>
+
+          <input class='submit' type='submit' name='Abpanier' value='Abandonner le panier' />
         </form>
+        <button class='boutonV'><a href='./choixP.php?acces=CB'>Valider</a></button>";
+        } else {
+          echo "<button class='ContinuerAchats'><a href='./Nouveaute.php'>Continuer mes achats</a></button>";
+        } ?>
       </div>
     </div>
     </div>

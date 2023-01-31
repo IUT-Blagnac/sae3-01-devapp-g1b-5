@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="include/footer.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
 
 <!-- <footer class="site-footer">
@@ -21,11 +21,9 @@
 
             <a href="./Boutique.php">Nos Boutiques</a>
 
-            <a href="#">Nouveautés</a>
+            <a href="./Nouveaute.php">Nouveautés</a>
 
             <a href="./contact.php">Contact</a>
-
-            <a href="#">Politique de confidentialité</a>
         </p>
 
         <p id="footerCheribou">CHERIBOU &copy; 2023</p>
