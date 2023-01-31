@@ -1,0 +1,126 @@
+body{
+  background-color: #ffd44f;
+}
+
+h2{
+  font-family: Arial;
+  font-size: 2.5em;
+  text-align : center;
+  margin-top: 5%;
+}
+
+.info1{
+  display: flex;
+  column-gap: 2em;
+  width: 100%;
+}
+
+.text1{
+  flex: 1;
+  font-family: Arial;
+  font-size: 1.5em;
+  text-align : left;
+  margin-left: 5%;
+  background-color: white;
+  border-radius: 10px;
+  border:2px solid black;
+  
+  padding: 1%;
+}
+
+.img1{
+  flex: 1;
+  margin-left: 10%;
+}
+
+.image{
+  width: 500px;
+  height: 330px;
+}
+
+.info2{
+  display: flex;
+  column-gap: 2em;
+  width: 100%;
+}
+
+.text2{
+  flex: 1;
+  font-family: Arial;
+  font-size: 1.5em;
+  text-align : left;
+  background-color: white;
+  border-radius: 10px;
+  border:2px solid black;
+  margin-right: 1%;
+  
+  padding: 1%;
+}
+
+.img2{
+  flex: 1;
+  margin-left: 10%;
+}
+
+.image2{
+  width: 600px;
+  height: 330px;
+}
+
+p{
+  font-family: Arial;
+  font-size: 2em;
+  text-align : left;
+  margin-left: 10%;
+}
+
+.info{
+  display: flex;
+  column-gap: 2em;
+  width: 100%;
+  text-align : center;
+}
+
+.creation{
+  flex: 1;
+}
+
+.production{
+  flex: 1;
+}
+
+.CA{
+  flex: 1;
+}
+
+.marcheFR{
+  flex: 1;
+}
+
+.info img{
+  width: 60px;
+  height: 60px;
+  padding: 1%;
+  -webkit-transition: all 0.5s ease; 
+}
+
+.info img:hover{
+  -webkit-transform:scale(1.03);
+}
+
+h4{
+  font-family: Arial;
+}
+
+.boutonContact {
+  margin-left: 10%;
+  margin-bottom: 9%;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 1.6em;
+  text-align: center;
+  padding: 0.5%;
+  width: 19%;
+  transition: all 0.5s;
+  cursor: pointer;
+}

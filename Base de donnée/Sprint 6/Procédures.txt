@@ -1,0 +1,64 @@
+--Procédure de création d'un compte
+
+create or replace PROCEDURE CreerCompte(
+vNomc Client.nomc%TYPE,
+vPrenomC Client.prenomc%TYPE,
+vAdressemailC Client.adressemail%TYPE,
+Vmdp Client.motdepasse%TYPE
+)
+IS
+vID_panier PANIER.IDPANIER%TYPE;
+BEGIN
+vID_panier := idPanier.NEXTVAL;
+INSERT INTO PANIER
+VALUES(vID_panier,0);
+INSERT INTO Client
+(idclient,idPanier,nomc,prenomc,adressemail,ptsfidelite,adressec,telportablec,motdepasse)
+VALUES (idClient.nextVal, vID_panier, vNomc, vPrenomC, vAdressemailC,0,null,null,Vmdp);
+COMMIT;
+END;
+
+--Procédure d'historisation d'une commande
+
+create or replace PROCEDURE Historique(
+cli client.idclient%TYPE
+)
+IS
+CURSOR c1 IS SELECT c.idcommande, c.datecommande, c.prixc, ce.nomc from commande c,
+client ce where ce.idclient = c.idclient and c.idclient = cli;
+cd commande.idcommande%TYPE;
+cda commande.datecommande%TYPE;
+cp commande.prixc%TYPE;
+ce client.nomc%TYPE;
+BEGIN
+OPEN c1;
+FETCH c1 INTO cd,cda,cp,ce;
+WHILE c1%FOUND LOOP
+DBMS_OUTPUT.PUT_LINE('Date de la commande :'|| cda||' / Id commande :'|| cd||' / Prix de la
+commande :'|| cp||' / Id client :'|| ce);
+FETCH c1 INTO cd,cda,cp,ce;
+end loop;
+END;
+
+--Procédure de vidage de panier
+
+create or replace PROCEDURE ViderPanier(
+vip panier.idpanier%TYPE,
+paye paiement.modepaiement%TYPE
+)
+IS
+idp paiement.idpaiement%TYPE;
+datec date;
+idc client.idpanier%TYPE;
+prixcc decimal;
+BEGIN
+SELECT SYSDATE into datec from dual;
+SELECT idclient into idc from client where idpanier = vip;
+idp:= idpaiement.nextVal;
+prixcc:= prixtotalcommande.prixtotal(vip);
+INSERT INTO paiement VALUES(idp,paye);
+INSERT INTO commande VALUES(idcommande.nextVal,idp,idc,datec,prixcc);
+delete from contientbonbon where idpanier = vip;
+delete from contientrecipient where idpanier = vip;
+COMMIT;
+END;

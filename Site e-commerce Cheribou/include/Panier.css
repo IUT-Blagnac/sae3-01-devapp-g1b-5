@@ -1,0 +1,147 @@
+main{
+  padding-top: 5%;  
+  background-color: #ffd44f;
+  font-family: Arial;
+}
+.contener{
+  background-color: #ffd44f;  
+  margin-left: 10%;
+  padding-bottom: 5%;
+}
+.contener2{
+  background-color: white;
+  margin-top: 2%;
+  border-radius: 20px;
+  margin-right: 20%;
+  padding-bottom: 22%;
+}
+p{
+  font-size: 2em;
+}
+.text{
+  padding-top: 15px;
+  padding-left: 40px;
+  font-size: 2em; 
+  color:#ff74aa;
+}
+.cont{
+  /*background-color: aqua;*/
+  margin: 20px;
+  display: flex;
+  flex-wrap:wrap ;
+  column-gap :2em;
+  width: 100%;
+}
+.infop p{
+  font-size: 1em;
+  flex: 1;
+  max-width:160px ;
+}
+
+.prixun{
+  flex: 1;
+}
+.quant{
+  flex: 1;
+}
+.prix{
+  flex: 1;
+}
+.bonbon{
+  flex: 1;
+}
+.imgP{
+  flex: 1;
+}
+#bonbon{
+  height:150px; 
+  width:150px;
+  border-radius: 15px;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+.submit{
+  background-color  : red;
+  position: absolute;
+  margin-left: 36%;
+  margin-top: 16%;
+  border-radius: 20px;
+  font-size: 1.6em;
+  padding: 0.3%;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.submit:hover {background-color: #3e8e41}
+/*Bouton valider*/
+.boutonV {
+  
+  position: absolute;
+  margin-left: 56%;
+  margin-top: 16%;
+  background-color: red;
+  border-radius: 20px;
+  font-size: 1.6em;
+  padding: 0.3%;
+  width: 12%;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.boutonV:hover {background-color: #3e8e41}
+/*Bouton déconnexion*/
+.boutonD {
+  margin-left: 72%;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 1.6em;
+  text-align: center;
+  padding: 0.5%;
+  width: 19%;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.boutonD:hover {background-color: #EAEAEA}
+/*.boutonV:after {
+  content: "";
+  background: #90EE90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}*/
+.ContinuerAchats{
+  position: absolute;
+  margin-left: 54%;
+  margin-top: 16%;
+  background-color:#ff74aa;
+  border-radius: 20px;
+  font-size: 1.6em;
+  padding: 0.3%;
+  
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ContinuerAchats:hover {background-color: #EAEAEA}
+.boutonS{
+  background-color: white;
+  color: red;
+  border-radius: 10px;
+  font-size: 1em;
+  text-align: center;
+  padding: 2%;
+}
+.boutonS:hover {background-color: #EAEAEA}

@@ -1,0 +1,101 @@
+body{
+  background-color: #ffd44f;
+  font-family: Arial;
+}
+
+.contener{
+  display: flex;
+  width: 100%;
+}
+
+.gauche{
+  flex: 1;
+}
+
+.value{
+  margin-left: 8%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  font-size: 2em;
+}
+
+.produit{
+  margin-top: 8%;
+  margin-left: 8%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.produit img{
+  width: 300px; 
+  height: 300px;
+}
+
+.droite{
+  flex: 1;
+  margin-top: 7%;
+}
+
+.info{
+  width: 70%;
+  font-size: 1.5em;
+  background-color: white;
+  padding: 2%;
+  text-align: left;
+  border:2px none;
+  border-radius: 15px;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+  margin-bottom: 8%;
+  margin-left: 10%;
+}
+
+h3{
+  color : #ff74aa;
+}
+
+.boutonD {
+  background-color: white;
+  border-radius: 20px;
+  font-size: 1.6em;
+  text-align: center;
+  padding: 1%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-bottom: 13%;
+  margin-left: 10%;
+}
+.boutonD:hover {background-color: #EAEAEA}
+
+.boutonInfos {
+  border-radius: 20px;
+  font-size: 1em;
+  text-align: center;
+  padding: 0.5%;
+  width: 40%;
+  transition: all 0.5s;
+  cursor: pointer; 
+  font-family: "mikado_bold";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 1rem;
+  border:1px solid;
+  -webkit-box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
+  box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
+  background: #D92534;
+}
+
+.commandes{
+  width: 70%;
+  font-size: 1.5em;
+  background-color: white;
+  padding: 2%;
+  text-align: left;
+  border:2px none;
+  border-radius: 15px;
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.25);
+  margin-bottom: 8%;
+  margin-left: 10%;
+}

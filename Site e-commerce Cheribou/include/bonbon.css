@@ -1,0 +1,48 @@
+main{
+  padding-top: 3%;
+  background-color: #ffd44f;
+  font-family: Arial;
+}
+.contener{
+  background-color: #FFB2E2;
+}
+.titre{
+  text-align: center;
+  font-size: 2.5em;
+  padding-bottom: 2%;
+  padding-top: -3%;
+}
+.compteur{
+  position: absolute;
+  margin-left: 3%;
+  font-size: 1.5em;
+}
+.form{
+  float: right; 
+  font-size: 1.5em;
+  margin-right: 5%;
+}
+.produit img {
+	max-height:100%;
+	max-width:100%; 
+  width: 430px; 
+  height: 370px;
+  border: 2px solid black;
+  -webkit-transition: all 0.5s ease; 
+}
+.produit img:hover{
+  -webkit-transform:scale(1.03);
+}
+.produit{
+  display: grid;
+  font-size: 1.2em;
+  grid-template-columns: repeat(3, 1fr);
+}
+.produit #produitAffiche{
+	padding: 50px; 
+}
+.produit #contenerdesc{
+	text-align: left;
+	justify-content: center; 
+	align-items: center;	
+}

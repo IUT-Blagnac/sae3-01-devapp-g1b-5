@@ -51,11 +51,13 @@ toc::[]
 
 Projet est réalisé par::
 
-- https://github.com/janeDoe[Jane Doe]
-- https://github.com/johnSmith[John Smith]
-...
+- https://github.com/Yann-cmd[Yann Guillevic]
+- https://github.com/VictorThompsonKeyl[Victor Thompson]
+- https://github.com/Anthonycbrl[Anthony Cabrillac]
+- https://github.com/leosae06[Léo Douville]
+- https://github.com/SylvainHsy[Shiyu Hu]
 
-Tuteur/tutrice enseignant(e) de l'équipe:: mailto:jean-michel.bruel@univ-tlse2.fr[JMB]
+Tuteur/tutrice enseignant(e) de l'équipe:: mailto:laurent.nonne@univ-tlse2.fr[LN]
 
 == Contexte général
 
@@ -90,6 +92,339 @@ TIP: Pensez à utiliser les salons Discord dédiés pour poser vos questions.
 
 TIP: Mettez ici toutes les informations nécessaire à l'utilisation de votre dépôt (comment on installe votre application, où sont les docs, etc.)
 
+Pour la plupart des documenations ci-dessous, celles-ci ont majoritairement été rangées par sprint. Le sprint 5 est actuellement en cours.
+
+**Partie Base de donnée**
+
+Lien vers les docs BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e[ici]
+
+Lien vers les tests BD : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/Cahier%20de%20tests%20BD%20V1.adoc[ici]
+
+[cols="1,1"]
+|===
+|Sprint 3
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/DiagrammeDesClasses%20V3%20G1B%20-%205.pdf[Diagramme des classes V3]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/Sch%C3%A9ma%20relationnel%20V3%20G1B%20-%205.pdf[Schéma relationnel V3]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%203/dicoDonnee%20V3%20G1B%20-%205.pdf[Dictionnaire des données V3]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 4
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/Avancement%20du%20projet%20Base%20de%20donn%C3%A9e%20Semaine%2050%20G1B%20-5.pdf[Livrable avancement de la BD]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/DiagrammeDesClasses%20V4%20G1B%20-%205.pdf[Diagramme des classes V4]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/Sch%C3%A9ma%20relationnel%20V4%20G1B%20-%205.pdf[Schéma relationnel V4]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%204/dicoDonnee%20V4%20G1B%20-%205.pdf[Dictionnaire des données V4]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Sprint%204/Scripts[Scripts insertion V4 et création des données V4]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 5
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/Avancement%20du%20projet%20Base%20de%20donn%C3%A9e%20Semaine%2001.pdf[Livrable avancement de la BD]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/Cahier%20de%20tests%20BD%20V5.adoc[cahier de test V5]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/D%C3%A9clencheurs.txt[Nos déclencheurs]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/Package%20et%20fonction.txt[Nos packages et fonctions]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%205/Proc%C3%A9dures.txt[Nos procédures]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 6
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/Avancement%20du%20projet%20Base%20de%20donn%C3%A9e%20Semaine%2002.pdf[Livrable avancement de la BD]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/Cahier%20de%20tests%20BD%20V6.adoc[cahier de test V6]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/D%C3%A9clencheurs.txt[Nos déclencheurs]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/Proc%C3%A9dures.txt[Nos procédures]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/DiagrammeDesClasses%20V6.pdf[Diagramme des classes V6]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/Sch%C3%A9ma%20relationnel%20V6%20G1B%20-%205.pdf[Schéma relationnel V6]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Sprint%206/dicoDonnee%20V6%20G1B%20-%205.pdf[Dictionnaire des données V6]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Base%20de%20donn%C3%A9e/Sprint%206/Script[Scripts insertion V6 et création des données V6]
+|===
+
+**Partie Développement web**
+
+Lien vers les fichiers Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou[ici]
+
+Lien vers les docs Dev Web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Site%20e-commerce%20Cheribou/assets/docs[ici]
+
+[cols="1,1"]
+|===
+|Sprint 3
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%203/Charte_Graphique_PHP_G1B%20-%205.pdf[Charte graphique V3]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%203/SEP%20G1B%20-%205.pdf[SEP]
+
+Header, footer, menus(avec css)
+
+Charte graphique index.php(avec css)
+
+Charte graphique panier.php(avec css)
+
+|===
+
+[cols="1,1"]
+|===
+|Sprint 4
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%204/Avancement%20du%20projet%20Dev%20Web%20semaine%2050%20G1B%20-%205.pdf[Livrable avancement du site web]
+
+Charte graphique Bonbon.php (avec css)
+
+Finalisation Header et footer
+
+Charte graphique Contact.php (avec css)
+
+Charte graphique Compte.php (avec css)
+|===
+
+[cols="1,1"]
+|===
+|Sprint 5
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%205/Avancement_du_projet_Dev_Web_semaine_01_G1B_-_5.pdf[Livrable avancement du site web]
+
+Finalisation menus (PHP)
+
+Finalisation Contact.php (PHP)
+
+Finalisation index.php (PHP)
+
+Finalisation Compte.php (PHP)
+
+Finalisation Bonbon.php (PHP)
+
+Finalisation InfosCompte.php (PHP)
+
+Finalisation de modification des données client + sessions et cookies
+
+Charte graphique detailProduit.php (avec css)
+
+|===
+
+[cols="1,1"]
+|===
+|Sprint 6
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Site%20e-commerce%20Cheribou/assets/docs/Sprint%206/Avancement_du_projet_Dev_Web_semaine_02_G1B_-_5.pdf[Livrable avancement du site web]
+
+Finalisation footer (PHP)
+
+Finalisation detailBonbon.php et detailRecipient.php (PHP)
+
+Finalisation page sur l'entreprise boutique.php
+
+Finalisation page de modification d'un client (PHP)
+
+Finalisation recipient.php (PHP)
+
+Amélioration panier.php
+
+Implémentation fonctionnalité d'historique des commandes
+
+Fonctionnalité ajout des produits (bonbon ou récipient) au panier
+
+Fonctionnalité suppression des produits (bonbon ou récipient) du panier
+
+
+|===
+
+[cols="1,1"]
+|===
+|Sprint 7
+|Codage de la page paiement (Charte graphique + PHP)
+
+Finalisation page des produits en promotion (PHP)
+
+Finalisation page des nouveaux produits (PHP)
+
+Codage de la partie administrateur
+
+Fonctionnalité rajouter stock bonbon/récipient pour admin
+
+Fonctionnalité supprimer/rajouter produits pour admin
+
+Fonctionnalité voire les commandes des clients pour admin
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Documentations/Documentation_Technique.adoc[Début doc technique]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Documentations/Documentation_Utilisateur.adoc[Début doc utilisateur]
+
+|===
+
+**Partie JAVA**
+
+[cols="1,1"]
+|===
+|Sprint 5
+|
+Début Interface principale
+
+|===
+
+[cols="1,1"]
+|===
+|Sprint 6
+|
+Interface principale
+
+Interface de configuration
+
+Onglet config Seuils
+
+Onglet config Frequence
+
+Lecture/Affichage des données capteurs
+
+Lecture/Affichage des données config
+
+Modification fichier de config
+|===
+
+[cols="1,1"]
+|===
+|Sprint 7
+|Onglet config paramètre serveur
+
+Thread pour affichage des données sur graphiques
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20JAVA/Docs%20JAVA/Documentation%20Technique.adoc[Documentation technique JAVA]
+|===
+
+
+
+**Partie Python**
+
+Lien vers les programmes Python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Programmes%20python[ici]
+
+Lien vers les docs Python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Programmes%20python/Docs%20Python[ici]
+
+Quelques tests Python ont été codé pour vous permettre de tester le programmes principal. Vous pourrez les retrouver : 
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/tree/master/Programmes%20python/Tests[ici]
+
+Notre programme Python utilise la librairie paho-mqtt. Si vous n'avez pas installé celle-ci sur Ubuntu, vous pouvez l'installer avec cette commande :
+  `sudo pip3 install paho-mqtt`
+  
+[cols="1,1"]
+|===
+|Sprint 3
+|Connexion aux services mqtt et extraction des données des capteurs
+
+Réalisation d'un fichier de configuration
+
+Ecriture des données dans un fichier texte
+
+Gestion des seuils maximaux des données
+|===
+
+[cols="1,1"]
+|===
+|Sprint 4
+|Gestion de la fréquence d'émission des données
+
+Réalisation des premiers tests
+|===
+
+[cols="1,1"]
+|===
+|Sprint 5
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/Cahier%20de%20tests%20Python%20V5.adoc[Cahier de test Python V5]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 7
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Docs%20Python/Documentation%20Globale%20Python%20G1B%20-%205.pdf[Documentation globale python]
+|===
+
+
+**Partie Gestion de projet**
+
+[cols="1,1"]
+|===
+|Sprint 1
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%201/CDCF.pdf[CDCF]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%201/CDCT.pdf[CDCT]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%201/DCE%20SAE.pdf[DCE]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 2
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%202/Speed%20Dating%20G1B%20-%205.pdf[Compte rendue du speed dating]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 3
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%203/Backlog%20de%20sprint%20(sprint%203).pdf[Backlog de sprint 3]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%203/Compte%20rendu%20de%20r%C3%A9union%20G1B%20-%205.pdf[Compte rendue de réunion semaine 49]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%203/Ordre%20Du%20Jour%20semaine%2049%20G1B%20-5.pdf[Ordre du jour semaine 49]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 4
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/Backlog%20de%20sprint%20(sprint%204).pdf[Backlog de sprint 4]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/Compte%20rendu%20de%20r%C3%A9union%20semaine%2050%20G1B%20-5.pdf[Compte rendue de réunion semaine 50]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/Ordre%20du%20Jour%20semaine%2050%20G1B%20-%205.pdf[Ordre du jour semaine 50]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%204/Analyse%20semaine%2050%20G1B%20-5.pdf[Analyse semaine 50]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 5
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%205/Backlog%20de%20sprint%20(sprint%205).pdf[Backlog de sprint 5]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%205/Compte%20rendu%20de%20r%C3%A9union%20semaine%2001%20G1B%20-5.pdf[Compte rendue de réunion semaine 01]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%205/Ordre%20du%20Jour%20semaine%2001%20G1B%20-%205.pdf[Ordre du jour semaine 01]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%205/Analyse%20semaine%2001%20G1B%20-5.pdf[Analyse semaine 01]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 6
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/Backlog%20de%20sprint%20(sprint%206).pdf[Backlog de sprint 6]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/Compte%20rendu%20de%20r%C3%A9union%20semaine%2002%20G1B%20-5.pdf[Compte rendue de réunion semaine 02]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/Ordre%20du%20Jour%20semaine%2002%20G1B%20-%205.pdf[Ordre du jour semaine 02]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%206/Analyse%20semaine%2002%20G1B%20-5.pdf[Analyse semaine 02]
+|===
+
+[cols="1,1"]
+|===
+|Sprint 7
+|https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%207/Ordre%20du%20Jour%20Post-mortem%20G1B%20-5.pdf[Ordre du jour post-mortem]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%207/Compte%20rendu%20de%20r%C3%A9union%20post-mortem%20G1B%20-5.pdf[Compte rendue de réunion post-mortem]
+
+https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/GPO/Sprint%207/Analyse%20d%E2%80%99impact%20SAE%203.01%20G1B%20-%205.pdf[Analyse d'impact]
+|===
+
 == Gestion de projet & Qualité
 
 Chaque sprint (semaine) vous devrez livrer une nouvelle version de votre application (release).
@@ -97,10 +432,49 @@ Utilisez pour cela les fonctionnalités de GitHub pour les https://docs.github.c
 
 De plus ce fichier `README.adoc` devra être à jour des informations suivantes :
 
-- Version courante : https://github.com/IUT-Blagnac/sae3-01-template/releases/tag/v0.1.2[v0.1.2]
-- Lien vers la doc technique
-- Lien vers la doc utilisateur
-- Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant
+- Version courante : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/releases/tag/V3[V3]
+- Lien vers la doc technique web : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Documentations/Documentation_Technique.adoc[ici]
+- Lien vers la doc utilisateur web: https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Documentations/Documentation_Utilisateur.adoc[ici]
+- Liste des (ou lien vers les) User Stories (ToDo/Ongoing/Done) et % restant : 
+
+Pour la partie python https://github.com/orgs/IUT-Blagnac/projects/43[ici]
+
+Pour la partie site d'E-commerce https://github.com/orgs/IUT-Blagnac/projects/6/views/1[ici]
+  
 - Tests unitaires et plans de test
+
+Pour la partie base de donnée : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Base%20de%20donn%C3%A9e/Tests/Cahier%20de%20tests%20BD%20V6.adoc[ici]
+
+Pour la partie python : https://github.com/IUT-Blagnac/sae3-01-devapp-g1b-5/blob/master/Programmes%20python/Tests/Cahier%20de%20tests%20Python%20V1.adoc[ici]
+
 - Indicateurs de qualité du code (dette technique)
 - ... tout autre élément que vous jugerez utiles pour démontrer la qualité de votre application
+
+
+=== Évaluations hebdomadaires
+
+
+
+NOTE: Les notes ci-dessous sont mises à jour directement par les enseignants responsables de la compétence 5.
+
+
+
+ifdef::env-github[]
+
+image:https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1826607166&amp;format=image[link=https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1826607166&amp;format=image]
+
+endif::[]
+
+
+
+ifndef::env-github[]
+
+++++
+
+<iframe width="786" height="430" seamless frameborder="0" scrolling="no" src="[https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1826607166&amp;format=image](https://docs.google.com/spreadsheets/d/e/2PACX-1vTc3HJJ9iSI4aa2I9a567wX1AUEmgGrQsPl7tHGSAJ_Z-lzWXwYhlhcVIhh5vCJxoxHXYKjSLetP6NS/pubchart?oid=1826607166&amp%3Bformat=image&authuser=0)"></iframe>
+
+++++
+
+endif::[]
+
+

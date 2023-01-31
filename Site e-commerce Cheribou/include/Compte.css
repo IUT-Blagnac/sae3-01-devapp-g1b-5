@@ -1,0 +1,122 @@
+*{
+  margin: 0;
+  padding: 0;  
+}
+section{
+  margin: 10vh;
+  display: flex;
+  font-family: Arial;
+  justify-content: center;
+}
+.links{
+  margin: 12vh;
+  border-bottom:1px #000;
+}
+.links a{
+  display: inline-block;
+  font-family: Arial;
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  color:  #000;
+}
+#loginLink{
+  color: red;
+}
+#registerLink{
+  color: red;
+}
+.container #login{
+  background-color: #fff;
+  border-radius: 15px;
+  border-color: black;
+  width: 50vh;
+  display: flex;
+  flex-flow: column wrap;
+  border:2px solid black;
+}
+.container #regis{
+  width: 55vh;
+  display: flex;
+  margin-bottom: 50px;
+  border-radius: 15px;
+  border:2px solid black;
+}
+#register{
+  background-color: blue;
+}
+#valider{ 
+  font-family: "mikado_bold";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.25rem;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 0.8125rem 1.875rem;
+  border-radius: 0.9375rem;
+  border: none;
+  -webkit-box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
+  box-shadow: inset 0px -4px 4px rgb(0 0 0 / 20%);
+  background: #D92534;
+}
+body{  
+  background-color: #FFB2E2;
+}
+.body{
+  box-sizing: border-box;
+  margin:10vh;
+  display:flex;
+  justify-content: center;
+  border-radius :15px;
+}
+.container form{
+  display:flex;
+  flex-direction:column;
+  background-color:#fff;
+  padding:10px;
+  font-family: Arial;
+}
+h4{
+  text-align:center;
+  font-size:20px;
+}
+hr{
+  margin:10px 0;
+  background-color:#ccc;
+  border :1px;
+  height:1px;
+  width:100%;   
+}
+.name-field{
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  justify-content:space-between;
+}
+.name-field div{
+  display:flex;
+    flex-direction: column;
+}
+.name-field div{
+  width:49%;
+}
+label{
+  margin-bottom:10px;
+}
+.container input{
+  border-radius: 0.8em;
+  margin-bottom:5px;
+  padding:5px;
+  outline:0;
+  border:1px solid;
+}
+.container input:focus{
+  border:1px solid #FFB2E2;
+}
+.container input[type="submit"]{
+  margin-top:15px;
+  background-color:#FFB2E2;
+  color:#fff;
+  border:1px solid #FFB2E2;
+}
